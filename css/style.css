@@ -119,19 +119,28 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
+    background: rgba(79, 70, 229, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    margin-right: 2rem;
 }
 
 #clock {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 0.2rem;
 }
 
 #date {
     font-size: 0.9rem;
-    opacity: 0.8;
+    color: var(--text-color-light);
+    font-weight: 500;
+    text-transform: capitalize;
 }
 
 nav ul {

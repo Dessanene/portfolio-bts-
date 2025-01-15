@@ -179,17 +179,19 @@ function updateTime() {
     // Mise à jour de l'horloge
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    document.getElementById('clock').textContent = `${hours}:${minutes}`;
     
     // Mise à jour de la date
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
     const date = now.toLocaleDateString('fr-FR', options);
-    document.getElementById('date').textContent = date.charAt(0).toUpperCase() + date.slice(1);
+    const formattedDate = date.split(' ').map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+    document.getElementById('date').textContent = formattedDate;
 }
 
-// Mettre à jour l'heure chaque seconde
-setInterval(updateTime, 1000);
+// Mettre à jour l'heure chaque minute
+setInterval(updateTime, 60000);
 updateTime(); // Première mise à jour immédiate
 
 // Gestion du formulaire de contact
