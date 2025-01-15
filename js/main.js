@@ -176,18 +176,15 @@ particlesJS('particles-js', {
 function updateTime() {
     const now = new Date();
     
-    // Mise à jour de l'horloge
+    // Format de l'heure : HH:MM
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     document.getElementById('clock').textContent = `${hours}:${minutes}`;
     
-    // Mise à jour de la date
-    const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+    // Format de la date en français
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const date = now.toLocaleDateString('fr-FR', options);
-    const formattedDate = date.split(' ').map(word => 
-        word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(' ');
-    document.getElementById('date').textContent = formattedDate;
+    document.getElementById('date').textContent = date.charAt(0).toUpperCase() + date.slice(1);
 }
 
 // Mettre à jour l'heure chaque minute
