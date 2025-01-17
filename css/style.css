@@ -245,6 +245,8 @@ nav {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary-color);
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .about-text {
@@ -317,6 +319,7 @@ nav {
 
 .skill-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .skill-item i {
@@ -855,6 +858,43 @@ nav {
 .stage-card h3, .projet-card h3, .veille-card h3 {
     font-size: var(--font-size-md);
     font-weight: 600;
+}
+
+/* Styles des boutons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--primary-color-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(79, 70, 229, 0.3);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn i {
+    margin-right: 8px;
 }
 
 /* Buttons */
@@ -1413,6 +1453,8 @@ textarea {
     border: 2px solid var(--primary-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .profile-image:hover {
@@ -1886,3 +1928,43 @@ section::after {
 
 .veille-card:nth-child(1) { transition-delay: 0.1s; }
 .veille-card:nth-child(2) { transition-delay: 0.2s; }
+
+/* Nouvelles animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Amélioration du responsive */
+@media (max-width: 768px) {
+    :root {
+        --font-size-xxl: 2.5rem;
+        --font-size-xl: 2rem;
+        --font-size-lg: 1.75rem;
+        --font-size-md: 1.2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: var(--font-size-xxl);
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .skills-carousel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Amélioration des transitions */
+.project-card, .skill-card, .certification-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover, .skill-card:hover, .certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
