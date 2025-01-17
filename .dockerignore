@@ -1,0 +1,11 @@
+.git
+.gitignore
+.env
+node_modules
+README.md
+Dockerfile
+.dockerignore
+*.log
+.DS_Store
+.vscode/
+netlify.toml
