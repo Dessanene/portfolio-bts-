@@ -239,13 +239,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Gestion des liens sociaux
-document.addEventListener('DOMContentLoaded', () => {
-    const linkedinLink = document.querySelector('.social-link.linkedin');
-    if (linkedinLink) {
-        linkedinLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.open('https://www.linkedin.com/in/dessanene-sanhan-ba5174205/', '_blank');
-        });
-    }
-});
+// Suppression du gestionnaire des liens sociaux pour permettre le comportement par défaut des liens
