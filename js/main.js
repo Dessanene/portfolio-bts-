@@ -172,35 +172,6 @@ particlesJS('particles-js', {
     retina_detect: true
 });
 
-// Fonction pour mettre à jour l'horloge et la date
-function updateTime() {
-    const now = new Date();
-    
-    // Format de l'heure : HH:MM:SS
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-    
-    // Format de la date en français avec style amélioré
-    const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
-    };
-    const date = now.toLocaleDateString('fr-FR', options);
-    // Première lettre en majuscule et reste en minuscules
-    const formattedDate = date.split(' ').map(word => 
-        word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-    ).join(' ');
-    document.getElementById('date').textContent = formattedDate;
-}
-
-// Mettre à jour l'heure chaque seconde
-setInterval(updateTime, 1000);
-updateTime(); // Première mise à jour immédiate
-
 // Gestion du formulaire de contact
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
