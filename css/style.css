@@ -1577,7 +1577,6 @@ textarea {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
     font-size: 1.5rem;
     transition: all 0.3s ease;
@@ -1585,6 +1584,16 @@ textarea {
     position: relative;
     z-index: 10;
     cursor: pointer;
+}
+
+.social-link.linkedin {
+    background-color: #0077B5;
+}
+
+.social-link.linkedin:hover {
+    background-color: #006396;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
 }
 
 .social-link.github {
@@ -1597,10 +1606,21 @@ textarea {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-.social-link:hover {
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+/* Animations pour les icônes sociales */
+@keyframes social-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.social-link:hover i {
+    animation: social-pulse 1s infinite;
 }
 
 /* Stages Section */
