@@ -220,7 +220,7 @@ nav {
 
 .about-text p {
     margin-bottom: var(--spacing-md);
-    line-height: 1.6;
+    line-height: var(--line-height-loose);
     line-height: 1.8;
     color: var(--text-color-light);
     font-size: 1.1rem;
@@ -1585,6 +1585,16 @@ textarea {
     backdrop-filter: blur(8px);
     cursor: pointer;
     text-decoration: none;
+}
+
+.social-link.linkedin {
+    background-color: #0077B5;
+}
+
+.social-link.linkedin:hover {
+    background-color: #006396;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
 }
 
 .social-link:hover {
