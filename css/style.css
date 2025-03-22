@@ -1028,6 +1028,81 @@ textarea {
     margin: 0 var(--spacing-sm);
 }
 
+.skill-card {
+    background: var(--card-bg);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-glow);
+    border-color: var(--hover-color);
+    background: rgba(255, 43, 74, 0.1);
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(to bottom, var(--hover-color) 0%, transparent);
+    opacity: 0.1;
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.skill-card:hover::before {
+    height: 100%;
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    color: var(--hover-color);
+    transform: scale(1.1);
+    text-shadow: var(--hover-glow);
+}
+
+.skill-card h4 {
+    color: var(--text-color);
+    font-size: var(--font-size-md);
+    margin-bottom: var(--spacing-sm);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover h4 {
+    color: var(--hover-color);
+}
+
+.skill-card p {
+    color: var(--text-color-light);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+}
+
 @media (max-width: 768px) {
     .carousel-button {
         width: 30px;
@@ -1346,6 +1421,26 @@ textarea {
     gap: var(--spacing-sm);
     flex-wrap: wrap;
     margin-bottom: var(--spacing-lg);
+}
+
+.projet-tech span {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: var(--card-bg);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.projet-tech span:hover {
+    background: var(--hover-color);
+    color: white;
+    transform: translateY(-3px) rotate(2deg);
+    box-shadow: var(--hover-glow);
 }
 
 .btn-projet {
@@ -2509,4 +2604,22 @@ h2.text-center, h3.text-center {
 
 .btn:active {
     transform: translateY(1px);
+}
+
+.tech-badge {
+    background: var(--card-bg);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: var(--hover-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--hover-glow);
 }
