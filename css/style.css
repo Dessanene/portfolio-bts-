@@ -90,23 +90,19 @@ p {
 
 /* Header */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--primary-color);
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-md) var(--spacing-lg);
-    max-width: var(--container-width);
-    margin: 0 auto;
 }
 
 .logo h1 {
@@ -116,7 +112,7 @@ header {
 }
 
 .time-container {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
     background: rgba(0, 0, 0, 0.8);
