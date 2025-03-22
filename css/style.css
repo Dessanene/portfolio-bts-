@@ -108,45 +108,12 @@ header {
 .logo h1 {
     font-size: 1.5rem;
     color: var(--text-color);
-    margin: 0;
-}
-
-.time-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-family: 'Roboto Mono', monospace;
-    z-index: 1000;
-    border: 1px solid rgba(74, 107, 255, 0.3);
-    box-shadow: 0 0 10px rgba(74, 107, 255, 0.2);
-}
-
-#current-time {
-    font-size: 2.5rem;
-    color: #4a6bff;
-    margin-bottom: 5px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-align: right;
-}
-
-#current-date {
-    font-size: 1rem;
-    color: #ffffff;
-    opacity: 0.9;
-    letter-spacing: 1px;
-    text-align: right;
 }
 
 nav ul {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: 2rem;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 nav a {
@@ -187,10 +154,6 @@ nav a:hover::after {
         flex-wrap: wrap;
         justify-content: center;
         gap: var(--spacing-md);
-    }
-
-    .time-container {
-        order: -1;
     }
 }
 
@@ -624,7 +587,7 @@ nav {
 
 .certification-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 163, 255, 0.2);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
 }
 
 .certification-image {
@@ -802,32 +765,6 @@ nav {
 .hero p {
     font-size: var(--font-size-lg);
     font-weight: 300;
-}
-
-/* Time container */
-.time-container {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: 1px solid var(--primary-color);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
-}
-
-#clock {
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-    color: var(--primary-color);
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-}
-
-#date {
-    font-size: var(--font-size-base);
-    color: var(--text-color);
-    margin-top: 5px;
 }
 
 /* Cards */

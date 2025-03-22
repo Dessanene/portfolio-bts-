@@ -125,14 +125,14 @@ particlesJS('particles-js', {
             }
         },
         color: {
-            value: '#ff0000'
+            value: '#4a6bff'
         },
         shape: {
             type: 'circle'
         },
         opacity: {
             value: 0.5,
-            random: true
+            random: false
         },
         size: {
             value: 3,
@@ -141,13 +141,13 @@ particlesJS('particles-js', {
         line_linked: {
             enable: true,
             distance: 150,
-            color: '#ff0000',
+            color: '#4a6bff',
             opacity: 0.4,
             width: 1
         },
         move: {
             enable: true,
-            speed: 3,
+            speed: 6,
             direction: 'none',
             random: false,
             straight: false,
@@ -167,57 +167,48 @@ particlesJS('particles-js', {
                 mode: 'push'
             },
             resize: true
+        },
+        modes: {
+            repulse: {
+                distance: 100,
+                duration: 0.4
+            },
+            push: {
+                particles_nb: 4
+            }
         }
     },
     retina_detect: true
 });
 
-// Mise à jour de l'horloge
-function updateClock() {
-    const now = new Date();
-    
-    // Mise à jour de l'heure
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
-    
-    // Mise à jour de la date
-    const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
-    const months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
-    
-    const dayName = days[now.getDay()];
-    const day = now.getDate();
-    const month = months[now.getMonth()];
-    const year = now.getFullYear();
-    
-    document.getElementById('current-date').textContent = `${dayName} ${day} ${month} ${year}`;
-}
-
-// Mettre à jour l'horloge chaque seconde
-setInterval(updateClock, 1000);
-updateClock(); // Afficher l'heure immédiatement
-
 // Gestion du formulaire de contact
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Récupération des valeurs du formulaire
-        const formData = {
-            nom: this.querySelector('input[type="text"]').value,
-            email: this.querySelector('input[type="email"]').value,
-            message: this.querySelector('textarea').value
-        };
+    contactForm.addEventListener('submit', handleSubmit);
+}
 
-        // Ici, vous pourrez ajouter la logique d'envoi du formulaire
-        console.log('Formulaire soumis :', formData);
-        
-        // Réinitialisation du formulaire
-        this.reset();
-        alert('Message envoyé ! (simulation)');
-    });
+function handleSubmit(event) {
+    event.preventDefault();
+    
+    // Récupération des valeurs du formulaire
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    // Validation simple
+    if (!name || !email || !message) {
+        alert('Veuillez remplir tous les champs');
+        return;
+    }
+    
+    // Ici, vous pouvez ajouter le code pour envoyer le formulaire
+    console.log('Formulaire envoyé:', { name, email, message });
+    
+    // Réinitialisation du formulaire
+    contactForm.reset();
+    
+    // Message de confirmation
+    alert('Merci pour votre message ! Je vous répondrai dès que possible.');
 }
 
 // Gestion des carrousels
