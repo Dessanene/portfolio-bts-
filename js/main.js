@@ -172,25 +172,31 @@ particlesJS('particles-js', {
     retina_detect: true
 });
 
-// Fonction pour mettre à jour l'horloge et la date
-function updateTime() {
+// Mise à jour de l'horloge
+function updateClock() {
     const now = new Date();
     
-    // Mise à jour de l'horloge
+    // Mise à jour de l'heure
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
-    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
     
     // Mise à jour de la date
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const date = now.toLocaleDateString('fr-FR', options);
-    document.getElementById('date').textContent = date.charAt(0).toUpperCase() + date.slice(1);
+    const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+    const months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+    
+    const dayName = days[now.getDay()];
+    const day = now.getDate();
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+    
+    document.getElementById('current-date').textContent = `${dayName} ${day} ${month} ${year}`;
 }
 
-// Mettre à jour l'heure chaque seconde
-setInterval(updateTime, 1000);
-updateTime(); // Première mise à jour immédiate
+// Mettre à jour l'horloge chaque seconde
+setInterval(updateClock, 1000);
+updateClock(); // Afficher l'heure immédiatement
 
 // Gestion du formulaire de contact
 const contactForm = document.querySelector('.contact-form form');
