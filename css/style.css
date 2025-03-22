@@ -1903,12 +1903,19 @@ section::after {
 .subtitle {
     font-size: 1.2rem;
     color: var(--text-color-light);
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
     animation: fadeIn 1s ease-in-out;
+}
+
+.subtitle:last-of-type {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
 }
 
 @keyframes fadeIn {
@@ -1930,5 +1937,9 @@ section::after {
     .subtitle {
         font-size: 1rem;
         padding: 0 1rem;
+    }
+
+    .subtitle:last-of-type {
+        font-size: 1.2rem;
     }
 }
