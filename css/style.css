@@ -1,16 +1,16 @@
 /* Variables et Reset */
 :root {
-    --primary-color: #4F46E5;
-    --primary-color-dark: #4338CA;
-    --primary-color-light: #818CF8;
-    --accent-color: #06B6D4;
+    --primary-color: #6C63FF;
+    --primary-color-dark: #5046e5;
+    --primary-color-light: #8A84FF;
+    --accent-color: #00E0FF;
     --text-color: #ffffff;
     --text-color-light: #E5E7EB;
-    --dark-bg: #111827;
-    --card-bg: rgba(79, 70, 229, 0.1);
-    --border-color: rgba(79, 70, 229, 0.2);
-    --gradient-start: #4F46E5;
-    --gradient-end: #06B6D4;
+    --dark-bg: #0A0A1A;
+    --card-bg: rgba(108, 99, 255, 0.08);
+    --border-color: rgba(108, 99, 255, 0.15);
+    --gradient-start: #6C63FF;
+    --gradient-end: #00E0FF;
     --section-padding: 4rem 2rem;
     --container-width: 1400px;
     --spacing-xs: 0.5rem;
@@ -44,7 +44,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: var(--line-height-normal);
     color: var(--text-color);
-    background: linear-gradient(135deg, var(--dark-bg) 0%, #1E1B4B 100%);
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #141440 100%);
     font-size: var(--font-size-base);
 }
 
@@ -888,7 +888,9 @@ textarea {
     margin-bottom: var(--spacing-sm);
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
     font-weight: 700;
 }
 
@@ -1430,9 +1432,12 @@ textarea {
 
 .glitch {
     position: relative;
-    text-shadow: 
-        2px 2px var(--gradient-start),
-        -2px -2px var(--gradient-end);
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    overflow: hidden;
 }
 
 .glitch::before,
@@ -2358,4 +2363,52 @@ h2.text-center, h3.text-center {
     background-color: rgba(220, 53, 69, 0.2);
     border: 1px solid #dc3545;
     color: #dc3545;
+}
+
+.section-transition {
+    position: relative;
+    padding: var(--section-padding);
+    background-color: rgba(10, 10, 30, 0.7);
+    overflow: hidden;
+}
+
+.section-transition::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(0, 224, 255, 0.05) 100%);
+    z-index: -1;
+}
+
+.competence-card, .project-card, .epreuve-card, .certification-card, .veille-card {
+    background: rgba(16, 16, 40, 0.6);
+    border: 1px solid rgba(108, 99, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.competence-card:hover, .project-card:hover, .certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border-color: rgba(108, 99, 255, 0.3);
+}
+
+.particles-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
 }
