@@ -123,17 +123,6 @@ header {
     font-family: 'Poppins', sans-serif;
 }
 
-#clock {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
-#date {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
 nav ul {
     display: flex;
     gap: var(--spacing-lg);
@@ -795,32 +784,6 @@ nav {
 .hero p {
     font-size: var(--font-size-lg);
     font-weight: 300;
-}
-
-/* Time container */
-.time-container {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: 1px solid var(--primary-color);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
-}
-
-#clock {
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-    color: var(--primary-color);
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-}
-
-#date {
-    font-size: var(--font-size-base);
-    color: var(--text-color);
-    margin-top: 5px;
 }
 
 /* Cards */
