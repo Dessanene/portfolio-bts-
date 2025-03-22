@@ -1840,12 +1840,11 @@ section::after {
     align-items: center;
     justify-content: space-between;
     margin-bottom: var(--spacing-xl);
+    gap: var(--spacing-lg);
 }
 
 .project-header .section-intro {
-    flex: 1;
-    margin-right: var(--spacing-lg);
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .dokuwiki-link {
@@ -1853,6 +1852,7 @@ section::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .icon-circle {
@@ -1878,13 +1878,11 @@ section::after {
 @media (max-width: 768px) {
     .project-header {
         flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-md);
+        text-align: center;
     }
 
     .project-header .section-intro {
-        margin-right: 0;
-        text-align: center;
+        margin-bottom: var(--spacing-md);
     }
 }
 
