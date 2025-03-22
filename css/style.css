@@ -202,34 +202,41 @@ nav {
 /* About Section */
 .about-content {
     display: flex;
-    gap: var(--spacing-xl);
     align-items: center;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
 }
 
 .profile-image {
     width: 300px;
     height: 300px;
-    border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary-color);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    border: 2px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(79, 70, 229, 0.5);
 }
 
 .about-text {
     flex: 1;
 }
 
-.about-text p {
-    margin-bottom: var(--spacing-md);
-    line-height: 1.6;
-    line-height: 1.8;
-    color: var(--text-color-light);
-    font-size: 1.1rem;
-}
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.buttons {
-    display: flex;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+    .profile-image {
+        width: 250px;
+        height: 250px;
+        margin-bottom: var(--spacing-lg);
+    }
 }
 
 /* Skills Section */
