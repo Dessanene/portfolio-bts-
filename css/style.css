@@ -2173,3 +2173,17 @@ section::after {
         margin-bottom: var(--spacing-xs);
     }
 }
+
+.text-center {
+    text-align: center;
+}
+
+.dokuwiki-container {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0 2.5rem;
+}
+
+.project-header {
+    margin-bottom: var(--spacing-md);
+}
