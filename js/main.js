@@ -266,3 +266,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Fonction pour mettre à jour l'horloge
+function updateClock() {
+    const now = new Date();
+    
+    // Format de l'heure (HH:MM:SS)
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    
+    // Format de la date (Jour Mois Année)
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = now.toLocaleDateString('fr-FR', options);
+    
+    // Mise à jour des éléments HTML
+    document.getElementById('clock').textContent = timeString;
+    document.getElementById('date').textContent = dateString;
+}
+
+// Mettre à jour l'horloge toutes les secondes
+setInterval(updateClock, 1000);
+
+// Initialiser l'horloge au chargement de la page
+document.addEventListener('DOMContentLoaded', function() {
+    updateClock();
+});

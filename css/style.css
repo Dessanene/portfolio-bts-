@@ -2033,3 +2033,36 @@ section::after {
         font-size: 0.9rem;
     }
 }
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem 0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#clock {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+#date {
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    #clock {
+        font-size: 2rem;
+    }
+    
+    #date {
+        font-size: 1rem;
+    }
+}
