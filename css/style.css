@@ -2066,3 +2066,110 @@ section::after {
         font-size: 1rem;
     }
 }
+
+/* Styles pour les épreuves BTS */
+.epreuves-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+.epreuve-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.epreuve-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.epreuve-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.epreuve-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.epreuve-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    max-width: fit-content;
+}
+
+.epreuve-content {
+    padding: var(--spacing-lg);
+}
+
+.epreuve-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.detail-item {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.detail-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 0.3rem;
+}
+
+.detail-item h4 {
+    margin: 0 0 var(--spacing-xs) 0;
+    font-size: 1.1rem;
+    color: var(--heading-color);
+}
+
+.detail-item ul {
+    margin: var(--spacing-xs) 0;
+    padding-left: var(--spacing-lg);
+}
+
+.detail-item li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.detail-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.detail-item a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .detail-item {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .detail-item i {
+        margin-bottom: var(--spacing-xs);
+    }
+}
