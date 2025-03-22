@@ -1900,8 +1900,13 @@ section::after {
     color: var(--text-color);
 }
 
+.main-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--text-color-light);
     margin-bottom: 0.5rem;
     max-width: 800px;
@@ -1909,6 +1914,12 @@ section::after {
     margin-right: auto;
     line-height: 1.6;
     animation: fadeIn 1s ease-in-out;
+    text-align: center;
+}
+
+.subtitle.highlighted {
+    color: var(--primary-color);
+    font-weight: 500;
 }
 
 .subtitle:last-of-type {
@@ -1935,7 +1946,7 @@ section::after {
     }
 
     .subtitle {
-        font-size: 1rem;
+        font-size: 1.2rem;
         padding: 0 1rem;
     }
 
