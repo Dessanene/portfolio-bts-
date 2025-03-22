@@ -214,7 +214,7 @@ nav {
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
     border: 2px solid var(--primary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .profile-image:hover {
@@ -1885,5 +1885,50 @@ section::after {
     .project-header .section-intro {
         margin-right: 0;
         text-align: center;
+    }
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
     }
 }
