@@ -9,7 +9,7 @@
     <title>Dessanène Sanhan - Parcours</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css?v=202503272211">
+    <link rel="stylesheet" href="css/style.css?v=202503272324">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -339,6 +339,17 @@
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/particles-config.js"></script>
+    <script>
+        AOS.init();
+        
+        // Force le rechargement sans cache au chargement de la page
+        window.onload = function() {
+            // Si la page est chargée depuis le cache, force un rechargement
+            if (performance.navigation.type !== 1) { // 1 = rechargement
+                location.reload(true); // Force un rechargement sans cache
+            }
+        };
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
