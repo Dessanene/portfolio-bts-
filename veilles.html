@@ -9,7 +9,7 @@
     <title>Dessanène Sanhan - Veilles Technologiques</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css?v=202503272211">
+    <link rel="stylesheet" href="css/style.css?v=202503280017">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -203,7 +203,7 @@
                 </div>
             </div>
             <div class="veille-action-buttons">
-                <a href="presentations/veille_technologique2.pptx" class="btn-action" target="_blank">
+                <a href="presentations/view-veille-techno.html" class="btn-action" target="_blank">
                     <i class="fas fa-search-plus"></i> Voir Présentation Complète
                 </a>
             </div>
@@ -219,5 +219,33 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/particles-config.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        // Force le rechargement sans cache au chargement de la page
+        window.onload = function() {
+            // Si la page est chargée depuis le cache, force un rechargement
+            if (performance.navigation.type !== 1) { // 1 = rechargement
+                location.reload(true); // Force un rechargement sans cache
+            }
+        };
+
+        // Ajouter des effets de survol sur les tâches
+        document.addEventListener('DOMContentLoaded', function() {
+            const listItems = document.querySelectorAll('.veille-item ul li, .recommendation-item ul li');
+            
+            listItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(10px)';
+                    this.style.color = '#3498db';
+                    this.style.fontWeight = '500';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                    this.style.color = '';
+                    this.style.fontWeight = '';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
