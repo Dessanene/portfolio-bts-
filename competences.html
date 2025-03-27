@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Dessanène Sanhan - Compétences</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css?v=2023032701">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Force le rechargement du CSS
+        function forceReload() {
+            const links = document.querySelectorAll('link[rel="stylesheet"]');
+            links.forEach(link => {
+                if (link.href.includes('style.css')) {
+                    const url = link.href.split('?')[0];
+                    link.href = url + '?v=' + new Date().getTime();
+                }
+            });
+            localStorage.setItem('cacheCleared', 'true');
+        }
+        
+        // Vérifie si nous devons forcer le rechargement
+        if (!localStorage.getItem('cacheCleared')) {
+            forceReload();
+        }
+    </script>
+</head>
+<body>
+    <div class="particles-container" id="particles-js"></div>
+    
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Dessanène Sanhan</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="competences.html" class="active">Compétences</a></li>
+                    <li><a href="stages.html">Stages</a></li>
+                    <li><a href="veilles.html">Veille Technologique</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="competences" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Compétences & Projets </h2>
+            
+            <div class="competences-nav">
+                <a href="#" class="competences-nav-btn active" data-section="techniques">
+                    <i class="fas fa-code"></i> Compétences Techniques
+                </a>
+                <a href="#" class="competences-nav-btn" data-section="projets">
+                    <i class="fas fa-rocket"></i> Projets Réalisés
+                </a>
+            </div>
+            
+            <div id="techniques" class="competences-section-content active">
+                <div class="competences-section">
+                    <h3 class="section-title">Langages Pratiqués </h3>
+                    <p class="section-description">Les différents langages que j'ai pu rencontrer et pratiquer lors de ma formation.</p>
+                    
+                    <div class="carousel-container">
+                        <button class="carousel-button prev">❮</button>
+                        <div class="skills-carousel">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-linux"></i>
+                                </div>
+                                <h4>Linux</h4>
+                                <p>Système d'exploitation open-source, maîtrise des commandes et de l'administration système.</p>
+                            </div>
+
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <h4>Python</h4>
+                                <p>Langage de programmation polyvalent pour le développement d'applications et l'automatisation.</p>
+                            </div>
+
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <h4>HTML</h4>
+                                <p>Langage de balisage pour la création de pages web structurées.</p>
+                            </div>
+
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <h4>CSS</h4>
+                                <p>Langage de style pour la mise en forme et le design des pages web.</p>
+                            </div>
+
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-php"></i>
+                                </div>
+                                <h4>PHP</h4>
+                                <p>Langage de programmation pour le développement web côté serveur.</p>
+                            </div>
+
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h4>SQL</h4>
+                                <p>Langage de requête pour la gestion et manipulation des bases de données.</p>
+                            </div>
+                        </div>
+                        <button class="carousel-button next">❯</button>
+                    </div>
+
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <div class="competences-section">
+                    <h3 class="section-title">Outils & Logiciels utilisés ⚙️</h3>
+                    <p class="section-description">Les différents outils et logiciels que j'ai rencontrés et utilisés lors de ma formation.</p>
+                    
+                    <div class="carousel-container">
+                        <button class="carousel-button prev">❮</button>
+                        <div class="skills-carousel">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-terminal"></i>
+                                </div>
+                                <h4>PuTTY</h4>
+                                <p>Émulateur de terminal pour Windows permettant la connexion SSH sécurisée.</p>
+                            </div>
+
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <h4>Packet Tracer</h4>
+                                <p>Simulateur de réseau Cisco pour la conception et test d'infrastructures réseau.</p>
+                            </div>
+
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <h4>GitHub</h4>
+                                <p>Plateforme de gestion de versions et de collaboration pour le code source.</p>
+                            </div>
+
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h4>MySQL</h4>
+                                <p>Système de gestion de base de données relationnelle open-source.</p>
+                            </div>
+                        </div>
+                        <button class="carousel-button next">❯</button>
+                    </div>
+
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                
+                <div class="competences-section">
+                    <h3 class="section-title">Certifications 🏆</h3>
+                    <p class="section-description">Les certifications que j'ai obtenues ou que je suis en train de passer.</p>
+                    
+                    <div class="certifications-container">
+                        <div class="certification-card">
+                            <div class="certification-logo">
+                                <img src="images/certifications/cisco-logo.png" alt="Cisco" class="cert-logo">
+                            </div>
+                            <div class="certification-details">
+                                <h3>Cisco Certified Network Associate (CCNA)</h3>
+                                <p class="certification-date">Obtenu en Décembre 2023</p>
+                                <p class="certification-description">Certification validant mes compétences en administration réseau, routage, commutation, et technologies Cisco.</p>
+                                <div class="certification-skills">
+                                    <span class="skill-tag">Routage & Commutation</span>
+                                    <span class="skill-tag">IPv4/IPv6</span>
+                                    <span class="skill-tag">Sécurité réseau</span>
+                                    <span class="skill-tag">Dépannage</span>
+                                </div>
+                            </div>
+                            <div class="certification-badge">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                        </div>
+
+                        <div class="certification-card">
+                            <div class="certification-logo">
+                                <img src="images/certifications/comptia-logo.png" alt="CompTIA" class="cert-logo">
+                            </div>
+                            <div class="certification-details">
+                                <h3>CompTIA Security+</h3>
+                                <p class="certification-date">Obtenu en Mars 2024</p>
+                                <p class="certification-description">Certification couvrant les bases de la sécurité informatique, la gestion des risques, et les meilleures pratiques en cybersécurité.</p>
+                                <div class="certification-skills">
+                                    <span class="skill-tag">Cryptographie</span>
+                                    <span class="skill-tag">Sécurité réseau</span>
+                                    <span class="skill-tag">Gestion des identités</span>
+                                    <span class="skill-tag">Threat Management</span>
+                                </div>
+                            </div>
+                            <div class="certification-badge">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="projets" class="competences-section-content">
+                <div class="project-header">
+                    <p class="section-intro text-center">Durant ma formation, j'ai participé activement à de nombreux projets techniques, développant des compétences variées en administration réseau et gestion de serveurs. Ces projets ont été réalisés en collaboration, renforçant mes capacités de travail en équipe.</p>
+                </div>
+                
+                <div class="projects-container">
+                    <div class="year-section">
+                        <h3>Première Année</h3>
+                        <div class="project-grid">
+                            <div class="project-card" data-aos="fade-up">
+                                <div class="project-icon"><i class="fas fa-server"></i></div>
+                                <h4>Installation et Configuration d'un Serveur Windows</h4>
+                                <div class="project-tags">
+                                    <span class="tag">Windows Server</span>
+                                    <span class="tag">Active Directory</span>
+                                    <span class="tag">DHCP</span>
+                                </div>
+                                <p>Configuration d'un serveur Windows avec mise en place d'Active Directory, DHCP, et partage de ressources réseau.</p>
+                                <div class="project-links">
+                                    <a href="#" class="btn-action">Voir Détails</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                                <div class="project-icon"><i class="fas fa-network-wired"></i></div>
+                                <h4>Conception et Implémentation d'un Réseau Local</h4>
+                                <div class="project-tags">
+                                    <span class="tag">LAN</span>
+                                    <span class="tag">Cisco</span>
+                                    <span class="tag">VLAN</span>
+                                </div>
+                                <p>Mise en place d'un réseau local segmenté avec VLANs, routage inter-VLAN, et sécurisation des accès.</p>
+                                <div class="project-links">
+                                    <a href="#" class="btn-action">Voir Détails</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                                <div class="project-icon"><i class="fas fa-terminal"></i></div>
+                                <h4>Déploiement d'un Serveur Linux</h4>
+                                <div class="project-tags">
+                                    <span class="tag">Linux</span>
+                                    <span class="tag">Apache</span>
+                                    <span class="tag">MySQL</span>
+                                </div>
+                                <p>Installation et configuration d'un serveur web LAMP sous Linux avec sécurisation et optimisation des performances.</p>
+                                <div class="project-links">
+                                    <a href="#" class="btn-action">Voir Détails</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="year-section">
+                        <h3>Deuxième Année</h3>
+                        <div class="project-grid">
+                            <div class="project-card" data-aos="fade-up">
+                                <div class="project-icon"><i class="fas fa-database"></i></div>
+                                <h4>Mise en Place d'une Infrastructure de Haute Disponibilité</h4>
+                                <div class="project-tags">
+                                    <span class="tag">Clustering</span>
+                                    <span class="tag">Load Balancing</span>
+                                    <span class="tag">Failover</span>
+                                </div>
+                                <p>Conception et implémentation d'une solution hautement disponible avec répartition de charge et redondance.</p>
+                                <div class="project-links">
+                                    <a href="#" class="btn-action">Voir Détails</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                                <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                                <h4>Sécurisation d'Infrastructure Réseau</h4>
+                                <div class="project-tags">
+                                    <span class="tag">Firewall</span>
+                                    <span class="tag">IDS/IPS</span>
+                                    <span class="tag">VPN</span>
+                                </div>
+                                <p>Mise en place de solutions de sécurité complètes incluant pare-feu, détection d'intrusion, et tunnels VPN.</p>
+                                <div class="project-links">
+                                    <a href="#" class="btn-action">Voir Détails</a>
+                                </div>
+                            </div>
+
+                            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                                <div class="project-icon"><i class="fas fa-cloud"></i></div>
+                                <h4>Virtualisation et Cloud Computing</h4>
+                                <div class="project-tags">
+                                    <span class="tag">VMware</span>
+                                    <span class="tag">Docker</span>
+                                    <span class="tag">AWS</span>
+                                </div>
+                                <p>Déploiement d'environnements virtualisés et migration vers des solutions cloud hybrides.</p>
+                                <div class="project-links">
+                                    <a href="#" class="btn-action">Voir Détails</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dessanène Sanhan. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 120,
+            delay: 50,
+            duration: 800,
+        });
+        
+        // Configuration des particules adaptée pour le fond clair
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: "#337ab7" },
+                shape: { type: "circle" },
+                opacity: { value: 0.3, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#337ab7", opacity: 0.3, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out", bounce: false }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+        
+        // Navigation entre les sections Compétences Techniques et Projets
+        $(document).ready(function() {
+            // Afficher la section active par défaut (compétences techniques)
+            $("#projets").hide();
+            
+            // Gestion des boutons de navigation
+            $(".competences-nav-btn").click(function(e) {
+                e.preventDefault();
+                
+                // Supprimer la classe active de tous les boutons
+                $(".competences-nav-btn").removeClass("active");
+                
+                // Ajouter la classe active au bouton cliqué
+                $(this).addClass("active");
+                
+                // Récupérer la section à afficher
+                var section = $(this).data("section");
+                
+                // Masquer toutes les sections
+                $("#techniques, #projets").hide();
+                
+                // Afficher la section demandée
+                $("#" + section).fadeIn(500);
+                
+                // Animation AOS refresh
+                setTimeout(function() {
+                    AOS.refresh();
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

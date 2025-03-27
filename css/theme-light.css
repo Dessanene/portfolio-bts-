@@ -1,0 +1,108 @@
+/* Thème clair pour améliorer la lisibilité */
+:root {
+    --primary-color: #337ab7;
+    --primary-color-dark: #23527c;
+    --primary-color-light: #4682b4;
+    --accent-color: #00a0c6;
+    --text-color: #333333;
+    --text-color-light: #555555;
+    --dark-bg: #ffffff;
+    --card-bg: rgba(245, 245, 245, 0.9);
+    --border-color: rgba(80, 70, 229, 0.3);
+    --gradient-start: #337ab7;
+    --gradient-end: #00a0c6;
+    --hover-color: #e63946;
+    --hover-glow: 0 0 10px rgba(230, 57, 70, 0.4);
+}
+
+/* Reset et styles de base */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background: var(--dark-bg);
+}
+
+/* Titre et textes */
+h1, h2, h3, h4, h5, h6 {
+    color: #222222;
+    font-weight: 700;
+}
+
+p {
+    color: #444444;
+    line-height: 1.7;
+}
+
+/* Header */
+header {
+    background: rgba(240, 240, 240, 0.9);
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.logo h1 {
+    color: var(--text-color);
+}
+
+/* Navigation */
+nav {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a {
+    color: #333333;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    background-color: rgba(51, 122, 183, 0.1);
+    color: var(--primary-color);
+}
+
+nav ul li a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Cartes et conteneurs */
+.projet-card, 
+.langages-container, 
+.outils-container, 
+.certifications-container,
+.contact-form {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Boutons */
+.btn {
+    font-weight: 600;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.competences-nav-btn, 
+.profile-nav-btn {
+    background-color: #f5f5f5;
+    color: var(--text-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.competences-nav-btn.active, 
+.profile-nav-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Particules */
+.particles-container {
+    opacity: 0.4;
+}
+
+/* Formulaires */
+.form-group input,
+.form-group textarea {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #333;
+}

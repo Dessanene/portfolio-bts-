@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Dessanène Sanhan - Accueil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css?v=2023032701">
+    <link rel="stylesheet" href="css/theme-light.css?v=2023032701">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Ajustements supplémentaires spécifiques à cette page */
+        body {
+            background-color: #ffffff;
+            color: #333333;
+        }
+        
+        .hero-title, .hero-subtitle, .hero-description {
+            color: #333333;
+        }
+        
+        .section-title {
+            color: #222222;
+        }
+        
+        nav ul li a {
+            color: #333333;
+        }
+        
+        nav ul li a.active {
+            background-color: #337ab7;
+            color: white;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        // Force le rechargement du CSS
+        function forceReload() {
+            const links = document.querySelectorAll('link[rel="stylesheet"]');
+            links.forEach(link => {
+                if (link.href.includes('style.css') || link.href.includes('theme-light.css')) {
+                    const url = link.href.split('?')[0];
+                    link.href = url + '?v=' + new Date().getTime();
+                }
+            });
+            localStorage.setItem('cacheCleared', 'true');
+        }
+        
+        // Vérifie si nous devons forcer le rechargement
+        if (!localStorage.getItem('cacheCleared')) {
+            forceReload();
+        }
+    </script>
+</head>
+<body>
+    <div class="particles-container" id="particles-js"></div>
+    
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Dessanène Sanhan</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="accueil.html" class="active">Accueil</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="stages.html">Stages</a></li>
+                    <li><a href="veilles.html">Veille Technologique</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero-section" data-aos="fade-up" data-aos-duration="1000">
+            <div class="particles-container" id="particles-js"></div>
+            <div class="hero-content">
+                <h1 class="glitch" data-text="Déssanène Sanhan">Déssanène Sanhan</h1>
+                <div class="main-title">
+                    <p class="subtitle">Étudiant en BTS SIO</p>
+                    <p class="subtitle definition">(Services Informatiques aux Organisations)</p>
+                    <p class="subtitle">Option SISR</p>
+                    <p class="subtitle definition">(Solutions Infrastructure Systèmes et Réseaux)</p>
+                </div>
+                <div class="clock-container">
+                    <div id="clock"></div>
+                    <div id="date"></div>
+                </div>
+                <div class="typing-container">
+                    <span class="typing"></span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/dessanene-sanhan/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Dessanene" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dessanène Sanhan. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 120,
+            delay: 50,
+            duration: 800,
+        });
+    </script>
+    <script>
+        // Configuration des particules 
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#5e72e4" },
+                shape: { type: "circle" },
+                opacity: { value: 0.4, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#5e72e4", opacity: 0.3, width: 1 },
+                move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out", bounce: false }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+    </script>
+    <script src="js/particles-config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

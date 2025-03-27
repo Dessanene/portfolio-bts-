@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Dessanène Sanhan - Profil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .profile-nav {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            gap: 1rem;
+        }
+        
+        .profile-nav-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+        }
+        
+        .profile-nav-btn:hover {
+            background-color: #3498db;
+            transform: translateY(-2px);
+        }
+        
+        .profile-nav-btn.active {
+            background-color: #3498db;
+        }
+        
+        .profile-nav-btn:hover .btn-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .btn-description {
+            font-size: 0.8rem;
+            opacity: 0;
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-5px);
+            background-color: #2c3e50;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles-container" id="particles-js"></div>
+    
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Dessanène Sanhan</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="profil.html" class="active">Profil</a></li>
+                    <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="stages.html">Stages</a></li>
+                    <li><a href="veilles.html">Veille Technologique</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Navigation interne au profil -->
+        <div class="profile-nav">
+            <a href="profil.html" class="profile-nav-btn active">
+                <i class="fas fa-user"></i> 
+                <span>À Propos</span>
+                <div class="btn-description">Mon parcours personnel</div>
+            </a>
+            <a href="parcours.html" class="profile-nav-btn">
+                <i class="fas fa-graduation-cap"></i> 
+                <span>Parcours</span>
+                <div class="btn-description">Formation et expériences</div>
+            </a>
+            <a href="competences.html" class="profile-nav-btn">
+                <i class="fas fa-database"></i> 
+                <span>Compétences</span>
+                <div class="btn-description">Compétences techniques et projets</div>
+            </a>
+        </div>
+
+        <section id="apropos" data-aos="fade-up" data-aos-duration="1000">
+            <h2>À Propos 👨‍💻</h2>
+            <div class="about-content">
+                <img src="images/WhatsApp Image 2025-03-22 à 13.37.24_5918716c.jpg" alt="Dessanène Sanhan" class="profile-image">
+                <div class="about-text">
+                    <p>Bonjour,</p>
+                    <p>Je m'appelle Dessanène Sanhan et je suis originaire de la Côte d'Ivoire. Après avoir obtenu un BTS en Réseaux Informatiques et Télécoms, ma passion pour le métier de technicien en systèmes et réseaux m'a poussé à suivre mes rêves. Cela m'a conduit à voyager et à m'inscrire à l'Institution Beaupeyrat de Limoges, où je suis actuellement en deuxième année de BTS SIO (Services Informatiques aux Organisations), option SISR (Solutions d'Infrastructure, Systèmes et Réseaux).</p>
+                    <p>Depuis toujours, l'informatique exerce sur moi une forte attirance. Mon objectif à court terme est de devenir technicien de maintenance et d'infrastructures systèmes et réseaux. C'est dans cette optique que je me suis naturellement orienté vers cette formation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="competences" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Compétences 🛠️</h2>
+            
+            <div class="competences-section">
+                <h3 class="section-title">Langages Pratiqués 💻</h3>
+                <p class="section-description">Les différents langages que j'ai pu rencontrer et pratiquer lors de ma formation.</p>
+                
+                <div class="carousel-container">
+                    <button class="carousel-button prev">❮</button>
+                    <div class="skills-carousel">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-linux"></i>
+                            </div>
+                            <h4>Linux</h4>
+                            <p>Système d'exploitation open-source, maîtrise des commandes et de l'administration système.</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <h4>Python</h4>
+                            <p>Langage de programmation polyvalent pour le développement d'applications et l'automatisation.</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <h4>HTML</h4>
+                            <p>Langage de balisage pour la création de pages web structurées.</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <h4>CSS</h4>
+                            <p>Langage de style pour la mise en forme et le design des pages web.</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-php"></i>
+                            </div>
+                            <h4>PHP</h4>
+                            <p>Langage de programmation pour le développement web côté serveur.</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>SQL</h4>
+                            <p>Langage de requête pour la gestion et manipulation des bases de données.</p>
+                        </div>
+                    </div>
+                    <button class="carousel-button next">❯</button>
+                </div>
+
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <div class="competences-section">
+                <h3 class="section-title">Outils & Logiciels utilisés ⚙️</h3>
+                <p class="section-description">Les différents outils et logiciels que j'ai rencontrés et utilisés lors de ma formation.</p>
+                
+                <div class="carousel-container">
+                    <button class="carousel-button prev">❮</button>
+                    <div class="skills-carousel">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <h4>PuTTY</h4>
+                            <p>Émulateur de terminal pour Windows permettant la connexion SSH sécurisée.</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h4>Packet Tracer</h4>
+                            <p>Simulateur de réseau Cisco pour la conception et test d'infrastructures réseau.</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h4>GitHub</h4>
+                            <p>Plateforme de gestion de versions et de collaboration pour le code source.</p>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>MySQL</h4>
+                            <p>Système de gestion de base de données relationnelle open-source.</p>
+                        </div>
+                    </div>
+                    <button class="carousel-button next">❯</button>
+                </div>
+
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dessanène Sanhan. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

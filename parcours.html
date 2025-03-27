@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Dessanène Sanhan - Parcours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .profile-nav {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            gap: 1rem;
+        }
+        
+        .profile-nav-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .profile-nav-btn:hover {
+            background-color: #3498db;
+            transform: translateY(-2px);
+        }
+        
+        .profile-nav-btn.active {
+            background-color: #3498db;
+        }
+
+        .profile-nav-btn:hover .btn-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .btn-description {
+            font-size: 0.8rem;
+            opacity: 0;
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-5px);
+            background-color: #2c3e50;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #3498db;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid #3498db;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-left {
+            left: 0;
+        }
+
+        .timeline-right {
+            left: 50%;
+        }
+
+        .timeline-left::after {
+            right: -12px;
+        }
+
+        .timeline-right::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 20px 25px;
+            background-color: #2c3e50;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #95a5a6;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 19px;
+            }
+            
+            .timeline-right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles-container" id="particles-js"></div>
+    
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Dessanène Sanhan</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="stages.html">Stages</a></li>
+                    <li><a href="veilles.html">Veille Technologique</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Navigation interne au profil -->
+        <div class="profile-nav">
+            <a href="profil.html" class="profile-nav-btn">
+                <i class="fas fa-user"></i>
+                <span>À Propos</span>
+                <div class="btn-description">Mon parcours personnel</div>
+            </a>
+            <a href="parcours.html" class="profile-nav-btn active">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Parcours</span>
+                <div class="btn-description">Formation et expériences</div>
+            </a>
+            <a href="competences.html" class="profile-nav-btn">
+                <i class="fas fa-code"></i>
+                <span>Compétences</span>
+                <div class="btn-description">Compétences techniques et projets</div>
+            </a>
+        </div>
+
+        <section id="parcours" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Mon Parcours 🎓</h2>
+            
+            <div class="timeline">
+                <!-- Formation -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 2025</div>
+                        <h3 class="timeline-title">BTS SIO option SISR</h3>
+                        <div class="timeline-location">
+                            <i class="fas fa-map-marker-alt"></i> Institution Beaupeyrat, Limoges
+                        </div>
+                        <p>Formation en Services Informatiques aux Organisations, spécialisation en Solutions d'Infrastructure, Systèmes et Réseaux. Développement de compétences en administration réseau, virtualisation, sécurité et support technique.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 - 2023</div>
+                        <h3 class="timeline-title">BTS Réseaux Informatiques et Télécoms</h3>
+                        <div class="timeline-location">
+                            <i class="fas fa-map-marker-alt"></i> Institut Supérieur de Technologies, Côte d'Ivoire
+                        </div>
+                        <p>Formation initiale en réseaux et télécommunications. Acquisition des fondamentaux en infrastructures réseau, protocoles de communication et bases de la sécurité informatique.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2021</div>
+                        <h3 class="timeline-title">Baccalauréat Scientifique</h3>
+                        <div class="timeline-location">
+                            <i class="fas fa-map-marker-alt"></i> Lycée Modern d'Abobo, Côte d'Ivoire
+                        </div>
+                        <p>Obtention du baccalauréat avec spécialisation en mathématiques et physique. Premier pas vers une carrière technique.</p>
+                    </div>
+                </div>
+                
+                <!-- Expérience Professionnelle -->
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Janvier - Mars 2024</div>
+                        <h3 class="timeline-title">Stage chez Nextiraone</h3>
+                        <div class="timeline-location">
+                            <i class="fas fa-building"></i> Intégrateur de solutions réseau et sécurité
+                        </div>
+                        <p>Participation à l'implémentation de solutions de sécurité réseau, configuration d'équipements Cisco et Fortinet, mise en place de solutions VPN pour le télétravail.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Mai - Juin 2023</div>
+                        <h3 class="timeline-title">Stage chez Arène Informatique</h3>
+                        <div class="timeline-location">
+                            <i class="fas fa-building"></i> Support et maintenance informatique pour PME
+                        </div>
+                        <p>Immersion dans un environnement professionnel spécialisé dans le support et la maintenance informatique. Assistance aux utilisateurs, déploiement et configuration de postes de travail, maintenance préventive.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h3 class="timeline-title">Projet associatif - Formation numérique</h3>
+                        <div class="timeline-location">
+                            <i class="fas fa-users"></i> Association "Numérique Pour Tous"
+                        </div>
+                        <p>Animation d'ateliers d'initiation à l'informatique pour personnes en situation de précarité. Enseignement des bases de l'utilisation d'un ordinateur, navigation internet et sécurité en ligne.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dessanène Sanhan. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
