@@ -153,6 +153,36 @@
             color: #95a5a6;
         }
 
+        .timeline-separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .separator-line {
+            width: 100%;
+            height: 2px;
+            background-color: #2c3e50;
+            margin: 0 1rem;
+        }
+
+        .separator-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .timeline-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline-details li {
+            margin-bottom: 0.5rem;
+        }
+
         @media screen and (max-width: 768px) {
             .timeline::after {
                 left: 31px;
@@ -229,6 +259,7 @@
                             <span>INSTITUTION BEAUPEYRAT - Limoges, France</span>
                         </div>
                         <p>Formation axée sur la gestion et la maintenance des systèmes informatiques au sein des organisations.</p>
+                        <p><strong>Option SISR</strong> (Solutions d'Infrastructure, Systèmes et Réseaux)</p>
                     </div>
                 </div>
 
@@ -252,41 +283,48 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <span>COURS SECONDAIRE CATHOLIQUE DE YOPOUGON - Abidjan, Côte d'Ivoire</span>
                         </div>
-                        <p>Diplôme d'études secondaires avec spécialisation en sciences.</p>
-                    </div>
-                </div>
-
-                <!-- Expériences professionnelles -->
-                <div class="timeline-item timeline-right">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Janvier - Mars 2024</div>
-                        <h3 class="timeline-title">Stage chez Nextiraone</h3>
-                        <div class="timeline-location">
-                            <i class="fas fa-building"></i> Intégrateur de solutions réseau et sécurité
-                        </div>
-                        <p>Participation à l'implémentation de solutions de sécurité réseau, configuration d'équipements Cisco et Fortinet, mise en place de solutions VPN pour le télétravail.</p>
+                        <p>Baccalauréat scientifique avec spécialisation en Mathématiques, Physique-Chimie et Sciences de la Vie et de la Terre (SVT).</p>
                     </div>
                 </div>
                 
-                <div class="timeline-item timeline-left">
+                <!-- Stages -->
+                <div class="timeline-separator" data-aos="fade-up">
+                    <div class="separator-line"></div>
+                    <div class="separator-text">Expériences Professionnelles</div>
+                    <div class="separator-line"></div>
+                </div>
+                
+                <div class="timeline-item timeline-right" data-aos="fade-left">
                     <div class="timeline-content">
-                        <div class="timeline-date">Mai - Juin 2023</div>
-                        <h3 class="timeline-title">Stage chez Arène Informatique</h3>
+                        <div class="timeline-date">Janvier - Février 2025</div>
+                        <h3 class="timeline-title">Stage en Maintenance Informatique</h3>
                         <div class="timeline-location">
-                            <i class="fas fa-building"></i> Support et maintenance informatique pour PME
+                            <i class="fas fa-building"></i>
+                            <span>Arène Informatique</span>
                         </div>
-                        <p>Immersion dans un environnement professionnel spécialisé dans le support et la maintenance informatique. Assistance aux utilisateurs, déploiement et configuration de postes de travail, maintenance préventive.</p>
+                        <p><strong>Stage 2</strong> : Effectué en maintenance informatique du 21 janvier au 21 février 2025.</p>
+                        <ul class="timeline-details">
+                            <li>Diagnostic et résolution de problèmes techniques</li>
+                            <li>Maintenance préventive et corrective du parc informatique</li>
+                            <li>Installation et configuration de systèmes et applications</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="timeline-item timeline-right">
+                <div class="timeline-item timeline-left" data-aos="fade-right">
                     <div class="timeline-content">
-                        <div class="timeline-date">2022</div>
-                        <h3 class="timeline-title">Projet associatif - Formation numérique</h3>
+                        <div class="timeline-date">Mai - Juin 2024</div>
+                        <h3 class="timeline-title">Stage en Services Informatiques</h3>
                         <div class="timeline-location">
-                            <i class="fas fa-users"></i> Association "Numérique Pour Tous"
+                            <i class="fas fa-building"></i>
+                            <span>OGEC Beaupeyrat - Limoges, France</span>
                         </div>
-                        <p>Animation d'ateliers d'initiation à l'informatique pour personnes en situation de précarité. Enseignement des bases de l'utilisation d'un ordinateur, navigation internet et sécurité en ligne.</p>
+                        <p><strong>Stage 1</strong> : Réalisé entre mai et juin 2024 pendant une durée de 6 semaines.</p>
+                        <ul class="timeline-details">
+                            <li>Support technique aux utilisateurs</li>
+                            <li>Participation à la gestion de l'infrastructure réseau</li>
+                            <li>Mise en place de solutions informatiques</li>
+                        </ul>
                     </div>
                 </div>
             </div>
