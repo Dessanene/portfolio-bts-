@@ -24,31 +24,133 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/style.css?v=202503281245">
+    <link rel="stylesheet" href="css/theme-light.css?v=202503290018">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Ajustements supplémentaires spécifiques à cette page */
         body {
-            color: #333333;
+            color: #000000;
+            background-color: #ffffff;
         }
         
         .hero-title, .hero-subtitle, .hero-description {
-            color: #333333;
+            color: #000000;
         }
         
         .section-title {
-            color: #333333;
+            color: #000000;
         }
         
         nav ul li a {
-            color: #333333;
+            color: #000000;
         }
         
         nav ul li a.active {
-            background-color: #333333;
-            color: white;
+            background-color: #000000;
+            color: #ffffff;
             border-radius: 4px;
+        }
+        
+        .hero h1 {
+            color: #000000;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: none;
+            letter-spacing: normal;
+            text-shadow: none;
+        }
+
+        .hero p {
+            color: #000000;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Style du menu */
+        header {
+            background-color: #ffffff;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .logo h1 {
+            color: #000000;
+        }
+
+        nav ul li a {
+            color: #000000;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+            background-color: #000000;
+            border: 1px solid #ff0000;
+        }
+
+        nav ul li a.active {
+            background-color: #000000;
+            color: #ffffff;
+            border: 1px solid #ff0000;
+        }
+
+        /* Suppression des effets de particules */
+        .particles-container {
+            display: none;
+        }
+
+        /* Style des sections */
+        .section-title {
+            color: #000000;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .section-content {
+            color: #000000;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        /* Style des boutons */
+        .btn-primary {
+            background-color: #000000;
+            color: #ffffff;
+            border: 2px solid #ff0000;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ffffff;
+            color: #000000;
+            border-top: 2px solid #ff0000;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-weight: 500;
         }
     </style>
     <script>
@@ -71,8 +173,6 @@
     </script>
 </head>
 <body>
-    <div class="particles-container" id="particles-js"></div>
-    
     <header>
         <div class="header-content">
             <div class="logo">
@@ -93,30 +193,10 @@
 
     <main>
         <section id="accueil" class="hero-section" data-aos="fade-up" data-aos-duration="1000">
-            <div class="particles-container" id="particles-js"></div>
             <div class="hero-content">
-                <h1 class="glitch" data-text="Déssanène Sanhan">Déssanène Sanhan</h1>
-                <div class="main-title">
-                    <p class="subtitle">Étudiant en BTS SIO</p>
-                    <p class="subtitle definition">(Services Informatiques aux Organisations)</p>
-                    <p class="subtitle">Option SISR</p>
-                    <p class="subtitle definition">(Solutions Infrastructure Systèmes et Réseaux)</p>
-                </div>
-                <div class="clock-container">
-                    <div id="clock"></div>
-                    <div id="date"></div>
-                </div>
-                <div class="typing-container">
-                    <span class="typing"></span>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/dessanene-sanhan/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/Dessanene" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
+                <h1>Dessanène Sanhan</h1>
+                <p>Étudiant en BTS SIO</p>
+                <p>Option SISR</p>
             </div>
         </section>
     </main>
@@ -126,7 +206,6 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         // Configuration d'AOS avec des exclusions pour l'en-tête
@@ -141,27 +220,6 @@
             duration: 800
         });
     </script>
-    <script>
-        // Configuration des particules 
-        particlesJS("particles-js", {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#333333" },
-                shape: { type: "circle" },
-                opacity: { value: 0.4, random: true },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: "#333333", opacity: 0.3, width: 1 },
-                move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out", bounce: false }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
-                modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, push: { particles_nb: 4 } }
-            },
-            retina_detect: true
-        });
-    </script>
-    <script src="js/particles-config.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
