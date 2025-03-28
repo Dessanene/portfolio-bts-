@@ -9,8 +9,8 @@
     <title>Dessanène Sanhan - Veilles Technologiques</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css?v=202503290025">
-    <link rel="stylesheet" href="css/theme-light.css?v=202503290025">
+    <link rel="stylesheet" href="css/style.css?v=202503290029">
+    <link rel="stylesheet" href="css/theme-light.css?v=202503290029">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -72,6 +72,51 @@
             color: #ffffff !important;
             font-weight: 600 !important;
             margin-bottom: 1rem !important;
+            padding-left: 1.5rem !important;
+            position: relative !important;
+        }
+
+        .veille-content ul li::before {
+            content: "•" !important;
+            color: #ff0000 !important;
+            font-weight: bold !important;
+            position: absolute !important;
+            left: 0 !important;
+            font-size: 1.2rem !important;
+        }
+
+        .veille-content ol {
+            list-style: none !important;
+            counter-reset: item !important;
+            padding-left: 0 !important;
+        }
+
+        .veille-content ol li {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            margin-bottom: 1rem !important;
+            padding-left: 2rem !important;
+            position: relative !important;
+            counter-increment: item !important;
+        }
+
+        .veille-content ol li::before {
+            content: counter(item) "." !important;
+            color: #ff0000 !important;
+            font-weight: bold !important;
+            position: absolute !important;
+            left: 0 !important;
+        }
+
+        .veille-content .best-practice {
+            color: #ff0000 !important;
+            font-weight: 700 !important;
+            margin-bottom: 0.5rem !important;
+        }
+
+        .veille-content .practice-description {
+            color: #ffffff !important;
+            margin-left: 1.5rem !important;
         }
 
         .veille-stats {
@@ -235,12 +280,12 @@
                                 
                                 <h6>Phishing alimenté par l'IA</h6>
                                 <p>L'intelligence artificielle a révolutionné le phishing en 2025 avec :</p>
-                                <ul>
+                                <ol>
                                     <li>Génération de textes sans fautes d'orthographe ni incohérences grammaticales</li>
                                     <li>Création d'images et logos indiscernables des originaux</li>
                                     <li>Personnalisation à grande échelle des attaques</li>
                                     <li>Analyse comportementale pour cibler les moments de vulnérabilité</li>
-                                </ul>
+                                </ol>
                                 
                                 <h6>QRishing</h6>
                                 <p>L'explosion de l'utilisation des QR codes a ouvert la voie à une nouvelle forme de phishing. Des codes QR malveillants sont placés dans des lieux publics ou envoyés numériquement, redirigeant vers des sites frauduleux.</p>
