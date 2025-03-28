@@ -10,13 +10,10 @@
     <title>Dessanène Sanhan - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css?v=202503282310">
-    <link rel="stylesheet" href="css/theme-light.css?v=202503282310">
+    <link rel="stylesheet" href="css/style.css?v=202503272211">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <style>
         .loading-screen {
             display: flex;
@@ -53,6 +50,24 @@
         }
     </style>
     <script>
+        // Force le rechargement du CSS
+        function forceReload() {
+            const links = document.querySelectorAll('link[rel="stylesheet"]');
+            links.forEach(link => {
+                if (link.href.includes('style.css')) {
+                    const url = link.href.split('?')[0];
+                    link.href = url + '?v=' + new Date().getTime();
+                }
+            });
+            localStorage.setItem('cacheCleared', 'true');
+        }
+        
+        // Vérifie si nous devons forcer le rechargement
+        if (!localStorage.getItem('cacheCleared')) {
+            forceReload();
+        }
+    </script>
+    <script>
         // Redirection automatique vers la page d'accueil après un court délai
         window.onload = function() {
             setTimeout(function() {
@@ -62,23 +77,13 @@
     </script>
 </head>
 <body>
-    <header>
+    <div class="loading-screen">
         <div class="loading-content">
             <h1>Dessanène Sanhan</h1>
             <p>Chargement du portfolio...</p>
             <div class="spinner"></div>
             <p>Si vous n'êtes pas redirigé automatiquement, <a href="accueil.html">cliquez ici</a>.</p>
         </div>
-    </header>
-    <script>
-        // Configuration de AOS
-        AOS.init({
-            mirror: false,
-            disableMutationObserver: false,
-            offset: 120,
-            delay: 50,
-            duration: 800
-        });
-    </script>
+    </div>
 </body>
 </html>

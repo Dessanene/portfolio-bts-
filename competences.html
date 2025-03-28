@@ -10,51 +10,32 @@
     <title>Dessanène Sanhan - Compétences</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css?v=202503282310">
-    <link rel="stylesheet" href="css/theme-light.css?v=202503282310">
+    <link rel="stylesheet" href="css/style.css?v=202503281245">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Styles directs pour forcer les changements */
-        body, section, .hero, .langages-container, .outils-container, .certifications-container, 
-        .competences-section-content, .skills-carousel, .carousel-container {
-            background-color: #ffffff !important;
-            background: #ffffff !important;
+    <script>
+        // Force le rechargement du CSS
+        function forceReload() {
+            const links = document.querySelectorAll('link[rel="stylesheet"]');
+            links.forEach(link => {
+                if (link.href.includes('style.css')) {
+                    const url = link.href.split('?')[0];
+                    link.href = url + '?v=' + new Date().getTime();
+                }
+            });
+            localStorage.setItem('cacheCleared', 'true');
         }
         
-        .glitch, h1.glitch, .hero-content .glitch {
-            position: relative !important;
-            font-weight: 700 !important;
-            color: #333333 !important;
-            background: none !important;
-            -webkit-background-clip: initial !important;
-            background-clip: initial !important;
-            text-shadow: none !important;
-            overflow: visible !important;
-            animation: none !important;
+        // Vérifie si nous devons forcer le rechargement
+        if (!localStorage.getItem('cacheCleared')) {
+            forceReload();
         }
-        
-        .glitch::before, .glitch::after, h1.glitch::before, h1.glitch::after {
-            display: none !important;
-            content: none !important;
-            animation: none !important;
-        }
-        
-        .particles-container {
-            opacity: 0.2 !important;
-        }
-        
-        .projet-card, .langages-container, .outils-container, .certifications-container, 
-        .contact-form, .about-content, .skills-card, .competences-section-content, 
-        .skill-card, .carousel-container, .skills-carousel {
-            background-color: #fff !important;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05) !important;
-            border: 1px solid rgba(0, 0, 0, 0.1) !important;
-        }
-    </style>
+    </script>
 </head>
 <body>
+    <div class="particles-container" id="particles-js"></div>
+    
     <header>
         <div class="header-content">
             <div class="logo">
@@ -452,15 +433,38 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        // Configuration de AOS
+        // Configuration d'AOS avec des exclusions pour l'en-tête
         AOS.init({
+            disable: false,
+            startEvent: 'DOMContentLoaded',
+            once: false,
             mirror: false,
             disableMutationObserver: false,
             offset: 120,
             delay: 50,
             duration: 800
+        });
+        
+        // Configuration des particules adaptée pour le fond clair
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: "#337ab7" },
+                shape: { type: "circle" },
+                opacity: { value: 0.3, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#337ab7", opacity: 0.3, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out", bounce: false }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
         });
         
         // Navigation entre les sections Compétences Techniques et Projets

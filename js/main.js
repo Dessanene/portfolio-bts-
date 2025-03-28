@@ -1,10 +1,7 @@
 // Animation du menu au défilement - DÉSACTIVÉE POUR AVOIR UNE COULEUR CONSTANTE
-// Supprimer le changement de couleur au scroll
 window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (header) {
-        header.classList.add('scrolled');
-    }
+    // Aucun changement de couleur ou de style au défilement
+    // L'en-tête conserve son style défini dans le CSS
 });
 
 // Typing Effect remplacé par texte statique professionnel
@@ -60,31 +57,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Gestion des carrousels
-document.addEventListener('DOMContentLoaded', () => {
-    const carousels = document.querySelectorAll('.carousel-container');
-    
-    carousels.forEach(carousel => {
-        const container = carousel.querySelector('.carousel-items');
-        const prevButton = carousel.querySelector('.carousel-prev');
-        const nextButton = carousel.querySelector('.carousel-next');
-        
-        if (!container || !prevButton || !nextButton) return;
-
-        // Fonction pour faire défiler
-        const scroll = (direction) => {
-            const scrollAmount = container.clientWidth;
-            container.scrollBy({
-                left: direction === 'left' ? -scrollAmount : scrollAmount,
-                behavior: 'smooth'
-            });
-        };
-
-        // Écouteurs d'événements pour les boutons
-        prevButton.addEventListener('click', () => scroll('left'));
-        nextButton.addEventListener('click', () => scroll('right'));
-    });
-});
+// Mise à jour du lien actif pendant le défilement - DÉSACTIVÉE POUR ÉVITER LES CHANGEMENTS VISUELS
+// window.addEventListener('scroll', () => {
+//     let current = '';
+//     sections.forEach(section => {
+//         const sectionTop = section.offsetTop;
+//         const sectionHeight = section.clientHeight;
+//         if (pageYOffset >= sectionTop - 200) {
+//             current = section.getAttribute('id');
+//         }
+//     });
+//
+//     document.querySelectorAll('nav a').forEach(link => {
+//         link.classList.remove('active');
+//         if (link.getAttribute('href').slice(1) === current) {
+//             link.classList.add('active');
+//         }
+//     });
+// });
 
 // Configuration et initialisation des particules
 particlesJS('particles-js', {
@@ -182,6 +172,51 @@ function handleSubmit(event) {
     // Message de confirmation
     alert('Merci pour votre message ! Je vous répondrai dès que possible.');
 }
+
+// Gestion des carrousels
+document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.carousel-container');
+    
+    carousels.forEach(container => {
+        const carousel = container.querySelector('.skills-carousel');
+        const prevButton = container.querySelector('.prev');
+        const nextButton = container.querySelector('.next');
+        const cardWidth = 300 + 16; // Largeur de la carte + gap
+
+        // Fonction pour faire défiler
+        const scroll = (direction) => {
+            const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+            carousel.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        };
+
+        // Écouteurs d'événements pour les boutons
+        prevButton.addEventListener('click', () => scroll('left'));
+        nextButton.addEventListener('click', () => scroll('right'));
+
+        // Navigation au clavier
+        carousel.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') scroll('left');
+            if (e.key === 'ArrowRight') scroll('right');
+        });
+
+        // Navigation tactile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) scroll('right');
+            if (touchEndX - touchStartX > 50) scroll('left');
+        });
+    });
+});
 
 // Gestion des liens sociaux
 document.addEventListener('DOMContentLoaded', () => {
