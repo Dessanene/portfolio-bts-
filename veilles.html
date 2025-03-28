@@ -9,8 +9,8 @@
     <title>Dessanène Sanhan - Veilles Technologiques</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css?v=202503282345">
-    <link rel="stylesheet" href="css/theme-light.css?v=202503282345">
+    <link rel="stylesheet" href="css/style.css?v=202503282350">
+    <link rel="stylesheet" href="css/theme-light.css?v=202503282350">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
         .veille-card {
             background-color: #000000 !important;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
-            border: 1px solid #000000 !important;
+            border: 2px solid #ff0000 !important;
             padding: 2rem !important;
             margin-bottom: 2rem !important;
             border-radius: 10px !important;
@@ -37,6 +37,8 @@
             font-size: 1.5rem !important;
             margin-bottom: 1.5rem !important;
             font-weight: 600 !important;
+            border-bottom: 2px solid #ff0000 !important;
+            padding-bottom: 0.5rem !important;
         }
 
         .veille-content {
@@ -56,7 +58,7 @@
             padding: 1.5rem !important;
             border-radius: 8px !important;
             margin: 1.5rem 0 !important;
-            border: 1px solid #333333 !important;
+            border: 2px solid #ff0000 !important;
         }
 
         .stat-item {
@@ -83,11 +85,15 @@
             font-size: 2.5rem !important;
             margin-bottom: 3rem !important;
             font-weight: 700 !important;
+            border-bottom: 2px solid #ff0000 !important;
+            padding-bottom: 1rem !important;
+            display: inline-block !important;
         }
 
         /* Style du menu */
         header {
             background-color: #ffffff !important;
+            border-bottom: 2px solid #ff0000 !important;
         }
 
         .logo h1 {
@@ -101,11 +107,29 @@
         nav ul li a:hover {
             color: #ffffff !important;
             background-color: #000000 !important;
+            border: 1px solid #ff0000 !important;
         }
 
         nav ul li a.active {
             background-color: #000000 !important;
             color: #ffffff !important;
+            border: 1px solid #ff0000 !important;
+        }
+
+        /* Remplacer le bleu par du noir */
+        a, .btn-primary, .link-primary {
+            color: #000000 !important;
+        }
+
+        .btn-primary, .btn-outline-primary {
+            background-color: #000000 !important;
+            border-color: #ff0000 !important;
+            color: #ffffff !important;
+        }
+
+        .btn-primary:hover, .btn-outline-primary:hover {
+            background-color: #333333 !important;
+            border-color: #ff0000 !important;
         }
     </style>
 </head>
@@ -132,7 +156,7 @@
 
     <main>
         <section id="veilles" data-aos="fade-up" data-aos-duration="1000">
-            <h2 class="text-center">Veilles Technologiques 📚</h2>
+            <h2 class="text-center">Veilles Technologiques </h2>
             <div class="veille-container">
                 <div class="veille-card">
                     <h3>Section Veille : Cybersécurité et Phishing</h3>
