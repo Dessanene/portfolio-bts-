@@ -66,16 +66,20 @@
 
 /* Sections */
 section {
-    padding: 4rem 2rem;
+    padding: 3rem 1rem !important;
     position: relative;
+    width: 100% !important;
+    margin: 0 !important;
+    overflow: visible !important;
 }
 
 section h2 {
     text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
+    margin-bottom: 2rem !important;
+    font-size: 2rem !important;
     color: #333;
     position: relative;
+    padding: 0 !important;
 }
 
 section h2:after {
@@ -180,6 +184,7 @@ body {
     color: var(--text-color);
     background: var(--dark-bg);
     font-size: var(--font-size-base);
+    overflow-x: hidden;
 }
 
 /* Layout de base */
@@ -190,16 +195,26 @@ body {
     padding: 0 var(--spacing-lg);
 }
 
-section {
-    padding: var(--section-padding);
-    position: relative;
+section > div {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 1200px !important;
 }
 
-section h2 {
-    text-align: center;
-    margin-bottom: var(--spacing-xl);
-    font-size: 2.5rem;
-    color: var(--text-color);
+/* Conteneurs de section */
+.section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Grilles et conteneurs flexibles */
+.grid-container,
+.flex-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
 }
 
 /* Typographie */
@@ -390,6 +405,9 @@ nav {
     align-items: center;
     gap: var(--spacing-xl);
     margin-top: var(--spacing-xl);
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--spacing-lg);
 }
 
 .profile-image {

@@ -9,8 +9,8 @@
     <title>Dessanène Sanhan - Veilles Technologiques</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css?v=202503290029">
-    <link rel="stylesheet" href="css/theme-light.css?v=202503290029">
+    <link rel="stylesheet" href="css/style.css?v=202503290038">
+    <link rel="stylesheet" href="css/theme-light.css?v=202503290038">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,32 +22,14 @@
 
         #veilles {
             background-color: #000000 !important;
-            padding: 3rem 0 !important;
+            padding: 3rem 2rem !important;
         }
         
         .veille-container {
             background-color: #000000 !important;
             color: #ffffff !important;
-            padding: 2rem !important;
-        }
-        
-        .veille-card {
-            background-color: #000000 !important;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
-            border: 2px solid #ff0000 !important;
-            padding: 2rem !important;
-            margin-bottom: 2rem !important;
-            border-radius: 10px !important;
-            color: #ffffff !important;
-        }
-
-        .veille-card h3 {
-            color: #ffffff !important;
-            font-size: 1.5rem !important;
-            margin-bottom: 1.5rem !important;
-            font-weight: 600 !important;
-            border-bottom: 2px solid #ff0000 !important;
-            padding-bottom: 0.5rem !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
         }
 
         .veille-content {
@@ -66,6 +48,12 @@
             text-decoration: underline !important;
             font-weight: 700 !important;
             color: #ffffff !important;
+        }
+
+        .veille-content ul {
+            list-style: none !important;
+            padding-left: 0 !important;
+            margin-bottom: 2rem !important;
         }
 
         .veille-content ul li {
@@ -89,6 +77,7 @@
             list-style: none !important;
             counter-reset: item !important;
             padding-left: 0 !important;
+            margin-bottom: 2rem !important;
         }
 
         .veille-content ol li {
@@ -117,41 +106,7 @@
         .veille-content .practice-description {
             color: #ffffff !important;
             margin-left: 1.5rem !important;
-        }
-
-        .veille-stats {
-            background-color: #1a1a1a !important;
-            padding: 1.5rem !important;
-            border-radius: 8px !important;
-            margin: 1.5rem 0 !important;
-            border: 2px solid #ff0000 !important;
-            color: #ffffff !important;
-        }
-
-        .veille-stats h4 {
-            color: #ffffff !important;
-            margin-bottom: 1rem !important;
-            font-size: 1.3rem !important;
-            font-weight: 600 !important;
-        }
-
-        .stat-item {
-            display: flex !important;
-            align-items: center !important;
-            gap: 1rem !important;
-            color: #ffffff !important;
-            margin-bottom: 1rem !important;
-        }
-
-        .stat-item i {
-            color: #ffffff !important;
-            font-size: 1.2rem !important;
-        }
-
-        .stat-item p {
-            margin: 0 !important;
-            font-weight: 500 !important;
-            color: #ffffff !important;
+            margin-bottom: 1.5rem !important;
         }
 
         h2.text-center {
@@ -159,9 +114,14 @@
             font-size: 2.5rem !important;
             margin-bottom: 3rem !important;
             font-weight: 700 !important;
-            border-bottom: 2px solid #ff0000 !important;
-            padding-bottom: 1rem !important;
-            display: inline-block !important;
+            text-align: center !important;
+        }
+
+        h3 {
+            color: #ffffff !important;
+            font-size: 2rem !important;
+            margin-bottom: 2rem !important;
+            font-weight: 600 !important;
         }
 
         /* Style du menu */
@@ -216,165 +176,162 @@
         <section id="veilles" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="text-center">Veilles Technologiques </h2>
             <div class="veille-container">
-                <div class="veille-card">
-                    <h3>Section Veille : Cybersécurité et Phishing</h3>
-                    <div class="veille-content">
-                        <div class="veille-intro">
-                            <p><strong>Problématique :</strong> Comment anticiper et contrer efficacement les attaques de phishing qui évoluent constamment dans le paysage cyber actuel ?</p>
-                            <div class="veille-stats">
-                                <div class="stat-item">
-                                    <i class="fas fa-arrow-up"></i>
-                                    <p>+52% d'attaques de phishing en 2024</p>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fas fa-euro-sign"></i>
-                                    <p>5,3M€ coût moyen d'une violation de données</p>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fas fa-user-shield"></i>
-                                    <p>97% des brèches liées à l'erreur humaine</p>
-                                </div>
+                <div class="veille-content">
+                    <div class="veille-intro">
+                        <p><strong>Problématique :</strong> Comment anticiper et contrer efficacement les attaques de phishing qui évoluent constamment dans le paysage cyber actuel ?</p>
+                        <div class="veille-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-arrow-up"></i>
+                                <p>+52% d'attaques de phishing en 2024</p>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-euro-sign"></i>
+                                <p>5,3M€ coût moyen d'une violation de données</p>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-user-shield"></i>
+                                <p>97% des brèches liées à l'erreur humaine</p>
                             </div>
                         </div>
-                        
-                        <div class="veille-section">
-                            <h5>1. Définition du Phishing</h5>
-                            <div class="veille-item">
-                                <p>Le phishing (ou hameçonnage) est une technique utilisée par les cybercriminels pour dérober des informations personnelles ou bancaires en usurpant l'identité d'une entité de confiance. Ces attaques exploitent la crédulité ou l'inattention des utilisateurs pour obtenir des données sensibles.</p>
-                                
-                                <p>En France, les campagnes d'hameçonnage ciblent fréquemment des marques et institutions reconnues comme :</p>
+                    </div>
+                    
+                    <div class="veille-section">
+                        <h3>1. Définition du Phishing</h3>
+                        <div class="veille-item">
+                            <p>Le phishing (ou hameçonnage) est une technique utilisée par les cybercriminels pour dérober des informations personnelles ou bancaires en usurpant l'identité d'une entité de confiance. Ces attaques exploitent la crédulité ou l'inattention des utilisateurs pour obtenir des données sensibles.</p>
+                            
+                            <p>En France, les campagnes d'hameçonnage ciblent fréquemment des marques et institutions reconnues comme :</p>
+                            <ul>
+                                <li>Les impôts et l'administration fiscale (remboursements fictifs)</li>
+                                <li>La Poste (colis en attente)</li>
+                                <li>EDF (factures impayées)</li>
+                                <li>Les banques françaises (opérations bancaires à confirmer)</li>
+                                <li>La CAF (aide exceptionnelle)</li>
+                            </ul>
+                            
+                            <p>Selon l'ANSSI, les attaques de phishing représentent la principale menace pour les particuliers et PME en France en 2024-2025.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="veille-section">
+                        <h3>2. Méthodes de Phishing</h3>
+                        <div class="veille-item">
+                            <h4>Email frauduleux</h4>
+                            <p>La méthode la plus répandue consiste à envoyer des messages imitant des organisations légitimes. Ces emails contiennent généralement des logos officiels, une mise en page professionnelle et un langage créant un sentiment d'urgence pour pousser à l'action immédiate.</p>
+                            
+                            <h4>Smishing (SMS Phishing)</h4>
+                            <p>Les attaques par SMS exploitent la confiance et la nature directe des messages mobiles. Le taux d'ouverture des SMS étant supérieur à 98%, cette méthode connaît une croissance exponentielle en 2025. Les messages contiennent des liens courts vers des sites frauduleux, souvent avec des prétextes comme des colis en attente ou des paiements à valider.</p>
+                            
+                            <h4>Vishing (Voice Phishing)</h4>
+                            <p>Le phishing vocal implique des appels téléphoniques où l'attaquant se fait passer pour un représentant d'une entreprise légitime. Grâce à l'IA générative, ces appels sont devenus particulièrement convaincants avec des voix clonées et des scripts adaptés en temps réel.</p>
+                            
+                            <h4>Spear Phishing</h4>
+                            <p>Contrairement au phishing de masse, cette technique cible des individus ou organisations spécifiques avec des messages hautement personnalisés, contenant des détails précis récoltés via les réseaux sociaux ou des fuites de données.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="veille-section">
+                        <h3>3. Attaques Courantes en 2024-2025</h3>
+                        <div class="veille-item">
+                            <h4>Phishing via moteurs de recherche</h4>
+                            <p>Une tendance émergente consiste à manipuler les résultats de recherche pour diriger les utilisateurs vers des sites frauduleux. Ces sites apparaissent en position privilégiée via des techniques de référencement malveillant ou des publicités.</p>
+                            
+                            <h4>Phishing alimenté par l'IA</h4>
+                            <p>L'intelligence artificielle a révolutionné le phishing en 2025 avec :</p>
+                            <ol>
+                                <li>Génération de textes sans fautes d'orthographe ni incohérences grammaticales</li>
+                                <li>Création d'images et logos indiscernables des originaux</li>
+                                <li>Personnalisation à grande échelle des attaques</li>
+                                <li>Analyse comportementale pour cibler les moments de vulnérabilité</li>
+                            </ol>
+                            
+                            <h4>QRishing</h4>
+                            <p>L'explosion de l'utilisation des QR codes a ouvert la voie à une nouvelle forme de phishing. Des codes QR malveillants sont placés dans des lieux publics ou envoyés numériquement, redirigeant vers des sites frauduleux.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="veille-section">
+                        <h3>4. Mesures de Prévention</h3>
+                        <div class="recommendations">
+                            <div class="recommendation-item">
+                                <i class="fas fa-user-shield"></i>
+                                <h4>Formations et Sensibilisation</h4>
                                 <ul>
-                                    <li>Les impôts et l'administration fiscale (remboursements fictifs)</li>
-                                    <li>La Poste (colis en attente)</li>
-                                    <li>EDF (factures impayées)</li>
-                                    <li>Les banques françaises (opérations bancaires à confirmer)</li>
-                                    <li>La CAF (aide exceptionnelle)</li>
+                                    <li>Programmes de formation réguliers pour reconnaître les signes de phishing</li>
+                                    <li>Simulations d'attaques pour tester la vigilance</li>
+                                    <li>Culture de signalement sans pénalité en cas de doute</li>
                                 </ul>
-                                
-                                <p>Selon l'ANSSI, les attaques de phishing représentent la principale menace pour les particuliers et PME en France en 2024-2025.</p>
                             </div>
-                        </div>
-                        
-                        <div class="veille-section">
-                            <h5>2. Méthodes de Phishing</h5>
-                            <div class="veille-item">
-                                <h6>Email frauduleux</h6>
-                                <p>La méthode la plus répandue consiste à envoyer des messages imitant des organisations légitimes. Ces emails contiennent généralement des logos officiels, une mise en page professionnelle et un langage créant un sentiment d'urgence pour pousser à l'action immédiate.</p>
-                                
-                                <h6>Smishing (SMS Phishing)</h6>
-                                <p>Les attaques par SMS exploitent la confiance et la nature directe des messages mobiles. Le taux d'ouverture des SMS étant supérieur à 98%, cette méthode connaît une croissance exponentielle en 2025. Les messages contiennent des liens courts vers des sites frauduleux, souvent avec des prétextes comme des colis en attente ou des paiements à valider.</p>
-                                
-                                <h6>Vishing (Voice Phishing)</h6>
-                                <p>Le phishing vocal implique des appels téléphoniques où l'attaquant se fait passer pour un représentant d'une entreprise légitime. Grâce à l'IA générative, ces appels sont devenus particulièrement convaincants avec des voix clonées et des scripts adaptés en temps réel.</p>
-                                
-                                <h6>Spear Phishing</h6>
-                                <p>Contrairement au phishing de masse, cette technique cible des individus ou organisations spécifiques avec des messages hautement personnalisés, contenant des détails précis récoltés via les réseaux sociaux ou des fuites de données.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="veille-section">
-                            <h5>3. Attaques Courantes en 2024-2025</h5>
-                            <div class="veille-item">
-                                <h6>Phishing via moteurs de recherche</h6>
-                                <p>Une tendance émergente consiste à manipuler les résultats de recherche pour diriger les utilisateurs vers des sites frauduleux. Ces sites apparaissent en position privilégiée via des techniques de référencement malveillant ou des publicités.</p>
-                                
-                                <h6>Phishing alimenté par l'IA</h6>
-                                <p>L'intelligence artificielle a révolutionné le phishing en 2025 avec :</p>
-                                <ol>
-                                    <li>Génération de textes sans fautes d'orthographe ni incohérences grammaticales</li>
-                                    <li>Création d'images et logos indiscernables des originaux</li>
-                                    <li>Personnalisation à grande échelle des attaques</li>
-                                    <li>Analyse comportementale pour cibler les moments de vulnérabilité</li>
-                                </ol>
-                                
-                                <h6>QRishing</h6>
-                                <p>L'explosion de l'utilisation des QR codes a ouvert la voie à une nouvelle forme de phishing. Des codes QR malveillants sont placés dans des lieux publics ou envoyés numériquement, redirigeant vers des sites frauduleux.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="veille-section">
-                            <h5>4. Mesures de Prévention</h5>
-                            <div class="recommendations">
-                                <div class="recommendation-item">
-                                    <i class="fas fa-user-shield"></i>
-                                    <h6>Formations et Sensibilisation</h6>
-                                    <ul>
-                                        <li>Programmes de formation réguliers pour reconnaître les signes de phishing</li>
-                                        <li>Simulations d'attaques pour tester la vigilance</li>
-                                        <li>Culture de signalement sans pénalité en cas de doute</li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="recommendation-item">
-                                    <i class="fas fa-lock"></i>
-                                    <h6>Mesures Techniques</h6>
-                                    <ul>
-                                        <li>Authentification multifactorielle (MFA) systématique</li>
-                                        <li>Vérification DMARC/SPF/DKIM pour les emails</li>
-                                        <li>Filtres anti-phishing avancés avec analyse comportementale</li>
-                                        <li>Gestionnaires de mots de passe pour éviter la réutilisation</li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="recommendation-item">
-                                    <i class="fas fa-check-double"></i>
-                                    <h6>Bonnes Pratiques Quotidiennes</h6>
-                                    <ul>
-                                        <li>Vérification des URL avant de cliquer (survol du lien)</li>
-                                        <li>Contrôle de l'adresse email de l'expéditeur</li>
-                                        <li>Méfiance face aux demandes urgentes</li>
-                                        <li>Contacter directement l'organisation par un canal officiel en cas de doute</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="veille-section">
-                            <h5>5. Solutions en Cas de Phishing</h5>
-                            <div class="veille-item">
-                                <h6>Actions Immédiates</h6>
+                            
+                            <div class="recommendation-item">
+                                <i class="fas fa-lock"></i>
+                                <h4>Mesures Techniques</h4>
                                 <ul>
-                                    <li>Déconnecter l'appareil du réseau pour limiter la propagation</li>
-                                    <li>Changer immédiatement tous les mots de passe depuis un appareil sécurisé</li>
-                                    <li>Faire opposition sur les comptes bancaires ou cartes compromises</li>
-                                    <li>Activer les alertes de fraude auprès des organismes financiers</li>
+                                    <li>Authentification multifactorielle (MFA) systématique</li>
+                                    <li>Vérification DMARC/SPF/DKIM pour les emails</li>
+                                    <li>Filtres anti-phishing avancés avec analyse comportementale</li>
+                                    <li>Gestionnaires de mots de passe pour éviter la réutilisation</li>
                                 </ul>
-                                
-                                <h6>Signalements Officiels</h6>
+                            </div>
+                            
+                            <div class="recommendation-item">
+                                <i class="fas fa-check-double"></i>
+                                <h4>Bonnes Pratiques Quotidiennes</h4>
                                 <ul>
-                                    <li>Plateforme Pharos : <a href="https://www.internet-signalement.gouv.fr" target="_blank">www.internet-signalement.gouv.fr</a></li>
-                                    <li>Signal Spam : <a href="https://www.signal-spam.fr" target="_blank">www.signal-spam.fr</a></li>
-                                    <li>33700 pour les SMS frauduleux</li>
-                                    <li>CNIL en cas de violation de données personnelles</li>
+                                    <li>Vérification des URL avant de cliquer (survol du lien)</li>
+                                    <li>Contrôle de l'adresse email de l'expéditeur</li>
+                                    <li>Méfiance face aux demandes urgentes</li>
+                                    <li>Contacter directement l'organisation par un canal officiel en cas de doute</li>
                                 </ul>
-                                
-                                <h6>Analyse Post-Incident</h6>
-                                <p>Déterminer comment l'attaque s'est produite et mettre en place des mesures correctives pour éviter qu'elle ne se reproduise.</p>
                             </div>
                         </div>
-                        
-                        <div class="veille-section">
-                            <h5>6. Ressources et Outils Utilisés</h5>
-                            <div class="veille-item">
-                                <h6>Sources d'Information</h6>
-                                <ul>
-                                    <li>Bulletins de l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information)</li>
-                                    <li>CERT-FR pour les alertes en temps réel</li>
-                                    <li>Rapports annuels de Cisco Talos et Proofpoint</li>
-                                    <li>Forums spécialisés comme r/cybersecurity et HaveIBeenPwned</li>
-                                </ul>
-                                
-                                <h6>Outils de Protection</h6>
-                                <ul>
-                                    <li>CheckPhish pour l'analyse de liens suspects</li>
-                                    <li>VirusTotal pour vérifier les pièces jointes</li>
-                                    <li>MxToolbox pour l'analyse des en-têtes d'emails</li>
-                                    <li>Extensions navigateur comme Malwarebytes Browser Guard</li>
-                                </ul>
-                                
-                                <h6>Méthodologie de Veille</h6>
-                                <p>Ma veille technologique s'appuie sur une méthode OSINT (Open Source Intelligence) structurée avec agrégation de flux RSS, alertes Google, et revue hebdomadaire des publications spécialisées.</p>
-                            </div>
+                    </div>
+                    
+                    <div class="veille-section">
+                        <h3>5. Solutions en Cas de Phishing</h3>
+                        <div class="veille-item">
+                            <h4>Actions Immédiates</h4>
+                            <ul>
+                                <li>Déconnecter l'appareil du réseau pour limiter la propagation</li>
+                                <li>Changer immédiatement tous les mots de passe depuis un appareil sécurisé</li>
+                                <li>Faire opposition sur les comptes bancaires ou cartes compromises</li>
+                                <li>Activer les alertes de fraude auprès des organismes financiers</li>
+                            </ul>
+                            
+                            <h4>Signalements Officiels</h4>
+                            <ul>
+                                <li>Plateforme Pharos : <a href="https://www.internet-signalement.gouv.fr" target="_blank">www.internet-signalement.gouv.fr</a></li>
+                                <li>Signal Spam : <a href="https://www.signal-spam.fr" target="_blank">www.signal-spam.fr</a></li>
+                                <li>33700 pour les SMS frauduleux</li>
+                                <li>CNIL en cas de violation de données personnelles</li>
+                            </ul>
+                            
+                            <h4>Analyse Post-Incident</h4>
+                            <p>Déterminer comment l'attaque s'est produite et mettre en place des mesures correctives pour éviter qu'elle ne se reproduise.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="veille-section">
+                        <h3>6. Ressources et Outils Utilisés</h3>
+                        <div class="veille-item">
+                            <h4>Sources d'Information</h4>
+                            <ul>
+                                <li>Bulletins de l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information)</li>
+                                <li>CERT-FR pour les alertes en temps réel</li>
+                                <li>Rapports annuels de Cisco Talos et Proofpoint</li>
+                                <li>Forums spécialisés comme r/cybersecurity et HaveIBeenPwned</li>
+                            </ul>
+                            
+                            <h4>Outils de Protection</h4>
+                            <ul>
+                                <li>CheckPhish pour l'analyse de liens suspects</li>
+                                <li>VirusTotal pour vérifier les pièces jointes</li>
+                                <li>MxToolbox pour l'analyse des en-têtes d'emails</li>
+                                <li>Extensions navigateur comme Malwarebytes Browser Guard</li>
+                            </ul>
+                            
+                            <h4>Méthodologie de Veille</h4>
+                            <p>Ma veille technologique s'appuie sur une méthode OSINT (Open Source Intelligence) structurée avec agrégation de flux RSS, alertes Google, et revue hebdomadaire des publications spécialisées.</p>
                         </div>
                     </div>
                 </div>
