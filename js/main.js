@@ -1,53 +1,18 @@
-// Animation du menu au défilement
+// Animation du menu au défilement - DÉSACTIVÉE POUR AVOIR UNE COULEUR CONSTANTE
+// Supprimer le changement de couleur au scroll
 window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 50) {
-        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
-    } else {
-        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    const header = document.querySelector('header');
+    if (header) {
+        header.classList.add('scrolled');
     }
 });
 
-// Typing Effect
+// Typing Effect remplacé par texte statique professionnel
 const typingElement = document.querySelector('.typing');
-const phrases = [
-    'Développeur Web',
-    'Administrateur Systèmes',
-    'Passionné de Cybersécurité',
-    'Étudiant en BTS SIO'
-];
-let phraseIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typingDelay = 100;
-
-function type() {
-    const currentPhrase = phrases[phraseIndex];
-    
-    if (isDeleting) {
-        typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    if (!isDeleting && charIndex === currentPhrase.length) {
-        isDeleting = true;
-        typingDelay = 2000; // Pause at end of phrase
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        typingDelay = 200;
-    } else {
-        typingDelay = isDeleting ? 50 : 100;
-    }
-
-    setTimeout(type, typingDelay);
+if (typingElement) {
+    typingElement.textContent = 'Développeur Web';
+    typingElement.style.borderRight = 'none'; // Supprime le curseur clignotant
 }
-
-// Start typing effect
-setTimeout(type, typingDelay);
 
 // Intersection Observer pour les animations de section
 const sections = document.querySelectorAll('section');
@@ -95,22 +60,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Mise à jour du lien actif pendant le défilement
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
+// Gestion des carrousels
+document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.carousel-container');
+    
+    carousels.forEach(carousel => {
+        const container = carousel.querySelector('.carousel-items');
+        const prevButton = carousel.querySelector('.carousel-prev');
+        const nextButton = carousel.querySelector('.carousel-next');
+        
+        if (!container || !prevButton || !nextButton) return;
 
-    document.querySelectorAll('nav a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
-        }
+        // Fonction pour faire défiler
+        const scroll = (direction) => {
+            const scrollAmount = container.clientWidth;
+            container.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        };
+
+        // Écouteurs d'événements pour les boutons
+        prevButton.addEventListener('click', () => scroll('left'));
+        nextButton.addEventListener('click', () => scroll('right'));
     });
 });
 
@@ -210,51 +182,6 @@ function handleSubmit(event) {
     // Message de confirmation
     alert('Merci pour votre message ! Je vous répondrai dès que possible.');
 }
-
-// Gestion des carrousels
-document.addEventListener('DOMContentLoaded', () => {
-    const carousels = document.querySelectorAll('.carousel-container');
-    
-    carousels.forEach(container => {
-        const carousel = container.querySelector('.skills-carousel');
-        const prevButton = container.querySelector('.prev');
-        const nextButton = container.querySelector('.next');
-        const cardWidth = 300 + 16; // Largeur de la carte + gap
-
-        // Fonction pour faire défiler
-        const scroll = (direction) => {
-            const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
-            carousel.scrollBy({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        };
-
-        // Écouteurs d'événements pour les boutons
-        prevButton.addEventListener('click', () => scroll('left'));
-        nextButton.addEventListener('click', () => scroll('right'));
-
-        // Navigation au clavier
-        carousel.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') scroll('left');
-            if (e.key === 'ArrowRight') scroll('right');
-        });
-
-        // Navigation tactile
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        carousel.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        carousel.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            if (touchStartX - touchEndX > 50) scroll('right');
-            if (touchEndX - touchStartX > 50) scroll('left');
-        });
-    });
-});
 
 // Gestion des liens sociaux
 document.addEventListener('DOMContentLoaded', () => {
