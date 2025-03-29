@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique - Portfolio Professionnel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .article-card {
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .article-date {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--light-gray);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .resource-link {
+            display: block;
+            margin-top: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Portfolio</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="profil.html">Profil</a></li>
+                        <li><a href="competences.html">Compétences</a></li>
+                        <li><a href="stages.html">Stages</a></li>
+                        <li><a href="veille.html" class="active">Veille</a></li>
+                        <li><a href="epreuve-e4.html">Épreuve E4</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-title">
+                <h1>Veille Technologique</h1>
+            </div>
+
+            <section>
+                <p style="text-align: center; margin-bottom: 40px;">Cette page présente ma veille technologique sur la cybersécurité, un domaine essentiel dans l'administration des systèmes et réseaux. J'y partage les ressources, tendances et informations pertinentes que j'ai collectées.</p>
+            </section>
+
+            <section>
+                <h2 class="section-title">Qu'est-ce que la veille en cybersécurité ?</h2>
+                <div class="card">
+                    <p>La veille en cybersécurité est un processus visant à surveiller et analyser les nouvelles menaces, vulnérabilités et tendances dans le domaine de la sécurité informatique. Elle permet de prévenir les risques, d'améliorer les stratégies de défense et de garantir la conformité réglementaire des systèmes informatiques.</p>
+                    <p style="margin-top: 15px;">Dans le cadre de ma formation en BTS SIO option SISR, j'ai mis en place un système de veille technologique pour suivre les évolutions dans le domaine de la cybersécurité et des infrastructures sécurisées.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Objectifs de ma veille</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-search"></i> Identification des menaces</h3>
+                        <p>Repérer et comprendre les nouvelles menaces comme le phishing, les rançongiciels et les attaques DDoS qui ciblent les infrastructures informatiques.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-shield-alt"></i> Atténuation des risques</h3>
+                        <p>Proposer des solutions pour atténuer ces risques et renforcer la sécurité des systèmes d'information et des réseaux.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-lock"></i> Protection proactive</h3>
+                        <p>Assurer une protection proactive des données et des infrastructures en anticipant les évolutions des menaces et des technologies de sécurité.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Sources et outils utilisés</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-rss"></i> Sources d'information</h3>
+                        <ul style="list-style-position: inside; margin-top: 10px;">
+                            <li>Blogs spécialisés en cybersécurité</li>
+                            <li>Bulletins de sécurité (CERT-FR, ANSSI)</li>
+                            <li>Webinaires et conférences spécialisées</li>
+                            <li>Forums professionnels et communautés</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-tools"></i> Outils utilisés</h3>
+                        <ul style="list-style-position: inside; margin-top: 10px;">
+                            <li>Plateformes de threat intelligence</li>
+                            <li>Agrégateurs de flux RSS</li>
+                            <li>Systèmes de détection d'intrusion (IDS)</li>
+                            <li>Scanners de vulnérabilités</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-calendar-alt"></i> Méthode</h3>
+                        <p>J'ai mis en place un processus structuré pour collecter, analyser et synthétiser les informations pertinentes en matière de cybersécurité, avec une attention particulière aux menaces concernant les infrastructures et réseaux.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Articles et analyses</h2>
+                
+                <div class="article-card card">
+                    <div class="article-date">Mars 2025</div>
+                    <h3>Analyse des attaques DDoS et stratégies de protection</h3>
+                    <p>Étude approfondie des dernières tendances en matière d'attaques par déni de service distribué et des solutions pour protéger efficacement les infrastructures.</p>
+                    <div style="margin: 10px 0;">
+                        <span class="tag">DDoS</span>
+                        <span class="tag">Protection réseau</span>
+                        <span class="tag">Infrastructure</span>
+                    </div>
+                    <a href="#" class="resource-link" onclick="toggleArticleContent('ddos-article'); return false;">Lire l'analyse complète →</a>
+                    <div id="ddos-article" style="display: none; margin-top: 20px; padding: 15px; background-color: #f8f8f8; border-radius: 5px;">
+                        <h4>Déni de services</h4>
+                        <p><strong>Une attaque par déni de service (DDoS)</strong> est l'une des attaques les plus répandues, mais son objectif principal n'est pas de voler des informations confidentielles. Elle vise à <strong>interrompre ou rendre indisponible un service</strong>, généralement en saturant les serveurs ou les réseaux ciblés avec un trafic massif, rendant ainsi le service inaccessible pour les utilisateurs légitimes.</p>
+                        
+                        <h4>Les différents types de déni de service</h4>
+                        <ul style="list-style-position: inside; margin: 10px 0;">
+                            <li>
+                                <strong>Attaques par inondation (Flooding attacks)</strong> : Ces attaques visent à submerger le système cible avec un volume massif de trafic, comme des paquets UDP ou ICMP, afin de saturer la bande passante et les ressources du système.
+                            </li>
+                            <li>
+                                <strong>Attaques par épuisement des ressources (Resource exhaustion attacks)</strong> : Ces attaques cherchent à épuiser les ressources du système, telles que la mémoire, le processeur ou les connexions réseau, en envoyant des requêtes spécialement conçues pour consommer ces ressources de manière excessive.
+                            </li>
+                            <li>
+                                <strong>Attaques par amplification (Amplification attacks)</strong> : Dans ce type d'attaque, les attaquants exploitent des services publics vulnérables pour amplifier leur trafic malveillant. Ils envoient des requêtes avec une adresse IP source usurpée à ces services, qui renvoient ensuite des réponses amplifiées vers la cible, submergeant ainsi le système.
+                            </li>
+                            <li>
+                                <strong>Attaques par réflexion (Reflection attacks)</strong> : Ces attaques impliquent l'utilisation de services publics pour rediriger le trafic malveillant vers la cible. Les attaquants envoient des requêtes avec une adresse IP source usurpée à ces services, qui répondent ensuite directement à la cible, générant un trafic important.
+                            </li>
+                        </ul>
+                        
+                        <h4>Impact des attaques DDoS</h4>
+                        <p>Ces attaques peuvent avoir plusieurs impacts significatifs :</p>
+                        <ul style="list-style-position: inside; margin: 10px 0;">
+                            <li><strong>Indisponibilité du service</strong> : Les utilisateurs légitimes ne peuvent plus accéder au service.</li>
+                            <li><strong>Perturbation des opérations</strong> : Interruption des processus métier et des activités normales.</li>
+                            <li><strong>Coût financier</strong> : Pertes financières dues à l'indisponibilité du service et aux coûts de remédiation.</li>
+                        </ul>
+                        
+                        <h4>Prévention et mitigation des attaques par déni de service</h4>
+                        <p>Pour se protéger contre les attaques par déni de service, il est essentiel de mettre en place des mesures de prévention et de mitigation. Voici quelques stratégies clés :</p>
+                        
+                        <ul style="list-style-position: inside; margin: 10px 0;">
+                            <li>
+                                <strong>Dimensionnement adéquat des ressources</strong> : S'assurer que les systèmes et les infrastructures sont correctement dimensionnés pour gérer des volumes de trafic élevés et des pics de demande.
+                            </li>
+                            <li>
+                                <strong>Filtrage du trafic</strong> : Mettre en place des mécanismes de filtrage du trafic, tels que des pare-feu et des systèmes de détection d'intrusion (IDS), pour identifier et bloquer le trafic malveillant.
+                            </li>
+                            <li>
+                                <strong>Répartition de charge et redondance</strong> : Utiliser des techniques de répartition de charge et de redondance pour distribuer le trafic sur plusieurs serveurs ou sites, réduisant ainsi l'impact d'une attaque DoS sur un seul point de défaillance.
+                            </li>
+                            <li>
+                                <strong>Plans de réponse aux incidents</strong> : Développer et tester des plans de réponse aux incidents pour réagir rapidement et efficacement en cas d'attaque DoS, minimisant ainsi les perturbations et les dommages.
+                            </li>
+                            <li>
+                                <strong>Services d'atténuation des DDoS</strong> : Envisager l'utilisation de services d'atténuation des attaques DDoS fournis par des prestataires spécialisés, qui peuvent absorber et filtrer le trafic malveillant avant qu'il n'atteigne les systèmes de l'organisation.
+                            </li>
+                        </ul>
+                        
+                        <p>En suivant ces bonnes pratiques et en restant vigilant face aux menaces émergentes, les organisations peuvent renforcer leur résilience face aux attaques par déni de service et protéger leurs systèmes et leurs données critiques.</p>
+                        
+                        <h4>Exemples récents de cyberattaques en France</h4>
+                        
+                        <div style="background-color: #f0f0f0; border-left: 4px solid #e74c3c; padding: 15px; margin: 15px 0; border-radius: 3px;">
+                            <h5>Cyberattaque chez Norauto</h5>
+                            <ul style="list-style-position: inside;">
+                                <li><strong>Date de l'attaque</strong> : Annoncée le 3 décembre 2024.</li>
+                                <li><strong>Impact</strong> : Environ 78 000 clients touchés.</li>
+                                <li><strong>Données compromises</strong> : Noms, adresses e-mail et postales, numéros de téléphone, et numéros de pièces d'identité.</li>
+                                <li><strong>Nature de l'attaque</strong> : Une cyberattaque sophistiquée ciblant les systèmes informatiques de Norauto, permettant aux attaquants d'accéder à des données sensibles.</li>
+                                <li><strong>Réponse de Norauto</strong> : Mise en place immédiate de mesures pour stopper l'attaque et renforcer la sécurité des systèmes. Les clients concernés ont été informés et une plainte a été déposée.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-card card">
+                    <div class="article-date">Février 2025</div>
+                    <h3>L'évolution du phishing et des techniques d'ingénierie sociale</h3>
+                    <p>Analyse des techniques de phishing les plus sophistiquées et des méthodes pour sensibiliser les utilisateurs et renforcer la sécurité des organisations.</p>
+                    <div style="margin: 10px 0;">
+                        <span class="tag">Phishing</span>
+                        <span class="tag">Ingénierie sociale</span>
+                        <span class="tag">Formation utilisateurs</span>
+                    </div>
+                    <a href="#" class="resource-link" onclick="toggleArticleContent('phishing-article'); return false;">Lire l'analyse complète →</a>
+                    <div id="phishing-article" style="display: none; margin-top: 20px; padding: 15px; background-color: #f8f8f8; border-radius: 5px;">
+                        <h4>1. Définir les Objectifs</h4>
+                        <ul style="list-style-position: inside; margin: 10px 0;">
+                            <li><strong>Identifier les menaces</strong> : Suivre les nouvelles vulnérabilités et les méthodes d'attaque.</li>
+                        </ul>
+                        
+                        <p>Il existe plusieurs types d'attaques, mais nous nous concentrerons sur les plus courantes, telles que le phishing, les ransomwares et les attaques par déni de service (DDoS).</p>
+                        
+                        <h4>Définitions :</h4>
+                        
+                        <p><strong>Le phishing</strong> (hameçonnage) est une attaque cybercriminelle dans laquelle l'attaquant envoie des messages frauduleux, souvent sous forme de courriels, de liens ou de pages web falsifiées, imitant une source de confiance (comme une banque, un service en ligne ou une entreprise). L'objectif est de tromper la victime afin qu'elle divulgue des informations sensibles, telles que ses identifiants de connexion, mots de passe, coordonnées bancaires ou autres données personnelles, qui seront ensuite utilisées de manière malveillante, comme pour le vol d'identité ou des fraudes financières.</p>
+                        
+                        <p><strong>Exemple de phishing :</strong></p>
+                        
+                        <div style="text-align: center; margin: 15px 0;">
+                            <img src="../assets/img/phishing-example.png" alt="Exemple de phishing" style="max-width: 100%; border: 1px solid #ddd; border-radius: 5px;">
+                        </div>
+                        
+                        <h4>Hameçonnage par ingénierie sociale</h4>
+                        
+                        <p><strong>Méthodes utilisées par l'attaquant :</strong></p>
+                        
+                        <ol style="list-style-position: inside; margin: 10px 0;">
+                            <li>
+                                <strong>Automatisation des envois :</strong>
+                                <p style="margin-left: 20px;">L'attaquant utilise des <strong>scripts automatisés</strong>, des outils comme des bots ou des serveurs de mails compromis pour envoyer des milliers de courriels frauduleux en quelques minutes. Ces outils permettent de générer rapidement des messages personnalisés, imitant des entreprises de confiance (banques, plateformes de commerce en ligne, services de livraison, etc.).</p>
+                            </li>
+                            <li>
+                                <strong>Scénarios d'urgence :</strong>
+                                <ul style="list-style-position: inside; margin-left: 20px;">
+                                    <li>Le courriel indique que la victime est <strong>l'auteur d'une commande importante qui a été débitée</strong> (souvent avec un montant élevé).</li>
+                                    <li>Pour inciter à une réaction rapide, le message suggère que <strong>si la victime n'est pas à l'origine de la commande, elle doit cliquer sur un lien ou rappeler un numéro</strong>.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Pièges dans le contenu du courriel :</strong>
+                                <ul style="list-style-position: inside; margin-left: 20px;">
+                                    <li><strong>Lien frauduleux :</strong> Le courriel contient un lien menant à un site qui imite celui de l'entreprise légitime. Une fois sur ce site, la victime peut être invitée à saisir ses identifiants ou informations bancaires.</li>
+                                    <li><strong>Appel téléphonique :</strong> Si un numéro de téléphone est fourni, la victime peut tomber sur une voix féminine douce et rassurante (une technique d'ingénierie sociale) pour gagner sa confiance. Cette personne pourra demander des informations sensibles comme un code PIN, un numéro de carte, ou d'autres détails personnels.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Exploitation des émotions :</strong>
+                                <ul style="list-style-position: inside; margin-left: 20px;">
+                                    <li>L'attaquant joue sur des émotions comme la peur, l'urgence ou la confusion. Cela pousse la victime à agir rapidement sans prendre le temps de vérifier la véracité du message.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        
+                        <h4>Les différents types de phishing</h4>
+                        <p>Il existe 19 types de phishing différents, dont voici les plus courants :</p>
+                        
+                        <ul style="list-style-position: inside; margin: 10px 0;">
+                            <li>
+                                <strong>Spear Phishing</strong> : Cible une personne spécifique dans une organisation pour voler ses identifiants de connexion.
+                            </li>
+                            <li>
+                                <strong>Vishing</strong> : Utilise le téléphone pour tenter de voler des informations.
+                            </li>
+                            <li>
+                                <strong>Phishing par e-mail</strong> : Attaque envoyée par e-mail contenant des liens frauduleux.
+                            </li>
+                            <li>
+                                <strong>Whaling</strong> : Cible spécifiquement les cadres supérieurs d'une organisation.
+                            </li>
+                            <li>
+                                <strong>Smishing</strong> : Utilise les SMS pour piéger les victimes.
+                            </li>
+                            <li>
+                                <strong>Pharming</strong> : Redirige les victimes vers des sites web falsifiés.
+                            </li>
+                        </ul>
+                        
+                        <h4>Exemples récents de cyberattaques en France</h4>
+                        
+                        <div style="background-color: #f0f0f0; border-left: 4px solid #e74c3c; padding: 15px; margin: 15px 0; border-radius: 3px;">
+                            <h5>Cyberattaque chez Free</h5>
+                            <ul style="list-style-position: inside;">
+                                <li><strong>Date de l'attaque</strong> : Signalée le 17 octobre 2024.</li>
+                                <li><strong>Impact</strong> : 19 millions d'abonnés touchés, avec 5 millions d'adresses IBAN compromises.</li>
+                                <li><strong>Données compromises</strong> : Données personnelles des abonnés, y compris les numéros IBAN.</li>
+                                <li><strong>Nature de l'attaque</strong> : L'attaque a été facilitée par un complice interne qui a fourni ses identifiants OpenVPN aux cybercriminels, permettant un accès non autorisé aux systèmes de Free.</li>
+                                <li><strong>Réponse de Free</strong> : Confirmation de l'attaque et mise en place de mesures pour sécuriser les systèmes. Une enquête interne a révélé la complicité d'un employé.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <script>
+                        function toggleArticleContent(id) {
+                            var content = document.getElementById(id);
+                            if (content.style.display === "none") {
+                                content.style.display = "block";
+                            } else {
+                                content.style.display = "none";
+                            }
+                        }
+                    </script>
+                </div>
+                
+                <div class="article-card card">
+                    <div class="article-date">Décembre 2024</div>
+                    <h3>Les rançongiciels et la protection des données sensibles</h3>
+                    <p>Étude des dernières tendances en matière de rançongiciels et des stratégies de sauvegarde et de récupération pour protéger les données critiques des organisations.</p>
+                    <div style="margin: 10px 0;">
+                        <span class="tag">Ransomware</span>
+                        <span class="tag">Sauvegarde</span>
+                        <span class="tag">Récupération</span>
+                    </div>
+                    <a href="#" class="resource-link">Lire l'analyse complète →</a>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Impact et apprentissage</h2>
+                <div class="card">
+                    <p>Cette veille en cybersécurité m'a permis de développer plusieurs compétences essentielles :</p>
+                    <ul style="list-style-position: inside; margin-top: 15px;">
+                        <li><strong>Anticipation des menaces</strong> : capacité à identifier les risques émergents avant qu'ils n'affectent les systèmes</li>
+                        <li><strong>Connaissance approfondie</strong> des vecteurs d'attaque et des techniques de défense modernes</li>
+                        <li><strong>Culture de la sécurité</strong> : compréhension de l'importance d'une approche proactive en matière de sécurité</li>
+                        <li><strong>Capacité d'analyse</strong> : aptitude à évaluer la pertinence et la fiabilité des informations en matière de cybersécurité</li>
+                    </ul>
+                    <p style="margin-top: 15px;">Ces connaissances ont été directement appliquées lors de mes stages et projets, notamment pour la mise en place de solutions de sécurité adaptées aux infrastructures existantes.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Ressources recommandées</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3 class="card-title">Sites spécialisés</h3>
+                        <ul style="list-style-position: inside; margin-top: 10px;">
+                            <li><a href="https://www.ssi.gouv.fr/" target="_blank" style="color: var(--accent-color);">ANSSI</a></li>
+                            <li><a href="https://www.cert.ssi.gouv.fr/" target="_blank" style="color: var(--accent-color);">CERT-FR</a></li>
+                            <li><a href="https://www.zataz.com/" target="_blank" style="color: var(--accent-color);">ZATAZ</a></li>
+                            <li><a href="https://www.bleepingcomputer.com/" target="_blank" style="color: var(--accent-color);">Bleeping Computer</a></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Chaînes YouTube</h3>
+                        <ul style="list-style-position: inside; margin-top: 10px;">
+                            <li><a href="https://www.youtube.com/c/HackerSploit" target="_blank" style="color: var(--accent-color);">HackerSploit</a></li>
+                            <li><a href="https://www.youtube.com/c/LiveOverflow" target="_blank" style="color: var(--accent-color);">LiveOverflow</a></li>
+                            <li><a href="https://www.youtube.com/c/SecurityFWD" target="_blank" style="color: var(--accent-color);">Security FWD</a></li>
+                            <li><a href="https://www.youtube.com/user/DEFCONConference" target="_blank" style="color: var(--accent-color);">DEFCON</a></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Outils essentiels</h3>
+                        <ul style="list-style-position: inside; margin-top: 10px;">
+                            <li><a href="https://www.virustotal.com/" target="_blank" style="color: var(--accent-color);">VirusTotal</a></li>
+                            <li><a href="https://www.shodan.io/" target="_blank" style="color: var(--accent-color);">Shodan</a></li>
+                            <li><a href="https://www.wireshark.org/" target="_blank" style="color: var(--accent-color);">Wireshark</a></li>
+                            <li><a href="https://nmap.org/" target="_blank" style="color: var(--accent-color);">Nmap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="#"><i class="far fa-envelope fa-lg"></i></a>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Accueil</a>
+                    <a href="profil.html">Profil</a>
+                    <a href="competences.html">Compétences</a>
+                    <a href="stages.html">Stages</a>
+                    <a href="veille.html">Veille</a>
+                    <a href="epreuve-e4.html">Épreuve E4</a>
+                </div>
+                <p>&copy; 2025 - Portfolio BTS SIO</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
