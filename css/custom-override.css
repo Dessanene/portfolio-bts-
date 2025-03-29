@@ -64,3 +64,73 @@ a {
 a:hover {
     color: #333333 !important;
 }
+
+/* Correction des fonds bleus dans les projets */
+.project-card,
+.skill-card,
+.competence-card,
+.epreuve-card,
+.certification-card,
+.veille-card,
+.section-transition,
+.competences-section {
+    background-color: #ffffff !important;
+    border: 1px solid #000000 !important;
+    box-shadow: none !important;
+}
+
+.project-card:hover,
+.skill-card:hover {
+    transform: translateY(-5px) !important;
+    background-color: #ffffff !important;
+    border-color: #000000 !important;
+}
+
+.skill-card::before,
+.project-card::before,
+.section-transition::before {
+    display: none !important;
+}
+
+/* Correction des dates grises dans parcours */
+.timeline-date,
+.timeline-item h4,
+.timeline-item p,
+.timeline-item span {
+    color: #000000 !important;
+}
+
+/* Correction de tous les effets de hover avec fond bleu ou rouge */
+*:hover {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+}
+
+/* Correction des boutons de navigation dans compétences */
+.competences-nav-btn {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+}
+
+.competences-nav-btn:hover,
+.competences-nav-btn.active {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    text-decoration: underline !important;
+    font-weight: bold !important;
+}
+
+/* Surcharge pour supprimer tous les effets de dégradé et de hover */
+[class*="card"]::before,
+[class*="card"]:hover::before {
+    display: none !important;
+    background: none !important;
+    opacity: 0 !important;
+    height: 0 !important;
+}
+
+.section-title {
+    color: #000000 !important;
+}
