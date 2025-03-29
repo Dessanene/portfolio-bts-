@@ -1,0 +1,66 @@
+/* Styles de surcharge pour les boutons de navigation du profil */
+.profile-nav {
+    margin-top: 6rem !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Styles extrêmement spécifiques pour empêcher tout changement lors du défilement */
+.profile-nav-btn,
+.profile-nav-btn:link,
+.profile-nav-btn:visited,
+.profile-nav-btn:focus,
+.profile-nav a,
+.profile-nav a:link,
+.profile-nav a:visited,
+.profile-nav a:focus,
+html.any-class .profile-nav-btn,
+body.scrolled .profile-nav-btn,
+header.scrolled ~ main .profile-nav-btn,
+.any-state .profile-nav-btn,
+main .profile-nav .profile-nav-btn {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+    text-decoration: underline !important;
+    transition: transform 0.2s !important;
+    box-shadow: none !important;
+}
+
+.profile-nav-btn:hover,
+html.any-class .profile-nav-btn:hover,
+body.scrolled .profile-nav-btn:hover,
+.any-state .profile-nav-btn:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    transform: translateY(-2px) !important;
+    text-decoration: underline !important;
+    font-weight: bold !important;
+    box-shadow: none !important;
+}
+
+.profile-nav-btn.active,
+html.any-class .profile-nav-btn.active,
+body.scrolled .profile-nav-btn.active,
+.any-state .profile-nav-btn.active {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    text-decoration: underline !important;
+    font-weight: bold !important;
+    border-bottom: 2px solid #000000 !important;
+    box-shadow: none !important;
+}
+
+/* Section spécifique pour les pages parcours et compétences */
+#parcours, #competences {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* Pour s'assurer que les liens de navigation sont en noir */
+a {
+    color: #000000 !important;
+}
+
+a:hover {
+    color: #333333 !important;
+}

@@ -9,7 +9,8 @@
     <title>Dessanène Sanhan - Profil</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css?v=202503281245">
+    <link rel="stylesheet" href="css/style.css?v=202503291313">
+    <link rel="stylesheet" href="css/custom-override.css?v=202503291313">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -23,7 +24,7 @@
         
         .profile-nav-btn {
             padding: 0.8rem 1.5rem;
-            background-color: #2c3e50;
+            background-color: #000000;
             color: white;
             border: none;
             border-radius: 5px;
@@ -37,12 +38,13 @@
         }
         
         .profile-nav-btn:hover {
-            background-color: #3498db;
+            background-color: #333333;
             transform: translateY(-2px);
         }
         
         .profile-nav-btn.active {
-            background-color: #3498db;
+            background-color: #000000;
+            border: 1px solid #ffffff;
         }
         
         .profile-nav-btn:hover .btn-description {
@@ -64,6 +66,19 @@
             border-radius: 5px;
         }
     </style>
+    <script>
+        // Force le rechargement complet des ressources
+        window.onload = function() {
+            if (!localStorage.getItem('profilCacheReloaded')) {
+                localStorage.setItem('profilCacheReloaded', 'true');
+                setTimeout(function() {
+                    window.location.reload(true);
+                }, 100);
+            } else {
+                localStorage.removeItem('profilCacheReloaded');
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="particles-container" id="particles-js"></div>
@@ -89,17 +104,17 @@
     <main>
         <!-- Navigation interne au profil -->
         <div class="profile-nav">
-            <a href="profil.html" class="profile-nav-btn active">
+            <a href="profil.html" class="profile-nav-btn active" style="background-color: white !important; color: black !important; text-decoration: underline !important; font-weight: bold !important; border: none !important; border-bottom: 2px solid black !important;">
                 <i class="fas fa-user"></i> 
                 <span>À Propos</span>
                 <div class="btn-description">Mon parcours personnel</div>
             </a>
-            <a href="parcours.html" class="profile-nav-btn">
+            <a href="parcours.html" class="profile-nav-btn" style="background-color: white !important; color: black !important; text-decoration: underline !important; border: none !important;">
                 <i class="fas fa-graduation-cap"></i> 
                 <span>Parcours</span>
                 <div class="btn-description">Formation et expériences</div>
             </a>
-            <a href="competences.html" class="profile-nav-btn">
+            <a href="competences.html" class="profile-nav-btn" style="background-color: white !important; color: black !important; text-decoration: underline !important; border: none !important;">
                 <i class="fas fa-database"></i> 
                 <span>Compétences</span>
                 <div class="btn-description">Compétences techniques et projets</div>

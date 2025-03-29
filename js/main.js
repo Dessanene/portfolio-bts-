@@ -1,7 +1,6 @@
-// Animation du menu au défilement - DÉSACTIVÉE POUR AVOIR UNE COULEUR CONSTANTE
+// Animation du menu au défilement - COMPLÈTEMENT DÉSACTIVÉE
 window.addEventListener('scroll', () => {
-    // Aucun changement de couleur ou de style au défilement
-    // L'en-tête conserve son style défini dans le CSS
+    // Ne rien faire au défilement pour conserver les styles CSS
 });
 
 // Typing Effect remplacé par texte statique professionnel
@@ -57,24 +56,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Mise à jour du lien actif pendant le défilement - DÉSACTIVÉE POUR ÉVITER LES CHANGEMENTS VISUELS
-// window.addEventListener('scroll', () => {
-//     let current = '';
-//     sections.forEach(section => {
-//         const sectionTop = section.offsetTop;
-//         const sectionHeight = section.clientHeight;
-//         if (pageYOffset >= sectionTop - 200) {
-//             current = section.getAttribute('id');
-//         }
-//     });
-//
-//     document.querySelectorAll('nav a').forEach(link => {
-//         link.classList.remove('active');
-//         if (link.getAttribute('href').slice(1) === current) {
-//             link.classList.add('active');
-//         }
-//     });
-// });
+// Empêcher les boutons de profil de changer de style au scroll
+document.addEventListener('DOMContentLoaded', function() {
+    // Sélectionner tous les boutons de navigation du profil
+    const profileButtons = document.querySelectorAll('.profile-nav-btn');
+    
+    if (profileButtons.length > 0) {
+        // Observer le défilement et forcer le style à chaque fois
+        window.addEventListener('scroll', function() {
+            profileButtons.forEach(btn => {
+                if (btn.classList.contains('active')) {
+                    // Style pour le bouton actif
+                    btn.style.backgroundColor = '#ffffff';
+                    btn.style.color = '#000000';
+                    btn.style.textDecoration = 'underline';
+                    btn.style.fontWeight = 'bold';
+                    btn.style.border = 'none';
+                    btn.style.borderBottom = '2px solid #000000';
+                } else {
+                    // Style pour les autres boutons
+                    btn.style.backgroundColor = '#ffffff';
+                    btn.style.color = '#000000';
+                    btn.style.textDecoration = 'underline';
+                    btn.style.border = 'none';
+                }
+            });
+        });
+    }
+});
 
 // Configuration et initialisation des particules
 particlesJS('particles-js', {
