@@ -1,98 +1,115 @@
-/* Styles de surcharge pour les boutons de navigation du profil */
-.profile-nav {
-    margin-top: 6rem !important;
-    margin-bottom: 2rem !important;
-}
+/* Reset complet pour un design minimaliste strict
+   - Texte noir (#000000)
+   - Fond blanc (#FFFFFF)
+   - Aucun effet de survol
+   - Aucune animation
+   - Aucune bordure, ombre ou fond coloré
+*/
 
-/* Styles extrêmement spécifiques pour empêcher tout changement lors du défilement */
-.profile-nav-btn,
-.profile-nav-btn:link,
-.profile-nav-btn:visited,
-.profile-nav-btn:focus,
-.profile-nav a,
-.profile-nav a:link,
-.profile-nav a:visited,
-.profile-nav a:focus,
-html.any-class .profile-nav-btn,
-body.scrolled .profile-nav-btn,
-header.scrolled ~ main .profile-nav-btn,
-.any-state .profile-nav-btn,
-main .profile-nav .profile-nav-btn {
-    background-color: #ffffff !important;
+/* Reset global */
+* {
     color: #000000 !important;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
     border: none !important;
-    text-decoration: underline !important;
-    transition: transform 0.2s !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
+    text-shadow: none !important;
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    opacity: 1 !important;
 }
 
-.profile-nav-btn:hover,
-html.any-class .profile-nav-btn:hover,
-body.scrolled .profile-nav-btn:hover,
-.any-state .profile-nav-btn:hover {
-    background-color: #ffffff !important;
+/* Suppression de tous les effets de survol */
+*:hover,
+*:focus,
+*:active,
+*.active {
     color: #000000 !important;
-    transform: translateY(-2px) !important;
-    text-decoration: underline !important;
-    font-weight: bold !important;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    border: none !important;
     box-shadow: none !important;
+    text-shadow: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+/* Navigation */
+.profile-nav-btn,
+.competences-nav-btn,
+.nav-btn,
+nav ul li a {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    text-decoration: underline !important;
+    border: none !important;
 }
 
 .profile-nav-btn.active,
-html.any-class .profile-nav-btn.active,
-body.scrolled .profile-nav-btn.active,
-.any-state .profile-nav-btn.active {
-    background-color: #ffffff !important;
+.competences-nav-btn.active,
+.nav-btn.active,
+nav ul li a.active {
     color: #000000 !important;
-    text-decoration: underline !important;
+    background-color: #ffffff !important;
     font-weight: bold !important;
-    border-bottom: 2px solid #000000 !important;
-    box-shadow: none !important;
+    text-decoration: underline !important;
 }
 
-/* Section spécifique pour les pages parcours et compétences */
-#parcours, #competences {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-}
-
-/* Pour s'assurer que les liens de navigation sont en noir */
+/* Boutons et liens */
+button,
 a {
     color: #000000 !important;
+    background-color: #ffffff !important;
+    text-decoration: underline !important;
 }
 
-a:hover {
-    color: #333333 !important;
-}
-
-/* Correction des fonds bleus dans les projets */
+/* Cartes de projets et compétences */
 .project-card,
 .skill-card,
 .competence-card,
 .epreuve-card,
 .certification-card,
 .veille-card,
-.section-transition,
-.competences-section {
+.timeline-item,
+.card {
+    color: #000000 !important;
     background-color: #ffffff !important;
-    border: 1px solid #000000 !important;
+    border: none !important;
     box-shadow: none !important;
+    padding: 1rem !important;
 }
 
-.project-card:hover,
-.skill-card:hover {
-    transform: translateY(-5px) !important;
-    background-color: #ffffff !important;
-    border-color: #000000 !important;
-}
-
+/* Suppression des pseudo-éléments */
 .skill-card::before,
 .project-card::before,
-.section-transition::before {
+.skill-card::after,
+.project-card::after,
+.timeline-item::before,
+.timeline-item::after,
+.section-transition::before,
+.section-transition::after,
+[class*="card"]::before,
+[class*="card"]::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+/* Suppression des particules */
+.particles-container,
+#particles-js {
     display: none !important;
 }
 
-/* Correction des dates grises dans parcours */
+/* Timeline et dates */
 .timeline-date,
 .timeline-item h4,
 .timeline-item p,
@@ -100,37 +117,36 @@ a:hover {
     color: #000000 !important;
 }
 
-/* Correction de tous les effets de hover avec fond bleu ou rouge */
-*:hover {
-    background-color: #ffffff !important;
+/* Titres et textes */
+h1, h2, h3, h4, h5, h6, p, span, div, li, ul, ol {
+    color: #000000 !important;
+    text-shadow: none !important;
     background: #ffffff !important;
+}
+
+/* Sections */
+section,
+header,
+footer,
+main,
+aside,
+.section-transition {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
     box-shadow: none !important;
 }
 
-/* Correction des boutons de navigation dans compétences */
-.competences-nav-btn {
-    background-color: #ffffff !important;
+/* Formulaires */
+input, textarea, select {
     color: #000000 !important;
+    background-color: #ffffff !important;
     border: 1px solid #000000 !important;
 }
 
-.competences-nav-btn:hover,
-.competences-nav-btn.active {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    text-decoration: underline !important;
-    font-weight: bold !important;
-}
-
-/* Surcharge pour supprimer tous les effets de dégradé et de hover */
-[class*="card"]::before,
-[class*="card"]:hover::before {
-    display: none !important;
-    background: none !important;
-    opacity: 0 !important;
-    height: 0 !important;
-}
-
-.section-title {
-    color: #000000 !important;
+/* Suppression de tous les gradients */
+[style*="background"],
+[style*="background-image"] {
+    background: #ffffff !important;
+    background-image: none !important;
 }
