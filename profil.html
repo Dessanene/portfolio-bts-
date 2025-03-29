@@ -9,8 +9,8 @@
     <title>Dessanène Sanhan - Profil</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css?v=202503291313">
-    <link rel="stylesheet" href="css/custom-override.css?v=202503291313">
+    <link rel="stylesheet" href="css/style.css?v=20250329095942">
+    <link rel="stylesheet" href="css/custom-override.css?v=20250329095942">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -78,6 +78,21 @@
                 localStorage.removeItem('profilCacheReloaded');
             }
         }
+        
+        // Force le rechargement du CSS
+        document.addEventListener('DOMContentLoaded', function() {
+            // Force le rechargement de la feuille de style personnalisée
+            const customStylesheet = document.createElement('link');
+            customStylesheet.rel = 'stylesheet';
+            customStylesheet.href = 'css/custom-override.css?v=' + new Date().getTime();
+            document.head.appendChild(customStylesheet);
+            
+            // Force également le rechargement de la feuille de style principale
+            const mainStylesheet = document.createElement('link');
+            mainStylesheet.rel = 'stylesheet';
+            mainStylesheet.href = 'css/style.css?v=' + new Date().getTime();
+            document.head.appendChild(mainStylesheet);
+        });
     </script>
 </head>
 <body>
