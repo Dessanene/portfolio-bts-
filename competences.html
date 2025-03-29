@@ -10,27 +10,35 @@
     <title>Dessanène Sanhan - Compétences</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css?v=202503281245">
+    <link rel="stylesheet" href="css/style.css?v=202503291003">
+    <link rel="stylesheet" href="css/custom-override.css?v=202503291003">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
-        // Force le rechargement du CSS
-        function forceReload() {
-            const links = document.querySelectorAll('link[rel="stylesheet"]');
-            links.forEach(link => {
-                if (link.href.includes('style.css')) {
-                    const url = link.href.split('?')[0];
-                    link.href = url + '?v=' + new Date().getTime();
+        // Force le rechargement du CSS sans utiliser le cache
+        document.addEventListener('DOMContentLoaded', function() {
+            // Supprime les anciennes feuilles de style
+            const oldLinks = document.querySelectorAll('link[rel="stylesheet"]');
+            oldLinks.forEach(link => {
+                if (link.href.includes('style.css') || link.href.includes('custom-override.css')) {
+                    link.parentNode.removeChild(link);
                 }
             });
-            localStorage.setItem('cacheCleared', 'true');
-        }
-        
-        // Vérifie si nous devons forcer le rechargement
-        if (!localStorage.getItem('cacheCleared')) {
-            forceReload();
-        }
+            
+            // Ajoute les nouvelles feuilles de style avec un timestamp unique
+            const customStylesheet = document.createElement('link');
+            customStylesheet.rel = 'stylesheet';
+            customStylesheet.href = 'css/custom-override.css?v=' + new Date().getTime();
+            document.head.appendChild(customStylesheet);
+            
+            const mainStylesheet = document.createElement('link');
+            mainStylesheet.rel = 'stylesheet';
+            mainStylesheet.href = 'css/style.css?v=' + new Date().getTime();
+            document.head.appendChild(mainStylesheet);
+            
+            console.log('CSS rechargé à: ' + new Date().toString());
+        });
     </script>
 </head>
 <body>
