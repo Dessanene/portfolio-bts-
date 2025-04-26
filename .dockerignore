@@ -1,0 +1,11 @@
+.git
+.gitignore
+README.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+deploy.sh
+deploy.bat
+node_modules/
+.DS_Store
+*.log

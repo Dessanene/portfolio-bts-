@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  portfolio:
+    build: .
+    container_name: portfolio-bts
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/usr/share/nginx/html
+    restart: always
