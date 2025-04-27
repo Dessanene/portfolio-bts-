@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="600" height="240">
+  <!-- Logo PIX basé sur l'image officielle -->
+  <g fill="#0D9DF7">
+    <circle cx="310" cy="64" r="30"/>
+    <path d="M140 20L96 62 52 20H23v155h25V72l48 47 48-47v103h25V20h-29z"/>
+    <path d="M269 20v45h-20V41h-34v113h34v-24h20v44h-75V20z"/>
+    <path d="M373 63c0-30 25-55 56-55 1.8 0 3.6 0.1 5.4 0.2v23c-1.8-0.2-3.6-0.3-5.4-0.3-16 0-30 14-30 30 0 17 14 31 30 31 1.8 0 3.6-0.1 5.4-0.4v23c-1.8 0.2-3.6 0.3-5.4 0.3-31 0-56-25-56-55z"/>
+    <path d="M518 84h-28l14-34zm-17-64h-34l-42 103h28l10-31h46l10 31h28z"/>
+  </g>
+</svg>
