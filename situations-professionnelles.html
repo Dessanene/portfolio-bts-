@@ -9,6 +9,81 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques pour animer la page des situations professionnelles */
+        .timeline-item::before {
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(13, 110, 253, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+            }
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 0% 100%; }
+        }
+        
+        /* Animation d'apparition des sections */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .skills-container .skill-item {
+            transform: translateY(0);
+            transition: var(--transition-normal);
+        }
+        
+        .skills-container .skill-item:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+        }
+        
+        .resource-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .resource-link:hover {
+            transform: translateX(5px);
+        }
+        
+        .resource-link:hover::after {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -33,7 +108,7 @@
     <main>
         <div class="container">
             <div class="page-title">
-                <h1>Situations Professionnelles</h1>
+                <h1>Situations Professionnelles 🚀</h1>
             </div>
 
             <section>
@@ -41,66 +116,99 @@
             </section>
 
             <section>
-                <h2 class="section-title">Présentation de l'épreuve E4</h2>
-                <div class="card">
+                <h2 class="section-title">🎯 Présentation de l'épreuve E4</h2>
+                <div class="card" style="border-left: 5px solid #3498db; padding-left: 20px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background-color: #3498db; display: flex; justify-content: center; align-items: center; margin-right: 15px;">
+                            <span style="font-size: 2rem; color: white;">📋</span>
+                        </div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #3498db;">Épreuve professionnelle</h3>
+                            <p>Mise en situation réelle pour évaluer les compétences techniques</p>
+                        </div>
+                    </div>
                     <p>L'épreuve E4 du BTS SIO est une épreuve pratique qui consiste à concevoir et mettre en œuvre des solutions d'infrastructure, de systèmes et de réseaux à partir d'un cahier des charges. Elle permet d'évaluer les compétences techniques et méthodologiques acquises durant la formation.</p>
                     <p style="margin-top: 15px;">Pour cette épreuve, j'ai réalisé plusieurs projets et situations professionnelles qui démontrent ma capacité à analyser un besoin, concevoir une solution et la mettre en œuvre.</p>
                 </div>
             </section>
 
             <section>
-                <h2 class="section-title">Mes situations professionnelles</h2>
+                <h2 class="section-title">💼 Mes situations professionnelles</h2>
                 
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-date">Situation professionnelle 1</div>
-                        <div class="timeline-content">
-                            <h3>Mise en place d'un système de sauvegarde et sécurisation d'infrastructure</h3>
-                            <p style="margin-top: 10px;"><strong>Contexte :</strong> Dans le cadre de mon stage en entreprise GSB, j'ai implémenté un système de sauvegarde avec BackupPC et configuré Fail2ban pour renforcer la sécurité de l'infrastructure.</p>
+                        <div class="timeline-date" style="font-weight: 600; color: #3498db;">Situation professionnelle 1</div>
+                        <div class="timeline-content" style="border-left: 4px solid #3498db; padding-left: 20px;">
+                            <h3 style="display: flex; align-items: center;"><i class="fas fa-server" style="color: #3498db; margin-right: 10px;"></i> Mise en place d'un système de sauvegarde et sécurisation d'infrastructure</h3>
+                            
+                            <div style="background-color: #f8f9fa; border-radius: 8px; padding: 15px; margin: 15px 0;">
+                                <h4 style="margin-top: 0; color: #2c3e50;"><i class="fas fa-building" style="margin-right: 10px;"></i> Contexte professionnel</h4>
+                                <p style="margin-bottom: 0;">Dans le cadre de mon stage en entreprise <strong>GSB</strong>, j'ai implémenté un système de sauvegarde avec BackupPC et configuré Fail2ban pour renforcer la sécurité de l'infrastructure.</p>
+                            </div>
+                            
                             <div style="margin-top: 15px;">
-                                <h4>Technologies utilisées :</h4>
+                                <h4 style="color: #2c3e50; display: flex; align-items: center;"><i class="fas fa-microchip" style="margin-right: 10px;"></i> Technologies utilisées</h4>
                                 <div class="skills-container">
-                                    <span class="skill-item">Linux</span>
-                                    <span class="skill-item">BackupPC</span>
-                                    <span class="skill-item">Fail2ban</span>
+                                    <span class="skill-item" style="background-color: #3498db; color: white;">Linux</span>
+                                    <span class="skill-item" style="background-color: #2ecc71; color: white;">BackupPC</span>
+                                    <span class="skill-item" style="background-color: #e74c3c; color: white;">Fail2ban</span>
                                 </div>
                             </div>
+                            
                             <div style="margin-top: 15px;">
-                                <h4>Compétences mises en œuvre :</h4>
-                                <ul style="list-style-position: inside; margin: 10px 0;">
-                                    <li>Analyse des besoins de sauvegarde et de sécurité</li>
-                                    <li>Installation et configuration des logiciels sur environnement Linux</li>
-                                    <li>Mise en place de stratégies de sauvegarde automatisées</li>
-                                    <li>Configuration de règles de sécurité adaptées</li>
-                                    <li>Documentation des procédures pour l'équipe technique</li>
+                                <h4 style="color: #2c3e50; display: flex; align-items: center;"><i class="fas fa-brain" style="margin-right: 10px;"></i> Compétences mises en œuvre</h4>
+                                <ul style="list-style: none; padding-left: 0; margin: 10px 0;">
+                                    <li style="padding: 5px 0; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 10px;"></i> Analyse des besoins de sauvegarde et de sécurité</li>
+                                    <li style="padding: 5px 0; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 10px;"></i> Installation et configuration des logiciels sur environnement Linux</li>
+                                    <li style="padding: 5px 0; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 10px;"></i> Mise en place de stratégies de sauvegarde automatisées</li>
+                                    <li style="padding: 5px 0; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 10px;"></i> Configuration de règles de sécurité adaptées</li>
+                                    <li style="padding: 5px 0; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 10px;"></i> Documentation des procédures pour l'équipe technique</li>
                                 </ul>
+                            </div>
+                            
+                            <div style="margin-top: 20px;">
+                                <a href="pdf/sp1.pdf" class="btn-animated" style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500; transition: all 0.3s ease;">
+                                    <i class="fas fa-file-pdf" style="margin-right: 10px;"></i> Voir le rapport détaillé
+                                </a>
                             </div>
                         </div>
                     </div>
                     
                     <div class="timeline-item">
-                        <div class="timeline-date">Situation professionnelle 2</div>
-                        <div class="timeline-content">
-                            <h3>Déploiement d'une solution de supervision réseau</h3>
-                            <p style="margin-top: 10px;"><strong>Contexte :</strong> Au sein de l'entreprise Arène Informatique, j'ai mis en place un système de supervision et d'alerte pour infrastructures critiques basé sur Zabbix et Grafana.</p>
+                        <div class="timeline-date" style="font-weight: 600; color: #e74c3c;">Situation professionnelle 2</div>
+                        <div class="timeline-content" style="border-left: 4px solid #e74c3c; padding-left: 20px;">
+                            <h3 style="display: flex; align-items: center;"><i class="fas fa-network-wired" style="color: #e74c3c; margin-right: 10px;"></i> Déploiement d'une solution de supervision réseau</h3>
+                            
+                            <div style="background-color: #f8f9fa; border-radius: 8px; padding: 15px; margin: 15px 0;">
+                                <h4 style="margin-top: 0; color: #2c3e50;"><i class="fas fa-building" style="margin-right: 10px;"></i> Contexte professionnel</h4>
+                                <p style="margin-bottom: 0;">Au sein de l'entreprise <strong>Arène Informatique</strong>, j'ai mis en place un système de supervision et d'alerte pour infrastructures critiques basé sur Zabbix et Grafana.</p>
+                            </div>
+                            
                             <div style="margin-top: 15px;">
-                                <h4>Technologies utilisées :</h4>
+                                <h4 style="color: #2c3e50; display: flex; align-items: center;"><i class="fas fa-microchip" style="margin-right: 10px;"></i> Technologies utilisées</h4>
                                 <div class="skills-container">
-                                    <span class="skill-item">Zabbix</span>
-                                    <span class="skill-item">Grafana</span>
-                                    <span class="skill-item">SQL</span>
-                                    <span class="skill-item">Linux</span>
+                                    <span class="skill-item" style="background-color: #e74c3c; color: white;">Zabbix</span>
+                                    <span class="skill-item" style="background-color: #9b59b6; color: white;">Grafana</span>
+                                    <span class="skill-item" style="background-color: #f39c12; color: white;">SQL</span>
+                                    <span class="skill-item" style="background-color: #3498db; color: white;">Linux</span>
                                 </div>
                             </div>
+                            
                             <div style="margin-top: 15px;">
-                                <h4>Compétences mises en œuvre :</h4>
-                                <ul style="list-style-position: inside; margin: 10px 0;">
-                                    <li>Analyse des besoins de supervision</li>
-                                    <li>Installation et configuration de Zabbix et Grafana</li>
-                                    <li>Mise en place de tableaux de bord personnalisés</li>
-                                    <li>Configuration d'alertes en cas d'incident</li>
-                                    <li>Formation des utilisateurs à l'utilisation de l'outil</li>
+                                <h4 style="color: #2c3e50; display: flex; align-items: center;"><i class="fas fa-brain" style="margin-right: 10px;"></i> Compétences mises en œuvre</h4>
+                                <ul style="list-style: none; padding-left: 0; margin: 10px 0;">
+                                    <li style="padding: 5px 0; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 10px;"></i> Analyse des besoins de supervision</li>
+                                    <li style="padding: 5px 0; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 10px;"></i> Installation et configuration de Zabbix et Grafana</li>
+                                    <li style="padding: 5px 0; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 10px;"></i> Mise en place de tableaux de bord personnalisés</li>
+                                    <li style="padding: 5px 0; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 10px;"></i> Configuration d'alertes en cas d'incident</li>
+                                    <li style="padding: 5px 0; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 10px;"></i> Formation des utilisateurs à l'utilisation de l'outil</li>
                                 </ul>
+                            </div>
+                            
+                            <div style="margin-top: 20px;">
+                                <a href="pdf/rapport-situation2.pdf" class="btn-animated" style="display: inline-flex; align-items: center; background-color: #e74c3c; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500; transition: all 0.3s ease;">
+                                    <i class="fas fa-file-pdf" style="margin-right: 10px;"></i> Voir le rapport détaillé
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -108,65 +216,59 @@
             </section>
 
             <section>
-                <h2 class="section-title">Tableaux de synthèse</h2>
-                <div class="card">
-                    <p>Le tableau de synthèse est un document qui récapitule l'ensemble des compétences que j'ai développées durant ma formation.</p>
-                    <p style="margin-top: 15px;">Il présente, pour chaque compétence, le niveau d'acquisition atteint ainsi que les situations professionnelles dans lesquelles j'ai pu les mettre en œuvre.</p>
-                    <div style="margin-top: 15px;">
-                        <a href="#" style="display: inline-block; background-color: var(--accent-color); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500;"><i class="fas fa-table"></i> Consulter mon tableau de synthèse</a>
+                <h2 class="section-title">🎤 Préparation à l'oral</h2>
+                <div class="card" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden;">
+                    <div style="background: linear-gradient(135deg, #9b59b6, #3498db); padding: 20px; color: white;">
+                        <h3 style="margin-top: 0; display: flex; align-items: center;">
+                            <i class="fas fa-graduation-cap" style="margin-right: 10px; font-size: 1.5rem;"></i>
+                            Présentation orale professionnelle
+                        </h3>
                     </div>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="section-title">Fiches de compétences</h2>
-                <div class="grid">
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-server"></i> SISR 1</h3>
-                        <p>Support et mise à disposition de services informatiques</p>
-                        <a href="#" class="resource-link">Voir la fiche →</a>
-                    </div>
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-network-wired"></i> SISR 2</h3>
-                        <p>Administration des systèmes et des réseaux</p>
-                        <a href="#" class="resource-link">Voir la fiche →</a>
-                    </div>
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-shield-alt"></i> SISR 3</h3>
-                        <p>Cybersécurité des services informatiques</p>
-                        <a href="#" class="resource-link">Voir la fiche →</a>
-                    </div>
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-cloud"></i> SISR 4</h3>
-                        <p>Infrastructure et haute disponibilité</p>
-                        <a href="#" class="resource-link">Voir la fiche →</a>
-                    </div>
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-users"></i> SISR 5</h3>
-                        <p>Gestion des comportements professionnels</p>
-                        <a href="#" class="resource-link">Voir la fiche →</a>
-                    </div>
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-globe"></i> SISR 6</h3>
-                        <p>Parcours professionnel</p>
-                        <a href="#" class="resource-link">Voir la fiche →</a>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="section-title">Préparation à l'oral</h2>
-                <div class="card">
-                    <p>En préparation de l'épreuve orale E4, j'ai élaboré plusieurs supports de présentation pour mettre en valeur mes compétences et mes réalisations.</p>
-                    <p style="margin-top: 15px;">Ces supports comprennent :</p>
-                    <ul style="list-style-position: inside; margin: 10px 0;">
-                        <li>Une présentation de mes situations professionnelles</li>
-                        <li>Des démonstrations de mes réalisations techniques</li>
-                        <li>Des schémas et diagrammes illustrant les solutions développées</li>
-                        <li>Des analyses réflexives sur les compétences acquises</li>
-                    </ul>
-                    <div style="margin-top: 15px;">
-                        <a href="#" style="display: inline-block; background-color: var(--accent-color); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500;"><i class="fas fa-file-powerpoint"></i> Voir ma présentation</a>
+                    
+                    <div style="padding: 20px;">
+                        <p>En préparation de l'épreuve orale E4, j'ai élaboré plusieurs supports de présentation pour mettre en valeur mes compétences et mes réalisations.</p>
+                        
+                        <div style="display: flex; flex-wrap: wrap; margin: 20px 0;">
+                            <div style="flex: 1; min-width: 250px; padding: 15px; border-left: 3px solid #3498db; margin: 10px;">
+                                <h4 style="color: #3498db; margin-top: 0; display: flex; align-items: center;">
+                                    <i class="fas fa-file-powerpoint" style="margin-right: 10px;"></i>
+                                    Présentation des situations
+                                </h4>
+                                <p style="margin-bottom: 0;">Diaporama présentant mes situations professionnelles avec schémas techniques et captures d'écran.</p>
+                            </div>
+                            
+                            <div style="flex: 1; min-width: 250px; padding: 15px; border-left: 3px solid #e74c3c; margin: 10px;">
+                                <h4 style="color: #e74c3c; margin-top: 0; display: flex; align-items: center;">
+                                    <i class="fas fa-laptop-code" style="margin-right: 10px;"></i>
+                                    Démonstrations techniques
+                                </h4>
+                                <p style="margin-bottom: 0;">Vidéos et démonstrations en direct des solutions techniques développées.</p>
+                            </div>
+                        </div>
+                        
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li style="padding: 5px 0; display: flex; align-items: center;">
+                                <i class="fas fa-puzzle-piece" style="color: #3498db; margin-right: 10px;"></i>
+                                Des schémas et diagrammes illustrant les solutions développées
+                            </li>
+                            <li style="padding: 5px 0; display: flex; align-items: center;">
+                                <i class="fas fa-lightbulb" style="color: #f39c12; margin-right: 10px;"></i>
+                                Des analyses réflexives sur les compétences acquises
+                            </li>
+                            <li style="padding: 5px 0; display: flex; align-items: center;">
+                                <i class="fas fa-clipboard-check" style="color: #2ecc71; margin-right: 10px;"></i>
+                                Une démonstration de mes aptitudes techniques et professionnelles
+                            </li>
+                        </ul>
+                        
+                        <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
+                            <a href="#" class="btn-animated" style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500; transition: all 0.3s ease;">
+                                <i class="fas fa-file-powerpoint" style="margin-right: 10px;"></i> Voir ma présentation
+                            </a>
+                            <a href="#" class="btn-animated" style="display: inline-flex; align-items: center; background-color: #2ecc71; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500; transition: all 0.3s ease;">
+                                <i class="fas fa-video" style="margin-right: 10px;"></i> Voir les démonstrations
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -196,5 +298,69 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Animations pour les éléments de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation pour les sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+                section.style.opacity = '0';
+                section.style.animation = 'fadeInUp 0.8s ease-out forwards';
+            });
+            
+            // Animation pour la timeline
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                item.style.animationDelay = `${0.3 + (index * 0.2)}s`;
+                item.style.opacity = '0';
+                item.style.animation = 'fadeInUp 0.8s ease-out forwards';
+            });
+            
+            // Animation pour les cartes et les éléments de contenu
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${0.3 + (index * 0.1)}s`;
+                card.style.opacity = '0';
+                card.style.animation = 'fadeInUp 0.8s ease-out forwards';
+            });
+            
+            // Animation pour les listes d'éléments
+            const listItems = document.querySelectorAll('ul li');
+            listItems.forEach((item, index) => {
+                item.style.animationDelay = `${0.5 + (index * 0.05)}s`;
+                item.style.opacity = '0';
+                item.style.animation = 'fadeInUp 0.8s ease-out forwards';
+            });
+            
+            // Animation pour les boutons
+            const buttons = document.querySelectorAll('.btn-animated');
+            buttons.forEach((button, index) => {
+                button.style.animationDelay = `${0.7 + (index * 0.1)}s`;
+                button.style.opacity = '0';
+                button.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                
+                // Ajouter un effet de pulsation lors du survol
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                    this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+                });
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = '0 0 0 rgba(0,0,0,0)';
+                });
+            });
+            
+            // Effet de survol amélioré pour les éléments de la timeline
+            timelineItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

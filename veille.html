@@ -12,27 +12,56 @@
     <style>
         .article-card {
             margin-bottom: 30px;
-            transition: transform 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 0 solid var(--accent-color);
+            overflow: hidden;
         }
         
         .article-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) translateX(5px);
+            box-shadow: var(--hover-shadow);
+            border-left: 5px solid var(--accent-color);
         }
         
         .article-date {
             color: var(--accent-color);
             font-weight: 500;
             margin-bottom: 5px;
+            display: inline-block;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .article-card:hover .article-date {
+            transform: translateX(5px);
+        }
+        
+        .article-card h3 {
+            transition: all 0.3s ease;
+        }
+        
+        .article-card:hover h3 {
+            color: var(--accent-color);
         }
         
         .tag {
             display: inline-block;
             background-color: var(--light-gray);
             padding: 3px 10px;
-            border-radius: 15px;
+            border-radius: 20px;
             font-size: 0.8rem;
             margin-right: 5px;
             margin-bottom: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tag:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
         }
         
         .resource-link {
@@ -41,10 +70,108 @@
             color: var(--accent-color);
             text-decoration: none;
             font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
         }
         
         .resource-link:hover {
-            text-decoration: underline;
+            transform: translateX(5px);
+        }
+        
+        .resource-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Animation d'apparition des sections */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Animation pour le contenu des articles quand ils s'ouvrent */
+        @keyframes expandArticle {
+            from {
+                opacity: 0;
+                max-height: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                max-height: 3000px;
+                transform: translateY(0);
+            }
+        }
+        
+        .article-content {
+            animation: expandArticle 0.8s ease-out forwards;
+            overflow: hidden;
+        }
+        
+        .arrow-item {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .arrow-item::before {
+            content: "➡️";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .pin-item {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .pin-item::before {
+            content: "📌";
+            position: absolute;
+            left: 0;
+        }
+        
+        .sources-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .sources-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .sources-list li::before {
+            content: "📚";
+            position: absolute;
+            left: 0;
+        }
+        
+        .sources-list li:hover {
+            transform: translateX(5px);
+            color: var(--accent-color);
         }
     </style>
 </head>
@@ -71,7 +198,7 @@
     <main>
         <div class="container">
             <div class="page-title">
-                <h1>Veille Technologique</h1>
+                <h1>Veille Technologique 🔍</h1>
             </div>
 
             <section>
@@ -79,7 +206,7 @@
             </section>
 
             <section>
-                <h2 class="section-title">Qu'est-ce que la veille en cybersécurité ?</h2>
+                <h2 class="section-title">🔐 Qu'est-ce que la veille en cybersécurité ?</h2>
                 <div class="card">
                     <p>La veille en cybersécurité est un processus visant à surveiller et analyser les nouvelles menaces, vulnérabilités et tendances dans le domaine de la sécurité informatique. Elle permet de prévenir les risques, d'améliorer les stratégies de défense et de garantir la conformité réglementaire des systèmes informatiques.</p>
                     <p style="margin-top: 15px;">Dans le cadre de ma formation en BTS SIO option SISR, j'ai mis en place un système de veille technologique pour suivre les évolutions dans le domaine de la cybersécurité et des infrastructures sécurisées.</p>
@@ -87,294 +214,221 @@
             </section>
 
             <section>
-                <h2 class="section-title">Objectifs de ma veille</h2>
-                <div class="grid">
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-search"></i> Identification des menaces</h3>
-                        <p>Repérer et comprendre les nouvelles menaces comme le phishing, les rançongiciels et les attaques DDoS qui ciblent les infrastructures informatiques.</p>
+                <h2 class="section-title">❓ Pourquoi ce sujet?</h2>
+                <div class="card" style="border-left: 5px solid var(--accent-color); padding-left: 20px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background-color: var(--accent-color); display: flex; justify-content: center; align-items: center; margin-right: 15px;">
+                            <span style="font-size: 2rem; color: white;">💻</span>
+                        </div>
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: var(--accent-color);">Enjeu majeur du numérique</h3>
+                            <p>Un sujet crucial avec l'essor de la transformation digitale</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-shield-alt"></i> Atténuation des risques</h3>
-                        <p>Proposer des solutions pour atténuer ces risques et renforcer la sécurité des systèmes d'information et des réseaux.</p>
+                    <p>J'ai choisi de me concentrer sur les menaces cybersécuritaires, en particulier le <strong>phishing</strong> et les <strong>attaques de ransomware</strong>, car ce sont des sujets particulièrement préoccupants avec l'essor du numérique. La transformation digitale des organisations les expose à des risques croissants, et ces types d'attaques sont parmi les plus fréquents et les plus dommageables.</p>
+                    <p style="margin-top: 15px;">Les statistiques récentes montrent une augmentation alarmante des cyberattaques ciblant aussi bien les grandes entreprises que les PME, les collectivités ou même les particuliers. Se tenir informé des dernières menaces et des moyens de protection est donc indispensable pour tout professionnel du numérique.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">🎯 Mon focus de veille</h2>
+                <div class="card">
+                    <p style="margin-bottom: 20px;">Je me concentre sur deux menaces majeures dans mon activité de veille :</p>
+                    <div class="arrow-item">1. Attaques par déni de service (DDoS)</div>
+                    <div class="arrow-item">2. Phishing</div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">📊 Articles et analyses</h2>
+                
+                <div class="article-card card">
+                    <div class="pin-item">1. Attaques par déni de service (DDoS)</div>
+                    <h3 style="display: flex; align-items: center;"><i class="fas fa-server" style="color: #e74c3c; margin-right: 10px;"></i> Qu'est-ce qu'une attaque DDoS ?</h3>
+                    <div style="text-align: center; margin: 15px 0;">
+                        <img src="images/ddos-attack.svg" alt="Illustration d'une attaque DDoS" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <p style="font-size: 0.85rem; margin-top: 5px; color: #666;">Infographie illustrant les principes, conséquences et protections contre les attaques DDoS</p>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-lock"></i> Protection proactive</h3>
-                        <p>Assurer une protection proactive des données et des infrastructures en anticipant les évolutions des menaces et des technologies de sécurité.</p>
+                    <div style="background-color: #f8f9fa; border-left: 4px solid #e74c3c; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                        <p style="margin: 0;"><strong>⚠️ Définition :</strong> Une attaque par déni de service distribué (DDoS) vise à rendre un service ou un site web inaccessible en le submergeant de trafic malveillant provenant de multiples sources. Elle paralyse ainsi les serveurs et les infrastructures réseau de l'entreprise ciblée.</p>
+                    </div>
+                    <div style="margin: 10px 0;">
+                        <span class="tag">DDoS</span>
+                        <span class="tag">Protection réseau</span>
+                        <span class="tag">Infrastructure</span>
+                    </div>
+                    <a href="#" class="resource-link" onclick="toggleArticleContent('ddos-article'); return false;"><i class="fas fa-chevron-down"></i> Voir l'analyse détaillée</a>
+                    <div id="ddos-article" style="display: none; margin-top: 20px; padding: 15px; background-color: #f8f8f8; border-radius: 5px;" class="article-content">
+                        <h4 style="color: #e74c3c; display: flex; align-items: center;"><i class="fas fa-cogs" style="margin-right: 10px;"></i> Comment fonctionnent les attaques DDoS ?</h4>
+                        <ul style="list-style-position: inside; margin: 10px 0;">
+                            <li><strong>Inondation de trafic</strong> 🌊 : Envoyer un volume massif de requêtes pour saturer les serveurs.</li>
+                            <li><strong>Exploitation de failles</strong> 🔓 : Utiliser des vulnérabilités pour provoquer un plantage du système.</li>
+                            <li><strong>Utilisation de botnets</strong> 🤖 : Réseaux d'ordinateurs compromis (zombies) qui génèrent du trafic coordonné.</li>
+                        </ul>
+                        
+                        <h4 style="color: #e74c3c; display: flex; align-items: center;"><i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i> Exemples récents</h4>
+                        <ul style="list-style-position: inside; margin: 10px 0;">
+                            <li><strong>GitLab</strong> : Victime de failles exploitables pour des attaques DDoS et XSS.</li>
+                            <li><strong>Nvidia et Docker</strong> : Exposés à des attaques DDoS à cause de correctifs de sécurité incomplets.</li>
+                            <li><strong>Sites algériens (dont TSA)</strong> : Victimes d'une cyberattaque massive perturbant leur activité.</li>
+                            <li><strong>Transports urbains en France (2025)</strong> : 123 incidents signalés, dont plusieurs DDoS (source : ANSSI).</li>
+                            <li><strong>Collectivités territoriales françaises (Nouvel An 2025)</strong> : Paralysie de nombreux sites web municipaux et départementaux, revendiquée par le groupe prorusse NoName057(016).</li>
+                        </ul>
+                        
+                        <h4 style="color: #e74c3c; display: flex; align-items: center;"><i class="fas fa-bomb" style="margin-right: 10px;"></i> Conséquences des attaques DDoS</h4>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 15px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h5 style="margin-top: 0; color: #e74c3c;"><i class="fas fa-times-circle"></i> Indisponibilité</h5>
+                                <p style="margin-bottom: 0;">Sites web et services critiques hors ligne</p>
+                            </div>
+                            <div style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h5 style="margin-top: 0; color: #e74c3c;"><i class="fas fa-money-bill"></i> Perte financière</h5>
+                                <p style="margin-bottom: 0;">Interruptions d'activité et réparations coûteuses</p>
+                            </div>
+                            <div style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h5 style="margin-top: 0; color: #e74c3c;"><i class="fas fa-thumbs-down"></i> Réputation</h5>
+                                <p style="margin-bottom: 0;">Perte de confiance des clients et partenaires</p>
+                            </div>
+                            <div style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h5 style="margin-top: 0; color: #e74c3c;"><i class="fas fa-users"></i> Coût humain</h5>
+                                <p style="margin-bottom: 0;">Mobilisation des équipes IT en urgence</p>
+                            </div>
+                        </div>
+                        
+                        <h4 style="color: #2ecc71; display: flex; align-items: center;"><i class="fas fa-shield-alt" style="margin-right: 10px;"></i> Comment se protéger contre les DDoS ?</h4>
+                        <ul style="list-style-position: inside; margin: 10px 0;">
+                            <li>🔒 Pare-feu et systèmes de détection d'intrusion pour filtrer le trafic suspect.</li>
+                            <li>📈 Surveillance constante du réseau pour détecter les anomalies rapidement.</li>
+                            <li>🛡️ Solutions anti-DDoS proposées par des hébergeurs ou fournisseurs spécialisés (Cloudflare, AWS Shield…).</li>
+                            <li>🛠️ Mises à jour régulières des serveurs et applications pour corriger les failles.</li>
+                            <li>🧑‍💻 Plan de réponse aux incidents prêt à être déclenché en cas d'attaque.</li>
+                        </ul>
+                        
+                        <div style="background-color: #f0f0f0; border-left: 4px solid #e74c3c; padding: 15px; margin: 15px 0; border-radius: 3px;">
+                            <h5 style="color: #e74c3c;"><i class="fas fa-file-alt"></i> Cas d'étude : Attaque DDoS contre les collectivités territoriales françaises</h5>
+                            <p>À l'occasion du Nouvel An 2025, de nombreuses collectivités territoriales françaises ont subi des attaques par déni de service, rendant leurs sites web inaccessibles pendant plusieurs heures. Ces attaques, revendiquées par un groupe hacktiviste, ont montré la vulnérabilité des infrastructures numériques publiques et la nécessité de renforcer leur protection.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-card card">
+                    <div class="pin-item">2. Phishing</div>
+                    <h3 style="display: flex; align-items: center;"><i class="fas fa-fish" style="color: #3498db; margin-right: 10px;"></i> Qu'est-ce que le phishing ?</h3>
+                    <div style="text-align: center; margin: 15px 0;">
+                        <img src="images/phishing-attack.svg" alt="Illustration d'une attaque de phishing" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <p style="font-size: 0.85rem; margin-top: 5px; color: #666;">Infographie expliquant les étapes d'une attaque de phishing et les moyens de protection</p>
+                    </div>
+                    <div style="background-color: #f8f9fa; border-left: 4px solid #3498db; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                        <p style="margin: 0;"><strong>⚠️ Définition :</strong> Le phishing (hameçonnage) est une attaque qui vise à tromper une personne pour l'amener à divulguer des informations sensibles (identifiants, mots de passe, données bancaires) via des moyens frauduleux comme les emails, SMS ou appels téléphoniques.</p>
+                    </div>
+                    <div style="margin: 10px 0;">
+                        <span class="tag">Phishing</span>
+                        <span class="tag">Ingénierie sociale</span>
+                        <span class="tag">Sécurité</span>
+                    </div>
+                    <a href="#" class="resource-link" onclick="toggleArticleContent('phishing-article'); return false;"><i class="fas fa-chevron-down"></i> Voir l'analyse détaillée</a>
+                    <div id="phishing-article" style="display: none; margin-top: 20px; padding: 15px; background-color: #f8f8f8; border-radius: 5px;" class="article-content">
+                        <h4 style="color: #3498db; display: flex; align-items: center;"><i class="fas fa-cogs" style="margin-right: 10px;"></i> Comment fonctionne le phishing ?</h4>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 15px 0;">
+                            <div style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h5 style="margin-top: 0; color: #3498db;"><i class="fas fa-envelope"></i> Emails frauduleux</h5>
+                                <p style="margin-bottom: 0;">Fausse communication d'une entreprise ou d'une banque</p>
+                            </div>
+                            <div style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h5 style="margin-top: 0; color: #3498db;"><i class="fas fa-globe"></i> Sites web contrefaits</h5>
+                                <p style="margin-bottom: 0;">Copie de sites officiels pour dérober les informations saisies</p>
+                            </div>
+                            <div style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h5 style="margin-top: 0; color: #3498db;"><i class="fas fa-sms"></i> Smishing (SMS)</h5>
+                                <p style="margin-bottom: 0;">SMS malveillants demandant de cliquer sur des liens frauduleux</p>
+                            </div>
+                            <div style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <h5 style="margin-top: 0; color: #3498db;"><i class="fas fa-phone"></i> Vishing (Appels)</h5>
+                                <p style="margin-bottom: 0;">Appels où les criminels se font passer pour des représentants légitimes</p>
+                            </div>
+                        </div>
+                        
+                        <h4 style="color: #e74c3c; display: flex; align-items: center;"><i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i> Conséquences du phishing</h4>
+                        <ul style="list-style-position: inside; margin: 10px 0;">
+                            <li>💸 <strong>Vol d'argent</strong> : Accès aux comptes bancaires ou cartes de crédit.</li>
+                            <li>🕵️ <strong>Usurpation d'identité</strong> : Utilisation des données pour commettre des fraudes.</li>
+                            <li>📉 <strong>Perte de réputation</strong> : Pour les entreprises ciblées.</li>
+                            <li>🖥️ <strong>Infections par malware</strong> : Liens piégés installant des virus ou ransomwares.</li>
+                        </ul>
+                        
+                        <h4 style="color: #2ecc71; display: flex; align-items: center;"><i class="fas fa-shield-alt" style="margin-right: 10px;"></i> Comment se protéger contre le phishing ?</h4>
+                        <ul style="list-style-position: inside; margin: 10px 0;">
+                            <li>🔍 Vérifier les expéditeurs d'email et se méfier des adresses douteuses.</li>
+                            <li>❌ Ne pas cliquer sur les liens suspects sans vérifier l'URL réelle.</li>
+                            <li>🔐 Utiliser l'authentification à deux facteurs (2FA) pour sécuriser les comptes.</li>
+                            <li>🖥️ Installer et maintenir à jour antivirus et anti-phishing.</li>
+                            <li>📚 Se former à reconnaître les tentatives de phishing.</li>
+                        </ul>
+                        
+                        <h4 style="color: #f39c12; display: flex; align-items: center;"><i class="fas fa-chart-line" style="margin-right: 10px;"></i> Évolution récente du phishing (2023-2025)</h4>
+                        <div style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin: 15px 0;">
+                            <ul style="list-style-position: inside; margin: 10px 0; padding: 0;">
+                                <li style="padding: 5px 0;"><strong>IA</strong> : Messages plus crédibles et personnalisés</li>
+                                <li style="padding: 5px 0;"><strong>Ciblage</strong> : Spear phishing ultra-ciblé via les réseaux sociaux</li>
+                                <li style="padding: 5px 0;"><strong>Deepfakes</strong> : Vishing avec clonage vocal pour berner les victimes</li>
+                                <li style="padding: 5px 0;"><strong>Multi-canal</strong> : Email, SMS, appels, réseaux sociaux</li>
+                                <li style="padding: 5px 0;"><strong>Entreprises</strong> : Hausse des attaques ciblant les organisations</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #f0f0f0; border-left: 4px solid #3498db; padding: 15px; margin: 15px 0; border-radius: 3px;">
+                            <h5 style="color: #3498db;"><i class="fas fa-file-alt"></i> Cas d'étude : Campagne de phishing ciblant les employés d'une entreprise</h5>
+                            <p>En février 2025, une grande entreprise française a été victime d'une campagne de phishing sophistiquée. Les attaquants ont envoyé des emails imitant parfaitement ceux de la direction des ressources humaines, demandant aux employés de mettre à jour leurs informations personnelles sur un portail falsifié. Cette attaque a permis de récupérer les identifiants de plusieurs employés, donnant accès à des informations sensibles avant que la faille ne soit détectée.</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2 class="section-title">Sources et outils utilisés</h2>
+                <h2 class="section-title">📚 Sources recommandées</h2>
+                <div class="card" style="border-left: 5px solid #3498db; padding-left: 20px;">
+                    <div style="background-color: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <h3 style="color: #3498db; margin-top: 0;"><i class="fas fa-search"></i> Ressources de qualité pour ma veille</h3>
+                        <p>Ces sources m'ont permis de constituer une base de connaissances fiable et actualisée sur les cybermenaces.</p>
+                    </div>
+                    <ul class="sources-list">
+                        <li><strong>ANSSI</strong> : Rapports de cybersécurité et recommandations officielles</li>
+                        <li><strong>CERT-FR</strong> : Les 5 techniques de phishing les plus courantes (2025)</li>
+                        <li><strong>Rapport McAfee</strong> : Chiffres sur le phishing en 2025</li>
+                        <li><strong>Cybersecurity Ventures</strong> : Évolution des cybermenaces en 2025</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">🛠️ Outils utilisés pour ma veille</h2>
                 <div class="grid">
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-rss"></i> Sources d'information</h3>
-                        <ul style="list-style-position: inside; margin-top: 10px;">
+                    <div class="card" style="border-top: 4px solid #e74c3c;">
+                        <h3 class="card-title"><i class="fas fa-rss"></i> Sources d'information 📰</h3>
+                        <p style="margin-bottom: 10px;">Canaux que je consulte régulièrement :</p>
+                        <ul class="animated-list" style="list-style-position: inside; margin-top: 10px;">
                             <li>Blogs spécialisés en cybersécurité</li>
                             <li>Bulletins de sécurité (CERT-FR, ANSSI)</li>
                             <li>Webinaires et conférences spécialisées</li>
                             <li>Forums professionnels et communautés</li>
                         </ul>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-tools"></i> Outils utilisés</h3>
-                        <ul style="list-style-position: inside; margin-top: 10px;">
-                            <li>Plateformes de threat intelligence</li>
-                            <li>Agrégateurs de flux RSS</li>
-                            <li>Systèmes de détection d'intrusion (IDS)</li>
-                            <li>Scanners de vulnérabilités</li>
+                    <div class="card" style="border-top: 4px solid #2ecc71;">
+                        <h3 class="card-title"><i class="fas fa-tools"></i> Outils techniques 🔧</h3>
+                        <p style="margin-bottom: 10px;">Solutions que j'utilise pour ma veille :</p>
+                        <ul class="animated-list" style="list-style-position: inside; margin-top: 10px;">
+                            <li>Feedly (agrégateur de flux RSS)</li>
+                            <li>MISP (plateforme de threat intelligence)</li>
+                            <li>Nessus (scanner de vulnérabilités)</li>
+                            <li>Slack (groupes de cybersécurité)</li>
                         </ul>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-calendar-alt"></i> Méthode</h3>
-                        <p>J'ai mis en place un processus structuré pour collecter, analyser et synthétiser les informations pertinentes en matière de cybersécurité, avec une attention particulière aux menaces concernant les infrastructures et réseaux.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="section-title">Articles et analyses</h2>
-                
-                <div class="article-card card">
-                    <div class="article-date">Mars 2025</div>
-                    <h3>Analyse des attaques DDoS et stratégies de protection</h3>
-                    <p>Étude approfondie des dernières tendances en matière d'attaques par déni de service distribué et des solutions pour protéger efficacement les infrastructures.</p>
-                    <div style="margin: 10px 0;">
-                        <span class="tag">DDoS</span>
-                        <span class="tag">Protection réseau</span>
-                        <span class="tag">Infrastructure</span>
-                    </div>
-                    <a href="#" class="resource-link" onclick="toggleArticleContent('ddos-article'); return false;">Lire l'analyse complète →</a>
-                    <div id="ddos-article" style="display: none; margin-top: 20px; padding: 15px; background-color: #f8f8f8; border-radius: 5px;">
-                        <h4>Déni de services</h4>
-                        <p><strong>Une attaque par déni de service (DDoS)</strong> est l'une des attaques les plus répandues, mais son objectif principal n'est pas de voler des informations confidentielles. Elle vise à <strong>interrompre ou rendre indisponible un service</strong>, généralement en saturant les serveurs ou les réseaux ciblés avec un trafic massif, rendant ainsi le service inaccessible pour les utilisateurs légitimes.</p>
-                        
-                        <h4>Les différents types de déni de service</h4>
-                        <ul style="list-style-position: inside; margin: 10px 0;">
-                            <li>
-                                <strong>Attaques par inondation (Flooding attacks)</strong> : Ces attaques visent à submerger le système cible avec un volume massif de trafic, comme des paquets UDP ou ICMP, afin de saturer la bande passante et les ressources du système.
-                            </li>
-                            <li>
-                                <strong>Attaques par épuisement des ressources (Resource exhaustion attacks)</strong> : Ces attaques cherchent à épuiser les ressources du système, telles que la mémoire, le processeur ou les connexions réseau, en envoyant des requêtes spécialement conçues pour consommer ces ressources de manière excessive.
-                            </li>
-                            <li>
-                                <strong>Attaques par amplification (Amplification attacks)</strong> : Dans ce type d'attaque, les attaquants exploitent des services publics vulnérables pour amplifier leur trafic malveillant. Ils envoient des requêtes avec une adresse IP source usurpée à ces services, qui renvoient ensuite des réponses amplifiées vers la cible, submergeant ainsi le système.
-                            </li>
-                            <li>
-                                <strong>Attaques par réflexion (Reflection attacks)</strong> : Ces attaques impliquent l'utilisation de services publics pour rediriger le trafic malveillant vers la cible. Les attaquants envoient des requêtes avec une adresse IP source usurpée à ces services, qui répondent ensuite directement à la cible, générant un trafic important.
-                            </li>
-                        </ul>
-                        
-                        <h4>Impact des attaques DDoS</h4>
-                        <p>Ces attaques peuvent avoir plusieurs impacts significatifs :</p>
-                        <ul style="list-style-position: inside; margin: 10px 0;">
-                            <li><strong>Indisponibilité du service</strong> : Les utilisateurs légitimes ne peuvent plus accéder au service.</li>
-                            <li><strong>Perturbation des opérations</strong> : Interruption des processus métier et des activités normales.</li>
-                            <li><strong>Coût financier</strong> : Pertes financières dues à l'indisponibilité du service et aux coûts de remédiation.</li>
-                        </ul>
-                        
-                        <h4>Prévention et mitigation des attaques par déni de service</h4>
-                        <p>Pour se protéger contre les attaques par déni de service, il est essentiel de mettre en place des mesures de prévention et de mitigation. Voici quelques stratégies clés :</p>
-                        
-                        <ul style="list-style-position: inside; margin: 10px 0;">
-                            <li>
-                                <strong>Dimensionnement adéquat des ressources</strong> : S'assurer que les systèmes et les infrastructures sont correctement dimensionnés pour gérer des volumes de trafic élevés et des pics de demande.
-                            </li>
-                            <li>
-                                <strong>Filtrage du trafic</strong> : Mettre en place des mécanismes de filtrage du trafic, tels que des pare-feu et des systèmes de détection d'intrusion (IDS), pour identifier et bloquer le trafic malveillant.
-                            </li>
-                            <li>
-                                <strong>Répartition de charge et redondance</strong> : Utiliser des techniques de répartition de charge et de redondance pour distribuer le trafic sur plusieurs serveurs ou sites, réduisant ainsi l'impact d'une attaque DoS sur un seul point de défaillance.
-                            </li>
-                            <li>
-                                <strong>Plans de réponse aux incidents</strong> : Développer et tester des plans de réponse aux incidents pour réagir rapidement et efficacement en cas d'attaque DoS, minimisant ainsi les perturbations et les dommages.
-                            </li>
-                            <li>
-                                <strong>Services d'atténuation des DDoS</strong> : Envisager l'utilisation de services d'atténuation des attaques DDoS fournis par des prestataires spécialisés, qui peuvent absorber et filtrer le trafic malveillant avant qu'il n'atteigne les systèmes de l'organisation.
-                            </li>
-                        </ul>
-                        
-                        <p>En suivant ces bonnes pratiques et en restant vigilant face aux menaces émergentes, les organisations peuvent renforcer leur résilience face aux attaques par déni de service et protéger leurs systèmes et leurs données critiques.</p>
-                        
-                        <h4>Exemples récents de cyberattaques en France</h4>
-                        
-                        <div style="background-color: #f0f0f0; border-left: 4px solid #e74c3c; padding: 15px; margin: 15px 0; border-radius: 3px;">
-                            <h5>Cyberattaque chez Norauto</h5>
-                            <ul style="list-style-position: inside;">
-                                <li><strong>Date de l'attaque</strong> : Annoncée le 3 décembre 2024.</li>
-                                <li><strong>Impact</strong> : Environ 78 000 clients touchés.</li>
-                                <li><strong>Données compromises</strong> : Noms, adresses e-mail et postales, numéros de téléphone, et numéros de pièces d'identité.</li>
-                                <li><strong>Nature de l'attaque</strong> : Une cyberattaque sophistiquée ciblant les systèmes informatiques de Norauto, permettant aux attaquants d'accéder à des données sensibles.</li>
-                                <li><strong>Réponse de Norauto</strong> : Mise en place immédiate de mesures pour stopper l'attaque et renforcer la sécurité des systèmes. Les clients concernés ont été informés et une plainte a été déposée.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="article-card card">
-                    <div class="article-date">Février 2025</div>
-                    <h3>L'évolution du phishing et des techniques d'ingénierie sociale</h3>
-                    <p>Analyse des techniques de phishing les plus sophistiquées et des méthodes pour sensibiliser les utilisateurs et renforcer la sécurité des organisations.</p>
-                    <div style="margin: 10px 0;">
-                        <span class="tag">Phishing</span>
-                        <span class="tag">Ingénierie sociale</span>
-                        <span class="tag">Formation utilisateurs</span>
-                    </div>
-                    <a href="#" class="resource-link" onclick="toggleArticleContent('phishing-article'); return false;">Lire l'analyse complète →</a>
-                    <div id="phishing-article" style="display: none; margin-top: 20px; padding: 15px; background-color: #f8f8f8; border-radius: 5px;">
-                        <h4>1. Définir les Objectifs</h4>
-                        <ul style="list-style-position: inside; margin: 10px 0;">
-                            <li><strong>Identifier les menaces</strong> : Suivre les nouvelles vulnérabilités et les méthodes d'attaque.</li>
-                        </ul>
-                        
-                        <p>Il existe plusieurs types d'attaques, mais nous nous concentrerons sur les plus courantes, telles que le phishing, les ransomwares et les attaques par déni de service (DDoS).</p>
-                        
-                        <h4>Définitions :</h4>
-                        
-                        <p><strong>Le phishing</strong> (hameçonnage) est une attaque cybercriminelle dans laquelle l'attaquant envoie des messages frauduleux, souvent sous forme de courriels, de liens ou de pages web falsifiées, imitant une source de confiance (comme une banque, un service en ligne ou une entreprise). L'objectif est de tromper la victime afin qu'elle divulgue des informations sensibles, telles que ses identifiants de connexion, mots de passe, coordonnées bancaires ou autres données personnelles, qui seront ensuite utilisées de manière malveillante, comme pour le vol d'identité ou des fraudes financières.</p>
-                        
-                        <p><strong>Exemple de phishing :</strong></p>
-                        
+                    <div class="card" style="border-top: 4px solid #f39c12;">
+                        <h3 class="card-title"><i class="fas fa-calendar-alt"></i> Méthode de veille 📊</h3>
                         <div style="text-align: center; margin: 15px 0;">
-                            <img src="../assets/img/phishing-example.png" alt="Exemple de phishing" style="max-width: 100%; border: 1px solid #ddd; border-radius: 5px;">
+                            <img src="images/veille-methode.svg" alt="Cycle de veille technologique" style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                         </div>
-                        
-                        <h4>Hameçonnage par ingénierie sociale</h4>
-                        
-                        <p><strong>Méthodes utilisées par l'attaquant :</strong></p>
-                        
-                        <ol style="list-style-position: inside; margin: 10px 0;">
-                            <li>
-                                <strong>Automatisation des envois :</strong>
-                                <p style="margin-left: 20px;">L'attaquant utilise des <strong>scripts automatisés</strong>, des outils comme des bots ou des serveurs de mails compromis pour envoyer des milliers de courriels frauduleux en quelques minutes. Ces outils permettent de générer rapidement des messages personnalisés, imitant des entreprises de confiance (banques, plateformes de commerce en ligne, services de livraison, etc.).</p>
-                            </li>
-                            <li>
-                                <strong>Scénarios d'urgence :</strong>
-                                <ul style="list-style-position: inside; margin-left: 20px;">
-                                    <li>Le courriel indique que la victime est <strong>l'auteur d'une commande importante qui a été débitée</strong> (souvent avec un montant élevé).</li>
-                                    <li>Pour inciter à une réaction rapide, le message suggère que <strong>si la victime n'est pas à l'origine de la commande, elle doit cliquer sur un lien ou rappeler un numéro</strong>.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <strong>Pièges dans le contenu du courriel :</strong>
-                                <ul style="list-style-position: inside; margin-left: 20px;">
-                                    <li><strong>Lien frauduleux :</strong> Le courriel contient un lien menant à un site qui imite celui de l'entreprise légitime. Une fois sur ce site, la victime peut être invitée à saisir ses identifiants ou informations bancaires.</li>
-                                    <li><strong>Appel téléphonique :</strong> Si un numéro de téléphone est fourni, la victime peut tomber sur une voix féminine douce et rassurante (une technique d'ingénierie sociale) pour gagner sa confiance. Cette personne pourra demander des informations sensibles comme un code PIN, un numéro de carte, ou d'autres détails personnels.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <strong>Exploitation des émotions :</strong>
-                                <ul style="list-style-position: inside; margin-left: 20px;">
-                                    <li>L'attaquant joue sur des émotions comme la peur, l'urgence ou la confusion. Cela pousse la victime à agir rapidement sans prendre le temps de vérifier la véracité du message.</li>
-                                </ul>
-                            </li>
-                        </ol>
-                        
-                        <h4>Les différents types de phishing</h4>
-                        <p>Il existe 19 types de phishing différents, dont voici les plus courants :</p>
-                        
-                        <ul style="list-style-position: inside; margin: 10px 0;">
-                            <li>
-                                <strong>Spear Phishing</strong> : Cible une personne spécifique dans une organisation pour voler ses identifiants de connexion.
-                            </li>
-                            <li>
-                                <strong>Vishing</strong> : Utilise le téléphone pour tenter de voler des informations.
-                            </li>
-                            <li>
-                                <strong>Phishing par e-mail</strong> : Attaque envoyée par e-mail contenant des liens frauduleux.
-                            </li>
-                            <li>
-                                <strong>Whaling</strong> : Cible spécifiquement les cadres supérieurs d'une organisation.
-                            </li>
-                            <li>
-                                <strong>Smishing</strong> : Utilise les SMS pour piéger les victimes.
-                            </li>
-                            <li>
-                                <strong>Pharming</strong> : Redirige les victimes vers des sites web falsifiés.
-                            </li>
-                        </ul>
-                        
-                        <h4>Exemples récents de cyberattaques en France</h4>
-                        
-                        <div style="background-color: #f0f0f0; border-left: 4px solid #e74c3c; padding: 15px; margin: 15px 0; border-radius: 3px;">
-                            <h5>Cyberattaque chez Free</h5>
-                            <ul style="list-style-position: inside;">
-                                <li><strong>Date de l'attaque</strong> : Signalée le 17 octobre 2024.</li>
-                                <li><strong>Impact</strong> : 19 millions d'abonnés touchés, avec 5 millions d'adresses IBAN compromises.</li>
-                                <li><strong>Données compromises</strong> : Données personnelles des abonnés, y compris les numéros IBAN.</li>
-                                <li><strong>Nature de l'attaque</strong> : L'attaque a été facilitée par un complice interne qui a fourni ses identifiants OpenVPN aux cybercriminels, permettant un accès non autorisé aux systèmes de Free.</li>
-                                <li><strong>Réponse de Free</strong> : Confirmation de l'attaque et mise en place de mesures pour sécuriser les systèmes. Une enquête interne a révélé la complicité d'un employé.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <script>
-                        function toggleArticleContent(id) {
-                            var content = document.getElementById(id);
-                            if (content.style.display === "none") {
-                                content.style.display = "block";
-                            } else {
-                                content.style.display = "none";
-                            }
-                        }
-                    </script>
-                </div>
-                
-                <div class="article-card card">
-                    <div class="article-date">Décembre 2024</div>
-                    <h3>Les rançongiciels et la protection des données sensibles</h3>
-                    <p>Étude des dernières tendances en matière de rançongiciels et des stratégies de sauvegarde et de récupération pour protéger les données critiques des organisations.</p>
-                    <div style="margin: 10px 0;">
-                        <span class="tag">Ransomware</span>
-                        <span class="tag">Sauvegarde</span>
-                        <span class="tag">Récupération</span>
-                    </div>
-                    <a href="#" class="resource-link">Lire l'analyse complète →</a>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="section-title">Impact et apprentissage</h2>
-                <div class="card">
-                    <p>Cette veille en cybersécurité m'a permis de développer plusieurs compétences essentielles :</p>
-                    <ul style="list-style-position: inside; margin-top: 15px;">
-                        <li><strong>Anticipation des menaces</strong> : capacité à identifier les risques émergents avant qu'ils n'affectent les systèmes</li>
-                        <li><strong>Connaissance approfondie</strong> des vecteurs d'attaque et des techniques de défense modernes</li>
-                        <li><strong>Culture de la sécurité</strong> : compréhension de l'importance d'une approche proactive en matière de sécurité</li>
-                        <li><strong>Capacité d'analyse</strong> : aptitude à évaluer la pertinence et la fiabilité des informations en matière de cybersécurité</li>
-                    </ul>
-                    <p style="margin-top: 15px;">Ces connaissances ont été directement appliquées lors de mes stages et projets, notamment pour la mise en place de solutions de sécurité adaptées aux infrastructures existantes.</p>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="section-title">Ressources recommandées</h2>
-                <div class="grid">
-                    <div class="card">
-                        <h3 class="card-title">Sites spécialisés</h3>
-                        <ul style="list-style-position: inside; margin-top: 10px;">
-                            <li><a href="https://www.ssi.gouv.fr/" target="_blank" style="color: var(--accent-color);">ANSSI</a></li>
-                            <li><a href="https://www.cert.ssi.gouv.fr/" target="_blank" style="color: var(--accent-color);">CERT-FR</a></li>
-                            <li><a href="https://www.zataz.com/" target="_blank" style="color: var(--accent-color);">ZATAZ</a></li>
-                            <li><a href="https://www.bleepingcomputer.com/" target="_blank" style="color: var(--accent-color);">Bleeping Computer</a></li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3 class="card-title">Chaînes YouTube</h3>
-                        <ul style="list-style-position: inside; margin-top: 10px;">
-                            <li><a href="https://www.youtube.com/c/HackerSploit" target="_blank" style="color: var(--accent-color);">HackerSploit</a></li>
-                            <li><a href="https://www.youtube.com/c/LiveOverflow" target="_blank" style="color: var(--accent-color);">LiveOverflow</a></li>
-                            <li><a href="https://www.youtube.com/c/SecurityFWD" target="_blank" style="color: var(--accent-color);">Security FWD</a></li>
-                            <li><a href="https://www.youtube.com/user/DEFCONConference" target="_blank" style="color: var(--accent-color);">DEFCON</a></li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3 class="card-title">Outils essentiels</h3>
-                        <ul style="list-style-position: inside; margin-top: 10px;">
-                            <li><a href="https://www.virustotal.com/" target="_blank" style="color: var(--accent-color);">VirusTotal</a></li>
-                            <li><a href="https://www.shodan.io/" target="_blank" style="color: var(--accent-color);">Shodan</a></li>
-                            <li><a href="https://www.wireshark.org/" target="_blank" style="color: var(--accent-color);">Wireshark</a></li>
-                            <li><a href="https://nmap.org/" target="_blank" style="color: var(--accent-color);">Nmap</a></li>
-                        </ul>
+                        <p>J'ai mis en place un processus structuré pour collecter, analyser et synthétiser les informations pertinentes en matière de cybersécurité, avec une attention particulière aux menaces concernant les infrastructures et réseaux.</p>
                     </div>
                 </div>
             </section>
@@ -404,5 +458,85 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Fonction pour afficher/masquer le contenu des articles
+        function toggleArticleContent(articleId) {
+            const article = document.getElementById(articleId);
+            if (article.style.display === 'none') {
+                article.style.display = 'block';
+            } else {
+                article.style.display = 'none';
+            }
+        }
+        
+        // Animations pour les éléments de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation pour les sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+                section.style.opacity = '0';
+                section.style.animation = 'fadeInUp 0.8s ease-out forwards';
+            });
+            
+            // Animation pour les cartes d'articles
+            const articleCards = document.querySelectorAll('.article-card');
+            articleCards.forEach((card, index) => {
+                card.style.animationDelay = `${0.3 + (index * 0.2)}s`;
+                card.style.opacity = '0';
+                card.style.animation = 'fadeInUp 0.8s ease-out forwards';
+            });
+            
+            // Animation pour les cartes dans la grille
+            const gridCards = document.querySelectorAll('.grid .card');
+            gridCards.forEach((card, index) => {
+                card.style.animationDelay = `${0.3 + (index * 0.1)}s`;
+                card.style.opacity = '0';
+                card.style.animation = 'fadeInUp 0.8s ease-out forwards';
+            });
+            
+            // Animation pour les tags
+            const tags = document.querySelectorAll('.tag');
+            tags.forEach((tag, index) => {
+                tag.style.opacity = '0';
+                tag.style.transform = 'scale(0.8)';
+                tag.style.transition = 'all 0.3s ease';
+                tag.style.transitionDelay = `${0.1 + (index * 0.05)}s`;
+                
+                setTimeout(() => {
+                    tag.style.opacity = '1';
+                    tag.style.transform = 'scale(1)';
+                }, 500);
+            });
+            
+            // Animation pour les éléments de liste
+            const listItems = document.querySelectorAll('.animated-list li, .sources-list li');
+            listItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-10px)';
+                item.style.transition = 'all 0.3s ease';
+                item.style.transitionDelay = `${0.1 + (index * 0.05)}s`;
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 500);
+            });
+            
+            // Animation pour les items avec flèche
+            const arrowItems = document.querySelectorAll('.arrow-item, .pin-item');
+            arrowItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-10px)';
+                item.style.transition = 'all 0.3s ease';
+                item.style.transitionDelay = `${0.2 + (index * 0.1)}s`;
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 700);
+            });
+        });
+    </script>
 </body>
 </html>

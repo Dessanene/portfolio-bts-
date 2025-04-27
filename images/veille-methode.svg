@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="350px" viewBox="0 0 500 350" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Cycle de veille technologique</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="gradient1">
+            <stop stop-color="#3498DB" offset="0%"></stop>
+            <stop stop-color="#2980B9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="gradient2">
+            <stop stop-color="#E74C3C" offset="0%"></stop>
+            <stop stop-color="#C0392B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="gradient3">
+            <stop stop-color="#2ECC71" offset="0%"></stop>
+            <stop stop-color="#27AE60" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="gradient4">
+            <stop stop-color="#F39C12" offset="0%"></stop>
+            <stop stop-color="#D35400" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Cycle-Veille" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Titre -->
+        <text font-family="Arial" font-size="24" font-weight="bold" fill="#2C3E50" text-anchor="middle" x="250" y="30">Cycle de Veille Technologique</text>
+        
+        <!-- Cercle central -->
+        <circle cx="250" cy="175" r="40" fill="#f5f5f5" stroke="#bdc3c7" stroke-width="2"></circle>
+        <text font-family="Arial" font-size="14" font-weight="bold" fill="#2C3E50" text-anchor="middle" x="250" y="175">VEILLE</text>
+        <text font-family="Arial" font-size="12" fill="#2C3E50" text-anchor="middle" x="250" y="190">CYBERSÉCURITÉ</text>
+        
+        <!-- Phase 1 : Collecte -->
+        <circle cx="130" cy="100" r="50" fill="url(#gradient1)" opacity="0.9"></circle>
+        <text font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="130" y="90">1. COLLECTE</text>
+        <text font-family="Arial" font-size="11" fill="#FFFFFF" text-anchor="middle" x="130" y="110">Recueillir des</text>
+        <text font-family="Arial" font-size="11" fill="#FFFFFF" text-anchor="middle" x="130" y="125">informations</text>
+        
+        <!-- Phase 2 : Analyse -->
+        <circle cx="370" cy="100" r="50" fill="url(#gradient2)" opacity="0.9"></circle>
+        <text font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="370" y="90">2. ANALYSE</text>
+        <text font-family="Arial" font-size="11" fill="#FFFFFF" text-anchor="middle" x="370" y="110">Évaluer les</text>
+        <text font-family="Arial" font-size="11" fill="#FFFFFF" text-anchor="middle" x="370" y="125">menaces</text>
+        
+        <!-- Phase 3 : Diffusion -->
+        <circle cx="370" cy="250" r="50" fill="url(#gradient3)" opacity="0.9"></circle>
+        <text font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="370" y="240">3. DIFFUSION</text>
+        <text font-family="Arial" font-size="11" fill="#FFFFFF" text-anchor="middle" x="370" y="260">Partager les</text>
+        <text font-family="Arial" font-size="11" fill="#FFFFFF" text-anchor="middle" x="370" y="275">connaissances</text>
+        
+        <!-- Phase 4 : Action -->
+        <circle cx="130" cy="250" r="50" fill="url(#gradient4)" opacity="0.9"></circle>
+        <text font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="130" y="240">4. ACTION</text>
+        <text font-family="Arial" font-size="11" fill="#FFFFFF" text-anchor="middle" x="130" y="260">Appliquer des</text>
+        <text font-family="Arial" font-size="11" fill="#FFFFFF" text-anchor="middle" x="130" y="275">mesures</text>
+        
+        <!-- Flèches de connexion -->
+        <path d="M170,75 Q250,30 330,75" stroke="#95a5a6" stroke-width="3" fill="none" stroke-dasharray="5,5"></path>
+        <polygon fill="#95a5a6" points="330,75 320,65 315,80"></polygon>
+        
+        <path d="M395,140 Q430,175 395,210" stroke="#95a5a6" stroke-width="3" fill="none" stroke-dasharray="5,5"></path>
+        <polygon fill="#95a5a6" points="395,210 400,195 385,200"></polygon>
+        
+        <path d="M330,275 Q250,320 170,275" stroke="#95a5a6" stroke-width="3" fill="none" stroke-dasharray="5,5"></path>
+        <polygon fill="#95a5a6" points="170,275 180,285 185,270"></polygon>
+        
+        <path d="M105,210 Q70,175 105,140" stroke="#95a5a6" stroke-width="3" fill="none" stroke-dasharray="5,5"></path>
+        <polygon fill="#95a5a6" points="105,140 100,155 115,150"></polygon>
+        
+        <!-- Icônes -->
+        <g transform="translate(130, 85)">
+            <circle r="15" fill="#FFFFFF" opacity="0.3"></circle>
+            <text font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="0" y="5">📥</text>
+        </g>
+        
+        <g transform="translate(370, 85)">
+            <circle r="15" fill="#FFFFFF" opacity="0.3"></circle>
+            <text font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="0" y="5">🔍</text>
+        </g>
+        
+        <g transform="translate(370, 235)">
+            <circle r="15" fill="#FFFFFF" opacity="0.3"></circle>
+            <text font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="0" y="5">📤</text>
+        </g>
+        
+        <g transform="translate(130, 235)">
+            <circle r="15" fill="#FFFFFF" opacity="0.3"></circle>
+            <text font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="0" y="5">⚡</text>
+        </g>
+    </g>
+</svg>

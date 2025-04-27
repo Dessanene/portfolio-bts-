@@ -1,6 +1,35 @@
 // Script principal pour le portfolio professionnel
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Force refresh for cache-busting (added for immediate update)
+    const forceRefresh = () => {
+        // Add timestamp to all stylesheets to prevent caching
+        document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+            const url = new URL(link.href);
+            url.searchParams.set('v', Date.now());
+            link.href = url.toString();
+        });
+        
+        // Add timestamp to all images to prevent caching
+        document.querySelectorAll('img').forEach(img => {
+            if (img.src && !img.src.includes('data:')) {
+                const url = new URL(img.src);
+                url.searchParams.set('v', Date.now());
+                img.src = url.toString();
+            }
+        });
+        
+        // Apply visibility to application cards specifically
+        document.querySelectorAll('.application-card').forEach(card => {
+            card.style.opacity = '1';
+            card.style.visibility = 'visible';
+            card.style.display = 'block';
+        });
+    };
+    
+    // Run force refresh immediately
+    forceRefresh();
+    
     // Animation smooth scroll pour les liens d'ancrage
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -40,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Animation pour les cartes lors du chargement
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('.card, .application-card');
     
     function checkCards() {
         const triggerBottom = window.innerHeight * 0.8;

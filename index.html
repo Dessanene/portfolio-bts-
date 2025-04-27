@@ -11,23 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         .hero-section {
-            background-image: url('images/server-rack-patchbox.webp');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/server-rack-patchbox.webp');
             background-size: cover;
             background-position: center;
-            padding: 80px 0;
+            padding: 120px 0;
             position: relative;
             color: white;
-        }
-        
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1;
         }
         
         .hero-content {
@@ -37,18 +26,150 @@
         }
         
         .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s ease-out;
         }
         
         .profile-container {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
+            background-color: white;
+            border-radius: 15px;
             padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
             color: var(--text-color);
+            overflow: hidden;
+        }
+        
+        .animated-gradient-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .animated-gradient-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(52, 152, 219, 0.5);
+        }
+        
+        .feature-card:hover .section-icon {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+        }
+
+        .feature-card:hover .card-title {
+            color: #2980b9;
+        }
+        
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .feature-card {
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.4);
+            border-top-color: #2980b9;
+        }
+        
+        .feature-card-bts {
+            padding: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card-header {
+            padding: 20px;
+            color: white;
+        }
+        
+        .feature-card-body {
+            padding: 20px;
+            background-color: white;
+        }
+        
+        .section-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: white;
+            background-color: #3498db;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .section-icon {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.8);
+            background-color: #2980b9;
+        }
+        
+        .card-title {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .card-title {
+            color: #2980b9;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -76,7 +197,11 @@
         <section class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Bienvenue sur mon Portfolio</h1>
+                    <h1>Bienvenue sur mon Portfolio 👨‍💻</h1>
+                    <p>Étudiant en BTS SIO option SISR, passionné par les systèmes, réseaux et la cybersécurité</p>
+                    <div style="margin-top: 30px;">
+                        <a href="profil.html" class="animated-gradient-button"><i class="fas fa-user-circle" style="margin-right: 10px;"></i> Découvrir mon profil</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -84,15 +209,26 @@
         <div class="container">
             <section>
                 <div class="profile-container">
-                    <div class="profile-image">
-                        <img src="images/dessanene.jpg" alt="Photo de profil">
-                    </div>
-                    <div class="profile-content">
-                        <h2>À propos de moi</h2>
-                        <p>Bienvenue sur mon portfolio professionnel. Je suis étudiant en BTS SIO (Services Informatiques aux Organisations) passionné par les systèmes réseaux et la cybersécurité.</p>
-                        <p>Ce portfolio présente mon parcours, mes compétences, mes expériences professionnelles ainsi que ma veille technologique et les travaux réalisés pour l'épreuve E4.</p>
-                        <div style="margin-top: 20px;">
-                            <a href="profil.html" style="display: inline-block; background-color: var(--accent-color); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500;">En savoir plus</a>
+                    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 30px;">
+                        <div style="flex: 0 0 200px;">
+                            <div style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin: 0 auto;">
+                                <img src="images/dessanene.jpg" alt="Photo de profil" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <h2 style="color: #3498db; display: flex; align-items: center; margin-top: 0;">
+                                <i class="fas fa-user-graduate" style="margin-right: 10px;"></i> Dessanène Sanhan
+                            </h2>
+                            <div style="display: flex; flex-wrap: wrap; margin-bottom: 15px;">
+                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 5px 10px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.9rem;"><i class="fas fa-server" style="margin-right: 5px;"></i> Infrastructure</span>
+                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 5px 10px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.9rem;"><i class="fas fa-network-wired" style="margin-right: 5px;"></i> Réseaux</span>
+                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 5px 10px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.9rem;"><i class="fas fa-shield-alt" style="margin-right: 5px;"></i> Cybersécurité</span>
+                            </div>
+                            <p>Bienvenue sur mon portfolio professionnel. Je suis étudiant en BTS SIO (Services Informatiques aux Organisations) passionné par les systèmes réseaux et la cybersécurité.</p>
+                            <p>Ce portfolio présente mon parcours, mes compétences, mes expériences professionnelles ainsi que ma veille technologique et les travaux réalisés pour l'épreuve E4.</p>
+                            <div style="margin-top: 20px;">
+                                <a href="profil.html" class="animated-gradient-button"><i class="fas fa-arrow-right" style="margin-right: 10px;"></i> En savoir plus</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -100,17 +236,42 @@
 
             <section>
                 <div class="profile-container" style="margin-bottom: 40px;">
-                    <h2 class="section-title">Présentation du BTS SIO</h2>
+                    <div style="background-color: #3498db; color: white; padding: 20px; border-radius: 10px; margin: -30px -30px 20px -30px;">
+                        <h2 style="margin: 0; color: white; font-size: 1.8rem; display: flex; align-items: center;">
+                            <i class="fas fa-graduation-cap" style="margin-right: 10px;"></i> 
+                            Présentation du BTS SIO
+                        </h2>
+                    </div>
                     <p>Le BTS Services Informatiques aux Organisations (SIO) prépare aux métiers du numérique en entreprise, avec deux parcours distincts :</p>
                     
-                    <div style="margin-top: 25px;">
-                        <h3 style="color: var(--accent-color);">Option SISR (Solutions d'Infrastructure, Systèmes et Réseaux)</h3>
-                        <p><strong>Objectifs :</strong> Cette spécialisation forme à l'installation, la gestion et la sécurisation des systèmes et réseaux. Les diplômés deviennent capables d'administrer des infrastructures informatiques et d'assurer leur bon fonctionnement.</p>
-                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 25px;">
+                        <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; border-radius: 10px; padding: 20px; border-left: 5px solid #3498db;">
+                            <h3 style="color: #3498db; display: flex; align-items: center; margin-top: 0;">
+                                <i class="fas fa-server" style="margin-right: 10px;"></i> Option SISR
+                            </h3>
+                            <p style="font-weight: 600; color: #3498db;">Solutions d'Infrastructure, Systèmes et Réseaux</p>
+                            <p><strong>Objectifs :</strong> Cette spécialisation forme à l'installation, la gestion et la sécurisation des systèmes et réseaux. Les diplômés deviennent capables d'administrer des infrastructures informatiques et d'assurer leur bon fonctionnement.</p>
+                            <div style="display: flex; flex-wrap: wrap; margin-top: 15px;">
+                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-network-wired" style="margin-right: 5px;"></i> Réseaux</span>
+                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-shield-alt" style="margin-right: 5px;"></i> Sécurité</span>
+                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-server" style="margin-right: 5px;"></i> Infrastructure</span>
+                            </div>
+                        </div>
                     
-                    <div style="margin-top: 25px;">
-                        <h3 style="color: var(--accent-color);">Option SLAM (Solutions Logicielles et Applications Métiers)</h3>
-                        <p><strong>Objectifs :</strong> Cette spécialisation est axée sur le développement de solutions informatiques adaptées aux besoins des entreprises. Les diplômés apprennent à concevoir, programmer et maintenir des applications métier pour optimiser la gestion informatique.</p>
+                        <!-- Nouvelle section SLAM recréée entièrement -->
+                        <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; border-radius: 10px; padding: 20px; border-left: 5px solid #3498db;">
+                            <h3 style="color: #3498db; display: flex; align-items: center; margin-top: 0;">
+                                <i class="fas fa-code" style="margin-right: 10px;"></i>
+                                <span>Option SLAM</span>
+                            </h3>
+                            <p style="font-weight: 600; color: #3498db;">Solutions Logicielles et Applications Métiers</p>
+                            <p><strong>Objectifs :</strong> Cette spécialisation est axée sur le développement de solutions informatiques adaptées aux besoins des entreprises. Les diplômés apprennent à concevoir, programmer et maintenir des applications métier pour optimiser la gestion informatique.</p>
+                            <div style="display: flex; flex-wrap: wrap; margin-top: 15px;">
+                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-code" style="margin-right: 5px;"></i> Développement</span>
+                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-database" style="margin-right: 5px;"></i> Base de données</span>
+                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-cogs" style="margin-right: 5px;"></i> Applications</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -118,46 +279,64 @@
             <section>
                 <h2 class="section-title">Sections principales</h2>
                 <div class="grid">
-                    <div class="card">
-                        <h3 class="card-title">Profil</h3>
-                        <p>Découvrez mon parcours, mes formations et mes objectifs professionnels.</p>
-                        <div style="margin-top: 15px;">
-                            <a href="profil.html" style="color: var(--accent-color); text-decoration: none; font-weight: 500;">Voir mon profil →</a>
+                    <div class="feature-card" style="border-top: 5px solid #3498db;">
+                        <div class="section-icon" style="background-color: #3498db;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="card-title" style="text-align: center; color: #3498db;">Profil</h3>
+                        <p style="text-align: center;">Découvrez mon parcours, mes formations et mes objectifs professionnels.</p>
+                        <div style="margin-top: 15px; text-align: center;">
+                            <a href="profil.html" class="animated-gradient-button" style="font-size: 0.9rem; padding: 8px 20px;">Voir mon profil</a>
                         </div>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title">Compétences</h3>
-                        <p>Explorez mes compétences techniques et transversales acquises durant ma formation.</p>
-                        <div style="margin-top: 15px;">
-                            <a href="competences.html" style="color: var(--accent-color); text-decoration: none; font-weight: 500;">Voir mes compétences →</a>
+                    <div class="feature-card" style="border-top: 5px solid #3498db;">
+                        <div class="section-icon" style="background-color: #3498db;">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="card-title" style="text-align: center; color: #3498db;">Compétences</h3>
+                        <p style="text-align: center;">Explorez mes compétences techniques et transversales acquises durant ma formation.</p>
+                        <div style="margin-top: 15px; text-align: center;">
+                            <a href="competences.html" class="animated-gradient-button" style="font-size: 0.9rem; padding: 8px 20px;">Voir mes compétences</a>
                         </div>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title">Veille</h3>
-                        <p>Consultez ma veille technologique sur les dernières innovations dans le domaine informatique.</p>
-                        <div style="margin-top: 15px;">
-                            <a href="veille.html" style="color: var(--accent-color); text-decoration: none; font-weight: 500;">Voir ma veille →</a>
+                    <div class="feature-card" style="border-top: 5px solid #3498db;">
+                        <div class="section-icon" style="background-color: #3498db;">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="card-title" style="text-align: center; color: #3498db;">Veille</h3>
+                        <p style="text-align: center;">Consultez ma veille technologique sur les dernières innovations dans le domaine informatique.</p>
+                        <div style="margin-top: 15px; text-align: center;">
+                            <a href="veille.html" class="animated-gradient-button" style="font-size: 0.9rem; padding: 8px 20px;">Voir ma veille</a>
                         </div>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title">Stages</h3>
-                        <p>Découvrez mes expériences professionnelles et les projets sur lesquels j'ai travaillé.</p>
-                        <div style="margin-top: 15px;">
-                            <a href="stages.html" style="color: var(--accent-color); text-decoration: none; font-weight: 500;">Voir mes stages →</a>
+                    <div class="feature-card" style="border-top: 5px solid #3498db;">
+                        <div class="section-icon" style="background-color: #3498db;">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="card-title" style="text-align: center; color: #3498db;">Stages</h3>
+                        <p style="text-align: center;">Découvrez mes expériences professionnelles et les projets sur lesquels j'ai travaillé.</p>
+                        <div style="margin-top: 15px; text-align: center;">
+                            <a href="stages.html" class="animated-gradient-button" style="font-size: 0.9rem; padding: 8px 20px;">Voir mes stages</a>
                         </div>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title">Situations Professionnelles</h3>
-                        <p>Découvrez les situations professionnelles que j'ai réalisées dans le cadre de ma formation et de l'épreuve E4.</p>
-                        <div style="margin-top: 15px;">
-                            <a href="situations-professionnelles.html" style="color: var(--accent-color); text-decoration: none; font-weight: 500;">Voir mes SP →</a>
+                    <div class="feature-card" style="border-top: 5px solid #3498db;">
+                        <div class="section-icon" style="background-color: #3498db;">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3 class="card-title" style="text-align: center; color: #3498db;">Situations Professionnelles</h3>
+                        <p style="text-align: center;">Découvrez les situations professionnelles que j'ai réalisées dans le cadre de ma formation et de l'épreuve E4.</p>
+                        <div style="margin-top: 15px; text-align: center;">
+                            <a href="situations-professionnelles.html" class="animated-gradient-button" style="font-size: 0.9rem; padding: 8px 20px;">Voir mes SP</a>
                         </div>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title">Certifications</h3>
-                        <p>Consultez les certifications que j'ai obtenues durant ma formation.</p>
-                        <div style="margin-top: 15px;">
-                            <a href="certifications.html" style="color: var(--accent-color); text-decoration: none; font-weight: 500;">Voir mes certifications →</a>
+                    <div class="feature-card" style="border-top: 5px solid #3498db;">
+                        <div class="section-icon" style="background-color: #3498db;">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="card-title" style="text-align: center; color: #3498db;">Certifications</h3>
+                        <p style="text-align: center;">Consultez les certifications que j'ai obtenues durant ma formation.</p>
+                        <div style="margin-top: 15px; text-align: center;">
+                            <a href="certifications.html" class="animated-gradient-button" style="font-size: 0.9rem; padding: 8px 20px;">Voir mes certifications</a>
                         </div>
                     </div>
                 </div>
@@ -188,5 +367,64 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Lazy loading avec Intersection Observer API
+        document.addEventListener('DOMContentLoaded', function() {
+            // Créer l'observer pour les animations d'apparition
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Appliquer des classes initiales et observer les sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                section.style.transitionDelay = `${0.1 + (index * 0.1)}s`;
+                observer.observe(section);
+            });
+
+            // Observer les cartes de fonctionnalités
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease, translate 0.3s ease';
+                card.style.transitionDelay = `${0.3 + (index * 0.1)}s`;
+                observer.observe(card);
+            });
+            
+            // Observer la section héro
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                observer.observe(heroContent);
+            }
+            
+            // Observer le conteneur de profil
+            const profileContainer = document.querySelector('.profile-container');
+            if (profileContainer) {
+                observer.observe(profileContainer);
+            }
+            
+            // Ajouter la classe visible quand l'élément est en vue
+            document.addEventListener('scroll', function() {
+                document.querySelectorAll('.visible').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                });
+            }, { passive: true });
+            
+            // Déclencher un scroll pour activer les éléments visibles initialement
+            setTimeout(() => {
+                window.dispatchEvent(new Event('scroll'));
+            }, 100);
+        });
+    </script>
 </body>
 </html>

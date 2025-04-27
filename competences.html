@@ -12,15 +12,38 @@
     <style>
         .progress-container {
             width: 100%;
-            background-color: var(--light-gray);
+            background-color: #f0f0f0;
             border-radius: 10px;
             margin: 10px 0;
+            overflow: hidden;
+            position: relative;
         }
         
         .progress-bar {
             height: 10px;
             border-radius: 10px;
-            background-color: var(--accent-color);
+            background-color: #3498db;
+            transition: width 1.5s ease-in-out;
+            position: relative;
+        }
+        
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                        transparent, 
+                        rgba(255, 255, 255, 0.2), 
+                        transparent);
+            animation: progressGlow 2s infinite;
+        }
+        
+        @keyframes progressGlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
         
         .skill-level {
@@ -32,10 +55,58 @@
         
         .skill-level span {
             font-weight: 500;
+            transition: all 0.3s ease;
         }
         
         .skill-level-text {
-            color: var(--accent-color);
+            color: #3498db;
+        }
+        
+        /* Animation d'apparition des sections */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card:hover .skill-level span {
+            color: #3498db;
+            transform: translateX(5px);
+        }
+        
+        .card:hover .progress-bar {
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+        }
+        
+        .skill-category h3 {
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .skill-category h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3498db;
+            transition: width 0.3s ease;
+        }
+        
+        .skill-category:hover h3 {
+            color: #3498db;
+            transform: translateX(5px);
+        }
+        
+        .skill-category:hover h3::after {
+            width: 100%;
         }
     </style>
 </head>
@@ -62,7 +133,7 @@
     <main>
         <div class="container">
             <div class="page-title">
-                <h1>Mes Compétences</h1>
+                <h1>Mes Compétences 💼</h1>
             </div>
 
             <section>
@@ -73,53 +144,49 @@
                 <h2 class="section-title">Applications réalisées</h2>
                 
                 <div class="skill-category">
-                    <h3>🔹 1. Administration Système & Réseau</h3>
+                    <h3> 1. Configuration et Sécurité</h3>
                     <div class="card">
                         <ul style="list-style-position: inside; margin-top: 10px;">
-                            <li><strong>Windows Server</strong> → Installation et paramétrage d'Active Directory, DNS, DHCP, GPO</li>
-                            <li><strong>Linux (Debian/Ubuntu)</strong> → Administration de serveurs, automatisation avec scripts shell</li>
-                            <li><strong>PowerShell</strong> → Scripts d'automation pour environnements Windows</li>
-                            <li><strong>Pare-feu</strong> → Configuration pfSense et OPNsense</li>
-                            <li><strong>FTP et SAMBA</strong> → Partage de fichiers en local et à distance</li>
+                            <li><strong>Contexte et configuration de LAMP</strong> → Installation et paramétrage de l'environnement serveur LAMP (Linux, Apache, MySQL, PHP) pour héberger des applications web.</li>
+                            <li><strong>Préparation d'une configuration système</strong> → Définition des paramètres essentiels pour assurer une configuration stable et sécurisée du système.</li>
+                            <li><strong>Mise en place de GPG</strong> → Configuration et utilisation de GNU Privacy Guard (GPG) pour chiffrer et authentifier les fichiers et communications.</li>
+                            <li><strong>Installation et configuration de Fail2ban & Portsentry</strong> → Protection des serveurs contre les attaques répétées et les intrusions grâce à des outils de surveillance active.</li>
+                            <li><strong>Configuration du pare-feu et règles iptables/Netfilter</strong> → Implémentation de politiques de filtrage réseau pour sécuriser les connexions et prévenir les accès non autorisés.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3>🔹 2. Sécurité Informatique & Cybersécurité</h3>
+                    <h3> 2. Sauvegarde et Restauration</h3>
                     <div class="card">
                         <ul style="list-style-position: inside; margin-top: 10px;">
-                            <li><strong>Gestion des identités</strong> → Mise en place d'Active Directory, politique de gestion des mots de passe</li>
-                            <li><strong>Sécurisation réseau</strong> → Configuration de firewall, DMZ, proxy</li>
-                            <li><strong>Sécurité des accès</strong> → VPN avec OpenVPN, authentification forte</li>
-                            <li><strong>Chiffrement</strong> → Implémentation SSH, HTTPS, TLS</li>
-                            <li><strong>Mise en place du protocole FTP</strong> → Sécurisation des transferts de fichiers</li>
+                            <li><strong>Sauvegarde et restauration des systèmes</strong> → Mise en place de stratégies de sauvegarde et récupération des données pour garantir la continuité des services.</li>
+                            <li><strong>Mise en place de solutions de Backups et BackupPC</strong> → Automatisation des sauvegardes à distance et gestion centralisée des copies de sécurité.</li>
+                            <li><strong>Synchronisation des fichiers avec Rsync</strong> → Implémentation de synchronisations incrémentales pour optimiser la gestion des fichiers entre différents serveurs.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3>🔹 3. Gestion des Sauvegardes & Récupération</h3>
+                    <h3> 3. Réseau & Services</h3>
                     <div class="card">
                         <ul style="list-style-position: inside; margin-top: 10px;">
-                            <li><strong>Stratégies de sauvegarde</strong> → Déploiement de solutions de backup (Veeam, scripts personnalisés)</li>
-                            <li><strong>Restauration</strong> → Tests et validation des procédures de récupération</li>
-                            <li><strong>Virtualisation</strong> → Snapshots et clonage avec VMware/Hyper-V</li>
-                            <li><strong>Réplication</strong> → Mise en place de solutions de réplication de données entre sites</li>
-                            <li><strong>Plan de reprise d'activité</strong> → Documentation des procédures de récupération</li>
-                            <li><strong>Failover</strong> → Gestion de la haute disponibilité et de la redondance réseau</li>
+                            <li><strong>Configuration des services DNS, HTTP, HTTPS, FTP et FTPS</strong> → Déploiement et gestion de serveurs pour assurer un accès sécurisé et performant aux services web et fichiers.</li>
+                            <li><strong>Mise en place d'un serveur Samba</strong> → Partage sécurisé de fichiers entre machines sous différents systèmes d'exploitation via le protocole SMB.</li>
+                            <li><strong>Gestion du protocole DHCP et DHCP Relay</strong> → Configuration et optimisation du service DHCP pour l'attribution automatique des adresses IP sur un réseau.</li>
+                            <li><strong>Configuration de Failover et VLAN</strong> → Mise en place de mécanismes de tolérance aux pannes et segmentation réseau pour améliorer la sécurité et la performance.</li>
+                            <li><strong>Virtualisation avec Virtualhost Apache</strong> → Hébergement de multiples sites web sur un même serveur Apache via des configurations Virtualhost.</li>
+                            <li><strong>Sécurisation des connexions avec SSL/TLS</strong> → Chiffrement des échanges et mise en place de certificats pour garantir l'intégrité et la confidentialité des données.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3>🔹 4. Gestion des Réseaux & Infrastructures</h3>
+                    <h3> 4. Bases de Données & Supervision</h3>
                     <div class="card">
                         <ul style="list-style-position: inside; margin-top: 10px;">
-                            <li><strong>Router/Switch</strong> → Configuration des équipements Cisco et HP</li>
-                            <li><strong>Routage</strong> → Mise en place BGP, OSPF, RIP</li>
-                            <li><strong>Supervision</strong> → Utilisation de Nagios, PRTG, Zabbix</li>
-                            <li><strong>VLAN</strong> → Segmentation et isolation du réseau</li>
+                            <li><strong>Administration de MariaDB</strong> → Configuration et gestion de bases de données relationnelles pour le stockage et l'accès optimisé aux données.</li>
+                            <li><strong>Installation et gestion de Munin pour la supervision système</strong> → Surveillance en temps réel des performances et de la santé du serveur grâce à des graphiques détaillés.</li>
                         </ul>
                     </div>
                 </div>
@@ -135,21 +202,21 @@
                             <span>HTML5 / CSS3</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 75%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="75%"></div>
                         </div>
                         
                         <div class="skill-level" style="margin-top: 15px;">
                             <span>JavaScript</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 75%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="75%"></div>
                         </div>
                         
                         <div class="skill-level" style="margin-top: 15px;">
                             <span>PHP</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 70%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="70%"></div>
                         </div>
                     </div>
                 </div>
@@ -161,14 +228,14 @@
                             <span>C#</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 65%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="65%"></div>
                         </div>
                         
                         <div class="skill-level" style="margin-top: 15px;">
                             <span>Python</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 45%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="45%"></div>
                         </div>
                     </div>
                 </div>
@@ -180,21 +247,21 @@
                             <span>Docker</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 70%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="70%"></div>
                         </div>
                         
                         <div class="skill-level" style="margin-top: 15px;">
-                            <span>VMware ESXi / vSphere</span>
+                            <span>VirtualBox</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 80%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="80%"></div>
                         </div>
                         
                         <div class="skill-level" style="margin-top: 15px;">
-                            <span>Hyper-V</span>
+                            <span>Proxmox</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 65%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="65%"></div>
                         </div>
                     </div>
                 </div>
@@ -206,7 +273,7 @@
                             <span>Packet Tracer</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 75%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="75%"></div>
                         </div>
                     </div>
                 </div>
@@ -218,21 +285,21 @@
                             <span>SQL</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 70%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="70%"></div>
                         </div>
                         
                         <div class="skill-level" style="margin-top: 15px;">
                             <span>MySQL / MariaDB</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 75%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="75%"></div>
                         </div>
                         
                         <div class="skill-level" style="margin-top: 15px;">
                             <span>Microsoft SQL Server</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 50%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="50%"></div>
                         </div>
                     </div>
                 </div>
@@ -244,21 +311,21 @@
                             <span>Git / GitHub</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 65%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="65%"></div>
                         </div>
                         
                         <div class="skill-level" style="margin-top: 15px;">
                             <span>Microsoft Office</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 80%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="80%"></div>
                         </div>
                         
                         <div class="skill-level" style="margin-top: 15px;">
                             <span>Linux</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar" style="width: 70%"></div>
+                            <div class="progress-bar" style="width: 0%;" data-width="70%"></div>
                         </div>
                     </div>
                 </div>
@@ -312,5 +379,113 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Animations pour les éléments de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation pour les sections avec lazy loading
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Observer les sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+                section.style.opacity = '0';
+                observer.observe(section);
+            });
+            
+            // Observer les catégories de compétences
+            const skillCategories = document.querySelectorAll('.skill-category');
+            skillCategories.forEach((category, index) => {
+                category.style.animationDelay = `${0.3 + (index * 0.1)}s`;
+                category.style.opacity = '0';
+                observer.observe(category);
+            });
+            
+            // Observer les cartes transversales
+            const cards = document.querySelectorAll('.grid .card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${0.5 + (index * 0.1)}s`;
+                card.style.opacity = '0';
+                observer.observe(card);
+            });
+            
+            // Animation des barres de progression avec lazy loading
+            const progressObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            const targetWidth = entry.target.getAttribute('data-width');
+                            entry.target.style.width = targetWidth;
+                        }, 300);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                progressObserver.observe(bar);
+            });
+            
+            // Effet de survol pour les cartes
+            const allCards = document.querySelectorAll('.card');
+            allCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 25px rgba(52, 152, 219, 0.25)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.05)';
+                });
+            });
+            
+            // Animation des éléments de la liste avec lazy loading
+            const listObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const listItems = entry.target.querySelectorAll('li');
+                        listItems.forEach((item, index) => {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateX(-10px)';
+                            item.style.transition = 'all 0.3s ease';
+                            item.style.transitionDelay = `${0.1 + (index * 0.05)}s`;
+                            
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateX(0)';
+                            }, 100);
+                            
+                            item.addEventListener('mouseenter', function() {
+                                this.style.color = '#3498db';
+                                this.style.transform = 'translateX(5px)';
+                            });
+                            
+                            item.addEventListener('mouseleave', function() {
+                                this.style.color = '';
+                                this.style.transform = 'translateX(0)';
+                            });
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Observer les conteneurs de listes
+            const cardContainers = document.querySelectorAll('.card');
+            cardContainers.forEach(container => {
+                listObserver.observe(container);
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="500px" viewBox="0 0 800 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Phishing Attack Illustration</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="emailGradient">
+            <stop stop-color="#3498DB" offset="0%"></stop>
+            <stop stop-color="#2980B9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="hackerGradient">
+            <stop stop-color="#E74C3C" offset="0%"></stop>
+            <stop stop-color="#C0392B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="userGradient">
+            <stop stop-color="#2ECC71" offset="0%"></stop>
+            <stop stop-color="#27AE60" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="fakeGradient">
+            <stop stop-color="#E67E22" offset="0%"></stop>
+            <stop stop-color="#D35400" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Phishing-Illustration" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Title -->
+        <text font-family="Arial" font-size="24" font-weight="bold" fill="#2C3E50" text-anchor="middle" x="400" y="50">Phishing Attack</text>
+        <text font-family="Arial" font-size="16" fill="#7F8C8D" text-anchor="middle" x="400" y="80">Attackers trick users into revealing sensitive information through fake websites and deceptive emails</text>
+        
+        <!-- Hacker -->
+        <g id="Hacker" transform="translate(100, 200)">
+            <rect id="HackerBody" fill="url(#hackerGradient)" x="-50" y="-50" width="100" height="100" rx="8"></rect>
+            <text font-family="Arial" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="0" y="5">ATTACKER</text>
+            <path d="M-20,-20 L-10,-20 L-10,-30 L10,-30 L10,-20 L20,-20 L20,0 L-20,0 Z" fill="#FFFFFF" opacity="0.5"></path>
+        </g>
+        
+        <!-- Email -->
+        <g id="Email" transform="translate(250, 200)">
+            <path d="M-60,-40 L60,-40 L60,40 L-60,40 Z" fill="url(#emailGradient)"></path>
+            <path d="M-60,-40 L0,0 L60,-40 Z" fill="#FFFFFF" opacity="0.3"></path>
+            <path d="M-60,40 L0,0 L60,40 Z" fill="#FFFFFF" opacity="0.2"></path>
+            <text font-family="Arial" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="0" y="5">FAKE EMAIL</text>
+        </g>
+        
+        <!-- User -->
+        <g id="User" transform="translate(400, 200)">
+            <circle id="UserHead" fill="url(#userGradient)" cx="0" cy="-25" r="25"></circle>
+            <rect id="UserBody" fill="url(#userGradient)" x="-30" y="0" width="60" height="80" rx="8"></rect>
+            <text font-family="Arial" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="0" y="40">USER</text>
+        </g>
+        
+        <!-- Fake Website -->
+        <g id="FakeWebsite" transform="translate(600, 200)">
+            <rect id="WebsiteBody" fill="url(#fakeGradient)" x="-80" y="-60" width="160" height="120" rx="8"></rect>
+            <rect id="WebsiteHeader" fill="#FFFFFF" opacity="0.2" x="-70" y="-50" width="140" height="20" rx="4"></rect>
+            <circle id="LockIcon" fill="#FFFFFF" cx="-55" cy="-40" r="5"></circle>
+            <text font-family="Arial" font-size="10" fill="#FFFFFF" text-anchor="middle" x="0" y="-38">www.fake-bank.com</text>
+            <rect id="WebsiteContent1" fill="#FFFFFF" opacity="0.2" x="-70" y="-20" width="140" height="10" rx="2"></rect>
+            <rect id="WebsiteContent2" fill="#FFFFFF" opacity="0.2" x="-70" y="-5" width="100" height="10" rx="2"></rect>
+            <rect id="LoginBox" fill="#FFFFFF" opacity="0.3" x="-60" y="15" width="120" height="35" rx="4"></rect>
+            <rect id="UsernameField" fill="#FFFFFF" x="-50" y="20" width="100" height="8" rx="2"></rect>
+            <rect id="PasswordField" fill="#FFFFFF" x="-50" y="35" width="100" height="8" rx="2"></rect>
+            <text font-family="Arial" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="0" y="70">FAKE WEBSITE</text>
+        </g>
+        
+        <!-- Arrows and Flow -->
+        <path d="M150,200 L190,200" stroke="#E74C3C" stroke-width="3"></path>
+        <polygon fill="#E74C3C" points="195,200 185,195 185,205"></polygon>
+        
+        <path d="M310,200 L350,200" stroke="#3498DB" stroke-width="3"></path>
+        <polygon fill="#3498DB" points="355,200 345,195 345,205"></polygon>
+        
+        <path d="M450,200 L490,200" stroke="#2ECC71" stroke-width="3"></path>
+        <polygon fill="#2ECC71" points="495,200 485,195 485,205"></polygon>
+        
+        <!-- Data Theft Flow -->
+        <path d="M560,250 C480,300 180,300 150,250" stroke="#E74C3C" stroke-width="3" stroke-dasharray="5,5"></path>
+        <polygon fill="#E74C3C" points="145,245 149,255 155,250"></polygon>
+        <text font-family="Arial" font-size="14" fill="#E74C3C" text-anchor="middle" x="350" y="330">SENSITIVE DATA (credentials, credit card, personal info)</text>
+        
+        <!-- Labels -->
+        <text font-family="Arial" font-size="12" fill="#7F8C8D" text-anchor="middle" x="200" y="170">1. Creates deceptive email</text>
+        <text font-family="Arial" font-size="12" fill="#7F8C8D" text-anchor="middle" x="330" y="170">2. User receives email</text>
+        <text font-family="Arial" font-size="12" fill="#7F8C8D" text-anchor="middle" x="470" y="170">3. Clicks malicious link</text>
+        <text font-family="Arial" font-size="12" fill="#7F8C8D" text-anchor="middle" x="350" y="380">5. Data sent to attacker</text>
+        <text font-family="Arial" font-size="12" fill="#7F8C8D" text-anchor="middle" x="600" y="130">4. Enters information on fake site</text>
+        
+        <!-- Warning Signs -->
+        <g id="Warning" transform="translate(250, 250)">
+            <path d="M0,-15 L15,15 L-15,15 Z" fill="#F1C40F"></path>
+            <text font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="0" y="10">!</text>
+        </g>
+        
+        <g id="Warning2" transform="translate(600, 140)">
+            <path d="M0,-15 L15,15 L-15,15 Z" fill="#F1C40F"></path>
+            <text font-family="Arial" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle" x="0" y="10">!</text>
+        </g>
+    </g>
+</svg>

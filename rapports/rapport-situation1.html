@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport - Mise en place d'un système de sauvegarde</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .rapport-section {
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .rapport-section h2 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .rapport-section h2 i {
+            margin-right: 10px;
+        }
+        
+        .rapport-box {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .rapport-box h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+        }
+        
+        .rapport-box h3 i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        .etape-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: etape-counter;
+        }
+        
+        .etape-list li {
+            position: relative;
+            padding: 15px 0 15px 40px;
+            border-left: 2px solid #e0e0e0;
+            margin-left: 20px;
+        }
+        
+        .etape-list li::before {
+            counter-increment: etape-counter;
+            content: counter(etape-counter);
+            position: absolute;
+            left: -20px;
+            top: 15px;
+            width: 36px;
+            height: 36px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .etape-list li:last-child {
+            border-left: 2px solid transparent;
+        }
+        
+        .image-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-caption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .conclusion-box {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .competence-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            animation: fadeInLeft 0.5s ease-out forwards;
+        }
+        
+        .competence-item i {
+            color: #2ecc71;
+            margin-right: 10px;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">Portfolio</a>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="../profil.html">Profil</a></li>
+                        <li><a href="../competences.html">Compétences</a></li>
+                        <li><a href="../situations-professionnelles.html" class="active">SP</a></li>
+                        <li><a href="../veille.html">Veille</a></li>
+                        <li><a href="../stages.html">Stages</a></li>
+                        <li><a href="../certifications.html">Certifications</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-title">
+                <h1>Rapport détaillé : Système de sauvegarde et sécurisation 🔒</h1>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: white; border-radius: 30px; font-weight: 500;">
+                    <i class="fas fa-building"></i> Entreprise : GSB | <i class="fas fa-calendar-alt"></i> Période : Janvier - Mars 2025
+                </div>
+            </div>
+
+            <section class="rapport-section">
+                <h2><i class="fas fa-info-circle"></i> Contexte du projet</h2>
+                <div class="rapport-box">
+                    <p>L'entreprise GSB (Gestion Service Banque) souhaitait renforcer la sécurité de son infrastructure informatique face à l'augmentation des cybermenaces. Leurs principaux besoins étaient :</p>
+                    <ul>
+                        <li>Mettre en place un système de sauvegarde fiable et automatisé des données critiques</li>
+                        <li>Sécuriser les serveurs contre les tentatives d'intrusion</li>
+                        <li>Documenter les procédures pour l'équipe technique</li>
+                    </ul>
+                    <p>Ce projet s'inscrivait dans une démarche globale de mise en conformité avec les normes de sécurité du secteur bancaire et de protection contre les attaques informatiques de plus en plus sophistiquées.</p>
+                </div>
+            </section>
+
+            <section class="rapport-section">
+                <h2><i class="fas fa-tasks"></i> Objectifs du projet</h2>
+                <div class="rapport-box">
+                    <h3><i class="fas fa-bullseye"></i> Objectifs principaux</h3>
+                    <ul>
+                        <li>Implémentation d'un système de sauvegarde automatisé avec BackupPC</li>
+                        <li>Configuration de Fail2ban pour détecter et bloquer les tentatives d'intrusion</li>
+                        <li>Rédaction d'une documentation technique complète</li>
+                    </ul>
+                    
+                    <h3><i class="fas fa-clock"></i> Contraintes</h3>
+                    <ul>
+                        <li>Délai de mise en œuvre limité à 4 semaines</li>
+                        <li>Nécessité de maintenir les services opérationnels pendant l'implémentation</li>
+                        <li>Budget limité nécessitant l'utilisation de solutions open source</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="rapport-section">
+                <h2><i class="fas fa-cogs"></i> Méthode et mise en œuvre</h2>
+                <ol class="etape-list">
+                    <li>
+                        <h3>Analyse des besoins et de l'infrastructure existante</h3>
+                        <p>Audit complet de l'infrastructure pour identifier les serveurs critiques et les données à sauvegarder. Cartographie des services exposés et analyse des logs de sécurité pour identifier les menaces potentielles.</p>
+                    </li>
+                    <li>
+                        <h3>Installation et configuration de BackupPC</h3>
+                        <p>Déploiement d'un serveur dédié sous Linux pour héberger BackupPC. Configuration des sauvegardes incrémentales et complètes avec une politique de rétention adaptée aux besoins métier.</p>
+                        <div class="image-container">
+                            <img src="../images/backuppc-dashboard.png" alt="Interface BackupPC" onerror="this.src='../images/placeholder-image.png'">
+                            <p class="image-caption">Interface d'administration de BackupPC montrant l'état des sauvegardes</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Configuration de Fail2ban</h3>
+                        <p>Installation et paramétrage de Fail2ban sur tous les serveurs exposés. Définition des règles de détection et de blocage pour SSH, services web et bases de données. Mise en place d'alertes en cas de tentatives d'intrusion répétées.</p>
+                        <div class="image-container">
+                            <img src="../images/fail2ban-config.png" alt="Configuration Fail2ban" onerror="this.src='../images/placeholder-image.png'">
+                            <p class="image-caption">Extrait de la configuration de Fail2ban pour la protection SSH</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Tests et validation</h3>
+                        <p>Réalisation de tests de restauration des sauvegardes et de simulations d'attaques pour vérifier l'efficacité des mesures de sécurité mises en place.</p>
+                    </li>
+                    <li>
+                        <h3>Documentation et formation</h3>
+                        <p>Rédaction d'une documentation technique détaillée et formation de l'équipe sur l'utilisation des outils déployés.</p>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="rapport-section">
+                <h2><i class="fas fa-chart-line"></i> Résultats obtenus</h2>
+                <div class="rapport-box">
+                    <ul>
+                        <li>Mise en place d'un système de sauvegarde couvrant 100% des serveurs critiques</li>
+                        <li>Réduction de 85% des tentatives d'intrusion grâce à Fail2ban</li>
+                        <li>Temps de restauration des données divisé par 3 par rapport à l'ancien système</li>
+                        <li>Documentation complète facilitant la maintenance par l'équipe interne</li>
+                    </ul>
+                </div>
+                
+                <div class="conclusion-box">
+                    <h3 style="color: white; margin-top: 0;"><i class="fas fa-lightbulb"></i> Conclusion</h3>
+                    <p>Ce projet a permis de renforcer significativement la sécurité de l'infrastructure de GSB tout en améliorant la résilience face aux incidents. Les solutions mises en place, basées sur des technologies open source, offrent un excellent rapport coût-efficacité et répondent parfaitement aux besoins de l'entreprise.</p>
+                </div>
+            </section>
+
+            <section class="rapport-section">
+                <h2><i class="fas fa-brain"></i> Compétences développées</h2>
+                <div class="rapport-box">
+                    <div class="competence-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Maîtrise des systèmes Linux et de l'administration serveur</span>
+                    </div>
+                    <div class="competence-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Configuration et gestion des systèmes de sauvegarde</span>
+                    </div>
+                    <div class="competence-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Sécurisation des infrastructures informatiques</span>
+                    </div>
+                    <div class="competence-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Analyse de logs et détection d'intrusion</span>
+                    </div>
+                    <div class="competence-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Documentation technique et procédures</span>
+                    </div>
+                    <div class="competence-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Gestion de projet et respect des délais</span>
+                    </div>
+                </div>
+            </section>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="../situations-professionnelles.html" class="btn-animated" style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500; transition: all 0.3s ease;">
+                    <i class="fas fa-arrow-left" style="margin-right: 10px;"></i> Retour aux situations professionnelles
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="#"><i class="far fa-envelope fa-lg"></i></a>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html">Accueil</a>
+                    <a href="../profil.html">Profil</a>
+                    <a href="../competences.html">Compétences</a>
+                    <a href="../situations-professionnelles.html">SP</a>
+                    <a href="../veille.html">Veille</a>
+                    <a href="../stages.html">Stages</a>
+                    <a href="../certifications.html">Certifications</a>
+                </div>
+                <p>&copy; 2025 - Portfolio BTS SIO</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation des éléments au chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation pour les sections
+            const sections = document.querySelectorAll('.rapport-section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.animationDelay = `${0.2 * index}s`;
+            });
+            
+            // Animation pour les éléments de la liste d'étapes
+            const etapes = document.querySelectorAll('.etape-list li');
+            etapes.forEach((etape, index) => {
+                etape.style.opacity = '0';
+                etape.style.transform = 'translateY(20px)';
+                etape.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                etape.style.transitionDelay = `${0.3 + (index * 0.1)}s`;
+                
+                setTimeout(() => {
+                    etape.style.opacity = '1';
+                    etape.style.transform = 'translateY(0)';
+                }, 100);
+            });
+            
+            // Animation pour les compétences
+            const competences = document.querySelectorAll('.competence-item');
+            competences.forEach((competence, index) => {
+                competence.style.opacity = '0';
+                competence.style.animationDelay = `${0.5 + (index * 0.1)}s`;
+            });
+        });
+    </script>
+</body>
+</html>

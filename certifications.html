@@ -9,6 +9,161 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques pour animer la page certifications */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: #f1f1f1;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tag:hover {
+            background-color: #3498db;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .certification-date {
+            color: #3498db;
+            font-weight: 500;
+            margin-top: 5px;
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .certification-date::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3498db;
+            transition: width 0.3s ease;
+        }
+        
+        .card:hover .certification-date::before {
+            width: 100%;
+        }
+        
+        .card:hover .certification-date {
+            transform: translateX(5px);
+        }
+        
+        .card .btn-certificate {
+            transition: all 0.3s ease;
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .card .btn-certificate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.5s ease;
+        }
+        
+        .card .btn-certificate:hover::before {
+            left: 100%;
+        }
+        
+        .card .btn-certificate:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+        }
+        
+        /* Effet de pulsation pour les icônes */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .card-title i {
+            animation: pulse 2s infinite;
+            color: #3498db;
+        }
+        
+        /* Animation pour les listes */
+        .animated-list li {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .animated-list li.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .certification-card {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.2);
+        }
+        
+        .certification-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .certification-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: contain;
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin-right: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .certification-body {
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -42,66 +197,94 @@
 
             <section>
                 <div class="grid">
-                    <div class="card">
-                        <h3 class="card-title">PIX</h3>
-                        <div class="certification-date">Obtenu en 2024</div>
-                        <p style="margin-top: 15px;">Certification des compétences numériques couvrant 16 compétences dans 5 domaines, attestant de ma maîtrise des outils numériques essentiels.</p>
-                        <div class="tags" style="margin-top: 15px;">
-                            <span class="tag">Compétences numériques</span>
-                            <span class="tag">Culture digitale</span>
-                            <span class="tag">Bureautique</span>
-                            <span class="tag">Programmation</span>
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <img src="images/logos/pix-logo-new.svg" alt="Logo PIX" class="certification-logo" style="max-height: 50px; width: auto;">
+                            <div>
+                                <h3 class="card-title">PIX</h3>
+                                <div class="certification-date">Obtenu en 2024</div>
+                            </div>
                         </div>
-                        <div style="margin-top: 20px;">
-                            <a href="Documents/pix.pdf" target="_blank" style="display: inline-block; background-color: var(--accent-color); color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: 500;">
-                                <i class="fas fa-certificate"></i> Voir l'attestation
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <h3 class="card-title">SECnum académie</h3>
-                        <div class="certification-date">Obtenu en 2024</div>
-                        <p style="margin-top: 15px;">Formation délivrée par l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information) sur les fondamentaux de la cybersécurité.</p>
-                        <div class="tags" style="margin-top: 15px;">
-                            <span class="tag">Cybersécurité</span>
-                            <span class="tag">Protection des SI</span>
-                            <span class="tag">Gestion des risques</span>
-                            <span class="tag">Sécurité réseau</span>
-                        </div>
-                        <div style="margin-top: 20px;">
-                            <a href="Documents/secNum.pdf" target="_blank" style="display: inline-block; background-color: var(--accent-color); color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: 500;">
-                                <i class="fas fa-certificate"></i> Voir l'attestation
-                            </a>
+                        <div class="certification-body">
+                            <p style="margin-bottom: 15px;">Certification des compétences numériques couvrant 16 compétences dans 5 domaines, attestant de ma maîtrise des outils numériques essentiels.</p>
+                            <div class="tags" style="margin-bottom: 15px;">
+                                <span class="tag">Compétences numériques</span>
+                                <span class="tag">Culture digitale</span>
+                                <span class="tag">Bureautique</span>
+                                <span class="tag">Programmation</span>
+                            </div>
+                            <div>
+                                <a href="Documents/pix.pdf" target="_blank" class="btn-certificate" style="display: inline-block; background-color: #3498db; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: 500;">
+                                    <i class="fas fa-certificate"></i> Voir l'attestation
+                                </a>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="card">
-                        <h3 class="card-title">AWS Cloud Foundation</h3>
-                        <div class="certification-date">Obtenu en 2024</div>
-                        <p style="margin-top: 15px;">Certification d'Amazon Web Services validant les connaissances fondamentales du cloud computing et des services AWS.</p>
-                        <div class="tags" style="margin-top: 15px;">
-                            <span class="tag">Cloud Computing</span>
-                            <span class="tag">AWS</span>
-                            <span class="tag">Infrastructure Cloud</span>
-                            <span class="tag">Services Cloud</span>
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <img src="images/logos/anssi-logo.svg" alt="Logo ANSSI" class="certification-logo">
+                            <div>
+                                <h3 class="card-title">SECnum académie</h3>
+                                <div class="certification-date">Obtenu en 2024</div>
+                            </div>
                         </div>
-                        <div style="margin-top: 20px;">
-                            <a href="https://www.credly.com/badges/507579f9-2d28-47e8-abdf-e810040d8368" target="_blank" style="display: inline-block; background-color: var(--accent-color); color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: 500;">
-                                <i class="fab fa-aws"></i> Voir le badge Credly
-                            </a>
+                        <div class="certification-body">
+                            <p style="margin-bottom: 15px;">Formation délivrée par l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information) sur les fondamentaux de la cybersécurité.</p>
+                            <div class="tags" style="margin-bottom: 15px;">
+                                <span class="tag">Cybersécurité</span>
+                                <span class="tag">Protection des SI</span>
+                                <span class="tag">Gestion des risques</span>
+                                <span class="tag">Sécurité réseau</span>
+                            </div>
+                            <div>
+                                <a href="Documents/secNum.pdf" target="_blank" class="btn-certificate" style="display: inline-block; background-color: #3498db; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: 500;">
+                                    <i class="fas fa-shield-alt"></i> Voir l'attestation
+                                </a>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="card">
-                        <h3 class="card-title">RGPD</h3>
-                        <div class="certification-date">En cours (2025)</div>
-                        <p style="margin-top: 15px;">Formation au Règlement Général sur la Protection des Données, couvrant les aspects juridiques et techniques de la protection des données personnelles.</p>
-                        <div class="tags" style="margin-top: 15px;">
-                            <span class="tag">Protection des données</span>
-                            <span class="tag">Conformité</span>
-                            <span class="tag">Droit numérique</span>
-                            <span class="tag">Audit</span>
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <img src="images/logos/aws-logo.svg" alt="Logo AWS" class="certification-logo">
+                            <div>
+                                <h3 class="card-title">AWS Cloud Foundation</h3>
+                                <div class="certification-date">Obtenu en 2024</div>
+                            </div>
+                        </div>
+                        <div class="certification-body">
+                            <p style="margin-bottom: 15px;">Certification d'Amazon Web Services validant les connaissances fondamentales du cloud computing et des services AWS.</p>
+                            <div class="tags" style="margin-bottom: 15px;">
+                                <span class="tag">Cloud Computing</span>
+                                <span class="tag">AWS</span>
+                                <span class="tag">Infrastructure Cloud</span>
+                                <span class="tag">Services Cloud</span>
+                            </div>
+                            <div>
+                                <a href="https://www.credly.com/badges/507579f9-2d28-47e8-abdf-e810040d8368" target="_blank" class="btn-certificate" style="display: inline-block; background-color: #3498db; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: 500;">
+                                    <i class="fab fa-aws"></i> Voir le badge Credly
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <img src="images/logos/rgpd-logo.svg" alt="Logo RGPD" class="certification-logo">
+                            <div>
+                                <h3 class="card-title">RGPD</h3>
+                                <div class="certification-date">En cours (2025)</div>
+                            </div>
+                        </div>
+                        <div class="certification-body">
+                            <p style="margin-bottom: 15px;">Formation au Règlement Général sur la Protection des Données, couvrant les aspects juridiques et techniques de la protection des données personnelles.</p>
+                            <div class="tags" style="margin-bottom: 15px;">
+                                <span class="tag">Protection des données</span>
+                                <span class="tag">Conformité</span>
+                                <span class="tag">Droit numérique</span>
+                                <span class="tag">Audit</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -111,7 +294,7 @@
                 <h2 class="section-title">🎯 Aspirations et Objectifs</h2>
                 <div class="card">
                     <h3>📚 Objectifs académiques</h3>
-                    <ul style="list-style-position: inside; margin-top: 10px;">
+                    <ul class="animated-list" style="list-style-position: inside; margin-top: 10px;">
                         <li>Réussir mon BTS SIO option SISR avec d'excellents résultats.</li>
                         <li>Poursuivre mes études en bachelor puis master spécialisé en cybersécurité ou administration réseau.</li>
                         <li>Obtenir des certifications avancées dans les domaines de la sécurité informatique et des réseaux.</li>
@@ -119,7 +302,7 @@
                     </ul>
                     
                     <h4 style="margin-top: 15px;">🔹 Moyen terme :</h4>
-                    <ul style="list-style-position: inside; margin-top: 5px;">
+                    <ul class="animated-list" style="list-style-position: inside; margin-top: 5px;">
                         <li>Obtenir des certifications reconnues :
                             <ul style="list-style-position: inside; margin-left: 20px;">
                                 <li>Cisco CCNA (Cisco Certified Network Associate)</li>
@@ -130,7 +313,7 @@
                     </ul>
 
                     <h4 style="margin-top: 15px;">🔹 Long terme :</h4>
-                    <ul style="list-style-position: inside; margin-top: 5px;">
+                    <ul class="animated-list" style="list-style-position: inside; margin-top: 5px;">
                         <li>Devenir Administrateur Systèmes & Réseaux spécialisé en sécurisation d'infrastructures.</li>
                         <li>Fonder ma propre entreprise spécialisée en maintenance et sécurité des systèmes réseaux.</li>
                         <li>Contribuer à l'innovation technologique dans les domaines de la cybersécurité, IA et Cloud Computing.</li>
@@ -176,7 +359,7 @@
                 <div class="card">
                     <p>Téléchargez mon CV au format PDF pour plus d'informations sur mon parcours et mes compétences.</p>
                     <div style="margin-top: 15px;">
-                        <a href="documents/cv_dessanene_sanhan.pdf" style="display: inline-block; background-color: var(--accent-color); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500;"><i class="fas fa-download"></i> Télécharger mon CV</a>
+                        <a href="documents/cv_dessanene_sanhan.pdf" class="btn-certificate" style="display: inline-block; background-color: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500;"><i class="fas fa-download"></i> Télécharger mon CV</a>
                     </div>
                 </div>
             </section>
@@ -206,5 +389,91 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Animations pour les éléments de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation pour les sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+                section.style.opacity = '0';
+                section.style.animation = 'fadeInUp 0.8s ease-out forwards';
+            });
+            
+            // Animation pour les cartes de certifications
+            const cards = document.querySelectorAll('.grid .certification-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${0.3 + (index * 0.1)}s`;
+                card.style.opacity = '0';
+                card.style.animation = 'fadeInUp 0.8s ease-out forwards';
+            });
+            
+            // Animation pour les tags
+            const tags = document.querySelectorAll('.tag');
+            tags.forEach((tag, index) => {
+                tag.style.opacity = '0';
+                tag.style.transform = 'scale(0.8)';
+                tag.style.transition = 'all 0.3s ease';
+                tag.style.transitionDelay = `${0.1 + (index * 0.05)}s`;
+                
+                setTimeout(() => {
+                    tag.style.opacity = '1';
+                    tag.style.transform = 'scale(1)';
+                }, 500);
+            });
+            
+            // Animation pour les éléments de liste
+            const listItems = document.querySelectorAll('.animated-list li');
+            listItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-10px)';
+                item.style.transition = 'all 0.3s ease';
+                item.style.transitionDelay = `${0.1 + (index * 0.05)}s`;
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 500);
+                
+                item.addEventListener('mouseenter', function() {
+                    this.style.color = '#3498db';
+                    this.style.transform = 'translateX(5px)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.color = '';
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+            
+            // Effet de survol pour les cartes
+            const allCards = document.querySelectorAll('.card');
+            allCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 25px rgba(13, 110, 253, 0.25)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.05)';
+                });
+            });
+            
+            // Animation pour les boutons de certification
+            const certButtons = document.querySelectorAll('.btn-certificate');
+            certButtons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 5px 15px rgba(13, 110, 253, 0.3)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
