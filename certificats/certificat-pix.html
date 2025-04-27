@@ -123,7 +123,7 @@
 <body>
     <div class="certificate-container">
         <div class="certificate-header">
-            <img src="../images/logos/pix-official.svg" alt="Logo PIX" class="certificate-logo">
+            <img src="../images/logos/pix-official-logo.svg" alt="Logo PIX" class="certificate-logo">
             <div class="certificate-title">
                 <h1>Certification PIX</h1>
                 <p>Compétences numériques certifiées</p>
@@ -132,12 +132,10 @@
         
         <div class="certificate-content">
             <div id="certificateDisplay">
-                <!-- L'image du certificat sera affichée ici après téléchargement -->
-                <div class="upload-container">
-                    <label class="upload-label">Téléchargez votre certificat PIX ici</label>
-                    <input type="file" id="certificateUpload" accept="image/*,.pdf" style="display: none;">
-                    <button id="uploadBtn" class="back-btn">Choisir un fichier</button>
-                    <p style="margin-top: 10px; font-size: 0.9em; color: #777;">Formats acceptés: JPG, PNG, PDF</p>
+                <!-- Afficher le certificat existant -->
+                <img src="pix/Pix_logo.svg.png" alt="Certificat PIX" class="certificate-image">
+                <div style="text-align: center; margin-top: 10px;">
+                    <button id="replaceCertBtn" class="back-btn">Remplacer le certificat</button>
                 </div>
             </div>
             
@@ -164,17 +162,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const uploadBtn = document.getElementById('uploadBtn');
-            const fileInput = document.getElementById('certificateUpload');
-            const certificateDisplay = document.getElementById('certificateDisplay');
+            const replaceCertBtn = document.getElementById('replaceCertBtn');
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'image/*,.pdf';
+            fileInput.style.display = 'none';
+            document.body.appendChild(fileInput);
             
-            // Vérifier si un certificat est déjà stocké
-            const savedCertificate = localStorage.getItem('pixCertificate');
-            if (savedCertificate) {
-                displayCertificate(savedCertificate);
-            }
-            
-            uploadBtn.addEventListener('click', function() {
+            replaceCertBtn.addEventListener('click', function() {
                 fileInput.click();
             });
             
@@ -182,13 +177,25 @@
                 const file = e.target.files[0];
                 if (!file) return;
                 
+                const certificateDisplay = document.getElementById('certificateDisplay');
+                
                 if (file.type.match('image.*')) {
                     const reader = new FileReader();
                     
                     reader.onload = function(e) {
                         const dataUrl = e.target.result;
                         localStorage.setItem('pixCertificate', dataUrl);
-                        displayCertificate(dataUrl);
+                        
+                        certificateDisplay.innerHTML = `
+                            <img src="${dataUrl}" alt="Certificat PIX" class="certificate-image">
+                            <div style="text-align: center; margin-top: 10px;">
+                                <button id="replaceCertBtn" class="back-btn">Remplacer le certificat</button>
+                            </div>
+                        `;
+                        
+                        document.getElementById('replaceCertBtn').addEventListener('click', function() {
+                            fileInput.click();
+                        });
                     };
                     
                     reader.readAsDataURL(file);
@@ -199,24 +206,16 @@
                         <object data="${objectUrl}" type="application/pdf" width="100%" height="600px">
                             <p>Votre navigateur ne prend pas en charge l'affichage des PDF. <a href="${objectUrl}" target="_blank">Cliquez ici pour télécharger le PDF</a>.</p>
                         </object>
-                    `;
-                }
-            });
-            
-            function displayCertificate(src) {
-                if (src.startsWith('data:image')) {
-                    certificateDisplay.innerHTML = `
-                        <img src="${src}" alt="Certificat PIX" class="certificate-image">
                         <div style="text-align: center; margin-top: 10px;">
-                            <button id="replaceCertBtn" class="back-btn">Remplacer le certificat</button>
+                            <button id="restoreCertBtn" class="back-btn">Revenir au certificat original</button>
                         </div>
                     `;
                     
-                    document.getElementById('replaceCertBtn').addEventListener('click', function() {
-                        fileInput.click();
+                    document.getElementById('restoreCertBtn').addEventListener('click', function() {
+                        location.reload();
                     });
                 }
-            }
+            });
         });
     </script>
 </body>

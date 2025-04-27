@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280">
+  <g fill="none" fill-rule="evenodd">
+    <!-- Cercle bleu -->
+    <circle cx="320" cy="125" r="30" fill="#0D8CF4"/>
+    
+    <!-- Lettre p -->
+    <path d="M56 50v157h25V104l48 47 48-47v103h25V50H173l-44 44-44-44H56z" fill="#0D8CF4"/>
+    
+    <!-- Lettre i -->
+    <path d="M214 50h77v45h-20V71h-35v115h35v-24h20v45h-77V50z" fill="#0D8CF4"/>
+    
+    <!-- Lettre x -->
+    <path d="M372 70c0-31 25-57 56.5-57a57 57 0 015.5.3v24c-1.8-.2-3.7-.3-5.5-.3-16.5 0-30.5 14-30.5 31S412 99 428.5 99c1.8 0 3.7-.1 5.5-.3v24a57 57 0 01-5.5.3c-31.5 0-56.5-25-56.5-57v.3z" fill="#0D8CF4"/>
+    
+    <!-- Partie orange du X -->
+    <path d="M494 154h46l10 30h28L535 70h-35l-41 114h28l10-30h-3z" fill="#FF9900"/>
+    <!-- Partie bleue du X -->
+    <path d="M530 89l-28-39h-35l41 57-41 57h35l28-39 28 39h35l-41-57 41-57h-35z" fill="#0D8CF4"/>
+  </g>
+</svg>
