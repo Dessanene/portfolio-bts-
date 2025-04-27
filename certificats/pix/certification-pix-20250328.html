@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Certification PIX - Attestation</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .certificate-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certificate-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .certificate-logo {
+            width: 100px;
+            margin-right: 20px;
+        }
+        
+        .certificate-title h1 {
+            margin: 0;
+            color: #3498db;
+            font-size: 24px;
+        }
+        
+        .certificate-title p {
+            margin: 5px 0 0;
+            color: #777;
+        }
+        
+        .certificate-content {
+            margin-bottom: 30px;
+        }
+        
+        .certificate-details {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .detail-row {
+            display: flex;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .detail-label {
+            width: 40%;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .detail-value {
+            width: 60%;
+            color: #333;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .certificate-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #777;
+        }
+        
+        .score-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .score-meter {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .score-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(#3498db 0% 85%, #f1f1f1 85% 100%);
+            position: relative;
+        }
+        
+        .score-inner {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            background: white;
+            border-radius: 50%;
+            top: 10%;
+            left: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .competence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .competence-item {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .competence-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .competence-level {
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        .pix-stamp {
+            text-align: right;
+            margin-top: 30px;
+        }
+        
+        .pix-stamp img {
+            width: 100px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate-container">
+        <div class="certificate-header">
+            <img src="../../images/logos/pix-official-logo.svg" alt="Logo PIX" class="certificate-logo">
+            <div class="certificate-title">
+                <h1>Attestation officielle PIX</h1>
+                <p>Certification des compétences numériques</p>
+            </div>
+        </div>
+        
+        <div class="certificate-content">
+            <div class="certificate-details">
+                <div class="detail-row">
+                    <div class="detail-label">Nom du candidat :</div>
+                    <div class="detail-value">SANHAN Dessanene</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Date de certification :</div>
+                    <div class="detail-value">28 Mars 2025</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Référence :</div>
+                    <div class="detail-value">PIX-CERT-2025-03-28-BTS-SIO</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Établissement :</div>
+                    <div class="detail-value">Institution Beaupeyrat</div>
+                </div>
+            </div>
+            
+            <div class="score-container">
+                <h3>Score global</h3>
+                <div class="score-meter">
+                    <div class="score-circle"></div>
+                    <div class="score-inner">85%</div>
+                </div>
+                <p style="margin-top: 10px;">Niveau certifié : Avancé</p>
+            </div>
+            
+            <h3 style="margin-top: 40px;">Compétences certifiées</h3>
+            <div class="competence-grid">
+                <div class="competence-item">
+                    <div class="competence-name">Information et données</div>
+                    <div class="competence-level">Niveau 5/6</div>
+                </div>
+                <div class="competence-item">
+                    <div class="competence-name">Communication et collaboration</div>
+                    <div class="competence-level">Niveau 6/6</div>
+                </div>
+                <div class="competence-item">
+                    <div class="competence-name">Création de contenu</div>
+                    <div class="competence-level">Niveau 4/6</div>
+                </div>
+                <div class="competence-item">
+                    <div class="competence-name">Protection et sécurité</div>
+                    <div class="competence-level">Niveau 5/6</div>
+                </div>
+                <div class="competence-item">
+                    <div class="competence-name">Environnement numérique</div>
+                    <div class="competence-level">Niveau 6/6</div>
+                </div>
+            </div>
+            
+            <div class="pix-stamp">
+                <img src="../../images/logos/pix-official-logo.svg" alt="Cachet PIX">
+                <p>Certification délivrée par PIX<br>Service public en ligne d'évaluation des compétences numériques</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="../../certifications.html" class="back-btn"><i class="fas fa-arrow-left"></i> Retour aux certifications</a>
+        </div>
+        
+        <div class="certificate-footer">
+            <p>Cette attestation certifie que le candidat a été évalué selon le référentiel PIX, qui s'appuie sur le cadre européen DigComp. Pour vérifier l'authenticité de cette certification, visitez <a href="https://pix.fr">pix.fr</a> avec la référence indiquée.</p>
+        </div>
+    </div>
+</body>
+</html>
