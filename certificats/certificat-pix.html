@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Certificat PIX</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .certificate-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certificate-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .certificate-logo {
+            width: 100px;
+            margin-right: 20px;
+        }
+        
+        .certificate-title h1 {
+            margin: 0;
+            color: #3498db;
+            font-size: 24px;
+        }
+        
+        .certificate-title p {
+            margin: 5px 0 0;
+            color: #777;
+        }
+        
+        .certificate-content {
+            margin-bottom: 30px;
+        }
+        
+        .certificate-image {
+            width: 100%;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .certificate-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #777;
+        }
+        
+        .upload-container {
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px dashed #3498db;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .upload-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #3498db;
+        }
+        
+        .instructions {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .instructions h3 {
+            color: #3498db;
+            margin-top: 0;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate-container">
+        <div class="certificate-header">
+            <img src="../images/logos/pix-official.svg" alt="Logo PIX" class="certificate-logo">
+            <div class="certificate-title">
+                <h1>Certification PIX</h1>
+                <p>Compétences numériques certifiées</p>
+            </div>
+        </div>
+        
+        <div class="certificate-content">
+            <div id="certificateDisplay">
+                <!-- L'image du certificat sera affichée ici après téléchargement -->
+                <div class="upload-container">
+                    <label class="upload-label">Téléchargez votre certificat PIX ici</label>
+                    <input type="file" id="certificateUpload" accept="image/*,.pdf" style="display: none;">
+                    <button id="uploadBtn" class="back-btn">Choisir un fichier</button>
+                    <p style="margin-top: 10px; font-size: 0.9em; color: #777;">Formats acceptés: JPG, PNG, PDF</p>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3><i class="fas fa-info-circle"></i> Comment ajouter votre certificat</h3>
+                <ul>
+                    <li>Cliquez sur le bouton "Choisir un fichier" ci-dessus.</li>
+                    <li>Sélectionnez votre certificat PIX au format image (JPG, PNG) ou PDF.</li>
+                    <li>Votre certificat sera affiché sur cette page.</li>
+                    <li>Pour le remplacer, il suffit de télécharger un nouveau fichier.</li>
+                </ul>
+                <p><strong>Note :</strong> Cette page est conçue pour afficher votre certificat PIX pour un accès facile depuis votre portfolio.</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="../certifications.html" class="back-btn"><i class="fas fa-arrow-left"></i> Retour aux certifications</a>
+        </div>
+        
+        <div class="certificate-footer">
+            <p>Ce certificat atteste de vos compétences numériques évaluées par la plateforme PIX, service public en ligne d'évaluation, de développement et de certification des compétences numériques.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const uploadBtn = document.getElementById('uploadBtn');
+            const fileInput = document.getElementById('certificateUpload');
+            const certificateDisplay = document.getElementById('certificateDisplay');
+            
+            // Vérifier si un certificat est déjà stocké
+            const savedCertificate = localStorage.getItem('pixCertificate');
+            if (savedCertificate) {
+                displayCertificate(savedCertificate);
+            }
+            
+            uploadBtn.addEventListener('click', function() {
+                fileInput.click();
+            });
+            
+            fileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                if (file.type.match('image.*')) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        const dataUrl = e.target.result;
+                        localStorage.setItem('pixCertificate', dataUrl);
+                        displayCertificate(dataUrl);
+                    };
+                    
+                    reader.readAsDataURL(file);
+                } else if (file.type === 'application/pdf') {
+                    // Pour les PDF, on affiche un lien vers le PDF
+                    const objectUrl = URL.createObjectURL(file);
+                    certificateDisplay.innerHTML = `
+                        <object data="${objectUrl}" type="application/pdf" width="100%" height="600px">
+                            <p>Votre navigateur ne prend pas en charge l'affichage des PDF. <a href="${objectUrl}" target="_blank">Cliquez ici pour télécharger le PDF</a>.</p>
+                        </object>
+                    `;
+                }
+            });
+            
+            function displayCertificate(src) {
+                if (src.startsWith('data:image')) {
+                    certificateDisplay.innerHTML = `
+                        <img src="${src}" alt="Certificat PIX" class="certificate-image">
+                        <div style="text-align: center; margin-top: 10px;">
+                            <button id="replaceCertBtn" class="back-btn">Remplacer le certificat</button>
+                        </div>
+                    `;
+                    
+                    document.getElementById('replaceCertBtn').addEventListener('click', function() {
+                        fileInput.click();
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
