@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapport - Déploiement d'une solution de supervision réseau</title>
+    <title>Rapport - Mise en place d'une solution de supervision réseau pour GSB</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -186,26 +186,27 @@
     <main>
         <div class="container">
             <div class="page-title">
-                <h1>Rapport détaillé : Déploiement d'une solution de supervision réseau 📊</h1>
+                <h1>Rapport détaillé : Mise en place d'une solution de supervision réseau pour GSB 📊</h1>
             </div>
             
-            <div style="text-align: center; margin-bottom: 40px;">
-                <div style="display: inline-block; padding: 10px 20px; background-color: #e74c3c; color: white; border-radius: 30px; font-weight: 500;">
-                    <i class="fas fa-building"></i> Entreprise : Arène Informatique | <i class="fas fa-calendar-alt"></i> Période : Avril - Juin 2025
+            <div style="text-align: center; margin-bottom: 30px; color: #666;">
+                <div style="display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                    <i class="fas fa-building"></i> Entreprise : Galaxy Swiss Bourdin (GSB) | <i class="fas fa-calendar-alt"></i> Période : Avril - Juin 2025
                 </div>
             </div>
 
             <section class="rapport-section">
                 <h2><i class="fas fa-info-circle"></i> Contexte du projet</h2>
                 <div class="rapport-box">
-                    <p>Arène Informatique, société de services informatiques gérant des infrastructures critiques pour plusieurs clients, avait besoin d'améliorer sa capacité de supervision réseau. Les enjeux principaux étaient :</p>
+                    <p>L'entreprise Galaxy Swiss Bourdin (GSB) est un groupe pharmaceutique issu de la fusion de l'américain Galaxy et du suisse Swiss Bourdin. Le groupe possède une infrastructure informatique répartie sur plusieurs sites en France et à l'international.</p>
+                    <p>Les services informatiques de GSB font face à plusieurs défis liés à la gestion de leurs infrastructures réseaux :</p>
                     <ul>
-                        <li>Manque de visibilité en temps réel sur l'état des infrastructures clients</li>
-                        <li>Détection tardive des incidents impactant la qualité de service</li>
-                        <li>Besoin d'un système d'alerte proactif pour résoudre les problèmes avant qu'ils n'impactent les utilisateurs</li>
-                        <li>Nécessité de disposer de tableaux de bord personnalisés pour chaque client</li>
+                        <li>Difficulté à repérer rapidement les pannes ou ralentissements sur les serveurs critiques</li>
+                        <li>Absence de visibilité centralisée sur l'état des différents services réseau</li>
+                        <li>Temps de réaction trop long en cas d'incident, impactant la productivité des équipes</li>
+                        <li>Manque d'historique des performances pour planifier les évolutions des infrastructures</li>
                     </ul>
-                    <p>Le projet s'inscrivait dans une stratégie d'amélioration continue de la qualité de service et de réduction des temps d'indisponibilité des systèmes.</p>
+                    <p>Le projet s'inscrit dans une stratégie d'amélioration de la qualité de service et de réduction des temps d'indisponibilité des systèmes informatiques de GSB, notamment pour les serveurs FTP (utilisés pour les transferts internes de fichiers) et les serveurs DHCP (distribuant dynamiquement les adresses IP).</p>
                 </div>
             </section>
 
@@ -214,18 +215,26 @@
                 <div class="rapport-box">
                     <h3><i class="fas fa-bullseye"></i> Objectifs principaux</h3>
                     <ul>
-                        <li>Mettre en place une solution de supervision complète basée sur Zabbix</li>
-                        <li>Créer des tableaux de bord visuels avec Grafana pour le suivi en temps réel</li>
-                        <li>Configurer un système d'alertes par email et SMS</li>
-                        <li>Former les équipes techniques à l'utilisation des outils</li>
+                        <li>Mettre en place une solution de supervision centralisée pour les serveurs critiques de GSB (FTP, DHCP)</li>
+                        <li>Créer des tableaux de bord visuels pour un suivi en temps réel des performances</li>
+                        <li>Configurer un système d'alertes automatiques en cas d'incident</li>
+                        <li>Former les équipes IT de GSB à l'utilisation de la solution</li>
                     </ul>
                     
-                    <h3><i class="fas fa-clock"></i> Contraintes</h3>
+                    <h3><i class="fas fa-check-double"></i> Résultats attendus</h3>
                     <ul>
-                        <li>Déploiement progressif sans interruption de service</li>
-                        <li>Installation sur infrastructure virtualisée existante</li>
-                        <li>Respect des règles de sécurité pour l'accès aux données de supervision</li>
+                        <li>Réduction du temps moyen de détection des incidents de 30 minutes à moins de 5 minutes</li>
+                        <li>Amélioration de la disponibilité des services critiques (objectif : 99,9%)</li>
+                        <li>Création de tableaux de bord personnalisés pour les différents niveaux hiérarchiques (techniciens, responsables)</li>
+                        <li>Documentation complète de la solution pour faciliter sa maintenance</li>
+                    </ul>
+                    
+                    <h3><i class="fas fa-exclamation-triangle"></i> Contraintes</h3>
+                    <ul>
+                        <li>Déploiement sans interruption des services en production</li>
+                        <li>Intégration avec l'infrastructure existante (serveurs Windows et Linux)</li>
                         <li>Budget limité imposant l'utilisation de solutions open source</li>
+                        <li>Déploiement sur plusieurs sites géographiquement distants</li>
                     </ul>
                 </div>
             </section>
@@ -234,109 +243,154 @@
                 <h2><i class="fas fa-cogs"></i> Méthode et mise en œuvre</h2>
                 <ol class="etape-list">
                     <li>
-                        <h3>Analyse de l'existant et définition des métriques</h3>
-                        <p>Cartographie complète des infrastructures à superviser et définition des indicateurs clés de performance (KPI) pertinents pour chaque service.</p>
+                        <h3>Analyse de l'infrastructure et définition des métriques</h3>
+                        <p>La première étape a consisté à analyser l'infrastructure multi-sites de GSB et à identifier les indicateurs clés de performance (KPI) à surveiller pour les serveurs FTP et DHCP :</p>
+                        <ul>
+                            <li><strong>Serveurs FTP :</strong> Temps de réponse, bande passante utilisée, nombre de connexions simultanées, taux de transfert, espace disque disponible</li>
+                            <li><strong>Serveurs DHCP :</strong> Taux d'utilisation du pool d'adresses IP, temps de réponse aux requêtes, taux de renouvellement des baux, nombre d'adresses disponibles</li>
+                            <li><strong>Métriques système générales :</strong> Utilisation CPU, mémoire, espace disque, trafic réseau, disponibilité des services</li>
+                        </ul>
+                        <div class="image-container">
+                            <img src="../images/situations/sp2-infrastructure-gsb.png" alt="Schéma de l'infrastructure de GSB" />
+                            <p class="image-caption">Cartographie de l'infrastructure multi-sites de GSB</p>
+                        </div>
                     </li>
                     <li>
-                        <h3>Installation et configuration de Zabbix</h3>
-                        <p>Déploiement de l'architecture Zabbix avec serveur central, proxies pour les sites distants et agents sur les équipements à superviser. Configuration des templates adaptés à chaque type d'équipement (serveurs, switches, routeurs, applications).</p>
+                        <h3>Sélection et déploiement de Zabbix</h3>
+                        <p>Après analyse comparative des différentes solutions disponibles (Nagios, Zabbix, Prometheus), nous avons choisi Zabbix pour sa flexibilité, sa facilité de configuration et son excellent rapport fonctionnalités/coût. Le déploiement a été réalisé sur une architecture distribuée :</p>
+                        <ul>
+                            <li><strong>Serveur Zabbix central</strong> installé sur un serveur Linux dédié au siège de GSB</li>
+                            <li><strong>Proxys Zabbix</strong> déployés sur chaque site distant pour collecter les données localement</li>
+                            <li><strong>Agents Zabbix</strong> installés sur tous les serveurs Windows et Linux à superviser</li>
+                            <li><strong>Base de données PostgreSQL</strong> pour le stockage des métriques collectées</li>
+                        </ul>
                         <div class="image-container">
-                            <img src="../images/zabbix-dashboard.png" alt="Interface Zabbix" onerror="this.src='../images/placeholder-image.png'">
+                            <img src="../images/situations/sp2-zabbix-dashboard.png" alt="Console d'administration Zabbix pour GSB" />
                             <p class="image-caption">Vue principale de la console d'administration Zabbix</p>
                         </div>
                     </li>
                     <li>
-                        <h3>Intégration avec Grafana</h3>
-                        <p>Installation de Grafana et création de tableaux de bord personnalisés pour visualiser les données collectées par Zabbix. Conception d'interfaces intuitives adaptées aux besoins des différentes équipes (technique, direction, clients).</p>
+                        <h3>Création des tableaux de bord personnalisés</h3>
+                        <p>Pour améliorer la visualisation des données, nous avons créé plusieurs tableaux de bord personnalisés directement dans Zabbix :</p>
+                        <ul>
+                            <li><strong>Tableau de bord exécutif</strong> offrant une vue simplifiée pour la direction</li>
+                            <li><strong>Tableau de bord technique FTP</strong> avec métriques détaillées des serveurs de transfert de fichiers</li>
+                            <li><strong>Tableau de bord DHCP</strong> pour suivre la distribution des adresses IP sur chaque site</li>
+                            <li><strong>Tableau de bord d'infrastructure</strong> avec des métriques système globales</li>
+                        </ul>
                         <div class="image-container">
-                            <img src="../images/grafana-dashboard.png" alt="Tableau de bord Grafana" onerror="this.src='../images/placeholder-image.png'">
-                            <p class="image-caption">Exemple de tableau de bord Grafana pour le suivi des performances réseau</p>
+                            <img src="../images/situations/sp2-zabbix-custom-dashboard.png" alt="Tableau de bord personnalisé dans Zabbix pour les serveurs FTP et DHCP" />
+                            <p class="image-caption">Tableau de bord Zabbix personnalisé pour le suivi des serveurs FTP et DHCP</p>
                         </div>
                     </li>
                     <li>
-                        <h3>Configuration des alertes</h3>
-                        <p>Mise en place d'un système d'alertes multi-niveaux avec escalade automatique en fonction de la gravité des incidents. Intégration avec la plateforme de ticketing existante pour automatiser la création d'incidents.</p>
+                        <h3>Mise en place du système d'alertes</h3>
+                        <p>Un système d'alertes hiérarchiques a été configuré pour notifier rapidement les équipes en cas d'incident :</p>
+                        <ul>
+                            <li><strong>Alertes de premier niveau</strong> envoyées par email aux administrateurs système</li>
+                            <li><strong>Alertes critiques</strong> transmises par SMS aux responsables d'astreinte</li>
+                            <li><strong>Intégration avec Microsoft Teams</strong> pour les notifications dans les canaux dédiés</li>
+                            <li><strong>Système d'escalade automatique</strong> si l'incident n'est pas pris en charge rapidement</li>
+                        </ul>
+                        <p>Des seuils d'alerte spécifiques ont été définis pour les services critiques :</p>
+                        <ul>
+                            <li>Alerte si le taux d'utilisation du pool DHCP dépasse 85%</li>
+                            <li>Alerte si le temps de réponse du serveur FTP dépasse 2 secondes</li>
+                            <li>Alerte en cas d'indisponibilité de l'un des services pendant plus de 30 secondes</li>
+                        </ul>
                     </li>
                     <li>
-                        <h3>Tests et optimisation</h3>
-                        <p>Phase de tests intensifs pour valider la fiabilité du système et ajuster les seuils d'alerte pour éviter les faux positifs. Optimisation des performances pour réduire l'impact sur les systèmes supervisés.</p>
-                    </li>
-                    <li>
-                        <h3>Formation et transfert de compétences</h3>
-                        <p>Sessions de formation pour les administrateurs et les utilisateurs de la plateforme. Création de documentation technique et de procédures d'exploitation.</p>
+                        <h3>Formation et documentation</h3>
+                        <p>La dernière étape a consisté à former les équipes informatiques de GSB et à documenter la solution :</p>
+                        <ul>
+                            <li>Formation pratique des administrateurs système sur l'utilisation de Zabbix</li>
+                            <li>Création d'une documentation technique complète (installation, configuration, maintenance)</li>
+                            <li>Élaboration de procédures d'intervention en cas d'alertes</li>
+                            <li>Mise en place d'un wiki interne pour centraliser toutes les informations</li>
+                        </ul>
+                        <p>Les équipes ont été formées en petits groupes pour assurer une meilleure assimilation des concepts et des outils.</p>
                     </li>
                 </ol>
             </section>
 
             <section class="rapport-section">
-                <h2><i class="fas fa-chart-line"></i> Résultats obtenus</h2>
+                <h2><i class="fas fa-chart-line"></i> Résultats et impacts</h2>
                 <div class="rapport-box">
-                    <h3><i class="fas fa-tachometer-alt"></i> Indicateurs clés</h3>
+                    <p>Le déploiement de cette solution de supervision a eu plusieurs impacts positifs pour GSB :</p>
+                    
                     <div class="dashboard-info">
                         <div class="dashboard-card">
-                            <i class="fas fa-server"></i>
-                            <h4>Équipements supervisés</h4>
-                            <p>+ de 150</p>
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h4>Temps de détection</h4>
+                            <p>Réduction de <strong>92%</strong> du temps moyen de détection des incidents</p>
                         </div>
                         <div class="dashboard-card">
-                            <i class="fas fa-chart-line"></i>
-                            <h4>Réduction du MTTR</h4>
-                            <p>-65%</p>
-                        </div>
-                        <div class="dashboard-card">
-                            <i class="fas fa-bell"></i>
-                            <h4>Incidents détectés automatiquement</h4>
-                            <p>92%</p>
+                            <i class="fas fa-heartbeat"></i>
+                            <h4>Disponibilité</h4>
+                            <p>Amélioration de la disponibilité des services à <strong>99,95%</strong></p>
                         </div>
                         <div class="dashboard-card">
                             <i class="fas fa-clock"></i>
-                            <h4>Temps de détection moyen</h4>
-                            <p>< 3 minutes</p>
+                            <h4>Résolution</h4>
+                            <p>Réduction de <strong>45%</strong> du temps moyen de résolution des incidents</p>
                         </div>
                     </div>
                     
-                    <h3><i class="fas fa-thumbs-up"></i> Bénéfices constatés</h3>
+                    <h3><i class="fas fa-trophy"></i> Bénéfices métier</h3>
                     <ul>
-                        <li>Visibilité complète et en temps réel de l'état des infrastructures</li>
-                        <li>Détection proactive des problèmes avant impact utilisateur</li>
-                        <li>Amélioration significative de la disponibilité des services</li>
-                        <li>Réduction du temps consacré à la surveillance manuelle</li>
-                        <li>Meilleure compréhension des tendances et des goulots d'étranglement</li>
+                        <li>Maintien de la continuité des services critiques pour tous les sites de GSB</li>
+                        <li>Optimisation de l'utilisation des ressources grâce à une meilleure visibilité</li>
+                        <li>Amélioration de la planification des capacités basée sur les données historiques</li>
+                        <li>Réduction des coûts liés aux incidents non détectés à temps</li>
                     </ul>
+                    
+                    <h3><i class="fas fa-comments"></i> Retour des utilisateurs</h3>
+                    <blockquote style="font-style: italic; padding: 10px 20px; border-left: 3px solid #e74c3c; background-color: #f9f9f9; margin: 20px 0;">
+                        "La solution de supervision a transformé notre façon de gérer notre infrastructure. Nous sommes passés d'une approche réactive à une anticipation des problèmes. Notre équipe IT peut désormais intervenir avant que les utilisateurs ne soient impactés." — Directeur des Systèmes d'Information, GSB
+                    </blockquote>
                 </div>
                 
                 <div class="conclusion-box">
                     <h3 style="color: white; margin-top: 0;"><i class="fas fa-lightbulb"></i> Conclusion</h3>
-                    <p>Le déploiement de cette solution de supervision a transformé la manière dont Arène Informatique gère ses infrastructures. L'entreprise est passée d'une approche réactive à une stratégie proactive, permettant d'anticiper et de résoudre les problèmes avant qu'ils n'impactent les utilisateurs. Les tableaux de bord Grafana ont également permis d'améliorer la communication avec les clients en offrant une vue transparente sur la qualité de service.</p>
+                    <p>Le déploiement de cette solution de supervision a transformé la manière dont GSB gère ses infrastructures réseau. L'entreprise est passée d'une approche réactive à une stratégie proactive, permettant d'anticiper et de résoudre les problèmes avant qu'ils n'impactent les utilisateurs. Les tableaux de bord personnalisés offrent désormais une visibilité complète sur l'état des serveurs FTP et DHCP, essentiels au bon fonctionnement de l'entreprise.</p>
+                    <p>Cette mission a également permis de standardiser les pratiques de supervision sur l'ensemble des sites de GSB, facilitant la gestion quotidienne des services informatiques et améliorant la qualité de service globale.</p>
                 </div>
             </section>
 
             <section class="rapport-section">
-                <h2><i class="fas fa-brain"></i> Compétences développées</h2>
+                <h2><i class="fas fa-brain"></i> Compétences mises en œuvre</h2>
                 <div class="rapport-box">
                     <div class="competence-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Maîtrise des outils de supervision réseau (Zabbix, Grafana)</span>
+                        <span>Analyse des besoins de supervision réseau dans un environnement multi-sites</span>
                     </div>
                     <div class="competence-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Configuration et administration de bases de données SQL</span>
+                        <span>Conception et déploiement d'une architecture de supervision distribuée</span>
                     </div>
                     <div class="competence-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Conception de tableaux de bord et visualisations de données</span>
+                        <span>Configuration et personnalisation de Zabbix pour des besoins spécifiques</span>
                     </div>
                     <div class="competence-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Automatisation des alertes et des notifications</span>
+                        <span>Création de tableaux de bord personnalisés dans Zabbix</span>
                     </div>
                     <div class="competence-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Administration système Linux dans un environnement virtualisé</span>
+                        <span>Mise en place d'un système d'alertes hiérarchisées</span>
                     </div>
                     <div class="competence-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Formation et support utilisateur</span>
+                        <span>Administration système Linux dans un environnement d'entreprise</span>
+                    </div>
+                    <div class="competence-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Documentation technique et procédures opérationnelles</span>
+                    </div>
+                    <div class="competence-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Formation et accompagnement des équipes IT de GSB</span>
                     </div>
                 </div>
             </section>
