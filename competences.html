@@ -145,52 +145,357 @@
 
             <section>
                 <h2 class="section-title">Applications réalisées</h2>
+                <p style="text-align: center; margin-bottom: 30px;">Découvrez les différentes applications et configurations que j'ai mises en place durant ma formation et mes expériences professionnelles.<br>Cliquez sur les liens pour accéder aux rapports détaillés de chaque réalisation.</p>
                 
-                <div class="skill-category">
-                    <h3> 1. Configuration et Sécurité</h3>
-                    <div class="card">
-                        <ul style="list-style-position: inside; margin-top: 10px;">
-                            <li><strong>Contexte et configuration de LAMP</strong> → Installation et paramétrage de l'environnement serveur LAMP (Linux, Apache, MySQL, PHP) pour héberger des applications web.</li>
-                            <li><strong>Préparation d'une configuration système</strong> → Définition des paramètres essentiels pour assurer une configuration stable et sécurisée du système.</li>
-                            <li><strong>Mise en place de GPG</strong> → Configuration et utilisation de GNU Privacy Guard (GPG) pour chiffrer et authentifier les fichiers et communications.</li>
-                            <li><strong>Installation et configuration de Fail2ban & Portsentry</strong> → Protection des serveurs contre les attaques répétées et les intrusions grâce à des outils de surveillance active.</li>
-                            <li><strong>Configuration du pare-feu et règles iptables/Netfilter</strong> → Implémentation de politiques de filtrage réseau pour sécuriser les connexions et prévenir les accès non autorisés.</li>
-                        </ul>
+                <style>
+                    .app-section {
+                        margin-bottom: 40px;
+                    }
+                    
+                    .app-category {
+                        color: #3498db;
+                        font-size: 1.5rem;
+                        margin-bottom: 20px;
+                        border-bottom: 2px solid #f1f1f1;
+                        padding-bottom: 10px;
+                    }
+                    
+                    .app-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                        gap: 25px;
+                    }
+                    
+                    .app-card {
+                        background-color: white;
+                        border-radius: 8px;
+                        box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+                        overflow: hidden;
+                        transition: all 0.3s ease;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    
+                    .app-card:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                    }
+                    
+                    .app-header {
+                        padding: 20px 20px 10px 20px;
+                    }
+                    
+                    .app-header h4 {
+                        margin: 0;
+                        color: #2c3e50;
+                        font-weight: 500;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        font-size: 1.1rem;
+                    }
+                    
+                    .app-header i {
+                        color: #3498db;
+                        font-size: 1.2rem;
+                        min-width: 20px;
+                    }
+                    
+                    .app-body {
+                        padding: 5px 20px 20px 20px;
+                        flex-grow: 1;
+                    }
+                    
+                    .app-footer {
+                        padding: 15px 20px;
+                        text-align: left;
+                    }
+                    
+                    .app-link {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 5px;
+                        padding: 8px 15px;
+                        background-color: transparent;
+                        color: #3498db;
+                        text-decoration: none;
+                        border: 1px solid #3498db;
+                        border-radius: 4px;
+                        font-size: 0.85rem;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .app-link:hover {
+                        background-color: #f8f9fa;
+                    }
+                    
+                    .app-link.soon {
+                        color: #95a5a6;
+                        border-color: #95a5a6;
+                        cursor: not-allowed;
+                    }
+                    
+                    .app-nav {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        gap: 10px;
+                        margin-bottom: 30px;
+                    }
+                    
+                    .app-nav a {
+                        padding: 8px 15px;
+                        background-color: #f1f1f1;
+                        border-radius: 20px;
+                        text-decoration: none;
+                        color: #333;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .app-nav a:hover {
+                        background-color: #3498db;
+                        color: white;
+                    }
+                </style>
+
+                <div class="app-nav">
+                    <a href="#securite">🔒 Sécurité</a>
+                    <a href="#sauvegarde">💾 Sauvegarde</a>
+                    <a href="#reseau">🌐 Réseau</a>
+                    <a href="#services">🖥️ Services</a>
+                    <a href="#bdd">📊 Bases de données</a>
+                </div>
+                
+                <!-- Section 1: Sécurité -->
+                <div id="securite" class="app-section">
+                    <h3 class="app-category">1. Configuration et Sécurité</h3>
+                    <div class="app-grid">
+                        <!-- LAMP -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-server"></i> Configuration LAMP</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Installation et paramétrage de l'environnement serveur LAMP (Linux, Apache, MySQL, PHP) pour héberger des applications web.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/installation_des_systemes.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Configuration système -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-cogs"></i> Configuration système</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Définition des paramètres essentiels pour assurer une configuration stable et sécurisée du système.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/Installation creation de vm avec proxmox.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
+                        
+                        <!-- GPG -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-key"></i> Mise en place de GPG</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Configuration et utilisation de GNU Privacy Guard (GPG) pour chiffrer et authentifier les fichiers et communications.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/gpg_-_gpg.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Fail2ban & Portsentry -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-shield-alt"></i> Fail2ban & Portsentry</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Protection des serveurs contre les attaques répétées et les intrusions grâce à des outils de surveillance active.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/portsentry_fail2ban.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Pare-feu -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-fire"></i> Configuration pare-feu</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Implémentation de politiques de filtrage réseau pour sécuriser les connexions et prévenir les accès non autorisés.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/pare-feu_via_opensense.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="skill-category">
-                    <h3> 2. Sauvegarde et Restauration</h3>
-                    <div class="card">
-                        <ul style="list-style-position: inside; margin-top: 10px;">
-                            <li><strong>Sauvegarde et restauration des systèmes</strong> → Mise en place de stratégies de sauvegarde et récupération des données pour garantir la continuité des services.</li>
-                            <li><strong>Mise en place de solutions de Backups et BackupPC</strong> → Automatisation des sauvegardes à distance et gestion centralisée des copies de sécurité.</li>
-                            <li><strong>Synchronisation des fichiers avec Rsync</strong> → Implémentation de synchronisations incrémentales pour optimiser la gestion des fichiers entre différents serveurs.</li>
-                        </ul>
+                
+                <!-- Section 2: Sauvegarde -->
+                <div id="sauvegarde" class="app-section">
+                    <h3 class="app-category">2. Sauvegarde et Restauration</h3>
+                    <div class="app-grid">
+                        <!-- Sauvegarde et restauration -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-sync"></i> Sauvegarde et restauration</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Mise en place de stratégies de sauvegarde et récupération des données pour garantir la continuité des services.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/faire_une_backup.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
+                        
+                        <!-- BackupPC -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-database"></i> BackupPC</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Automatisation des sauvegardes à distance et gestion centralisée des copies de sécurité.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/backuppc.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Rsync -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-exchange-alt"></i> Synchronisation Rsync</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Implémentation de synchronisations incrémentales pour optimiser la gestion des fichiers entre différents serveurs.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/rsync.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="skill-category">
-                    <h3> 3. Réseau & Services</h3>
-                    <div class="card">
-                        <ul style="list-style-position: inside; margin-top: 10px;">
-                            <li><strong>Configuration des services DNS, HTTP, HTTPS, FTP et FTPS</strong> → Déploiement et gestion de serveurs pour assurer un accès sécurisé et performant aux services web et fichiers.</li>
-                            <li><strong>Mise en place d'un serveur Samba</strong> → Partage sécurisé de fichiers entre machines sous différents systèmes d'exploitation via le protocole SMB.</li>
-                            <li><strong>Gestion du protocole DHCP et DHCP Relay</strong> → Configuration et optimisation du service DHCP pour l'attribution automatique des adresses IP sur un réseau.</li>
-                            <li><strong>Configuration de Failover et VLAN</strong> → Mise en place de mécanismes de tolérance aux pannes et segmentation réseau pour améliorer la sécurité et la performance.</li>
-                            <li><strong>Virtualisation avec Virtualhost Apache</strong> → Hébergement de multiples sites web sur un même serveur Apache via des configurations Virtualhost.</li>
-                            <li><strong>Sécurisation des connexions avec SSL/TLS</strong> → Chiffrement des échanges et mise en place de certificats pour garantir l'intégrité et la confidentialité des données.</li>
-                        </ul>
+                
+                <!-- Section 3: Réseau -->
+                <div id="reseau" class="app-section">
+                    <h3 class="app-category">3. Réseau & Services</h3>
+                    <div class="app-grid">
+                        <!-- Services web -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-globe"></i> Services web</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Déploiement et gestion de serveurs pour assurer un accès sécurisé et performant aux services web et fichiers.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/http.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Samba -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-share-alt"></i> Serveur Samba</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Partage sécurisé de fichiers entre machines sous différents systèmes d'exploitation via le protocole SMB.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/SAMBA.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
+                        
+                        <!-- DHCP -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-network-wired"></i> DHCP</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Configuration et optimisation du service DHCP pour l'attribution automatique des adresses IP sur un réseau.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/configuration_dhcp_et_dhcp_relay.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Failover et VLAN -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-project-diagram"></i> Failover et VLAN</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Mise en place de mécanismes de tolérance aux pannes et segmentation réseau pour améliorer la sécurité et la performance.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/mise_en_place_de_failover_pour_les_2_serveurs_dhcp.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Virtualhost Apache -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-server"></i> Virtualhost Apache</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Hébergement de multiples sites web sur un même serveur Apache via des configurations Virtualhost.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/bind.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
+                        
+                        <!-- SSL/TLS -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-lock"></i> SSL/TLS</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Chiffrement des échanges et mise en place de certificats pour garantir l'intégrité et la confidentialité des données.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/ssl_tls.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="skill-category">
-                    <h3> 4. Bases de Données & Supervision</h3>
-                    <div class="card">
-                        <ul style="list-style-position: inside; margin-top: 10px;">
-                            <li><strong>Administration de MariaDB</strong> → Configuration et gestion de bases de données relationnelles pour le stockage et l'accès optimisé aux données.</li>
-                            <li><strong>Installation et gestion de Munin pour la supervision système</strong> → Surveillance en temps réel des performances et de la santé du serveur grâce à des graphiques détaillés.</li>
-                        </ul>
+                
+                <!-- Section 4: Bases de données -->
+                <div id="bdd" class="app-section">
+                    <h3 class="app-category">4. Bases de Données & Supervision</h3>
+                    <div class="app-grid">
+                        <!-- MariaDB -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-database"></i> Administration MariaDB</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Configuration et gestion de bases de données relationnelles pour le stockage et l'accès optimisé aux données.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/creation_de_vm_serveurs_base_de_donnees_mariadb.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Munin -->
+                        <div class="app-card">
+                            <div class="app-header">
+                                <h4><i class="fas fa-chart-line"></i> Supervision Munin</h4>
+                            </div>
+                            <div class="app-body">
+                                <p>Surveillance en temps réel des performances et de la santé du serveur grâce à des graphiques détaillés.</p>
+                            </div>
+                            <div class="app-footer">
+                                <a href="rapports/pdf/munin.pdf" class="app-link" target="_blank"><i class="fas fa-file-pdf"></i> Rapport PDF</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -366,6 +671,13 @@
                     <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
                     <a href="#"><i class="fab fa-github fa-lg"></i></a>
                     <a href="#"><i class="far fa-envelope fa-lg"></i></a>
+                </div>
+                <div class="category-navigation">
+                    <a href="#securite" class="nav-button">Sécurité</a>
+                    <a href="#sauvegarde" class="nav-button">Sauvegarde</a>
+                    <a href="#reseau" class="nav-button">Réseau</a>
+                    <a href="#services" class="nav-button">Services</a>
+                    <a href="#bdd" class="nav-button">Bases de données</a>
                 </div>
                 <div class="footer-links">
                     <a href="index.html">Accueil</a>

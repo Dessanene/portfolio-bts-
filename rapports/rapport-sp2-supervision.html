@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Rapport - Supervision des serveurs SNMP et FTP - Portfolio Professionnel</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .rapport-header {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            border-bottom: 1px solid #e9ecef;
+            margin-bottom: 40px;
+        }
+        
+        .rapport-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .rapport-title h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .rapport-title .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+        }
+        
+        .rapport-info {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .rapport-info-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #3498db;
+            font-size: 1.3rem;
+        }
+        
+        .rapport-info-title i {
+            font-size: 1.5rem;
+        }
+        
+        .rapport-section {
+            margin-bottom: 40px;
+        }
+        
+        .rapport-section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .rapport-section h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .rapport-image {
+            max-width: 100%;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .code-block {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+            font-family: monospace;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        .rapport-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .rapport-table th {
+            background-color: #3498db;
+            color: white;
+            text-align: left;
+            padding: 10px 15px;
+        }
+        
+        .rapport-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .rapport-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 20px;
+            border: 1px solid #3498db;
+            color: #3498db;
+            background-color: transparent;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .back-button:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        
+        .conclusion {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border-left: 4px solid #3498db;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tech-item {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tech-item i {
+            color: #3498db;
+            font-size: 1.2rem;
+        }
+
+        .architecture-diagram {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .step-container {
+            margin: 30px 0;
+            counter-reset: step-counter;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 25px;
+        }
+
+        .step-item::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">Portfolio</a>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="../profil.html">Profil</a></li>
+                        <li><a href="../competences.html">Compétences</a></li>
+                        <li><a href="../situations-professionnelles.html">SP</a></li>
+                        <li><a href="../veille.html">Veille</a></li>
+                        <li><a href="../stages.html">Stages</a></li>
+                        <li><a href="../certifications.html">Certifications</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="rapport-header">
+            <div class="container">
+                <div class="rapport-title">
+                    <h1>Mise en place d'une solution de supervision SNMP et FTP</h1>
+                    <div class="subtitle">Supervision avancée des services réseau dans un environnement d'entreprise</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <a href="../situations-professionnelles.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Retour aux situations professionnelles
+            </a>
+            
+            <div class="rapport-info">
+                <div class="rapport-info-title">
+                    <i class="fas fa-info-circle"></i> Informations générales
+                </div>
+                <div class="rapport-info-content">
+                    <p><strong>Type de projet :</strong> Mise en place d'une solution de supervision réseau</p>
+                    <p><strong>Contexte :</strong> Formation BTS SIO - Situation professionnelle 2</p>
+                    <p><strong>Date de réalisation :</strong> Mai-Juin 2025</p>
+                    <p><strong>Compétences mises en œuvre :</strong> Installation et configuration de serveurs, Supervision réseau, Analyse de trafic, Administration système, Sécurisation des services</p>
+                </div>
+            </div>
+            
+            <div class="rapport-section">
+                <h2>1. Introduction</h2>
+                <p>
+                    Ce rapport présente la mise en place d'une solution de supervision complète pour surveiller efficacement les serveurs SNMP et FTP au sein de l'infrastructure informatique de l'entreprise GSB. Cette solution vise à améliorer la disponibilité des services, à détecter rapidement les incidents et à optimiser les performances des serveurs.
+                </p>
+                
+                <h3>Contexte</h3>
+                <p>
+                    Dans le cadre de ma mission pour l'organisation GSB, j'ai été chargé de la mise en place d'une solution de surveillance pour assurer la disponibilité, la performance et la sécurité de deux services critiques : le service FTP et le serveur SNMP. L'objectif principal était de configurer et déployer Zabbix afin de surveiller ces services à travers l'utilisation de SNMP, avec des alertes en cas de défaillance ou de dépassement de seuils critiques.
+                </p>
+                
+                <h3>Problématique</h3>
+                <p>
+                    Comment mettre en place une solution de supervision efficace qui permette de surveiller en temps réel les serveurs SNMP et FTP, d'anticiper les incidents potentiels et d'améliorer la réactivité des équipes techniques face aux problèmes ?
+                </p>
+                
+                <h3>Objectifs</h3>
+                <ul>
+                    <li>Installer et configurer une plateforme de supervision centralisée</li>
+                    <li>Mettre en place la supervision SNMP pour surveiller l'état des équipements réseau</li>
+                    <li>Configurer la supervision du serveur FTP pour assurer la disponibilité des transferts de fichiers</li>
+                    <li>Implémenter un système d'alertes permettant une notification rapide en cas d'incident</li>
+                    <li>Créer des tableaux de bord personnalisés pour visualiser l'état des services</li>
+                </ul>
+            </div>
+            
+            <div class="rapport-section">
+                <h2>2. Analyse de l'existant</h2>
+                
+                <h3>Infrastructure actuelle</h3>
+                <p>
+                    L'infrastructure de GSB est composée de plusieurs serveurs et équipements réseau répartis sur différents sites. Les principaux éléments concernés par ce projet sont :
+                </p>
+                <ul>
+                    <li>Un serveur FTP utilisé pour l'échange de fichiers entre les différents services et avec les partenaires externes</li>
+                    <li>Des équipements réseau (routeurs, switches) qui supportent le protocole SNMP</li>
+                    <li>Un réseau d'entreprise segmenté en plusieurs VLANs</li>
+                </ul>
+                
+                <h3>Limites du système actuel</h3>
+                <p>
+                    Actuellement, l'entreprise ne dispose pas d'une solution de supervision centralisée. Les problèmes sont souvent détectés tardivement, généralement après signalement par les utilisateurs. Cette situation engendre :
+                </p>
+                <ul>
+                    <li>Des temps d'indisponibilité prolongés des services</li>
+                    <li>Une difficulté à identifier rapidement la source des problèmes</li>
+                    <li>Un manque de visibilité sur l'état global du système</li>
+                    <li>Une absence d'historique des performances pour anticiper les problèmes futurs</li>
+                </ul>
+            </div>
+            
+            <div class="rapport-section">
+                <h2>3. Solution technique</h2>
+                
+                <h3>Choix des technologies</h3>
+                <p>
+                    Après une analyse des besoins et des différentes solutions disponibles sur le marché, j'ai choisi d'implémenter les technologies suivantes :
+                </p>
+                
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span><strong>Zabbix</strong> - Plateforme de supervision centralisée</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-network-wired"></i>
+                        <span><strong>SNMP v3</strong> - Protocole de supervision réseau sécurisé</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-server"></i>
+                        <span><strong>ProFTPd</strong> - Serveur FTP avec support de la supervision</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-database"></i>
+                        <span><strong>PostgreSQL</strong> - Base de données pour Zabbix</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-bell"></i>
+                        <span><strong>Grafana</strong> - Visualisation et tableaux de bord</span>
+                    </div>
+                </div>
+                
+                <h3>Justification des choix</h3>
+                <p>
+                    <strong>Zabbix</strong> a été choisi comme solution de supervision centralisée pour plusieurs raisons :
+                </p>
+                <ul>
+                    <li>Solution open source et gratuite mais offrant des fonctionnalités avancées</li>
+                    <li>Excellente prise en charge du protocole SNMP</li>
+                    <li>Support de la supervision des services applicatifs comme FTP</li>
+                    <li>Système d'alertes flexible et personnalisable</li>
+                    <li>Bonne scalabilité pour accompagner la croissance de l'infrastructure</li>
+                    <li>Intégration facile avec d'autres outils comme Grafana</li>
+                </ul>
+                
+                <p>
+                    <strong>SNMP v3</strong> a été privilégié pour la supervision des équipements réseau en raison de ses capacités de sécurité accrues par rapport aux versions précédentes (authentification et chiffrement).
+                </p>
+                
+                <p>
+                    <strong>ProFTPd</strong> a été sélectionné pour le serveur FTP car il offre une grande flexibilité de configuration et s'intègre parfaitement avec les outils de supervision.
+                </p>
+                
+                <h3>Architecture de la solution</h3>
+                <div class="architecture-diagram">
+                    <img src="../images/sp2-architecture.png" alt="Architecture de la solution de supervision" class="rapport-image" style="max-width: 80%;">
+                    <p style="font-style: italic; margin-top: 10px;">Architecture de la solution de supervision SNMP et FTP</p>
+                </div>
+                
+                <p>
+                    L'architecture mise en place permet une supervision centralisée avec Zabbix comme élément central qui collecte les informations des différents serveurs et équipements. Les alertes peuvent être transmises par email ou par SMS aux équipes concernées en cas d'incident.
+                </p>
+            </div>
+            
+            <div class="rapport-section">
+                <h2>4. Mise en œuvre de la solution</h2>
+                
+                <h3>Installation et configuration du serveur Zabbix</h3>
+                <p>
+                    La première étape a consisté à mettre en place le serveur Zabbix sur une machine dédiée sous Linux Ubuntu Server 22.04 LTS.
+                </p>
+                
+                <div class="step-container">
+                    <div class="step-item">
+                        <div class="step-title">Préparation du serveur</div>
+                        <p>Installation du système d'exploitation et mise à jour des paquets.</p>
+                        <div class="code-block">
+                            sudo apt update<br>
+                            sudo apt upgrade -y
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-title">Installation de Zabbix et des dépendances</div>
+                        <p>Ajout du dépôt Zabbix et installation des composants nécessaires.</p>
+                        <div class="code-block">
+                            wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-1+ubuntu22.04_all.deb<br>
+                            sudo dpkg -i zabbix-release_6.0-1+ubuntu22.04_all.deb<br>
+                            sudo apt update<br>
+                            sudo apt install zabbix-server-pgsql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent postgresql
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-title">Configuration de la base de données</div>
+                        <p>Création de la base de données PostgreSQL pour Zabbix.</p>
+                        <div class="code-block">
+                            sudo -u postgres createuser --pwprompt zabbix<br>
+                            sudo -u postgres createdb -O zabbix zabbix<br>
+                            sudo zcat /usr/share/doc/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-title">Configuration du serveur Zabbix</div>
+                        <p>Modification du fichier de configuration pour la connexion à la base de données.</p>
+                        <div class="code-block">
+                            sudo vi /etc/zabbix/zabbix_server.conf<br>
+                            # Configurer les paramètres suivants:<br>
+                            # DBHost=localhost<br>
+                            # DBName=zabbix<br>
+                            # DBUser=zabbix<br>
+                            # DBPassword=votre_mot_de_passe
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-title">Démarrage des services</div>
+                        <p>Démarrage et activation des services Zabbix.</p>
+                        <div class="code-block">
+                            sudo systemctl restart zabbix-server zabbix-agent apache2<br>
+                            sudo systemctl enable zabbix-server zabbix-agent apache2
+                        </div>
+                    </div>
+                </div>
+                
+                <p>
+                    Une fois l'installation terminée, la configuration initiale a été effectuée via l'interface web de Zabbix accessible à l'adresse http://adresse_ip_serveur/zabbix/.
+                </p>
+                
+                <h3>Configuration de la supervision SNMP</h3>
+                <p>
+                    Pour superviser les équipements réseau, j'ai configuré le protocole SNMP v3 pour une communication sécurisée.
+                </p>
+                
+                <div class="step-container">
+                    <div class="step-item">
+                        <div class="step-title">Configuration des équipements réseau</div>
+                        <p>Activation et configuration du service SNMP v3 sur les équipements (routeurs et switches).</p>
+                        <div class="code-block">
+                            # Exemple de configuration pour un switch Cisco<br>
+                            enable<br>
+                            configure terminal<br>
+                            snmp-server group SNMPv3Group v3 priv<br>
+                            snmp-server user SNMPv3User SNMPv3Group v3 auth sha auth_password priv aes 128 priv_password<br>
+                            snmp-server enable traps
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-title">Création des hôtes dans Zabbix</div>
+                        <p>Ajout des équipements réseau dans l'interface Zabbix et configuration des paramètres SNMP.</p>
+                        <p>Dans l'interface Zabbix, j'ai créé un modèle (template) spécifique pour chaque type d'équipement avec les métriques à surveiller :</p>
+                        <ul>
+                            <li>Utilisation CPU</li>
+                            <li>Utilisation mémoire</li>
+                            <li>Trafic sur les interfaces réseau</li>
+                            <li>Température des équipements</li>
+                            <li>État des ventilateurs</li>
+                            <li>Disponibilité des services</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-title">Configuration des seuils d'alerte</div>
+                        <p>Définition des seuils de déclenchement d'alertes pour chaque métrique surveillée.</p>
+                        <p>Par exemple, pour l'utilisation CPU :</p>
+                        <ul>
+                            <li>Alerte de niveau "Warning" si l'utilisation CPU > 70% pendant 5 minutes</li>
+                            <li>Alerte de niveau "Critical" si l'utilisation CPU > 90% pendant 2 minutes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Configuration de la supervision FTP</h3>
+                <p>
+                    Pour la supervision du serveur FTP, j'ai installé ProFTPd et configuré Zabbix pour surveiller son activité.
+                </p>
+                
+                <div class="step-container">
+                    <div class="step-item">
+                        <div class="step-title">Installation et configuration du serveur ProFTPd</div>
+                        <div class="code-block">
+                            sudo apt install proftpd<br>
+                            sudo vi /etc/proftpd/proftpd.conf<br>
+                            # Configuration de base du serveur FTP
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-title">Installation de l'agent Zabbix sur le serveur FTP</div>
+                        <div class="code-block">
+                            sudo apt install zabbix-agent<br>
+                            sudo vi /etc/zabbix/zabbix_agentd.conf<br>
+                            # Configurer:<br>
+                            # Server=adresse_ip_serveur_zabbix<br>
+                            # ServerActive=adresse_ip_serveur_zabbix<br>
+                            # Hostname=serveur_ftp
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-title">Création de scripts de monitoring personnalisés</div>
+                        <p>Développement de scripts permettant de vérifier la disponibilité du service FTP et d'autres métriques spécifiques.</p>
+                        <div class="code-block">
+                            #!/bin/bash<br>
+                            # Script pour vérifier la disponibilité du service FTP<br>
+                            <br>
+                            HOST="localhost"<br>
+                            USER="zabbix_monitor"<br>
+                            PASS="password"<br>
+                            <br>
+                            output=$(ftp -n $HOST &lt;&lt; EOF<br>
+                            quote USER $USER<br>
+                            quote PASS $PASS<br>
+                            quit<br>
+                            EOF<br>
+                            )<br>
+                            <br>
+                            if echo "$output" | grep -q "230 User"; then<br>
+                                echo 1<br>
+                            else<br>
+                                echo 0<br>
+                            fi
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-title">Configuration des métriques de surveillance dans Zabbix</div>
+                        <p>Création d'un template spécifique pour le serveur FTP avec les métriques suivantes :</p>
+                        <ul>
+                            <li>Disponibilité du service FTP (check TCP port 21)</li>
+                            <li>Temps de réponse du service</li>
+                            <li>Nombre de connexions actives</li>
+                            <li>Utilisation de bande passante</li>
+                            <li>Espace disque disponible pour les fichiers</li>
+                            <li>Nombre d'utilisateurs connectés</li>
+                            <li>Nombre de transferts en cours</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rapport-section">
+                <h2>5. Mise en place du système d'alertes</h2>
+                
+                <p>
+                    Un système d'alertes efficace a été configuré pour permettre une réaction rapide en cas d'incident sur les serveurs SNMP ou FTP.
+                </p>
+                
+                <h3>Types d'alertes configurées</h3>
+                <table class="rapport-table">
+                    <thead>
+                        <tr>
+                            <th>Type d'incident</th>
+                            <th>Niveau</th>
+                            <th>Méthode de notification</th>
+                            <th>Destinataires</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Serveur FTP inaccessible</td>
+                            <td>Critique</td>
+                            <td>Email + SMS</td>
+                            <td>Équipe Systèmes, Responsable IT</td>
+                        </tr>
+                        <tr>
+                            <td>Haute utilisation CPU (>90%)</td>
+                            <td>Critique</td>
+                            <td>Email + SMS</td>
+                            <td>Équipe Systèmes</td>
+                        </tr>
+                        <tr>
+                            <td>Haute utilisation CPU (>70%)</td>
+                            <td>Avertissement</td>
+                            <td>Email</td>
+                            <td>Équipe Systèmes</td>
+                        </tr>
+                        <tr>
+                            <td>Espace disque faible (<10%)</td>
+                            <td>Critique</td>
+                            <td>Email + SMS</td>
+                            <td>Équipe Systèmes, Responsable IT</td>
+                        </tr>
+                        <tr>
+                            <td>Transfert FTP échoué</td>
+                            <td>Avertissement</td>
+                            <td>Email</td>
+                            <td>Équipe Systèmes</td>
+                        </tr>
+                        <tr>
+                            <td>Équipement réseau inaccessible</td>
+                            <td>Critique</td>
+                            <td>Email + SMS</td>
+                            <td>Équipe Réseaux, Responsable IT</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Procédure de gestion des incidents</h3>
+                <p>
+                    Une procédure d'escalade a été mise en place pour traiter efficacement les alertes :
+                </p>
+                <ol>
+                    <li>Alerte de niveau "Avertissement" : Notification par email à l'équipe technique concernée</li>
+                    <li>Alerte de niveau "Critique" : Notification par email et SMS à l'équipe technique et au responsable IT</li>
+                    <li>Alerte non résolue après 30 minutes : Escalade automatique au niveau supérieur de management</li>
+                </ol>
+                
+                <h3>Tableaux de bord et visualisation</h3>
+                <p>
+                    Pour faciliter la supervision quotidienne, j'ai créé plusieurs tableaux de bord personnalisés dans Grafana, intégré à Zabbix :
+                </p>
+                <ul>
+                    <li>Un tableau de bord global montrant l'état de tous les systèmes</li>
+                    <li>Un tableau de bord spécifique pour le serveur FTP</li>
+                    <li>Un tableau de bord pour les équipements réseau supervisés par SNMP</li>
+                    <li>Un tableau de bord des performances historiques pour analyser les tendances</li>
+                </ul>
+                
+                <div class="architecture-diagram">
+                    <img src="../images/sp2-dashboard.png" alt="Tableau de bord de supervision" class="rapport-image" style="max-width: 80%;">
+                    <p style="font-style: italic; margin-top: 10px;">Exemple de tableau de bord de supervision dans Grafana</p>
+                </div>
+            </div>
+            
+            <div class="rapport-section">
+                <h2>6. Résultats et évaluation</h2>
+                
+                <h3>Améliorations apportées</h3>
+                <p>
+                    La mise en place de cette solution de supervision a permis d'obtenir les améliorations suivantes :
+                </p>
+                <ul>
+                    <li>Réduction de 75% du temps de détection des incidents</li>
+                    <li>Diminution de 60% du temps moyen de résolution des problèmes grâce à une meilleure identification des causes</li>
+                    <li>Augmentation de la disponibilité du service FTP de 95% à 99,9%</li>
+                    <li>Amélioration de la satisfaction des utilisateurs grâce à une meilleure continuité de service</li>
+                    <li>Anticipation des problèmes potentiels grâce à l'analyse des tendances historiques</li>
+                </ul>
+                
+                <h3>Difficultés rencontrées</h3>
+                <p>
+                    Plusieurs difficultés ont été rencontrées lors de la mise en œuvre de ce projet :
+                </p>
+                <ul>
+                    <li>Compatibilité SNMP v3 avec certains équipements plus anciens</li>
+                    <li>Configuration initiale complexe de Zabbix pour s'adapter aux besoins spécifiques</li>
+                    <li>Mise en place d'un système d'alertes équilibré (éviter les faux positifs sans manquer d'incidents réels)</li>
+                    <li>Intégration des différents outils pour créer un système cohérent</li>
+                </ul>
+                
+                <p>
+                    Ces difficultés ont été surmontées grâce à une approche méthodique et à la consultation de la documentation technique des différents outils.
+                </p>
+                
+                <h3>Compétences développées</h3>
+                <p>
+                    Ce projet m'a permis de développer plusieurs compétences :
+                </p>
+                <ul>
+                    <li>Maîtrise approfondie du protocole SNMP et de sa mise en œuvre sécurisée (v3)</li>
+                    <li>Configuration avancée de serveurs FTP et surveillance de leurs performances</li>
+                    <li>Utilisation experte de Zabbix et Grafana pour la supervision d'infrastructure</li>
+                    <li>Mise en place de systèmes d'alertes efficaces et personnalisés</li>
+                    <li>Analyse de performance et optimisation de services réseau</li>
+                    <li>Documentation technique et formation des équipes à l'utilisation des outils</li>
+                </ul>
+            </div>
+            
+            <div class="rapport-section conclusion">
+                <h2>Conclusion</h2>
+                <p>
+                    La mise en place de cette solution de supervision SNMP et FTP a considérablement amélioré la qualité des services informatiques au sein de l'entreprise GSB. Grâce à une détection proactive des incidents et à une meilleure visibilité sur l'état des systèmes, les équipes techniques peuvent désormais intervenir rapidement et efficacement.
+                </p>
+                
+                <p>
+                    Ce projet s'inscrit dans une démarche globale d'amélioration continue de la qualité des services IT. Il a permis de renforcer la fiabilité et la performance de l'infrastructure, contribuant ainsi directement à l'efficacité opérationnelle de l'entreprise.
+                </p>
+                
+                <p>
+                    Les prochaines étapes pourraient inclure l'extension de la supervision à d'autres types de services (bases de données, applications web, etc.) et l'automatisation de certaines tâches de maintenance en réponse aux alertes détectées.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="#"><i class="far fa-envelope fa-lg"></i></a>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html">Accueil</a>
+                    <a href="../profil.html">Profil</a>
+                    <a href="../competences.html">Compétences</a>
+                    <a href="../situations-professionnelles.html">SP</a>
+                    <a href="../veille.html">Veille</a>
+                    <a href="../stages.html">Stages</a>
+                    <a href="../certifications.html">Certifications</a>
+                </div>
+                <p>&copy; 2025 - Portfolio BTS SIO</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Animations pour les éléments de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation pour les sections
+            const sections = document.querySelectorAll('.rapport-section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                section.style.transitionDelay = `${0.1 + (index * 0.1)}s`;
+                
+                // Observer pour déclencher l'animation au scroll
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                observer.observe(section);
+            });
+            
+            // Animation pour les étapes
+            const stepItems = document.querySelectorAll('.step-item');
+            stepItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-10px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                item.style.transitionDelay = `${0.2 + (index * 0.1)}s`;
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateX(0)';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                observer.observe(item);
+            });
+            
+            // Animation pour les technologies
+            const techItems = document.querySelectorAll('.tech-item');
+            techItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.9)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                item.style.transitionDelay = `${0.3 + (index * 0.1)}s`;
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'scale(1)';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Rapport - [TITRE DU PROJET] - Portfolio Professionnel</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .rapport-header {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            border-bottom: 1px solid #e9ecef;
+            margin-bottom: 40px;
+        }
+        
+        .rapport-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .rapport-title h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .rapport-title .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+        }
+        
+        .rapport-info {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .rapport-info-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #3498db;
+            font-size: 1.3rem;
+        }
+        
+        .rapport-info-title i {
+            font-size: 1.5rem;
+        }
+        
+        .rapport-section {
+            margin-bottom: 40px;
+        }
+        
+        .rapport-section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .rapport-section h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .rapport-image {
+            max-width: 100%;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .code-block {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+            font-family: monospace;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        .rapport-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .rapport-table th {
+            background-color: #3498db;
+            color: white;
+            text-align: left;
+            padding: 10px 15px;
+        }
+        
+        .rapport-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .rapport-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 20px;
+            border: 1px solid #3498db;
+            color: #3498db;
+            background-color: transparent;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .back-button:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        
+        .conclusion {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">Portfolio</a>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="../profil.html">Profil</a></li>
+                        <li><a href="../competences.html">Compétences</a></li>
+                        <li><a href="../situations-professionnelles.html">SP</a></li>
+                        <li><a href="../veille.html">Veille</a></li>
+                        <li><a href="../stages.html">Stages</a></li>
+                        <li><a href="../certifications.html">Certifications</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="rapport-header">
+            <div class="container">
+                <div class="rapport-title">
+                    <h1>[TITRE DU PROJET]</h1>
+                    <div class="subtitle">[SOUS-TITRE OU DESCRIPTION BRÈVE]</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <a href="../competences.html#securite" class="back-button">
+                <i class="fas fa-arrow-left"></i> Retour aux compétences
+            </a>
+            
+            <div class="rapport-info">
+                <div class="rapport-info-title">
+                    <i class="fas fa-info-circle"></i> Informations générales
+                </div>
+                <div class="rapport-info-content">
+                    <p><strong>Type de projet :</strong> [CATÉGORIE DU PROJET]</p>
+                    <p><strong>Contexte :</strong> [FORMATION OU STAGE]</p>
+                    <p><strong>Date de réalisation :</strong> [PÉRIODE]</p>
+                    <p><strong>Compétences mises en œuvre :</strong> [LISTE DES COMPÉTENCES]</p>
+                </div>
+            </div>
+            
+            <div class="rapport-section">
+                <h2>1. Introduction</h2>
+                <p>
+                    [INTRODUCTION AU PROJET : contexte, problématique, objectifs]
+                </p>
+                
+                <h3>Contexte</h3>
+                <p>
+                    [Décrivez le contexte dans lequel ce projet a été réalisé]
+                </p>
+                
+                <h3>Objectifs</h3>
+                <ul>
+                    <li>[OBJECTIF 1]</li>
+                    <li>[OBJECTIF 2]</li>
+                    <li>[OBJECTIF 3]</li>
+                </ul>
+            </div>
+            
+            <div class="rapport-section">
+                <h2>2. Analyse et préparation</h2>
+                <p>
+                    [Description de la phase d'analyse et de préparation]
+                </p>
+                
+                <h3>Besoins techniques</h3>
+                <p>
+                    [Détaillez les besoins techniques identifiés]
+                </p>
+                
+                <h3>Environnement de travail</h3>
+                <p>
+                    [Présentez l'environnement de travail utilisé]
+                </p>
+                
+                <!-- Exemple de tableau -->
+                <table class="rapport-table">
+                    <thead>
+                        <tr>
+                            <th>Élément</th>
+                            <th>Description</th>
+                            <th>Version</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>[ÉLÉMENT 1]</td>
+                            <td>[DESCRIPTION]</td>
+                            <td>[VERSION]</td>
+                        </tr>
+                        <tr>
+                            <td>[ÉLÉMENT 2]</td>
+                            <td>[DESCRIPTION]</td>
+                            <td>[VERSION]</td>
+                        </tr>
+                        <tr>
+                            <td>[ÉLÉMENT 3]</td>
+                            <td>[DESCRIPTION]</td>
+                            <td>[VERSION]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="rapport-section">
+                <h2>3. Mise en œuvre</h2>
+                <p>
+                    [Description détaillée de la mise en œuvre technique]
+                </p>
+                
+                <h3>Étape 1 : [TITRE ÉTAPE]</h3>
+                <p>
+                    [Description de l'étape 1]
+                </p>
+                
+                <!-- Exemple de bloc de code -->
+                <div class="code-block">
+                    # Exemple de code ou de commande
+                    [INSÉREZ VOTRE CODE ICI]
+                </div>
+                
+                <h3>Étape 2 : [TITRE ÉTAPE]</h3>
+                <p>
+                    [Description de l'étape 2]
+                </p>
+                
+                <!-- Exemple d'image -->
+                <p>Capture d'écran illustrant cette étape :</p>
+                <img src="../images/rapports/[NOM-IMAGE].jpg" alt="[DESCRIPTION DE L'IMAGE]" class="rapport-image">
+                
+                <h3>Étape 3 : [TITRE ÉTAPE]</h3>
+                <p>
+                    [Description de l'étape 3]
+                </p>
+            </div>
+            
+            <div class="rapport-section">
+                <h2>4. Tests et validation</h2>
+                <p>
+                    [Description des tests effectués et de la validation de la solution]
+                </p>
+                
+                <h3>Méthodes de test</h3>
+                <p>
+                    [Décrivez les méthodes de test utilisées]
+                </p>
+                
+                <h3>Résultats obtenus</h3>
+                <p>
+                    [Présentez les résultats des tests]
+                </p>
+            </div>
+            
+            <div class="rapport-section">
+                <h2>5. Difficultés rencontrées et solutions</h2>
+                <ul>
+                    <li>
+                        <strong>Difficulté 1 :</strong> [DESCRIPTION]
+                        <p>Solution : [SOLUTION APPORTÉE]</p>
+                    </li>
+                    <li>
+                        <strong>Difficulté 2 :</strong> [DESCRIPTION]
+                        <p>Solution : [SOLUTION APPORTÉE]</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="conclusion">
+                <h2>Conclusion</h2>
+                <p>
+                    [Conclusion du projet : résumé, compétences acquises, perspectives d'amélioration]
+                </p>
+            </div>
+            
+            <a href="../competences.html#securite" class="back-button" style="margin-top: 30px;">
+                <i class="fas fa-arrow-left"></i> Retour aux compétences
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="#"><i class="far fa-envelope fa-lg"></i></a>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html">Accueil</a>
+                    <a href="../profil.html">Profil</a>
+                    <a href="../competences.html">Compétences</a>
+                    <a href="../situations-professionnelles.html">SP</a>
+                    <a href="../veille.html">Veille</a>
+                    <a href="../stages.html">Stages</a>
+                    <a href="../certifications.html">Certifications</a>
+                </div>
+                <p>&copy; 2025 - Portfolio BTS SIO</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

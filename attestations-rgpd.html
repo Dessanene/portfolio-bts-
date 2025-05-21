@@ -82,19 +82,32 @@
         
         .download-btn {
             display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
+            color: #1a73e8;
             text-decoration: none;
-            border-radius: 5px;
             font-weight: 500;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            position: relative;
+            padding-bottom: 2px;
+            transition: all 0.2s;
+        }
+        
+        .download-btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #1a73e8;
+            opacity: 0.5;
         }
         
         .download-btn:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            color: #1565C0;
+        }
+        
+        .download-btn:hover::after {
+            opacity: 1;
         }
         
         .back-btn {
@@ -130,9 +143,7 @@
                     </div>
                     <div class="cert-body">
                         <p class="cert-desc">Ce module couvre les principes de base du RGPD, les définitions clés et les principes fondamentaux de la protection des données.</p>
-                        <a href="pdf/certifications/Certificat_1.pdf" target="_blank" class="download-btn">
-                            <i class="fas fa-download"></i> Télécharger l'attestation
-                        </a>
+                        <a href="pdf/certifications/Certificat_1.pdf" target="_blank" class="download-btn">Télécharger l'attestation</a>
                     </div>
                 </div>
                 
@@ -142,9 +153,7 @@
                     </div>
                     <div class="cert-body">
                         <p class="cert-desc">Ce module détaille les droits des personnes concernées, notamment les droits d'accès, de rectification, d'effacement et de portabilité.</p>
-                        <a href="pdf/certifications/certificat2.pdf" target="_blank" class="download-btn">
-                            <i class="fas fa-download"></i> Télécharger l'attestation
-                        </a>
+                        <a href="pdf/certifications/certificat2.pdf" target="_blank" class="download-btn">Télécharger l'attestation</a>
                     </div>
                 </div>
                 
@@ -154,9 +163,7 @@
                     </div>
                     <div class="cert-body">
                         <p class="cert-desc">Ce module aborde les méthodologies d'analyse d'impact relative à la protection des données (AIPD) et les approches de gestion des risques.</p>
-                        <a href="pdf/certifications/Certificat3.pdf" target="_blank" class="download-btn">
-                            <i class="fas fa-download"></i> Télécharger l'attestation
-                        </a>
+                        <a href="pdf/certifications/Certificat3.pdf" target="_blank" class="download-btn">Télécharger l'attestation</a>
                     </div>
                 </div>
                 
@@ -166,9 +173,7 @@
                     </div>
                     <div class="cert-body">
                         <p class="cert-desc">Ce module couvre les mesures de sécurité techniques et organisationnelles requises pour assurer la conformité RGPD des systèmes d'information.</p>
-                        <a href="pdf/certifications/Certificat_4.pdf" target="_blank" class="download-btn">
-                            <i class="fas fa-download"></i> Télécharger l'attestation
-                        </a>
+                        <a href="pdf/certifications/Certificat_4.pdf" target="_blank" class="download-btn">Télécharger l'attestation</a>
                     </div>
                 </div>
                 
@@ -178,9 +183,7 @@
                     </div>
                     <div class="cert-body">
                         <p class="cert-desc">Ce module explique le rôle du Délégué à la Protection des Données (DPO) et détaille la documentation nécessaire pour démontrer la conformité.</p>
-                        <a href="pdf/certifications/certification 5.pdf" target="_blank" class="download-btn">
-                            <i class="fas fa-download"></i> Télécharger l'attestation
-                        </a>
+                        <a href="pdf/certifications/certification 5.pdf" target="_blank" class="download-btn">Télécharger l'attestation</a>
                     </div>
                 </div>
             </div>

@@ -13,6 +13,115 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Styles pour la disposition en deux colonnes fixes */
+        .grid {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        
+        .certification-card {
+            width: calc(50% - 10px);
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Sur mobile, afficher en une colonne */
+        @media (max-width: 767px) {
+            .certification-card {
+                width: 100%;
+            }
+        }
+        
+        .certification-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .certification-logo {
+            height: 50px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .certification-title {
+            flex-grow: 1;
+        }
+        
+        .certification-title h3 {
+            margin: 0 0 8px 0;
+            color: #1a73e8;
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+        
+        .certification-date {
+            color: #5f6368;
+            font-weight: normal;
+            font-size: 0.9rem;
+        }
+        
+        .certification-description {
+            color: #202124;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            margin-top: auto;
+        }
+        
+        .tag {
+            background-color: #f1f3f4;
+            color: #5f6368;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .btn-certificate {
+            display: inline-block;
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            position: relative;
+            padding-bottom: 2px;
+            transition: all 0.2s;
+        }
+        
+        .btn-certificate::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #1a73e8;
+            opacity: 0.5;
+        }
+        
+        .btn-certificate:hover {
+            color: #1565C0;
+        }
+        
+        .btn-certificate:hover::after {
+            opacity: 1;
+        }
+        
         /* Styles spécifiques pour animer la page certifications */
         @keyframes fadeInUp {
             from {
@@ -200,133 +309,81 @@
 
             <section>
                 <div class="grid">
+                    <!-- Première ligne: PIX à gauche, AWS à droite -->
                     <div class="certification-card">
                         <div class="certification-header">
-                            <div>
-                                <h3 class="card-title">PIX</h3>
+                            <div class="certification-title">
+                                <h3>PIX</h3>
                                 <div class="certification-date">Obtenu en 2025</div>
                             </div>
                         </div>
-                        <div class="certification-body">
-                            <p style="margin-bottom: 15px;">Certification des compétences numériques couvrant 16 compétences dans 5 domaines, attestant de ma maîtrise des outils numériques essentiels.</p>
-                            <div class="tags" style="margin-bottom: 15px;">
-                                <span class="tag">Compétences numériques</span>
-                                <span class="tag">Culture digitale</span>
-                                <span class="tag">Bureautique</span>
-                            </div>
-                            <div style="text-align: center;">
-                                <a href="certificats/pix/certification-pix-20250328.html" class="btn-certificate" style="display: inline-block; background-color: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500;">
-                                    <i class="fas fa-certificate"></i> Voir l'attestation
-                                </a>
-                            </div>
+                        <div class="certification-description">
+                            Certification nationale qui évalue et développe les compétences numériques, incluant la sécurité en ligne, l'utilisation d'outils collaboratifs et la création de contenu numérique.
                         </div>
+                        <div class="tags">
+                            <span class="tag">Compétences numériques</span>
+                            <span class="tag">Culture digitale</span>
+                            <span class="tag">Bureautique</span>
+                        </div>
+                        <a href="certificats/pix/certification-pix-20250328.html" class="btn-certificate">Voir l'attestation</a>
                     </div>
                     
                     <div class="certification-card">
                         <div class="certification-header">
-                            <div>
-                                <h3 class="card-title">SECnum académie</h3>
+                            <div class="certification-title">
+                                <h3>AWS Cloud Foundation</h3>
                                 <div class="certification-date">Obtenu en 2024</div>
                             </div>
                         </div>
-                        <div class="certification-body">
-                            <p style="margin-bottom: 15px;">Formation délivrée par l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information) sur les fondamentaux de la cybersécurité.</p>
-                            <div class="tags" style="margin-bottom: 15px;">
-                                <span class="tag">Cybersécurité</span>
-                                <span class="tag">Protection des SI</span>
-                                <span class="tag">Gestion des risques</span>
-                                <span class="tag">Sécurité réseau</span>
-                            </div>
-                            <div>
-                                <a href="Documents/secNum.pdf" target="_blank" class="btn-certificate" style="display: inline-block; background-color: #3498db; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: 500;">
-                                    <i class="fas fa-shield-alt"></i> Voir l'attestation
-                                </a>
-                            </div>
+                        <div class="certification-description">
+                            Certification d'Amazon Web Services validant les connaissances fondamentales du cloud computing et des services AWS.
                         </div>
+                        <div class="tags">
+                            <span class="tag">Cloud Computing</span>
+                            <span class="tag">AWS</span>
+                            <span class="tag">Infrastructure Cloud</span>
+                            <span class="tag">Services Cloud</span>
+                        </div>
+                        <a href="https://www.credly.com/badges/507579f9-2d28-47e8-abdf-e810040d8368" target="_blank" class="btn-certificate">Voir le badge Credly</a>
                     </div>
                     
+                    <!-- Deuxième ligne: SecNum à gauche, Atelier RGPD à droite -->
                     <div class="certification-card">
                         <div class="certification-header">
-                            <img src="images/logos/aws-logo.svg" alt="Logo AWS" class="certification-logo">
-                            <div>
-                                <h3 class="card-title">AWS Cloud Foundation</h3>
+                            <div class="certification-title">
+                                <h3>SECnum académie</h3>
                                 <div class="certification-date">Obtenu en 2024</div>
                             </div>
                         </div>
-                        <div class="certification-body">
-                            <p style="margin-bottom: 15px;">Certification d'Amazon Web Services validant les connaissances fondamentales du cloud computing et des services AWS.</p>
-                            <div class="tags" style="margin-bottom: 15px;">
-                                <span class="tag">Cloud Computing</span>
-                                <span class="tag">AWS</span>
-                                <span class="tag">Infrastructure Cloud</span>
-                                <span class="tag">Services Cloud</span>
-                            </div>
-                            <div>
-                                <a href="https://www.credly.com/badges/507579f9-2d28-47e8-abdf-e810040d8368" target="_blank" class="btn-certificate" style="display: inline-block; background-color: #3498db; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: 500;">
-                                    <i class="fab fa-aws"></i> Voir le badge Credly
-                                </a>
-                            </div>
+                        <div class="certification-description">
+                            Formation délivrée par l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information) sur les fondamentaux de la cybersécurité.
                         </div>
+                        <div class="tags">
+                            <span class="tag">Cybersécurité</span>
+                            <span class="tag">Protection des SI</span>
+                            <span class="tag">Gestion des risques</span>
+                            <span class="tag">Sécurité réseau</span>
+                        </div>
+                        <a href="rapports/pdf/secNum.pdf" target="_blank" class="btn-certificate">Voir l'attestation</a>
                     </div>
                     
                     <div class="certification-card">
                         <div class="certification-header">
-                            <img src="images/logos/rgpd-logo.svg" alt="Logo RGPD" class="certification-logo">
-                            <div>
-                                <h3 class="card-title"><i class="fas fa-shield-alt"></i> Atelier RGPD</h3>
+                            <div class="certification-title">
+                                <h3>Atelier RGPD</h3>
                                 <div class="certification-date">Obtenu en 2025</div>
                             </div>
                         </div>
-                        <div class="certification-body">
-                            <p style="margin-bottom: 15px;">Certification complète de l'Atelier RGPD, couvrant les aspects juridiques et techniques de la protection des données personnelles à travers 5 modules essentiels.</p>
-                            
-                            <h4 style="margin-top: 15px; color: #3498db;">Modules validés :</h4>
-                            <ul class="animated-list" style="list-style-type: none; padding-left: 0;">
-                                <li>
-                                    <i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 8px;"></i> Module 1 : Principes fondamentaux du RGPD
-                                    <a href="pdf/certifications/Certificat_1.pdf" target="_blank" class="btn-download" style="margin-left: 10px; font-size: 0.8em;">
-                                        <i class="fas fa-file-pdf" style="color: #e74c3c;"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 8px;"></i> Module 2 : Droits des personnes concernées
-                                    <a href="pdf/certifications/certificat2.pdf" target="_blank" class="btn-download" style="margin-left: 10px; font-size: 0.8em;">
-                                        <i class="fas fa-file-pdf" style="color: #e74c3c;"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 8px;"></i> Module 3 : Analyse d'impact et gestion des risques
-                                    <a href="pdf/certifications/Certificat3.pdf" target="_blank" class="btn-download" style="margin-left: 10px; font-size: 0.8em;">
-                                        <i class="fas fa-file-pdf" style="color: #e74c3c;"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 8px;"></i> Module 4 : Mesures techniques et organisationnelles
-                                    <a href="pdf/certifications/Certificat_4.pdf" target="_blank" class="btn-download" style="margin-left: 10px; font-size: 0.8em;">
-                                        <i class="fas fa-file-pdf" style="color: #e74c3c;"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 8px;"></i> Module 5 : Rôle du DPO et documentation de conformité
-                                    <a href="pdf/certifications/certification 5.pdf" target="_blank" class="btn-download" style="margin-left: 10px; font-size: 0.8em;">
-                                        <i class="fas fa-file-pdf" style="color: #e74c3c;"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            
-                            <div class="tags" style="margin: 15px 0;">
-                                <span class="tag">Protection des données</span>
-                                <span class="tag">Conformité</span>
-                                <span class="tag">Droit numérique</span>
-                                <span class="tag">Audit</span>
-                            </div>
-                            
-                            <div style="margin-top: 20px; text-align: center;">
-                                <a href="attestations-rgpd.html" class="btn-certificate" style="display: inline-block; background-color: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500;">
-                                    <i class="fas fa-certificate"></i> Voir tous les modules RGPD
-                                </a>
-                            </div>
+                        <div class="certification-description">
+                            Certification complète de l'Atelier RGPD, couvrant les aspects juridiques et techniques de la protection des données personnelles à travers 5 modules essentiels.
                         </div>
+                        <div class="tags">
+                            <span class="tag">Protection des données</span>
+                            <span class="tag">Conformité</span>
+                            <span class="tag">Droit numérique</span>
+                            <span class="tag">Audit</span>
+                        </div>
+                        <a href="attestations-rgpd.html" class="btn-certificate">Voir tous les modules RGPD</a>
                     </div>
                 </div>
             </section>
@@ -364,44 +421,108 @@
             </section>
 
             <section>
-                <h2 class="section-title">🏆 Domaines de spécialisation</h2>
+                <h2 class="section-title">Domaines de spécialisation</h2>
                 <div class="grid">
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-network-wired"></i> Administration Réseau</h3>
-                        <p>Configuration, maintenance et sécurisation des infrastructures réseau.</p>
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <div class="certification-title">
+                                <h3>Administration Réseau</h3>
+                            </div>
+                        </div>
+                        <div class="certification-description">
+                            Configuration, maintenance et sécurisation des infrastructures réseau.
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Routage</span>
+                            <span class="tag">Switching</span>
+                            <span class="tag">Firewall</span>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-shield-alt"></i> Cybersécurité</h3>
-                        <p>Protection des systèmes contre les cyberattaques et expertise en solutions de sécurité avancées.</p>
+                    
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <div class="certification-title">
+                                <h3>Cybersécurité</h3>
+                            </div>
+                        </div>
+                        <div class="certification-description">
+                            Protection des systèmes contre les cyberattaques et expertise en solutions de sécurité avancées.
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Sécurité périmétrique</span>
+                            <span class="tag">Analyse de risques</span>
+                            <span class="tag">Audit</span>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-cloud"></i> Cloud Computing</h3>
-                        <p>Maîtrise des environnements cloud pour optimiser la transformation numérique des entreprises.</p>
+                    
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <div class="certification-title">
+                                <h3>Cloud Computing</h3>
+                            </div>
+                        </div>
+                        <div class="certification-description">
+                            Maîtrise des environnements cloud pour optimiser la transformation numérique des entreprises.
+                        </div>
+                        <div class="tags">
+                            <span class="tag">IaaS</span>
+                            <span class="tag">PaaS</span>
+                            <span class="tag">SaaS</span>
+                            <span class="tag">Virtualisation</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2 class="section-title">🌐 Veille & Centres d'intérêt</h2>
+                <h2 class="section-title">Veille & Centres d'intérêt</h2>
                 <div class="grid">
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-brain"></i> Intelligence Artificielle 🧠</h3>
-                        <p>Veille technologique sur les avancées en IA et applications pratiques dans le domaine informatique.</p>
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <div class="certification-title">
+                                <h3>Intelligence Artificielle</h3>
+                            </div>
+                        </div>
+                        <div class="certification-description">
+                            Veille technologique sur les avancées en IA et applications pratiques dans le domaine informatique.
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">NLP</span>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title"><i class="fas fa-lock"></i> Cybersécurité 🔒</h3>
-                        <p>Intérêt particulier pour le phishing, le hacking éthique et la protection des données.</p>
+                    
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <div class="certification-title">
+                                <h3>Cybersécurité</h3>
+                            </div>
+                        </div>
+                        <div class="certification-description">
+                            Intérêt particulier pour le phishing, le hacking éthique et la protection des données.
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Phishing</span>
+                            <span class="tag">Hacking éthique</span>
+                            <span class="tag">Protection des données</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2 class="section-title">CV</h2>
-                <div class="card">
-                    <p>Téléchargez mon CV au format PDF pour plus d'informations sur mon parcours et mes compétences.</p>
-                    <div style="margin-top: 15px;">
-                        <a href="documents/cv_dessanene_sanhan.pdf" class="btn-certificate" style="display: inline-block; background-color: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500;"><i class="fas fa-download"></i> Télécharger mon CV</a>
+                <h2 class="section-title">Curriculum Vitae</h2>
+                <div class="certification-card" style="max-width: 600px; margin: 0 auto;">
+                    <div class="certification-header">
+                        <div class="certification-title">
+                            <h3>CV</h3>
+                        </div>
                     </div>
+                    <div class="certification-description">
+                        Téléchargez mon CV au format PDF pour plus d'informations sur mon parcours et mes compétences.
+                    </div>
+                    <a href="documents/cv_dessanene_sanhan.pdf" class="btn-certificate">Télécharger mon CV</a>
                 </div>
             </section>
         </div>
