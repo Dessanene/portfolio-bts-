@@ -1,0 +1,115 @@
+/* Corrections très spécifiques pour les fonds blancs dans la page de veille */
+
+/* Toutes les définitions et sections avec fond blanc ou clair */
+[style*="background-color: #f8f9fa"],
+[style*="background-color: #f8f8f8"],
+[style*="background-color: #fff"],
+[style*="background-color: white"],
+[style*="background-color: #ffffff"],
+[style*="background-color: #f0f0f0"] {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid rgba(52, 152, 219, 0.2) !important;
+}
+
+/* Ciblage spécifique des sections d'analyse détaillée */
+#ddos-article,
+#phishing-article {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid rgba(52, 152, 219, 0.3) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Les cartes dans la grille de phishing */
+#phishing-article [style*="display: grid"] [style*="background-color: #fff"],
+#phishing-article [style*="display: grid"] > div {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border: 1px solid rgba(52, 152, 219, 0.2) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Évolution récente du phishing */
+#phishing-article [style*="background-color: #fff"] {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border: 1px solid rgba(52, 152, 219, 0.2) !important;
+}
+
+/* Cas d'étude */
+#phishing-article [style*="background-color: #f0f0f0"] {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-left: 4px solid #3498db !important;
+}
+
+/* Section sources recommandées */
+.sources-list + div,
+.sources-list + h4 + div,
+div[style*="background-color: #f8f9fa"] {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+/* Titres dans les sections avec fond modifié */
+#phishing-article h4,
+#phishing-article h5,
+#ddos-article h4,
+#ddos-article h5,
+[style*="background-color: #1a1a1a"] h3,
+[style*="background-color: #1a1a1a"] h4,
+[style*="background-color: #1a1a1a"] h5,
+[style*="background-color: #1e1e1e"] h3,
+[style*="background-color: #1e1e1e"] h4,
+[style*="background-color: #1e1e1e"] h5 {
+    color: #3498db !important;
+}
+
+/* S'assurer que tous les textes sont lisibles */
+#phishing-article p,
+#phishing-article li,
+#phishing-article span,
+#ddos-article p,
+#ddos-article li,
+#ddos-article span,
+[style*="background-color: #1a1a1a"] p,
+[style*="background-color: #1a1a1a"] li,
+[style*="background-color: #1a1a1a"] span,
+[style*="background-color: #1e1e1e"] p,
+[style*="background-color: #1e1e1e"] li,
+[style*="background-color: #1e1e1e"] span {
+    color: #e0e0e0 !important;
+}
+
+/* S'assurer que les icônes dans les titres restent colorées */
+#phishing-article h4 i,
+#phishing-article h5 i,
+#ddos-article h4 i,
+#ddos-article h5 i,
+[style*="background-color: #1a1a1a"] h3 i,
+[style*="background-color: #1a1a1a"] h4 i,
+[style*="background-color: #1a1a1a"] h5 i,
+[style*="background-color: #1e1e1e"] h3 i,
+[style*="background-color: #1e1e1e"] h4 i,
+[style*="background-color: #1e1e1e"] h5 i {
+    color: inherit !important;
+}
+
+/* Tous les liens dans les sections d'analyse */
+#phishing-article a,
+#ddos-article a,
+.sources-list a,
+[style*="background-color: #1a1a1a"] a,
+[style*="background-color: #1e1e1e"] a {
+    color: #5dade2 !important;
+    text-decoration: none !important;
+}
+
+#phishing-article a:hover,
+#ddos-article a:hover,
+.sources-list a:hover,
+[style*="background-color: #1a1a1a"] a:hover,
+[style*="background-color: #1e1e1e"] a:hover {
+    text-decoration: underline !important;
+}

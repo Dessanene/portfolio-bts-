@@ -1,0 +1,367 @@
+/* Améliorations esthétiques pour les pages spécifiques - Portfolio de Dessanène */
+
+/* Styles généraux améliorés */
+:root {
+    --gradient-primary: linear-gradient(135deg, #1a5276, #3498db);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --shadow-strong: 0 15px 35px rgba(0, 0, 0, 0.2);
+    --border-radius: 12px;
+    --spacing-section: 40px;
+    --accent-color-bright: #3498db;
+    --accent-color-muted: rgba(52, 152, 219, 0.8);
+    --card-bg-dark: #1e1e1e;
+    --card-bg-darker: #181818;
+    --text-secondary: #a0a0a0;
+    --text-primary: #e0e0e0;
+    --text-highlight: #ffffff;
+}
+
+/* Mise en page améliorée pour les sections */
+section {
+    margin-bottom: var(--spacing-section);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-3px);
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-highlight) !important;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 3px;
+}
+
+/* Améliorations pour les cartes */
+.card, .timeline-content, .certification-card {
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-soft) !important;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    overflow: hidden;
+    border: none !important;
+}
+
+.card:hover, .timeline-content:hover, .certification-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: var(--shadow-strong) !important;
+}
+
+/* === PAGE COMPÉTENCES === */
+/* Barres de progression améliorées */
+.progress-container {
+    height: 8px !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: var(--gradient-primary) !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.3), 
+                transparent);
+    animation: progressGlow 2s infinite;
+}
+
+.skill-level {
+    margin-bottom: 8px;
+}
+
+.skill-level span {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.skill-level-text {
+    color: var(--accent-color-bright) !important;
+}
+
+/* Applications et projets */
+.app-card {
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-soft) !important;
+    background-color: var(--card-bg-dark) !important;
+    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.app-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: var(--shadow-strong) !important;
+    border: 1px solid rgba(52, 152, 219, 0.3) !important;
+}
+
+.app-header h4 {
+    font-weight: 600 !important;
+    color: var(--text-highlight) !important;
+}
+
+.app-header i {
+    color: var(--accent-color-bright) !important;
+    font-size: 1.4rem !important;
+}
+
+.app-category {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+}
+
+.app-category::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 3px;
+}
+
+.app-nav a {
+    border-radius: 30px !important;
+    padding: 8px 20px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: var(--card-bg-darker) !important;
+    color: var(--text-secondary) !important;
+}
+
+.app-nav a:hover {
+    background: var(--gradient-primary) !important;
+    color: white !important;
+    transform: translateY(-2px);
+    border-color: transparent !important;
+}
+
+.app-link {
+    background-color: transparent !important;
+    border: 1px solid var(--accent-color-bright) !important;
+    color: var(--accent-color-bright) !important;
+    transition: all 0.3s ease !important;
+    border-radius: 30px !important;
+    padding: 8px 15px !important;
+}
+
+.app-link:hover {
+    background-color: var(--accent-color-bright) !important;
+    color: white !important;
+}
+
+/* === PAGE SITUATIONS PROFESSIONNELLES === */
+.timeline {
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    height: calc(100% - 20px);
+    width: 3px;
+    background: linear-gradient(to bottom, #3498db, #2c3e50);
+    border-radius: 5px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.7);
+}
+
+.timeline-date {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 5px 15px !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    background: var(--gradient-primary) !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.timeline-content {
+    background-color: var(--card-bg-dark) !important;
+    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 20px !important;
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: var(--accent-color-bright) !important;
+    font-weight: 600 !important;
+}
+
+.timeline-content p {
+    color: var(--text-primary) !important;
+}
+
+/* Boutons stylisés */
+.btn-animated {
+    border-radius: 30px !important;
+    padding: 10px 20px !important;
+    background: var(--gradient-primary) !important;
+    border: none !important;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-animated:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.5) !important;
+}
+
+/* === PAGE CERTIFICATIONS === */
+.certification-card {
+    background-color: var(--card-bg-dark) !important;
+    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    border-radius: var(--border-radius) !important;
+    margin-bottom: 25px !important;
+    overflow: hidden;
+}
+
+.certification-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+.certification-header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-color-muted), transparent);
+}
+
+.certification-title {
+    position: relative;
+    padding-left: 15px;
+}
+
+.certification-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.certification-title h3 {
+    margin: 0;
+    color: var(--text-highlight) !important;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.certification-description {
+    padding: 20px;
+    color: var(--text-primary) !important;
+}
+
+/* Badges et tags */
+.skill-item, span[style*="background-color"] {
+    border-radius: 30px !important;
+    padding: 5px 15px !important;
+    font-weight: 500 !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1) !important;
+    background: var(--gradient-primary) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* Logos des certifications */
+.certification-logo {
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto 15px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+}
+
+.certification-card:hover .certification-logo {
+    transform: scale(1.05);
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* Animation spécifique au survol des cartes de certification */
+.certification-card {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px) scale(1.02) !important;
+    box-shadow: var(--shadow-strong) !important;
+}
+
+/* Bouton de certification */
+.btn-certificate {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-certificate:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.5);
+}

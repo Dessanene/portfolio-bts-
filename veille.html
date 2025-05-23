@@ -8,6 +8,11 @@
     <meta http-equiv="Expires" content="0">
     <title>Veille Technologique - Portfolio Professionnel</title>
     <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/dark-theme.css">
+    <link rel="stylesheet" href="css/button-fixes.css">
+    <link rel="stylesheet" href="css/veille-fixes.css">
+    <link rel="stylesheet" href="css/veille-fix-background.css">
+    <link rel="stylesheet" href="css/enhanced-additional-pages.css">
     <link rel="stylesheet" href="css/preloader.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -178,6 +183,16 @@
             color: var(--accent-color);
         }
     </style>
+    <style>
+        body, html { background-color: #121212; }
+    </style>
+    <!-- Script prioritaire pour empêcher le flash -->
+    <script id="no-flash-inline">
+        document.documentElement.style.backgroundColor = '#121212';
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.backgroundColor = '#121212';
+        });
+    </script>
 </head>
 <body>
     
@@ -279,7 +294,7 @@
                         <span class="tag">Infrastructure</span>
                     </div>
                     <a href="#" class="resource-link" onclick="toggleArticleContent('ddos-article'); return false;"><i class="fas fa-chevron-down"></i> Voir l'analyse détaillée</a>
-                    <div id="ddos-article" style="display: none; margin-top: 20px; padding: 15px; background-color: #f8f8f8; border-radius: 5px;" class="article-content">
+                    <div id="ddos-article" style="display: none; margin-top: 20px; padding: 15px; background-color: #1a1a1a; border-radius: 5px; color: #e0e0e0; border: 1px solid rgba(52, 152, 219, 0.3); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);" class="article-content">
                         <h4 style="color: #e74c3c; display: flex; align-items: center;"><i class="fas fa-cogs" style="margin-right: 10px;"></i> Comment fonctionnent les attaques DDoS ?</h4>
                         <ul style="list-style-position: inside; margin: 10px 0;">
                             <li><strong>Inondation de trafic</strong> 🌊 : Envoyer un volume massif de requêtes pour saturer les serveurs.</li>
@@ -356,7 +371,7 @@
                         <span class="tag">Sécurité</span>
                     </div>
                     <a href="#" class="resource-link" onclick="toggleArticleContent('phishing-article'); return false;"><i class="fas fa-chevron-down"></i> Voir l'analyse détaillée</a>
-                    <div id="phishing-article" style="display: none; margin-top: 20px; padding: 15px; background-color: #f8f8f8; border-radius: 5px;" class="article-content">
+                    <div id="phishing-article" style="display: none; margin-top: 20px; padding: 15px; background-color: #1a1a1a; border-radius: 5px; color: #e0e0e0; border: 1px solid rgba(52, 152, 219, 0.3); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);" class="article-content">
                         <h4 style="color: #3498db; display: flex; align-items: center;"><i class="fas fa-cogs" style="margin-right: 10px;"></i> Comment fonctionne le phishing ?</h4>
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 15px 0;">
                             <div style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
@@ -592,4 +607,10 @@
     <script src="js/page-transitions.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 

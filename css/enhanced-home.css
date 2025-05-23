@@ -1,0 +1,203 @@
+/* Améliorations pour la page d'accueil - Portfolio de Dessanène */
+
+/* Transformer les fonds blancs en noir/foncé */
+.profile-container {
+    background-color: var(--card-bg) !important; /* Utilise la variable du thème sombre */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.feature-card-body {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+
+/* Améliorer les cartes de fonctionnalités */
+.feature-card {
+    background-color: var(--card-bg) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    border-top: 5px solid rgba(52, 152, 219, 0.5) !important;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(52, 152, 219, 0.4) !important;
+    border-top-color: #3498db !important;
+}
+
+/* Améliorer les boutons bleus pour une meilleure lisibilité */
+.btn-primary, 
+.btn-animated,
+a.btn-primary, 
+a.btn-animated,
+.animated-gradient-button,
+[class*="Réseaux"], [class*="Sécurité"], [class*="Infrastructure"],
+[class*="Développement"], [class*="Base de données"], [class*="Applications"] {
+    background-color: #1a5276 !important; /* Bleu encore plus foncé pour un contraste maximal */
+    color: #ffffff !important; /* Blanc pur */
+    font-weight: 700 !important; /* Extra-bold pour plus de lisibilité */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important; /* Ombre de texte plus prononcée */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important; /* Bordure légère pour définir les limites */
+    letter-spacing: 0.7px !important; /* Espacement des lettres accru pour meilleure lisibilité */
+}
+
+.btn-primary:hover, 
+.btn-animated:hover,
+a.btn-primary:hover, 
+a.btn-animated:hover {
+    background-color: #2980b9 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.5) !important;
+}
+
+/* Assurer le contraste pour tous les textes */
+.feature-card-body h3,
+.feature-card-body h4,
+.feature-card-body p,
+.feature-card-body span {
+    color: var(--text-color) !important;
+}
+
+.feature-card-bts {
+    background-color: var(--card-bg) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Style pour les headers des cartes BTS */
+.feature-card-header {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+    padding: 20px !important;
+    font-weight: 600 !important;
+}
+
+/* Améliorer la visibilité des icônes et éléments d'accent */
+.section-icon {
+    background-color: #3498db !important;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.5) !important;
+}
+
+/* Assurer que les textes de titres de cartes sont lisibles */
+.card-title {
+    color: var(--accent-color) !important;
+    font-weight: 600 !important;
+}
+
+/* Styles pour les options SLAM/SISR */
+.option-card,
+div[style*="background-color: #f8f9fa"],
+div[style*="border-left: 5px solid #3498db"],
+div[style*="border-left: 5px solid #0099cc"] {
+    background-color: var(--card-bg) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Styles spécifiques pour la section BTS SIO */
+.profile-container div[style*="flex: 1; min-width: 300px"] {
+    background-color: #1a1a1a !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Style SISR */
+div[style*="border-left: 5px solid #3498db"] {
+    border-left: 5px solid #3498db !important;
+}
+
+/* Style SLAM */
+div[style*="border-left: 5px solid #0099cc"] {
+    border-left: 5px solid #0099cc !important;
+}
+
+/* Styles pour les textes dans ces sections */
+div[style*="background-color: #f8f9fa"] p {
+    color: #e0e0e0 !important;
+}
+
+div[style*="background-color: #f8f9fa"] h3,
+div[style*="background-color: #f8f9fa"] p[style*="font-weight: 600"] {
+    color: #3498db !important;
+}
+
+/* Styles spécifiques pour les cartes d'options SISR et SLAM */
+[class*="Option SISR"], [class*="Option SLAM"] {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    background-color: #2574a9 !important;
+    border-radius: 8px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
+    letter-spacing: 0.5px;
+}
+
+/* Style spécifique pour les boutons des sections SISR/SLAM */
+[class*="Réseaux"], [class*="Sécurité"], [class*="Infrastructure"],
+[class*="Développement"], [class*="Base de données"], [class*="Applications"],
+span[style*="background-color: #3498db"],
+span[style*="background-color: #0099cc"] {
+    display: inline-block;
+    padding: 8px 15px !important;
+    margin: 5px !important;
+    border-radius: 30px !important;
+    background: linear-gradient(135deg, #2574a9, #1a5276) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+}
+
+/* Ciblage encore plus spécifique pour les badges technologiques dans les sections SISR/SLAM */
+div[style*="background-color: #f8f9fa"] span[style*="display: inline-flex"],
+div[style*="background-color: #f8f9fa"] span[style*="background-color: #3498db"],
+div[style*="background-color: #f8f9fa"] span[style*="background-color: #0099cc"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    background: linear-gradient(135deg, #2574a9, #1a5276) !important;
+    color: white !important;
+    padding: 5px 12px !important;
+    border-radius: 20px !important;
+    margin-right: 10px !important;
+    margin-bottom: 5px !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Assurer que les icônes restent visibles */
+div[style*="background-color: #f8f9fa"] span[style*="display: inline-flex"] i,
+div[style*="background-color: #f8f9fa"] span i {
+    margin-right: 5px !important;
+    color: white !important;
+}
+
+[class*="Réseaux"]:hover, [class*="Sécurité"]:hover, [class*="Infrastructure"]:hover,
+[class*="Développement"]:hover, [class*="Base de données"]:hover, [class*="Applications"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4) !important;
+    background: linear-gradient(135deg, #3498db, #2574a9) !important;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4) !important;
+    border-color: rgba(52, 152, 219, 0.3) !important;
+}
+
+/* Améliorer le contraste des liens */
+a {
+    color: #3498db !important;
+}
+
+a:hover {
+    color: #5dade2 !important;
+    text-decoration: none !important;
+}

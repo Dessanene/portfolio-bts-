@@ -211,6 +211,16 @@
             margin-right: 10px;
         }
     </style>
+    <style>
+        body, html { background-color: #121212; }
+    </style>
+    <!-- Script prioritaire pour empêcher le flash -->
+    <script id="no-flash-inline">
+        document.documentElement.style.backgroundColor = '#121212';
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.backgroundColor = '#121212';
+        });
+    </script>
 </head>
 <body>
     
@@ -290,4 +300,8 @@
     <script src="js/page-transitions.js"></script>
 </body>
 </html>
+
+
+
+
 

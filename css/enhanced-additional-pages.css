@@ -1,0 +1,303 @@
+/* Améliorations pour les pages de situations professionnelles, veille et stages */
+
+/* === SITUATIONS PROFESSIONNELLES === */
+/* Amélioration des cartes de situations professionnelles */
+.situation-card,
+.timeline-content {
+    background-color: var(--card-bg) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    overflow: hidden;
+    margin-bottom: 20px !important;
+}
+
+.situation-card:hover,
+.timeline-content:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4) !important;
+    border-color: rgba(52, 152, 219, 0.3) !important;
+}
+
+/* Amélioration des titres de situation */
+.situation-title,
+.timeline-item h3 {
+    color: #3498db !important;
+    font-weight: 600 !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid rgba(52, 152, 219, 0.3) !important;
+}
+
+/* Styles pour les badges de situation */
+.situation-badge,
+[class^="Situation professionnelle"] {
+    display: inline-block;
+    padding: 8px 15px !important;
+    margin: 5px !important;
+    border-radius: 30px !important;
+    background: linear-gradient(135deg, #2574a9, #1a5276) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    letter-spacing: 0.5px;
+}
+
+/* Badges technologiques */
+span[class="Linux"],
+span[class="BackupPC"],
+span[class="Fail2ban"],
+span[class*="technologie"] {
+    display: inline-block;
+    padding: 5px 12px !important;
+    margin: 5px !important;
+    border-radius: 20px !important;
+    background: linear-gradient(135deg, #2574a9, #1a5276) !important;
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    font-size: 0.9rem;
+}
+
+/* Amélioration de la timeline */
+.timeline {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    height: calc(100% - 20px);
+    width: 3px;
+    background: linear-gradient(to bottom, #3498db, #1a5276);
+    border-radius: 3px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -39px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3498db, #2574a9);
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.7);
+    z-index: 1;
+}
+
+/* Contexte professionnel */
+.contexte-professionnel {
+    background-color: #1e1e1e !important;
+    border-left: 4px solid #3498db !important;
+    padding: 15px 20px !important;
+    margin-bottom: 20px !important;
+    border-radius: 0 8px 8px 0 !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.contexte-professionnel i {
+    color: #3498db !important;
+    margin-right: 10px;
+}
+
+/* === VEILLE TECHNOLOGIQUE === */
+.veille-card {
+    background-color: var(--card-bg) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    overflow: hidden;
+    margin-bottom: 30px !important;
+    padding: 0 !important;
+}
+
+.veille-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4) !important;
+    border-color: rgba(52, 152, 219, 0.3) !important;
+}
+
+.veille-header {
+    background-color: #1a5276 !important;
+    padding: 15px 20px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.veille-header h3 {
+    color: white !important;
+    margin: 0 !important;
+    font-weight: 600 !important;
+}
+
+.veille-body {
+    padding: 20px !important;
+    background-color: #1e1e1e !important;
+}
+
+.veille-footer {
+    padding: 15px 20px !important;
+    background-color: #181818 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.veille-tag {
+    display: inline-block;
+    padding: 5px 12px !important;
+    margin: 5px !important;
+    border-radius: 20px !important;
+    background: linear-gradient(135deg, #2574a9, #1a5276) !important;
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    font-size: 0.85rem;
+}
+
+.veille-source {
+    margin-top: 15px;
+    font-style: italic;
+    color: #a0a0a0 !important;
+    font-size: 0.9rem;
+}
+
+.veille-source a {
+    color: #3498db !important;
+    text-decoration: none;
+}
+
+.veille-source a:hover {
+    text-decoration: underline;
+}
+
+/* === STAGES === */
+/* Correction des contrastes pour la page des stages */
+.stage-header {
+    background-color: #1a5276 !important;
+    color: white !important;
+    padding: 20px !important;
+    border-radius: 10px 10px 0 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.stage-body {
+    background-color: #1e1e1e !important;
+    padding: 25px !important;
+    border-radius: 0 0 10px 10px !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    margin-top: 0 !important;
+}
+
+.stage-card {
+    margin-bottom: 30px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 10px !important;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4) !important;
+}
+
+.stage-title {
+    color: white !important;
+    margin-top: 0 !important;
+    font-weight: 600 !important;
+}
+
+.stage-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.stage-info i {
+    color: #3498db !important;
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.stage-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.stage-actions .btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.stage-mission {
+    background-color: #242424 !important;
+    border-left: 4px solid #3498db !important;
+    padding: 15px !important;
+    margin: 20px 0 !important;
+    border-radius: 0 5px 5px 0 !important;
+}
+
+.stage-mission h4 {
+    color: #3498db !important;
+    margin-top: 0 !important;
+    font-weight: 600 !important;
+}
+
+/* Styles communs pour tous les textes et éléments */
+p, li, span:not([class]) {
+    color: #e0e0e0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+}
+
+/* Pour les listes dans toutes les pages */
+ul, ol {
+    padding-left: 20px;
+}
+
+ul li, ol li {
+    margin-bottom: 8px;
+}
+
+/* Pour les puces personnalisées */
+ul.custom-list {
+    list-style: none;
+    padding-left: 10px;
+}
+
+ul.custom-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+ul.custom-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    background-color: #3498db;
+    border-radius: 50%;
+}

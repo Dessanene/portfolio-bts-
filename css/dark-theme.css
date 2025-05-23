@@ -1,0 +1,187 @@
+/* Thème sombre pour le portfolio professionnel */
+:root {
+    /* Couleurs principales */
+    --primary-color: #121212;           /* Noir profond pour l'arrière-plan principal */
+    --secondary-color: #1e1e1e;         /* Gris très foncé pour les sections */
+    --text-color: #e0e0e0;              /* Blanc cassé pour le texte principal */
+    --accent-color: #3498db;            /* Bleu conservé pour l'accent */
+    --accent-hover: #2980b9;            /* Bleu plus foncé pour les hovers */
+    --light-gray: #2d2d2d;              /* Gris foncé pour remplacer le gris clair */
+    --border-color: #3d3d3d;            /* Bordure plus foncée */
+    --dark-text: #121212;               /* Texte foncé pour fond clair */
+    --light-accent-bg: #235789;         /* Fond bleu plus clair */
+    --soft-bg: #292929;                 /* Fond légèrement plus clair que le primaire */
+    
+    /* Ombres et effets */
+    --hover-shadow: 0 10px 25px rgba(52, 152, 219, 0.25);
+    --blue-glow: 0 0 15px rgba(52, 152, 219, 0.4);
+    --card-bg: #1a1a1a;                 /* Arrière-plan des cartes */
+    --header-bg: #0f0f0f;               /* Arrière-plan de l'en-tête */
+    --footer-bg: #0f0f0f;               /* Arrière-plan du pied de page */
+}
+
+/* Base */
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Header */
+header {
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Cartes et sections */
+.card, .timeline-content, .certification-card, .skill-item {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.section-title {
+    color: var(--accent-color);
+}
+
+/* Éléments de la timeline */
+.timeline-date {
+    background-color: var(--accent-color) !important;
+}
+
+.timeline-content {
+    border-left: 4px solid var(--accent-color) !important;
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustements pour la lisibilité */
+.profile-container, .grid > div, section > div {
+    background-color: var(--secondary-color) !important;
+}
+
+/* Assurer la lisibilité du texte */
+p, h1, h2, h3, h4, h5, h6, span, div {
+    color: var(--text-color);
+}
+
+/* Règles spécifiques pour les éléments avec un fond blanc en inline style */
+[style*="background-color: white"] {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+
+[style*="background: white"] {
+    background: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+
+/* Assurer la lisibilité des éléments avec fond blanc */
+.timeline-content, .card, .certification-card {
+    background-color: var(--soft-bg) !important;
+    color: var(--text-color) !important;
+}
+
+/* Styles spécifiques pour les spans et les badges */
+span[style*="background-color: #3498db"], 
+span[style*="background-color: #e74c3c"], 
+span[style*="background-color: #2ecc71"], 
+span[style*="background-color: #f39c12"] {
+    color: white !important; /* Assurer que le texte reste blanc sur fond coloré */
+}
+
+/* Ajustement des liens pour meilleure lisibilité */
+a:not(.btn-animated):not(.app-link):not([style*="color"]) {
+    color: var(--accent-color) !important;
+}
+
+/* Amélioration de la lisibilité des paragraphes et textes dans les cartes */
+.card p, .timeline-content p, .certification-card p {
+    color: var(--text-color) !important;
+}
+
+/* Conserver la couleur des liens et boutons */
+a:not(.btn-animated):not(.app-link) {
+    color: var(--accent-color);
+}
+
+/* Ajustements pour les éléments de navigation */
+nav ul li a {
+    color: var(--text-color);
+}
+
+nav ul li a.active, nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Préchargeur ajusté */
+.preloader {
+    background-color: var(--primary-color);
+}
+
+/* Transition de page */
+.page-transition {
+    background-color: var(--primary-color);
+}
+
+/* Section hero avec ajustements pour le fond sombre */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/server-rack-patchbox.webp') !important;
+}
+
+/* Pour les éléments avec un fond blanc spécifié en inline */
+[style*="background-color: white"], [style*="background-color:#fff"], [style*="background-color: #ffffff"] {
+    background-color: var(--card-bg) !important;
+}
+
+/* Ciblage spécifique des éléments div qui ont un style inline avec fond blanc */
+div[style*="background-color: white"] {
+    background-color: var(--soft-bg) !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Pour les titres et sous-titres colorés */
+h3[style*="color:"] {
+    color: var(--accent-color) !important;
+}
+
+/* Pour les boutons */
+.btn-animated, .app-link {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+}
+
+/* Pour les cartes avec styles spécifiques */
+.profile-content [style*="background-color: white"] {
+    background-color: var(--soft-bg) !important;
+}
+
+/* Pour les sections avec des div blancs spécifiques */
+div[style*="background-color: white"] p,
+div[style*="background-color: white"] h3,
+div[style*="background-color: white"] h4,
+div[style*="background-color: white"] span:not([style*="background-color"]) {
+    color: var(--text-color) !important;
+}
+
+/* Améliorations pour la lisibilité des éléments avec fond blanc et texte noir */
+.timeline-content [style*="color: #7f8c8d"] {
+    color: #a0a0a0 !important; /* Gris plus clair pour meilleure lisibilité */
+}
+
+/* Styles spécifiques pour le contenu des cartes timelines */
+.timeline-content h3 {
+    color: var(--accent-color) !important;
+}
+
+/* Pour les barres de progression */
+.progress-container {
+    background-color: var(--light-gray) !important;
+}

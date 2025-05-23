@@ -1,0 +1,78 @@
+/* Améliorations spécifiques pour les boutons de la page d'accueil */
+
+/* Ciblage spécifique des boutons qui posent problème */
+.animated-gradient-button,
+a[href="profil.html"].animated-gradient-button,
+a[href="competences.html"].animated-gradient-button,
+a[href="veille.html"].animated-gradient-button,
+a[style*="font-size: 0.9rem; padding: 8px 20px;"],
+.btn-primary,
+.btn-certificate,
+.btn-animated,
+.certification-card a.btn,
+a.btn-view-certificate {
+    background: linear-gradient(135deg, #154360, #1a5276) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.7px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.2) !important;
+    border-radius: 30px !important;
+    padding: 10px 25px !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
+    font-size: 0.9rem !important;
+    position: relative !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+}
+
+/* Effet de survol pour ces boutons */
+.animated-gradient-button:hover,
+a[style*="font-size: 0.9rem; padding: 8px 20px;"]:hover,
+.btn-primary:hover,
+.btn-certificate:hover,
+.btn-animated:hover,
+.certification-card a.btn:hover,
+a.btn-view-certificate:hover {
+    background: linear-gradient(135deg, #1a5276, #2980b9) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Effet de brillance pour renforcer la visibilité */
+.animated-gradient-button::after,
+a[style*="font-size: 0.9rem; padding: 8px 20px;"]::after,
+.btn-primary::after,
+.btn-certificate::after,
+.btn-animated::after,
+.certification-card a.btn::after,
+a.btn-view-certificate::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -50% !important;
+    left: -50% !important;
+    width: 200% !important;
+    height: 200% !important;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%) !important;
+    transform: rotate(30deg) !important;
+    opacity: 0.6 !important;
+    transition: all 0.8s ease !important;
+}
+
+.animated-gradient-button:hover::after,
+a[style*="font-size: 0.9rem; padding: 8px 20px;"]:hover::after,
+.btn-primary:hover::after,
+.btn-certificate:hover::after,
+.btn-animated:hover::after,
+.certification-card a.btn:hover::after,
+a.btn-view-certificate:hover::after {
+    left: 100% !important;
+    opacity: 0 !important;
+}
+
+/* Styles spécifiques pour les sections */
+.feature-card .animated-gradient-button {
+    display: inline-block !important;
+    margin-top: 10px !important;
+}

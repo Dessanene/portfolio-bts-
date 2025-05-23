@@ -1,0 +1,197 @@
+/* Corrections spécifiques pour la page de veille technologique */
+
+/* Correction des définitions avec fond blanc */
+[style*="background-color: white"],
+[style*="background-color:#fff"],
+[style*="background-color: #ffffff"],
+[style*="background-color: #f8f9fa"],
+[style*="background-color: #f8f8f8"],
+[id*="ddos-article"],
+[id*="phishing-article"],
+.article-content,
+div[style*="background-color: #f8f8f8"],
+div[style*="background-color: #f8f9fa"],
+.definition-box,
+.alert-box,
+.info-box {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid rgba(52, 152, 219, 0.3) !important;
+    border-left: 4px solid #3498db !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    border-radius: 5px !important;
+    padding: 15px !important;
+}
+
+/* Style spécifique pour les définitions */
+.definition-title,
+[style*="font-weight: bold"],
+strong {
+    color: #3498db !important;
+    font-weight: 700 !important;
+}
+
+/* Amélioration des onglets */
+.nav-tabs,
+.tab-buttons,
+[class*="DDoS"],
+[class*="Protection réseau"],
+[class*="Infrastructure"] {
+    background-color: #1e1e1e !important;
+    border-radius: 5px 5px 0 0 !important;
+    overflow: hidden !important;
+    border-bottom: 2px solid #3498db !important;
+}
+
+.nav-tabs li,
+.tab-buttons button,
+[class*="DDoS"],
+[class*="Protection réseau"],
+[class*="Infrastructure"] {
+    background: #1a5276 !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    margin: 0 2px !important;
+    border: none !important;
+    border-radius: 5px 5px 0 0 !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-tabs li:hover,
+.tab-buttons button:hover,
+[class*="DDoS"]:hover,
+[class*="Protection réseau"]:hover,
+[class*="Infrastructure"]:hover {
+    background: linear-gradient(135deg, #3498db, #2574a9) !important;
+    transform: translateY(-3px) !important;
+}
+
+.nav-tabs li.active,
+.tab-buttons button.active {
+    background: linear-gradient(135deg, #3498db, #2574a9) !important;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Mise en forme des listes dans les sections de veille */
+.veille-content ul,
+.tab-content ul {
+    list-style-type: none !important;
+    padding-left: 20px !important;
+    margin: 15px 0 !important;
+}
+
+.veille-content ul li,
+.tab-content ul li {
+    position: relative !important;
+    padding-left: 25px !important;
+    margin-bottom: 15px !important;
+    color: #e0e0e0 !important;
+}
+
+.veille-content ul li::before,
+.tab-content ul li::before {
+    content: '•' !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: #3498db !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+}
+
+/* Amélioration des infographies et sections explicatives */
+.infographic,
+.explanation-section,
+[class*="infographie"] {
+    background-color: #1a1a1a !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    border: 1px solid rgba(52, 152, 219, 0.2) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    margin: 20px 0 !important;
+}
+
+.infographic-title,
+.explanation-title,
+h3[style*="color"] {
+    color: #3498db !important;
+    font-weight: 600 !important;
+    border-bottom: 1px solid rgba(52, 152, 219, 0.3) !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 15px !important;
+}
+
+/* Styles pour les icônes */
+.icon-wave,
+.icon-lock,
+.icon-robot,
+[class*="fas fa-"],
+[class*="far fa-"],
+[class*="fab fa-"] {
+    color: #3498db !important;
+    margin-right: 10px !important;
+}
+
+/* Styles pour les liens "Voir l'analyse détaillée" */
+a[class*="Voir l'analyse détaillée"],
+a[style*="color: #3498db"] {
+    color: #3498db !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    margin: 15px 0 !important;
+    padding: 5px 0 !important;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.3s ease !important;
+}
+
+a[class*="Voir l'analyse détaillée"]:hover,
+a[style*="color: #3498db"]:hover {
+    color: #5dade2 !important;
+    border-bottom-color: #5dade2 !important;
+}
+
+/* Assurer une bonne lisibilité pour tous les textes */
+p, span, div, li {
+    color: #e0e0e0 !important;
+}
+
+/* Style spécifique pour Définition */
+[style*="Définition :"] {
+    color: #e0e0e0 !important;
+    font-weight: normal !important;
+}
+
+/* Corriger spécifiquement les éléments avec icônes et fonds */
+.type-attaque li,
+.consequence li,
+.protection li {
+    background-color: #1e1e1e !important;
+    border-radius: 5px !important;
+    padding: 10px 15px !important;
+    margin-bottom: 10px !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.type-attaque li img,
+.consequence li img,
+.protection li img {
+    vertical-align: middle !important;
+    margin-right: 10px !important;
+}
+
+/* Correction pour les éléments spécifiques à GitLab */
+.gitlab-section {
+    background-color: #1a1a1a !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    margin-top: 30px !important;
+    border-top: 3px solid #fc6d26 !important; /* Couleur GitLab */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.gitlab-logo {
+    color: #fc6d26 !important;
+    font-weight: 700 !important;
+}

@@ -1,0 +1,190 @@
+/* Effets modernes pour les cartes - Portfolio professionnel */
+
+/* Variables pour les animations */
+:root {
+    --transition-speed: 0.3s;
+    --hover-lift: -5px;
+    --card-border-radius: 12px;
+    --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --card-hover-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    --hover-border-color: rgba(52, 152, 219, 0.5);
+    --card-bg: #1a1a1a;
+    --card-hover-bg: #1e1e1e;
+}
+
+/* Animation pour tous les types de cartes du site */
+.card, 
+.feature-card, 
+.timeline-content, 
+.certification-card, 
+.profile-container,
+.veille-card,
+.app-card,
+.timeline-item,
+.situation-card,
+.article-card,
+div[style*="border-radius: 10px"],
+div[style*="border-radius: 15px"],
+div[style*="border-radius: 8px"] {
+    transition: transform var(--transition-speed) cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow var(--transition-speed) cubic-bezier(0.165, 0.84, 0.44, 1),
+                border-color var(--transition-speed) ease,
+                background-color var(--transition-speed) ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    will-change: transform, box-shadow !important;
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    background-color: var(--card-bg) !important;
+    border-radius: var(--card-border-radius) !important;
+    box-shadow: var(--card-shadow) !important;
+}
+
+/* Effet de survol élégant */
+.card:hover, 
+.feature-card:hover, 
+.timeline-content:hover, 
+.certification-card:hover, 
+.profile-container:hover,
+.veille-card:hover,
+.app-card:hover,
+.timeline-item:hover,
+.situation-card:hover,
+.article-card:hover,
+div[style*="border-radius: 10px"]:hover,
+div[style*="border-radius: 15px"]:hover,
+div[style*="border-radius: 8px"]:hover {
+    transform: translateY(var(--hover-lift)) !important;
+    box-shadow: var(--card-hover-shadow) !important;
+    border-color: var(--hover-border-color) !important;
+    background-color: var(--card-hover-bg) !important;
+    z-index: 1 !important;
+}
+
+/* Effet de brillance subtil au survol */
+.card::after, 
+.feature-card::after, 
+.timeline-content::after, 
+.certification-card::after, 
+.veille-card::after,
+.app-card::after,
+.situation-card::after,
+.article-card::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -50% !important;
+    left: -50% !important;
+    width: 200% !important;
+    height: 200% !important;
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.05) 50%, 
+        rgba(255, 255, 255, 0) 100%
+    ) !important;
+    transform: rotate(30deg) !important;
+    opacity: 0 !important;
+    transition: opacity 0.8s ease, left 0.8s ease !important;
+    pointer-events: none !important;
+}
+
+.card:hover::after, 
+.feature-card:hover::after, 
+.timeline-content:hover::after, 
+.certification-card:hover::after, 
+.veille-card:hover::after,
+.app-card:hover::after,
+.situation-card:hover::after,
+.article-card:hover::after {
+    opacity: 1 !important;
+    left: 100% !important;
+}
+
+/* Effet de pulsation pour certains éléments d'accent */
+@keyframes pulse-border {
+    0% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+    }
+}
+
+.section-icon,
+.timeline-item::before,
+.card h3::before,
+.feature-card-header {
+    animation: pulse-border 2s infinite !important;
+}
+
+/* Animation pour les boutons dans les cartes */
+.card a, 
+.feature-card a, 
+.timeline-content a, 
+.certification-card a,
+.veille-card a,
+.app-card a,
+.situation-card a,
+.article-card a {
+    transition: all 0.3s ease !important;
+}
+
+.card a:hover, 
+.feature-card a:hover, 
+.timeline-content a:hover, 
+.certification-card a:hover,
+.veille-card a:hover,
+.app-card a:hover,
+.situation-card a:hover,
+.article-card a:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Effet de mise à l'échelle pour les images */
+.card img, 
+.feature-card img, 
+.timeline-content img, 
+.certification-card img,
+.veille-card img,
+.app-card img,
+.situation-card img,
+.article-card img {
+    transition: transform 0.5s ease !important;
+}
+
+.card:hover img, 
+.feature-card:hover img, 
+.timeline-content:hover img, 
+.certification-card:hover img,
+.veille-card:hover img,
+.app-card:hover img,
+.situation-card:hover img,
+.article-card:hover img {
+    transform: scale(1.03) !important;
+}
+
+/* Animation pour les titres */
+.card h3, 
+.feature-card h3, 
+.timeline-content h3, 
+.certification-card h3,
+.veille-card h3,
+.app-card h3,
+.situation-card h3,
+.article-card h3 {
+    transition: color 0.3s ease !important;
+}
+
+.card:hover h3, 
+.feature-card:hover h3, 
+.timeline-content:hover h3, 
+.certification-card:hover h3,
+.veille-card:hover h3,
+.app-card:hover h3,
+.situation-card:hover h3,
+.article-card:hover h3 {
+    color: #3498db !important;
+}
