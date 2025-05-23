@@ -2,12 +2,41 @@ services:
   - type: web
     name: portfolio-bts
     env: static
-    buildCommand: echo "Static site, no build required"
+    buildCommand: echo "Préparation du déploiement"
     staticPublishPath: .
+    # Configuration avancée du cache pour les ressources statiques
     headers:
+      # Caching optimisé pour les ressources statiques
+      - path: /*.(css|js|svg|jpg|jpeg|png|gif|ico|woff|woff2|ttf|eot)
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      # Configuration générale pour les autres fichiers
       - path: /*
         name: Cache-Control
-        value: no-cache, must-revalidate
-    # Suppression de la redirection globale qui cause l'écran noir
-    # La redirection était probablement la cause du problème car elle
-    # envoyait toutes les requêtes vers index.html, y compris pour les CSS et images
+        value: public, max-age=0, must-revalidate
+      # En-têtes de sécurité
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-XSS-Protection
+        value: 1; mode=block
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Content-Security-Policy
+        value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data:;"
+    # Configurations de performance
+    autoDeploy: true
+    # Redirection HTTP vers HTTPS
+    routes:
+      - type: redirect
+        source: http://*
+        destination: https://$HOST$PATH
+    envVars:
+      - key: RENDER_EXTERNAL_URL
+        value: https://portfolio-bts.onrender.com
