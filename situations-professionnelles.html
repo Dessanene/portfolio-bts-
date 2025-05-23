@@ -6,6 +6,13 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <!-- Solution anti-flash prioritaire -->
+    <style id="no-flash-fix">
+        html, body {
+            background-color: #121212 !important;
+            transition: none !important;
+        }
+    </style>
     <title>Situations Professionnelles - Portfolio Professionnel</title>
     <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/dark-theme.css">
@@ -15,6 +22,13 @@
     <link rel="stylesheet" href="css/sp-fixes.css">
     <link rel="stylesheet" href="css/render-fix.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Script prioritaire pour empêcher le flash -->
+    <script id="no-flash-inline">
+        document.documentElement.style.backgroundColor = '#121212';
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.backgroundColor = '#121212';
+        });
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -372,7 +386,7 @@
             });
         });
     </script>
-    <script src="js/page-transitions.js"></script>
+    <script src="js/no-flash-fix.js"></script>
 </body>
 </html>
 

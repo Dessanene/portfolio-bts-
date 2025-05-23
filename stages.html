@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <!-- Solution anti-flash prioritaire -->
+    <style id="no-flash-fix">
+        html, body {
+            background-color: #121212 !important;
+            transition: none !important;
+        }
+    </style>
     <title>Stages - Portfolio Professionnel</title>
     <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/dark-theme.css">
@@ -318,7 +325,7 @@
             });
         });
     </script>
-    <script src="js/page-transitions.js"></script>
+    <script src="js/no-flash-fix.js"></script>
 </body>
 </html>
 

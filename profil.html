@@ -6,6 +6,13 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <!-- Solution anti-flash prioritaire -->
+    <style id="no-flash-fix">
+        html, body {
+            background-color: #121212 !important;
+            transition: none !important;
+        }
+    </style>
     <title>Profil - Portfolio Professionnel</title>
     <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/dark-theme.css">
@@ -72,13 +79,6 @@
     <style>
         body, html { background-color: #121212; }
     </style>
-    <!-- Script prioritaire pour empêcher le flash -->
-    <script id="no-flash-inline">
-        document.documentElement.style.backgroundColor = '#121212';
-        document.addEventListener('DOMContentLoaded', function() {
-            document.body.style.backgroundColor = '#121212';
-        });
-    </script>
 </head>
 <body>
     
@@ -298,60 +298,9 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        // Animations pour les éléments de la page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animation pour la timeline
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            timelineItems.forEach((item, index) => {
-                item.style.animationDelay = `${0.3 + (index * 0.2)}s`;
-                item.style.opacity = '0';
-                item.style.animation = 'fadeInUp 0.8s ease-out forwards';
-            });
-            
-            // Animation pour les sections
-            const sections = document.querySelectorAll('section');
-            sections.forEach((section, index) => {
-                section.style.animationDelay = `${0.1 + (index * 0.1)}s`;
-                section.style.opacity = '0';
-                section.style.animation = 'fadeInUp 0.8s ease-out forwards';
-            });
-            
-            // Effet de survol amélioré pour les éléments de la timeline
-            const timelineContents = document.querySelectorAll('.timeline-content');
-            timelineContents.forEach(content => {
-                content.addEventListener('mouseenter', function() {
-                    this.style.transition = 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)';
-                    this.style.transform = 'translateX(5px)';
-                    this.style.boxShadow = '0 10px 25px rgba(13, 110, 253, 0.25)';
-                });
-                
-                content.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateX(0)';
-                    this.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.05)';
-                });
-            });
-            
-            // Effet de survol pour la photo de profil
-            const profileImage = document.querySelector('.profile-image');
-            if (profileImage) {
-                profileImage.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.02)';
-                });
-                
-                profileImage.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                });
-            }
-        });
-    </script>
-    <script src="js/page-transitions.js"></script>
+    <script src="js/no-flash-fix.js"></script>
 </body>
 </html>
-
-
-
-
 
 
 
