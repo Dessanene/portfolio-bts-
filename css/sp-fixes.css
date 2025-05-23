@@ -1,0 +1,32 @@
+/* Corrections pour les fonds blancs dans la page des situations professionnelles */
+
+/* Correction pour les boîtes de contexte professionnel */
+.timeline-content div[style*="background-color: #f8f9fa"] {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #333 !important;
+}
+
+/* Correction pour les boîtes de la section conclusion */
+.card div[style*="background-color: #f8f9fa"] {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+    border-left-color: inherit !important;
+}
+
+/* S'assurer que tous les titres sont lisibles */
+div[style*="background-color: #f8f9fa"] h4 {
+    color: inherit !important;
+}
+
+/* Améliorer la visibilité des titres colorés */
+h4[style*="color: #3498db"], 
+h4[style*="color: #2c3e50"],
+h4[style*="color: #e74c3c"] {
+    color: #61dafb !important; /* Bleu clair pour meilleure visibilité */
+}
+
+/* Corriger la couleur du texte dans les contextes */
+div[style*="background-color: #f8f9fa"] p {
+    color: #e0e0e0 !important;
+}
