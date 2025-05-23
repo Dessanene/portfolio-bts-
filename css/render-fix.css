@@ -1,0 +1,23 @@
+/* Fix pour l'affichage sur Render */
+.preloader {
+    background-color: #121212 !important; /* Force le fond noir pour le preloader */
+    display: none !important; /* Désactive complètement le preloader pour Render */
+}
+
+body {
+    background-color: #121212 !important; /* Force le fond noir */
+    color: #e0e0e0 !important; /* Force le texte clair */
+    visibility: visible !important; /* Assure que le contenu est visible */
+}
+
+html, body {
+    display: block !important; /* Force l'affichage du contenu */
+    opacity: 1 !important; /* Force l'opacité complète */
+}
+
+/* Assure que les éléments principaux sont visibles */
+header, main, footer, .container, .content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
