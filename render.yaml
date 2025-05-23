@@ -7,8 +7,7 @@ services:
     headers:
       - path: /*
         name: Cache-Control
-        value: public, max-age=0, s-maxage=86400, must-revalidate
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
+        value: no-cache, must-revalidate
+    # Suppression de la redirection globale qui cause l'écran noir
+    # La redirection était probablement la cause du problème car elle
+    # envoyait toutes les requêtes vers index.html, y compris pour les CSS et images
