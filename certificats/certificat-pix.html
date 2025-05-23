@@ -121,7 +121,20 @@
     </style>
 </head>
 <body>
-    <div class="certificate-container">
+    
+    <!-- Préchargeur -->
+    <div class="preloader">
+        <div class="loader">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+    </div>
+    
+    <!-- Transition entre les pages -->
+    <div class="page-transition"></div>
+    
+<div class="certificate-container">
         <div class="certificate-header">
             <img src="../images/logos/pix-official-logo.svg" alt="Logo PIX" class="certificate-logo">
             <div class="certificate-title">
@@ -218,5 +231,7 @@
             });
         });
     </script>
+    <script src="js/page-transitions.js"></script>
 </body>
 </html>
+

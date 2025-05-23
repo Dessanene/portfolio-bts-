@@ -8,6 +8,7 @@
     <meta http-equiv="Expires" content="0">
     <title>Portfolio Professionnel</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/preloader.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -177,6 +178,18 @@
     </style>
 </head>
 <body>
+    <!-- Préchargeur -->
+    <div class="preloader">
+        <div class="loader">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+    </div>
+    
+    <!-- Transition entre les pages -->
+    <div class="page-transition"></div>
+    
     <header>
         <div class="container">
             <div class="header-content">
@@ -196,7 +209,7 @@
         </div>
     </header>
 
-    <main>
+    <main class="content-fade">
         <section class="hero-section">
             <div class="container">
                 <div class="hero-content">
@@ -259,19 +272,19 @@
                             </div>
                         </div>
                     
-                        <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; border-radius: 10px; padding: 20px; border-left: 5px solid #E6007E;">
+                        <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; border-radius: 10px; padding: 20px; border-left: 5px solid #0099cc;">
                             <h3 style="margin-top: 0; display: flex; align-items: center;">
-                                <span style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #E6007E 0%, #ff5db1 100%); color: white; padding: 8px 12px; border-radius: 8px; margin-right: 10px; width: 30px; height: 30px;">
+                                <span style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0099cc 0%, #2980b9 100%); color: white; padding: 8px 12px; border-radius: 8px; margin-right: 10px; width: 30px; height: 30px;">
                                     <i class="fas fa-laptop-code"></i>
                                 </span>
                                 <span style="color: #0099cc; font-size: 1.4rem; font-weight: 600;">Option SLAM</span>
                             </h3>
-                            <p style="font-weight: 600; color: #E6007E;">Solutions Logicielles et Applications Métiers</p>
+                            <p style="font-weight: 600; color: #0099cc;">Solutions Logicielles et Applications Métiers</p>
                             <p><strong>Objectifs :</strong> Cette spécialisation est axée sur le développement de solutions informatiques adaptées aux besoins des entreprises. Les diplômés apprennent à concevoir, programmer et maintenir des applications métier pour optimiser la gestion informatique.</p>
                             <div style="display: flex; flex-wrap: wrap; margin-top: 15px;">
-                                <span style="display: inline-flex; align-items: center; background-color: #E6007E; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-laptop-code" style="margin-right: 5px;"></i> Développement</span>
-                                <span style="display: inline-flex; align-items: center; background-color: #E6007E; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-database" style="margin-right: 5px;"></i> Base de données</span>
-                                <span style="display: inline-flex; align-items: center; background-color: #E6007E; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-cogs" style="margin-right: 5px;"></i> Applications</span>
+                                <span style="display: inline-flex; align-items: center; background-color: #0099cc; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-laptop-code" style="margin-right: 5px;"></i> Développement</span>
+                                <span style="display: inline-flex; align-items: center; background-color: #0099cc; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-database" style="margin-right: 5px;"></i> Base de données</span>
+                                <span style="display: inline-flex; align-items: center; background-color: #0099cc; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-cogs" style="margin-right: 5px;"></i> Applications</span>
                             </div>
                         </div>
                     </div>
@@ -428,5 +441,6 @@
             }, 100);
         });
     </script>
+    <script src="js/page-transitions.js"></script>
 </body>
 </html>

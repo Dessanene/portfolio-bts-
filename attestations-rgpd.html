@@ -8,6 +8,7 @@
     <meta http-equiv="Expires" content="0">
     <title>Attestations RGPD - Portfolio Professionnel</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/preloader.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,7 +130,20 @@
     </style>
 </head>
 <body>
-    <main>
+    
+    <!-- Préchargeur -->
+    <div class="preloader">
+        <div class="loader">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+    </div>
+    
+    <!-- Transition entre les pages -->
+    <div class="page-transition"></div>
+    
+<main class="content-fade">
         <div class="container">
             <div class="page-title">
                 <h1>Attestations de l'Atelier RGPD</h1>
@@ -193,5 +207,7 @@
             </a>
         </div>
     </main>
+    <script src="js/page-transitions.js"></script>
 </body>
 </html>
+

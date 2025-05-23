@@ -213,7 +213,20 @@
     </style>
 </head>
 <body>
-    <div class="attestation-container">
+    
+    <!-- Préchargeur -->
+    <div class="preloader">
+        <div class="loader">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+    </div>
+    
+    <!-- Transition entre les pages -->
+    <div class="page-transition"></div>
+    
+<div class="attestation-container">
         <div class="purple-wave"></div>
         <div class="attestation-content">
             
@@ -274,5 +287,7 @@
     <div class="navigation-buttons">
         <a href="../../certifications.html" class="back-btn"><i class="fas fa-arrow-left"></i> Retour aux certifications</a>
     </div>
+    <script src="js/page-transitions.js"></script>
 </body>
 </html>
+

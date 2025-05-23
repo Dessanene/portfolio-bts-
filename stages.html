@@ -8,6 +8,7 @@
     <meta http-equiv="Expires" content="0">
     <title>Stages - Portfolio Professionnel</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/preloader.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +60,20 @@
     </style>
 </head>
 <body>
-    <header>
+    
+    <!-- Préchargeur -->
+    <div class="preloader">
+        <div class="loader">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+    </div>
+    
+    <!-- Transition entre les pages -->
+    <div class="page-transition"></div>
+    
+<header>
         <div class="container">
             <div class="header-content">
                 <a href="index.html" class="logo">Portfolio</a>
@@ -78,7 +92,7 @@
         </div>
     </header>
 
-    <main>
+    <main class="content-fade">
         <div class="container">
             <div class="page-title">
                 <h1>Mes Stages</h1>
@@ -274,5 +288,7 @@
             });
         });
     </script>
+    <script src="js/page-transitions.js"></script>
 </body>
 </html>
+

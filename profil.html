@@ -8,6 +8,7 @@
     <meta http-equiv="Expires" content="0">
     <title>Profil - Portfolio Professionnel</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/preloader.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,7 +69,20 @@
     </style>
 </head>
 <body>
-    <header>
+    
+    <!-- Préchargeur -->
+    <div class="preloader">
+        <div class="loader">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+    </div>
+    
+    <!-- Transition entre les pages -->
+    <div class="page-transition"></div>
+    
+<header>
         <div class="container">
             <div class="header-content">
                 <a href="index.html" class="logo">Portfolio</a>
@@ -87,7 +101,7 @@
         </div>
     </header>
 
-    <main>
+    <main class="content-fade">
         <div class="container">
             <div class="page-title">
                 <h1>Mon Profil 👨‍💻</h1>
@@ -105,10 +119,22 @@
                             <div style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
                                 <img src="images/dessanene.jpg" alt="Photo de Dessanène Sanhan" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <div class="social-icons" style="margin-top: 20px; text-align: center;">
+                            
+                            <div style="margin-top: 15px; text-align: center;">
+                                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 5px;">
+                                    <i class="fas fa-map-marker-alt" style="color: #3498db; margin-right: 5px;"></i>
+                                    <span>Limoges, France</span>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 5px;">
+                                    <i class="fas fa-envelope" style="color: #3498db; margin-right: 5px; flex-shrink: 0;"></i>
+                                    <a href="mailto:oliviersanhan2016@gmail.com" style="color: #3498db; text-decoration: none; font-size: 0.9rem;">oliviersanhan2016@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="social-icons" style="margin-top: 15px; text-align: center;">
                                 <a href="https://www.linkedin.com/in/dessanene-sanhan-ba5174205/" style="width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; background-color: #3498db; color: white; border-radius: 50%; margin: 0 5px; text-decoration: none;"><i class="fab fa-linkedin fa-lg"></i></a>
                                 <a href="#" style="width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; background-color: #3498db; color: white; border-radius: 50%; margin: 0 5px; text-decoration: none;"><i class="fab fa-github fa-lg"></i></a>
-                                <a href="#" style="width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; background-color: #3498db; color: white; border-radius: 50%; margin: 0 5px; text-decoration: none;"><i class="far fa-envelope fa-lg"></i></a>
+                                <a href="mailto:oliviersanhan2016@gmail.com" style="width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; background-color: #3498db; color: white; border-radius: 50%; margin: 0 5px; text-decoration: none;"><i class="far fa-envelope fa-lg"></i></a>
                             </div>
                         </div>
                         
@@ -121,6 +147,14 @@
                                     <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 5px 10px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.9rem;"><i class="fas fa-shield-alt" style="margin-right: 5px;"></i> Cybersécurité</span>
                                 </div>
                                 <p style="line-height: 1.6;">Originaire de la Côte d'Ivoire, j'ai toujours nourri une profonde passion pour l'informatique. Après avoir obtenu un BTS en Réseaux Informatiques et Télécoms dans mon pays natal, j'ai entrepris un voyage vers la France, reconnue pour l'excellence de son enseignement et la valeur de ses diplômes à l'international. C'est ainsi que j'ai découvert Limoges, où j'ai posé mes valises pour la première fois. Désireux de poursuivre mon développement académique et professionnel, j'ai intégré l'Institution Beaupeyrat de Limoges, où je suis actuellement en deuxième année de BTS SIO (Services Informatiques aux Organisations), avec une spécialisation en SISR (Solutions d'Infrastructure, Systèmes et Réseaux). Cette formation m'offre l'opportunité d'approfondir mes connaissances et de me préparer à relever les défis du monde numérique avec rigueur et expertise.</p>
+                                <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                                    <a href="documents/cv_dessanene_sanhan.pdf" class="btn-animated" style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500; transition: all 0.3s ease;">
+                                        <i class="fas fa-file-pdf" style="margin-right: 10px;"></i> Consulter CV
+                                    </a>
+                                    <a href="#soft-skills" class="btn-animated" style="display: inline-flex; align-items: center; background-color: #2ecc71; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500; transition: all 0.3s ease;">
+                                        <i class="fas fa-brain" style="margin-right: 10px;"></i> Soft Skills
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -150,48 +184,6 @@
             </section>
 
             <section>
-                <h2 class="section-title">🛠 Expériences</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date" style="background-color: #3498db; color: white; font-weight: 600; padding: 5px 10px; border-radius: 5px;">Janvier – Février 2025</div>
-                        <div class="timeline-content" style="border-left: 4px solid #3498db; padding-left: 20px; background-color: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); padding: 15px 20px;">
-                            <h3 style="color: #3498db; display: flex; align-items: center;"><i class="fas fa-briefcase" style="margin-right: 10px;"></i> Technicien maintenance</h3>
-                            <div style="display: flex; flex-wrap: wrap; margin: 10px 0;">
-                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-chart-line" style="margin-right: 5px;"></i> Supervision</span>
-                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-desktop" style="margin-right: 5px;"></i> Monitoring</span>
-                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-bell" style="margin-right: 5px;"></i> Alertes</span>
-                            </div>
-                            <p style="margin-top: 10px;">Mise en place d'un système de supervision et d'alerte pour infrastructures critiques basé sur Zabbix et Grafana.</p>
-                            <div style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px;">
-                                <a href="situations-professionnelles.html" class="btn-animated" style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-size: 0.9rem; transition: all 0.3s ease;">
-                                    <i class="fas fa-file-alt" style="margin-right: 5px;"></i> Voir les détails
-                                </a>
-                                <a href="pdf/sp1.pdf" class="btn-animated" style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-size: 0.9rem; transition: all 0.3s ease;">
-                                    <i class="fas fa-file-pdf" style="margin-right: 5px;"></i> Rapport de stage
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date" style="background-color: #3498db; color: white; font-weight: 600; padding: 5px 10px; border-radius: 5px;">Mai – Juin 2024</div>
-                        <div class="timeline-content" style="border-left: 4px solid #3498db; padding-left: 20px; background-color: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); padding: 15px 20px;">
-                            <h3 style="color: #3498db; display: flex; align-items: center;"><i class="fas fa-briefcase" style="margin-right: 10px;"></i> Stage à OGEC Beaupeyrat</h3>
-                            <div style="display: flex; flex-wrap: wrap; margin: 10px 0;">
-                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-network-wired" style="margin-right: 5px;"></i> Réseaux</span>
-                                <span style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 3px 8px; border-radius: 20px; margin-right: 10px; margin-bottom: 5px; font-size: 0.8rem;"><i class="fas fa-server" style="margin-right: 5px;"></i> Infrastructure</span>
-                            </div>
-                            <p style="margin-top: 10px;">Gestion des infrastructures réseaux au sein de l'établissement scolaire. Maintenance du parc informatique et assistance aux utilisateurs.</p>
-                            <div style="margin-top: 15px;">
-                                <a href="stages.html" class="btn-animated" style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-size: 0.9rem; transition: all 0.3s ease;">
-                                    <i class="fas fa-file-alt" style="margin-right: 5px;"></i> Voir les détails
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section>
                 <h2 class="section-title">📝 Curriculum Vitae</h2>
                 <div class="card" style="max-width: 600px; margin: 0 auto; background-color: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); padding: 20px;">
                     <div style="display: flex; align-items: center; margin-bottom: 15px;">
@@ -207,6 +199,65 @@
                     <a href="documents/cv_dessanene_sanhan.pdf" class="btn-animated" style="display: inline-flex; align-items: center; background-color: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500; transition: all 0.3s ease;">
                         <i class="fas fa-download" style="margin-right: 10px;"></i> Télécharger mon CV
                     </a>
+                </div>
+            </section>
+
+            <section id="soft-skills">
+                <h2 class="section-title">Soft Skills</h2>
+                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+                    <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                        <div style="padding: 20px; border-top: 3px solid #3498db;">
+                            <h3 style="color: #3498db; display: flex; align-items: center; margin-top: 0;">
+                                <i class="fas fa-users" style="margin-right: 10px;"></i> Travail d'équipe
+                            </h3>
+                            <p>Excellente capacité à collaborer au sein d'une équipe, à partager des connaissances et à atteindre des objectifs communs dans un environnement professionnel.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                        <div style="padding: 20px; border-top: 3px solid #2ecc71;">
+                            <h3 style="color: #2ecc71; display: flex; align-items: center; margin-top: 0;">
+                                <i class="fas fa-comments" style="margin-right: 10px;"></i> Communication
+                            </h3>
+                            <p>Aptitude à communiquer clairement et efficacement, tant à l'oral qu'à l'écrit, avec des interlocuteurs de différents niveaux techniques.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                        <div style="padding: 20px; border-top: 3px solid #e74c3c;">
+                            <h3 style="color: #e74c3c; display: flex; align-items: center; margin-top: 0;">
+                                <i class="fas fa-tasks" style="margin-right: 10px;"></i> Résolution de problèmes
+                            </h3>
+                            <p>Capacité à analyser les situations complexes, identifier les causes profondes et mettre en œuvre des solutions efficaces et durables.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                        <div style="padding: 20px; border-top: 3px solid #2980b9;">
+                            <h3 style="color: #2980b9; display: flex; align-items: center; margin-top: 0;">
+                                <i class="fas fa-brain" style="margin-right: 10px;"></i> Adaptabilité
+                            </h3>
+                            <p>Flexibilité face aux changements et aux nouvelles technologies, avec une capacité à apprendre rapidement et à m'adapter à différents environnements de travail.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                        <div style="padding: 20px; border-top: 3px solid #f39c12;">
+                            <h3 style="color: #f39c12; display: flex; align-items: center; margin-top: 0;">
+                                <i class="fas fa-clock" style="margin-right: 10px;"></i> Gestion du temps
+                            </h3>
+                            <p>Organisation efficace des tâches, respect des délais et capacité à gérer plusieurs projets simultanément avec un niveau élevé de précision et d'attention aux détails.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="background-color: white; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                        <div style="padding: 20px; border-top: 3px solid #1abc9c;">
+                            <h3 style="color: #1abc9c; display: flex; align-items: center; margin-top: 0;">
+                                <i class="fas fa-lightbulb" style="margin-right: 10px;"></i> Créativité
+                            </h3>
+                            <p>Approche innovante des problèmes techniques, capacité à penser hors des sentiers battus et à proposer des solutions originales et efficaces.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -282,6 +333,8 @@
             }
         });
     </script>
+    <script src="js/page-transitions.js"></script>
 </body>
 </html>
+
 

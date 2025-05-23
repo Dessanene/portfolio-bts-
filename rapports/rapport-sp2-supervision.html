@@ -215,7 +215,20 @@
     </style>
 </head>
 <body>
-    <header>
+    
+    <!-- Préchargeur -->
+    <div class="preloader">
+        <div class="loader">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+    </div>
+    
+    <!-- Transition entre les pages -->
+    <div class="page-transition"></div>
+    
+<header>
         <div class="container">
             <div class="header-content">
                 <a href="../index.html" class="logo">Portfolio</a>
@@ -234,7 +247,7 @@
         </div>
     </header>
 
-    <main>
+    <main class="content-fade">
         <div class="rapport-header">
             <div class="container">
                 <div class="rapport-title">
@@ -790,5 +803,7 @@
             });
         });
     </script>
+    <script src="js/page-transitions.js"></script>
 </body>
 </html>
+
