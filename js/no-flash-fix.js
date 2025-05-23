@@ -1,8 +1,8 @@
-// Solution renforcée pour éliminer complètement le flash blanc lors des transitions de page
+// Solution améliorée pour éliminer complètement le flash blanc lors des transitions de page
 
 // Fonction immédiatement exécutée pour appliquer un fond noir avant tout chargement
 (function() {
-    // Force le fond noir dès le début
+    // Force le fond noir dès le début sur l'élément html et body
     document.documentElement.style.backgroundColor = '#121212';
     
     // Crée un élément style pour forcer le fond noir globalement
@@ -27,6 +27,37 @@
     
     // Ajoute l'élément style le plus tôt possible
     document.head.appendChild(style);
+    
+    // Écouteur pour les clics sur les liens pour forcer le fond noir avant la transition
+    document.addEventListener('click', function(e) {
+        var target = e.target;
+        // Remonte jusqu'à trouver un lien ou atteindre le document
+        while (target && target !== document) {
+            if (target.tagName && target.tagName.toLowerCase() === 'a') {
+                // Si c'est un lien interne (même domaine)
+                if (target.hostname === window.location.hostname) {
+                    // Force le fond noir pour la transition
+                    localStorage.setItem('preventFlash', 'true');
+                    document.body.style.backgroundColor = '#121212';
+                    document.documentElement.style.backgroundColor = '#121212';
+                }
+                break;
+            }
+            target = target.parentNode;
+        }
+    });
+    
+    // Au chargement de la page, vérifier si on vient d'une transition
+    if (localStorage.getItem('preventFlash') === 'true') {
+        // Réinitialiser le stockage
+        localStorage.setItem('preventFlash', 'false');
+    }
+    
+    // S'assurer que le fond reste noir même pendant le déchargement
+    window.addEventListener('beforeunload', function() {
+        document.body.style.backgroundColor = '#121212';
+        document.documentElement.style.backgroundColor = '#121212';
+    });
 })();
 
 // Configuration principale une fois le DOM chargé
