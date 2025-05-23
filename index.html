@@ -180,8 +180,18 @@
             transform: translateY(-2px);
         }
     </style>
-    <!-- Script pour éliminer le flash blanc lors des transitions de page -->
-    <script src="js/no-flash-fix.js"></script>
+    <!-- Désactivation temporaire du thème sombre forcé pour résoudre le problème d'écran noir sur Render -->
+    <style>
+        body, html { background-color: #ffffff; }
+    </style>
+    <!-- Modification du script pour utiliser un fond clair par défaut -->
+    <script id="no-flash-inline">
+        // Permettre l'affichage normal des éléments
+        document.documentElement.style.backgroundColor = '#ffffff';
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.backgroundColor = '#ffffff';
+        });
+    </script>
 </head>
 <body>
     <!-- Préchargeur -->
