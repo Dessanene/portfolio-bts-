@@ -24,14 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.backgroundColor = bgColor;
     document.documentElement.style.backgroundColor = bgColor;
     
-    // Force le fond noir pendant les transitions
-    function forceBackgroundColor() {
-        document.body.style.backgroundColor = bgColor;
-        document.documentElement.style.backgroundColor = bgColor;
+    // Appliquer le fond sombre uniquement lors des transitions
+    function applyBackgroundColor() {
+        // Uniquement lors des transitions de page, pas en permanence
+        document.body.classList.add('transitioning');
     }
-    
-    // Appliquer un intervalle pour s'assurer que le fond reste noir
-    setInterval(forceBackgroundColor, 100);
     
     // Gérer les clics sur les liens internes
     const internalLinks = document.querySelectorAll('a[href^="index"], a[href^="profil"], a[href^="competences"], a[href^="veille"], a[href^="stages"], a[href^="situations"], a[href^="certifications"], a[href^="attestations"], a[href^="epreuve"], a[href^="dashboard"], a[href^="./"], a[href^="../"]');

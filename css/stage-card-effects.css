@@ -1,0 +1,230 @@
+/* Effets visuels pour les cartes et timeline de la page stages */
+
+/* Animation d'apparition */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animation de bordure */
+@keyframes borderPulse {
+    0% {
+        border-color: rgba(52, 152, 219, 0.3);
+    }
+    50% {
+        border-color: rgba(52, 152, 219, 0.8);
+    }
+    100% {
+        border-color: rgba(52, 152, 219, 0.3);
+    }
+}
+
+/* Animation d'icône */
+@keyframes iconFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Effet de surbrillance */
+@keyframes highlightGlow {
+    0% {
+        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
+    }
+    50% {
+        box-shadow: 0 5px 25px rgba(52, 152, 219, 0.3);
+    }
+    100% {
+        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
+    }
+}
+
+/* Effet de vague au clic */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+/* Améliorations pour les cartes */
+.card {
+    position: relative;
+    animation: fadeInScale 0.6s ease-out forwards;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+    overflow: hidden;
+}
+
+/* Échelonner l'animation */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Effet au survol */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(52, 152, 219, 0.2);
+    border-color: rgba(52, 152, 219, 0.3);
+    animation: highlightGlow 2s infinite;
+}
+
+/* Effet pour les titres de carte */
+.card .card-title {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-title {
+    transform: translateX(5px);
+}
+
+/* Effet pour les icônes dans les titres */
+.card .card-title i {
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-title i {
+    animation: iconFloat 2s ease infinite;
+    color: #3498db;
+}
+
+/* Ligne décorative qui apparaît au survol */
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    transition: width 0.4s ease;
+}
+
+.card:hover::after {
+    width: 100%;
+}
+
+/* Améliorations pour la timeline */
+.timeline-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: scale(1.02);
+}
+
+.timeline-content {
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.timeline-content:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Ligne d'accent qui apparaît au survol */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(52, 152, 219, 0.1), transparent);
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.timeline-content:hover::before {
+    width: 100%;
+}
+
+/* Animation pour la date */
+.timeline-date {
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-date {
+    transform: translateX(-5px);
+    font-weight: 700;
+    color: #3498db;
+}
+
+/* Améliorations pour les boutons */
+.btn-animated {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-animated:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-animated::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.btn-animated:active::after {
+    animation: ripple 0.6s ease-out;
+}
+
+/* Amélioration des badges de compétences */
+.skill-item {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Effet de brillance qui traverse le badge */
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+.skill-item:hover::before {
+    left: 100%;
+}

@@ -1,17 +1,17 @@
-// Solution renforcée pour éliminer complètement le flash blanc lors des transitions de page
+// Solution améliorée pour éviter le flash blanc sans masquer le contenu
 
-// Fonction immédiatement exécutée pour appliquer un fond noir avant tout chargement
+// Configuration initiale du fond pour éviter le flash blanc
 (function() {
-    // Force le fond noir dès le début
+    // Définit la couleur de fond initiale sans bloquer le contenu
     document.documentElement.style.backgroundColor = '#121212';
     
-    // Crée un élément style pour forcer le fond noir globalement
+    // Style de base pour les transitions
     var style = document.createElement('style');
     style.type = 'text/css';
     style.innerHTML = `
         html, body {
-            background-color: #121212 !important;
-            transition: none !important;
+            background-color: #121212;
+            transition: background-color 0.3s ease;
         }
         .page-transition {
             position: fixed;
@@ -22,10 +22,11 @@
             background-color: #121212;
             z-index: 9999;
             pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
     `;
     
-    // Ajoute l'élément style le plus tôt possible
     document.head.appendChild(style);
 })();
 
@@ -54,18 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Force le fond noir en continu
-    function forceBlackBackground() {
-        document.documentElement.style.backgroundColor = '#121212';
-        document.body.style.backgroundColor = '#121212';
-    }
-    
-    // S'exécute toutes les 10ms pour garantir que le fond reste noir
-    const intervalId = setInterval(forceBlackBackground, 10);
-    
-    // Intercepte tous les clics sur les liens pour forcer le fond noir lors des navigations
+    // Gestion des transitions de page
     document.addEventListener('click', function(e) {
-        // Vérifie si l'élément cliqué est un lien ou a un parent qui est un lien
         let target = e.target;
         let isLink = false;
         
@@ -78,31 +69,29 @@ document.addEventListener('DOMContentLoaded', function() {
             target = target.parentNode;
         }
         
-        // Si c'est un lien interne, force le fond noir
+        // Si c'est un lien interne, prépare la transition
         if (isLink && target.getAttribute('href') && 
             !target.getAttribute('href').startsWith('http') && 
             !target.getAttribute('href').startsWith('#') &&
             !target.getAttribute('download') &&
             target.getAttribute('target') !== '_blank') {
             
-            forceBlackBackground();
-            
-            // Force encore le fond noir juste avant la navigation
-            setTimeout(forceBlackBackground, 0);
+            // Animation de transition légère
+            if (pageTransition) {
+                pageTransition.style.opacity = '0.3';
+                setTimeout(function() {
+                    pageTransition.style.opacity = '0';
+                }, 300);
+            }
         }
     });
-    
-    // Force le fond noir avant le déchargement de la page
-    window.addEventListener('beforeunload', forceBlackBackground);
-    window.addEventListener('unload', forceBlackBackground);
-    
-    // Applique également lors de la navigation avec les boutons du navigateur
-    window.addEventListener('pageshow', forceBlackBackground);
-    window.addEventListener('pagehide', forceBlackBackground);
 });
 
-// Fonction de secours qui s'exécute même si le DOMContentLoaded a déjà eu lieu
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    document.documentElement.style.backgroundColor = '#121212';
-    document.body.style.backgroundColor = '#121212';
-}
+// S'assurer que le contenu est visible quand la page est complètement chargée
+window.addEventListener('load', function() {
+    // Supprimer tout style forcé qui pourrait bloquer l'affichage
+    setTimeout(function() {
+        document.body.style.visibility = 'visible';
+        document.body.style.opacity = '1';
+    }, 500);
+});

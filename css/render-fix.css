@@ -1,23 +1,30 @@
-/* Fix pour l'affichage sur Render */
+/* Correction pour l'affichage sur Render */
 .preloader {
-    background-color: #121212 !important; /* Force le fond noir pour le preloader */
-    display: none !important; /* Désactive complètement le preloader pour Render */
+    background-color: #121212; /* Fond noir pour le preloader */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
 }
 
 body {
-    background-color: #121212 !important; /* Force le fond noir */
-    color: #e0e0e0 !important; /* Force le texte clair */
-    visibility: visible !important; /* Assure que le contenu est visible */
+    background-color: #121212; /* Fond sombre */
+    color: #e0e0e0; /* Texte clair */
+    visibility: visible; /* Contenu visible */
 }
 
 html, body {
-    display: block !important; /* Force l'affichage du contenu */
-    opacity: 1 !important; /* Force l'opacité complète */
+    display: block; /* Affichage normal */
+    opacity: 1; /* Opacité normale */
+    transition: opacity 0.3s ease;
 }
 
-/* Assure que les éléments principaux sont visibles */
+/* Assure que les éléments principaux sont visibles avec transitions */
 header, main, footer, .container, .content {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }

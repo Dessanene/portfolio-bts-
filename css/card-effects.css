@@ -1,0 +1,143 @@
+/* Effets visuels pour les cartes de compétences */
+
+/* Animation d'apparition des cartes */
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation du survol de l'icône */
+@keyframes iconPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Effet de bordure brillante */
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.1);
+    }
+}
+
+/* Effet de lueur du texte */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 0px rgba(52, 152, 219, 0);
+    }
+    50% {
+        text-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 0px rgba(52, 152, 219, 0);
+    }
+}
+
+/* Style de base des cartes avec animation d'apparition */
+.app-card {
+    animation: cardFadeIn 0.6s ease-out forwards;
+    position: relative;
+    border: 1px solid transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Permet d'échelonner l'animation pour chaque carte */
+.app-card:nth-child(2) { animation-delay: 0.1s; }
+.app-card:nth-child(3) { animation-delay: 0.2s; }
+.app-card:nth-child(4) { animation-delay: 0.3s; }
+.app-card:nth-child(5) { animation-delay: 0.4s; }
+.app-card:nth-child(6) { animation-delay: 0.5s; }
+
+/* Effets au survol */
+.app-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.3) !important;
+    border-color: rgba(52, 152, 219, 0.2);
+}
+
+/* Effet de ligne brillante qui apparaît au survol */
+.app-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2980b9, #3498db);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.app-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Effet sur les icônes au survol */
+.app-card:hover .app-header i {
+    animation: iconPulse 1s infinite;
+    color: #3498db !important;
+}
+
+/* Effet au survol des liens */
+.app-link:hover {
+    background-color: #3498db !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Ajouter un effet de transition pour les liens */
+.app-link {
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de vague au clic sur le lien */
+.app-link::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.app-link:active::after {
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}

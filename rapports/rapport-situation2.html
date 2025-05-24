@@ -170,7 +170,10 @@
     <script id="no-flash-inline">
         document.documentElement.style.backgroundColor = '#121212';
         document.addEventListener('DOMContentLoaded', function() {
-            document.body.style.backgroundColor = '#121212';
+            // Assurer que le contenu sera visible après chargement
+            setTimeout(function() {
+                document.body.style.visibility = 'visible';
+            }, 100);
         });
     </script>
 </head>
@@ -498,6 +501,7 @@
     <script src="js/page-transitions.js"></script>
 </body>
 </html>
+
 
 
 
